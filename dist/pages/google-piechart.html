@@ -1,0 +1,26 @@
+<html>
+    <body>
+    <form id="form">
+        
+        hola
+    </form>
+    <input type="submit" id="btn">
+    
+    <script>
+
+        $("#btn").addEventListener("click",function(){
+        var input2 = document.createElement("input");
+        input2.setAttribute("type","number");
+        input2.setAttribute("placeholder","01");
+        input2.setAttribute("name","tallas[]"); 
+        $("#form").appendChild(input2);
+        
+        
+        })
+        
+        function $(selector){
+        return document.querySelector(selector);
+        }
+</script>
+</body>
+</html>

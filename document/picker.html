@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Item Name: Forge - Material Design Admin Template
+  Version: 1.0
+  Author: CodigoForge
+  Author URL: http://www.themeforest.net/user/pixeleforge
+  WebSite : http://www.codigoforge.com
+  -->
+  <head>
+    <title>Picker - Forge</title>
+    <link rel="apple-touch-icon-precomposed" href="../dist/images/favicon/favicon-32x32.png">
+    <link rel="icon" href="../dist/images/favicon/favicon-32x32.png" sizes="32x32">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="title" content="Forge is modern, responsive Material Admin Template.">
+    <meta name="description" content="Forge Material Admin Template is modern, responsive and based on Material Design by Google.It's Material Design Admin Template powered by MaterialCSS.">
+    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, materialcss, admin pages, material CMS, forge admin template, resoponsive material admin">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="../dist/images/favicon/favicon-32x32.png">
+    <meta name="theme-color" content="#2a56c6">
+    <link rel="stylesheet" type="text/css" href="../dist/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/plugins/document.css">
+    <link rel="stylesheet" href="../dist/css/dynamic.min.css">
+    <link rel="stylesheet" href="../dist/css/markup.min.css">
+    <link rel="stylesheet" href="../dist/plugins/scrollbar/perfect-scrollbar.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/css/plugins/lolliclock.css">
+    <link rel="stylesheet" href="../dist/plugins/pickers/jquery-timepicker/jquery.timepicker.css">
+    <link rel="stylesheet" href="../dist/plugins/pickers/spectrum/spectrum.css">
+  </head>
+  <body>
+    <header>
+      <div class="container"><a class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only" href="#" data-activates="nav-mobile"><i class="material-icons">menu</i></a></div>
+      <ul class="side-nav fixed" id="nav-mobile">
+        <li class="logo" style="margin-bottom:0;"><a class="brand-logo app-logo" id="logo-container" href="http://forge.codigoforge.com"><i class="material-icons logo-icon left white-text" style="left:10px;top:32px;">whatshot </i><span class="left white-text">FORGE</span></a></li>
+        <li class="bold"><a class="waves-effect waves-primary" href="getting-started.html">Getting Started</a></li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header waves-effect waves-primary">Css Properties</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="color.html">Color</a></li>
+                  <li><a href="grid.html">Grid</a></li>
+                  <li><a href="helpers.html">Helpers</a></li>
+                  <li><a href="media-css.html">Media</a></li>
+                  <li><a href="shadow.html">Shadow</a></li>
+                  <li><a href="table.html">Table</a></li>
+                  <li><a href="overlay.html">Overlay</a></li>
+                  <li><a href="typography.html">Typography</a></li>
+                  <li><a href="icon.html">Icon</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header waves-effect waves-primary">UI Essentials</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="badges.html">Badges</a></li>
+                  <li><a href="buttons.html">Buttons</a></li>
+                  <li><a href="breadcrumbs.html">Breadcrumbs</a></li>
+                  <li><a href="cards.html">Cards</a></li>
+                  <li><a href="chips.html">Chips</a></li>
+                  <li><a href="collections.html">Collections</a></li>
+                  <li><a href="pagination.html">Pagination</a></li>
+                  <li><a href="preloader.html">Preloader</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header waves-effect waves-primary">Advance UI</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="carousel.html">Carousel</a></li>
+                  <li><a href="collapsible.html">Collapsible</a></li>
+                  <li><a href="dialogs.html">Dialogs</a></li>
+                  <li><a href="dropdown.html">Dropdown</a></li>
+                  <li><a href="media.html">Media</a></li>
+                  <li><a href="modals.html">Modals</a></li>
+                  <li><a href="pushpin.html">Pushpin</a></li>
+                  <li><a href="scrollfire.html">ScrollFire</a></li>
+                  <li><a href="scrollspy.html">Scrollspy</a></li>
+                  <li><a href="tabs.html">Tabs</a></li>
+                  <li><a href="transitions.html">Transitions</a></li>
+                  <li><a href="waves.html">Waves</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="bold"><a class="waves-effect waves-primary" href="form-component.html">Form Components</a></li>
+        <li class="bold"><a class="waves-effect waves-primary" href="editors.html">Editor</a></li>
+        <li class="bold"><a class="waves-effect waves-primary active" href="picker.html">Picker</a></li>
+        <li class="bold"><a class="waves-effect waves-primary" href="charts.html">Charts</a></li>
+        <li class="bold"><a class="waves-effect waves-primary" href="nestable.html">Nestable</a></li>
+        <li class="bold"><a class="waves-effect waves-primary" href="gallery.html">Gallery</a></li>
+        <li class="bold"><a class="waves-effect waves-primary" href="widgets.html">Widgets</a></li>
+        <li class="bold"><a class="waves-effect waves-primary" href="references.html">References</a></li>
+      </ul>
+    </header>
+    <main>
+      <div class="section" id="index-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m9">
+              <h1 class="header center-on-small-only">Picker</h1>
+            </div>
+            <div class="col s12 m3">
+              <div class="buysellads-header center-on-small-only"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m9 l10">
+            <div class="section" id="Intro">
+              <div class="row">
+                <p class="col s12 caption">Picker makes UI much pleasant and easy.</p>
+              </div>
+            </div>
+            <div class="section scrollspy" id="DatePickers">
+              <div class="row">
+                <h2 class="col s12 header">Date Pickers</h2>
+                <p class="col s12">We use a modified version of pickadate.js to create a materialized date picker. Test it out below!</p>
+                <p class="col s12">Setting up with material color scheme. Pretty is as usual. Set the class name <code class="language-markup">pck-*</code> to inpute. Here you can use entire material color palette with color tones that's lighten/darken/accent. For color tones, you can set <code class="language-markup">pck-darken-*</code> or <code class="language-markup">pck-lighten-*</code> or <code class="language-markup">pck-accent-*</code>. But make you initialize class to connect with Material TimePicker JS.</p>
+              </div>
+              <div class="row">
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker" type="date"><span class="input-info inline-block">No class</span>
+                </div>
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker pck-red" type="date"><span class="input-info inline-block">set <code class="language-markup">pck-red</code> class to input datepicker.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker pck-purple" type="date"><span class="input-info inline-block">set <code class="language-markup">pck-purple</code> class to input datepicker.</span>
+                </div>
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker pck-cyan" type="date"><span class="input-info inline-block">set <code class="language-markup">pck-cyan</code> class to input datepicker.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker pck-orange" type="date"><span class="input-info inline-block">set <code class="language-markup">pck-orange</code> class to input datepicker.</span>
+                </div>
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker pck-amber" type="date"><span class="input-info inline-block">set <code class="language-markup">pck-amber</code> class to input datepicker.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker pck-indigo" type="date"><span class="input-info inline-block">set <code class="language-markup">pck-indigo</code> class to input datepicker.</span>
+                </div>
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker pck-green" type="date"><span class="input-info inline-block">set <code class="language-markup">pck-green</code> class to input datepicker.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker pck-lime" type="date"><span class="input-info inline-block">set <code class="language-markup">pck-lime</code> class to input datepicker.</span>
+                </div>
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input class="datepicker pck-pink" type="date"><span class="input-info inline-block">set <code class="language-markup">pck-pink</code> class to input datepicker.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>datepicker pck-pink<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span></code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="section scrollspy" id="TimePicker">
+              <div class="row">
+                <h2 class="col s12 header">Time Picker</h2>
+                <p class="col s12">A material design timepicker based on clockpicker with customize UI. You can customize it as you want. Each element of this clock can be colorized.</p>
+                <div class="col s12">
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pick-a-time<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#pick-a-time'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lolliclock</span><span class="token punctuation">(</span><span class="token punctuation">{</span>autoclose<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input type="text" id="clock1" name="clock1">
+                  <label for="clock1">Default</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                  <input type="text" id="clock2" name="clock2">
+                  <label for="clock2">Pink</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field informatic-input col s12 m6 l6">
+                  <input type="text" id="clock3" name="clock3">
+                  <label for="clock3">Amber</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                  <input type="text" id="clock4" name="clock4">
+                  <label for="clock4">Cyan</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <p>Customize UI by defining option.</p>
+                  <pre class="language-javascript"><code class=" language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#clock2"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lolliclock</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  autoclose<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+  schemeActBtn<span class="token punctuation">:</span><span class="token string">'teal'</span><span class="token punctuation">,</span>
+  schemePopover<span class="token punctuation">:</span><span class="token string">'white'</span><span class="token punctuation">,</span>
+  schemeHead<span class="token punctuation">:</span><span class="token string">'teal'</span><span class="token punctuation">,</span>
+  schemePlat<span class="token punctuation">:</span><span class="token string">'grey'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+              </div>
+              <div class="row">
+                <h4 class="col s12">jQuery TimePicker</h4>
+                <p class="col s12">jQuery Timepicker can parse the most used time representations allowing you and your users to enter time using their prefered way for writing it.</p>
+                <h5 class="col s12 light">Basic Example</h5>
+                <div class="input-field informatic-input col s6 m4 l4">
+                  <input class="box-input" type="text" id="jq-timepick-basicExample" name="jq-timepick-basicExample" placeholder="Basic">
+                </div>
+                <div class="input-field col s6 m8 l8">
+                  <pre class="language-javascript"><code class=" language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#jq-timepick-basicExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h5 class="col s12 light"> Scroll Default Example</h5>
+                <p class="col s12">Set the scroll position to local time if no value selected.</p>
+                <div class="input-field col s6 m4 l4">
+                  <input class="box-input" type="text" id="scrollDefaultExample" name="scrollDefaultExample" placeholder="Basic">
+                </div>
+                <div class="input-field col s6 m8 l8">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#scrollDefaultExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">'scrollDefault'</span><span class="token punctuation">:</span> <span class="token string">'now'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h5 class="col s12 light">Scroll Default Example</h5>
+                <p class="col s12">Set the scroll position to local time if no value selected.</p>
+                <div class="input-field col s6 m4 l4">
+                  <input class="box-input" type="text" id="setTimeExample" name="setTimeExample" placeholder="Basic"><a class="waves-effect waves-light btn" href="javascript:void(0)" id="setTimeButton">Set Current Time<i class="material-icons left">timer</i></a>
+                </div>
+                <div class="input-field col s6 m8 l8">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#setTimeExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#setTimeButton'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#setTimeExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token string">'setTime'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h5 class="col s12 light">Duration Example</h5>
+                <div class="input-field col s6 m4 l4">
+                  <input class="box-input" type="text" id="durationExample" name="durationExample" placeholder="Basic">
+                  <p>Set a starting time and see duration from that starting time. You can optionally set an maxTime as well.</p>
+                </div>
+                <div class="input-field col s6 m8 l8">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#durationExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'minTime'</span><span class="token punctuation">:</span> <span class="token string">'2:00pm'</span><span class="token punctuation">,</span>
+  <span class="token string">'maxTime'</span><span class="token punctuation">:</span> <span class="token string">'11:30pm'</span><span class="token punctuation">,</span>
+  <span class="token string">'showDuration'</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h5 class="col s12 light">Event Example</h5>
+                <p class="col s12">Trigger an event after selecting a value. Fires before the input onchange event.</p>
+                <div class="input-field col s6 m4 l4">
+                  <input type="text" id="onselectExample" name="onselectExample" placeholder="Basic">
+                </div>
+                <div class="input-field col s6 m8 l8">
+                  <label for="onselectExample" id="onselectTarget"></label>
+                </div>
+                <div class="input-field col s12">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#onselectExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#onselectExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'changeTime'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#onselectTarget'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h5 class="col s12 light">DisableTimeRanges Example</h5>
+                <div class="input-field col s6 m4 l4">
+                  <input type="text" id="disableTimeRangesExample" name="disableTimeRangesExample" placeholder="Basic">
+                  <p>Prevent selection of certain time values.</p>
+                </div>
+                <div class="input-field col s6 m8 l8">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#disableTimeRangesExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'disableTimeRanges'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'1am'</span><span class="token punctuation">,</span> <span class="token string">'2am'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'3am'</span><span class="token punctuation">,</span> <span class="token string">'4:01am'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h5 class="col s12 light">noneOption Example</h5>
+                <div class="input-field col s6 m4 l4">
+                  <input type="text" id="noneOptionExample" name="noneOptionExample" placeholder="Basic">
+                  <p>Custom options can be added to the dropdown menu.</p>
+                </div>
+                <div class="input-field col s6 m8 l8">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#noneOptionExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'noneOption'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">'label'</span><span class="token punctuation">:</span> <span class="token string">'Foobar'</span><span class="token punctuation">,</span>
+      <span class="token string">'className'</span><span class="token punctuation">:</span> <span class="token string">'shibby'</span><span class="token punctuation">,</span>
+      <span class="token string">'value'</span><span class="token punctuation">:</span> <span class="token string">'42'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">'Foobar2'</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h5 class="col s12 light">timeFormat Example</h5>
+                <p class="col s12">timepicker.jquery uses the time portion of PHP's date formatting commands.</p>
+                <div class="input-field col s6 m6 l6">
+                  <input type="text" id="timeformatExample1" name="timeformatExample1" placeholder="Basic">
+                </div>
+                <div class="input-field col s6 m6 l6">
+                  <input type="text" id="timeformatExample2" name="timeformatExample2" placeholder="Basic">
+                </div>
+                <div class="input-field col s12">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#timeformatExample1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">'timeFormat'</span><span class="token punctuation">:</span> <span class="token string">'H:i:s'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#timeformatExample2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">'timeFormat'</span><span class="token punctuation">:</span> <span class="token string">'h:i A'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h5 class="col s12 light">Step Example</h5>
+                <p class="col s12">Step Example</p>
+                <div class="input-field col s6 m6 l6">
+                  <input type="text" id="stepExample1" name="stepExample1" placeholder="Basic">
+                </div>
+                <div class="input-field col s6 m6 l6">
+                  <input type="text" id="stepExample2" name="stepExample2" placeholder="Basic">
+                </div>
+                <div class="input-field col s12">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#stepExample1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">'step'</span><span class="token punctuation">:</span> <span class="token number">15</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#stepExample2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string">'step'</span><span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>i<span class="token operator">%</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">15</span> <span class="token punctuation">:</span> <span class="token number">45</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="section scrollspy" id="ColorPicker">
+              <div class="row">
+                <h2 class="col s12 header">Color Picker</h2>
+                <p class="col s12">Searching for that perfect color has never been easier, use our HTML color picker to browse millions of colors and color harmonies.</p>
+              </div>
+              <div class="row">
+                <h4 class="col s12">Tiny ColorPicker</h4>
+                <p class="col s12"> <a href="https://github.com/PitPik/tinyColorPicker">Tiny color-picker </a>is an efficient color picket tool to make you input colorized.</p>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="color" name="crnt-color" id="crnt-color">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m4 l4">
+                  <input class="color" type="text" value="#ffa000">
+                </div>
+                <div class="input-field col s12 m4 l4">
+                  <input class="color" type="text" value="rgb(29,233,182)">
+                </div>
+                <div class="input-field col s12 m4 l4">
+                  <input class="color" type="text" value="hsl(32, 95%, 23%)">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <p>Tiny jQuery color picker for mobile and desktop with alpha channel.</p>
+                </div>
+                <div class="col s12">
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Basic Input<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>crnt-color<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>crnt-color<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m4 l4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#ffa000<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m4 l4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rgb(29,233,182)<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m4 l4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hsl(32, 95%, 23%)<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </div>
+                <div class="col s12">
+                  <pre class="language-javascript"><code class=" language-javascript">
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"jqColorPicker.min.js"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">&gt;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.color'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">colorPicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// that's it</span>
+  <span class="token comment" spellcheck="true">// $().colorPicker.destroy(); // for singlePageApps</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span></code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="section scrollspy" id="Spectrum">
+              <div class="row">
+                <h2 class="col s12 header">Spectrum</h2>
+                <p class="col s12"><a href="http://bgrins.github.io/spectrum/">Spectrum </a>is compress library for color picker. I I has started using canvas, then switched to CSS gradients, since it turned out to be easier to manage, and provided better cross browser support.</p>
+                <h4 class="col s12">Custom</h4>
+                <p class="col s12">If you want to get more into the functionality, just create a normal input and initialize it as a normal jQuery plugin. You can set a lot of options when initializing the colorpicker. See the 'Options' section below.</p>
+                <div class="input-field col s12 m4 l4">
+                  <input type="text" name="spectrum1" id="spectrum1">
+                </div>
+                <div class="col s12 m8 l8">
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span></code></pre>
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#custom"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  color<span class="token punctuation">:</span> <span class="token string">"#f00"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </div>
+                <h4 class="col s12">Flat</h4>
+                <p class="col s12">Flat This means that it will always show up at full size, and be positioned as an inline-block element. Look to the left for a full sized flat picker.</p>
+                <div class="input-field col s12 m6 l6">
+                  <input type="text" name="flat" id="flat">
+                </div>
+                <div class="input-field col s12 m6 l6">
+                  <input type="text" name="flatClearable" id="flatClearable">
+                </div>
+                <div class="col s12">
+                  <pre class="language-javascript"><code class=" language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#flat"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  flat<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  showInput<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#flatClearable"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  flat<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  showInput<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  allowEmpty<span class="token punctuation">:</span><span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+                </div>
+                <h4 class="col s12">Color</h4>
+                <p class="col s12">The initial color will be set with the color option. If you don't pass in a color, Spectrum will use the value attribute on the input.</p>
+                <div class="input-field col s3 m3 l3">
+                  <input class="basic" type="text" value="red">
+                </div>
+                <div class="input-field col s3 m3 l3">
+                  <input class="basic" type="text" value="orange">
+                </div>
+                <div class="input-field col s3 m3 l3">
+                  <input class="basic" type="text" value="green">
+                </div>
+                <div class="input-field col s3 m3 l3">
+                  <input class="override" type="text">
+                </div>
+                <div class="col s12">
+                  <pre class="language-markup"><code class=" language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>basic<span class="token punctuation">'</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>red<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>basic<span class="token punctuation">'</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>orange<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>basic<span class="token punctuation">'</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>green<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>override<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span></code></pre>
+                </div>
+                <div class="col s12">
+                  <pre class="language-javascript"><code class=" language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".basic"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".override"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  color<span class="token punctuation">:</span> <span class="token string">"yellow"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+                </div>
+                <h4 class="col s12">Show Alpha</h4>
+                <p class="col s12">You can allow alpha transparency selection. Check out these examples:</p>
+                <div class="input-field col s12 m4 l4">
+                  <input type="text" name="showAlpha" id="showAlpha" value="rgba(67, 47, 26, 0.498039)">
+                </div>
+                <div class="input-field col s12 m8 l8">
+                  <pre class="language-javascript"><code class=" language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#showAlpha"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  showAlpha<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+                </div>
+                <h4 class="col s12">Show Palette</h4>
+                <p class="col s12">Spectrum can show a palette below the colorpicker to make it convenient for users to choose from frequently or recently used colors. When the colorpicker is closed, the current color will be added to the palette if it isn't there already. Check it out here:</p>
+                <div class="input-field col s12 m4 l4">
+                  <input type="text" name="showPalette" id="showPalette" value="rgb(173, 216, 230)">
+                </div>
+                <div class="input-field col s12 m8 l8">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#showPalette"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  showPalette<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  palette<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'black'</span><span class="token punctuation">,</span> <span class="token string">'white'</span><span class="token punctuation">,</span> <span class="token string">'blanchedalmond'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'rgb(255, 128, 0);'</span><span class="token punctuation">,</span> <span class="token string">'hsv 100 70 50'</span><span class="token punctuation">,</span> <span class="token string">'lightyellow'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h4 class="col s12">Show Palette Only</h4>
+                <p class="col s12">If you'd like, spectrum can show the palettes you specify, and nothing else.</p>
+                <div class="input-field col s12 m4 l4">
+                  <input type="text" name="showPaletteOnly" id="showPaletteOnly" value="rgb(173, 216, 230)">
+                </div>
+                <div class="input-field col s12 m8 l8">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#showPaletteOnly"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  showPaletteOnly<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  showPalette<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+  color<span class="token punctuation">:</span> <span class="token string">'blanchedalmond'</span><span class="token punctuation">,</span>
+  palette<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">'black'</span><span class="token punctuation">,</span> <span class="token string">'white'</span><span class="token punctuation">,</span> <span class="token string">'blanchedalmond'</span><span class="token punctuation">,</span>
+    <span class="token string">'rgb(255, 128, 0);'</span><span class="token punctuation">,</span> <span class="token string">'hsv 100 70 50'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'yellow'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'violet'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h4 class="col s12">Toggle Palette Only</h4>
+                <p class="col s12">Spectrum can show a button to toggle the colorpicker next to the palette. This way, the user can choose from a limited number of colors in the palette, but still be able to pick a color that's not in the palette.</p>
+                <p class="col s12">The default value for <code class="language-markup">togglePaletteOnly</code> is FALSE. Set it to TRUE to enable the Toggle button.</p>
+                <div class="input-field col s12 m4 l4">
+                  <input type="text" name="togglePaletteOnly" id="togglePaletteOnly" value="rgb(103, 216, 230)">
+                </div>
+                <div class="input-field col s12 m8 l8">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#togglePaletteOnly"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  showPaletteOnly<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  togglePaletteOnly<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  togglePaletteMoreText<span class="token punctuation">:</span> <span class="token string">'more'</span><span class="token punctuation">,</span>
+  togglePaletteLessText<span class="token punctuation">:</span> <span class="token string">'less'</span><span class="token punctuation">,</span>
+  color<span class="token punctuation">:</span> <span class="token string">'blanchedalmond'</span><span class="token punctuation">,</span>
+  palette<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token string">"#000"</span><span class="token punctuation">,</span><span class="token string">"#444"</span><span class="token punctuation">,</span><span class="token string">"#666"</span><span class="token punctuation">,</span><span class="token string">"#999"</span><span class="token punctuation">,</span><span class="token string">"#ccc"</span><span class="token punctuation">,</span><span class="token string">"#eee"</span><span class="token punctuation">,</span><span class="token string">"#f3f3f3"</span><span class="token punctuation">,</span><span class="token string">"#fff"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"#f00"</span><span class="token punctuation">,</span><span class="token string">"#f90"</span><span class="token punctuation">,</span><span class="token string">"#ff0"</span><span class="token punctuation">,</span><span class="token string">"#0f0"</span><span class="token punctuation">,</span><span class="token string">"#0ff"</span><span class="token punctuation">,</span><span class="token string">"#00f"</span><span class="token punctuation">,</span><span class="token string">"#90f"</span><span class="token punctuation">,</span><span class="token string">"#f0f"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"#f4cccc"</span><span class="token punctuation">,</span><span class="token string">"#fce5cd"</span><span class="token punctuation">,</span><span class="token string">"#fff2cc"</span><span class="token punctuation">,</span><span class="token string">"#d9ead3"</span><span class="token punctuation">,</span><span class="token string">"#d0e0e3"</span><span class="token punctuation">,</span><span class="token string">"#cfe2f3"</span><span class="token punctuation">,</span><span class="token string">"#d9d2e9"</span><span class="token punctuation">,</span><span class="token string">"#ead1dc"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"#ea9999"</span><span class="token punctuation">,</span><span class="token string">"#f9cb9c"</span><span class="token punctuation">,</span><span class="token string">"#ffe599"</span><span class="token punctuation">,</span><span class="token string">"#b6d7a8"</span><span class="token punctuation">,</span><span class="token string">"#a2c4c9"</span><span class="token punctuation">,</span><span class="token string">"#9fc5e8"</span><span class="token punctuation">,</span><span class="token string">"#b4a7d6"</span><span class="token punctuation">,</span><span class="token string">"#d5a6bd"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"#e06666"</span><span class="token punctuation">,</span><span class="token string">"#f6b26b"</span><span class="token punctuation">,</span><span class="token string">"#ffd966"</span><span class="token punctuation">,</span><span class="token string">"#93c47d"</span><span class="token punctuation">,</span><span class="token string">"#76a5af"</span><span class="token punctuation">,</span><span class="token string">"#6fa8dc"</span><span class="token punctuation">,</span><span class="token string">"#8e7cc3"</span><span class="token punctuation">,</span><span class="token string">"#c27ba0"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"#c00"</span><span class="token punctuation">,</span><span class="token string">"#e69138"</span><span class="token punctuation">,</span><span class="token string">"#f1c232"</span><span class="token punctuation">,</span><span class="token string">"#6aa84f"</span><span class="token punctuation">,</span><span class="token string">"#45818e"</span><span class="token punctuation">,</span><span class="token string">"#3d85c6"</span><span class="token punctuation">,</span><span class="token string">"#674ea7"</span><span class="token punctuation">,</span><span class="token string">"#a64d79"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"#900"</span><span class="token punctuation">,</span><span class="token string">"#b45f06"</span><span class="token punctuation">,</span><span class="token string">"#bf9000"</span><span class="token punctuation">,</span><span class="token string">"#38761d"</span><span class="token punctuation">,</span><span class="token string">"#134f5c"</span><span class="token punctuation">,</span><span class="token string">"#0b5394"</span><span class="token punctuation">,</span><span class="token string">"#351c75"</span><span class="token punctuation">,</span><span class="token string">"#741b47"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"#600"</span><span class="token punctuation">,</span><span class="token string">"#783f04"</span><span class="token punctuation">,</span><span class="token string">"#7f6000"</span><span class="token punctuation">,</span><span class="token string">"#274e13"</span><span class="token punctuation">,</span><span class="token string">"#0c343d"</span><span class="token punctuation">,</span><span class="token string">"#073763"</span><span class="token punctuation">,</span><span class="token string">"#20124d"</span><span class="token punctuation">,</span><span class="token string">"#4c1130"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="section scrollspy" id="LocationPicker">
+              <div class="row">
+                <h2 class="col s12">Location Picker</h2>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m10 l10">
+                  <input type="text" id="us3-address">
+                </div>
+                <div class="input-field col s12 m2 l2">
+                  <input type="text" id="us3-radius">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <div id="us3" style="height:300px;width:inherit;"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m6 l6 input-field">
+                  <input type="text" id="us3-lat">
+                </div>
+                <div class="col s12 m6 l6 input-field">
+                  <input type="text" id="us3-lon">
+                </div>
+              </div>
+              <div class="row">
+                <h4 class="col s12">Manipulating map widget from callback</h4>
+                <div class="col s12">
+                  <div id="us4" style="height:500px;width:inherit;"></div>
+                </div>
+                <div class="col s12">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us4'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  location<span class="token punctuation">:</span> <span class="token punctuation">{</span>latitude<span class="token punctuation">:</span> <span class="token number">46.15242437752303</span><span class="token punctuation">,</span> longitude<span class="token punctuation">:</span> <span class="token number">2.7470703125</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  radius<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+  onchanged<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>currentLocation<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> isMarkerDropped<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> mapContext <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token string">'map'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mapContext<span class="token punctuation">.</span>map<span class="token punctuation">.</span><span class="token function">setZoom</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+                <h4 class="col s12">Manipulating map widget from callback</h4>
+                <div class="col s12 m6 l6">
+                  <div id="us5" style="height:300px;width:100%;"></div>
+                </div>
+                <div class="col s12 m6 l6">
+                  <div class="row">
+                    <div class="input-field s12 col">
+                      <input type="text" placeholder="Street" id="us5-street1" name="Street">
+                      <label for="us5-street1">Street</label>
+                    </div>
+                    <div class="input-field s12 col">
+                      <input type="text" placeholder="City" id="us5-city" name="City">
+                      <label for="us5-city">City</label>
+                    </div>
+                    <div class="input-field s12 col">
+                      <input type="text" placeholder="State" id="us5-state" name="State">
+                      <label for="us5-state">State or Province</label>
+                    </div>
+                    <div class="input-field s12 col">
+                      <input type="text" placeholder="Postal" id="us5-zip" name="Postal">
+                      <label for="us5-zip">Postal Code</label>
+                    </div>
+                    <div class="input-field s12 col">
+                      <input type="text" placeholder="Country" id="us5-country" name="Country">
+                      <label for="us5-country">Country</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12">
+                  <pre class="language-javascript"><code class="  language-javascript">
+<span class="token keyword">function</span> <span class="token function">updateControls</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-street1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>addressLine1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-city'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>city<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-state'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>stateOrProvince<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-zip'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>postalCode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-country'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>country<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  location<span class="token punctuation">:</span> <span class="token punctuation">{</span>latitude<span class="token punctuation">:</span> <span class="token number">42.00</span><span class="token punctuation">,</span> longitude<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">73.82480799999996</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  radius<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+  onchanged<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>currentLocation<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> isMarkerDropped<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> addressComponents <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token string">'map'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>location<span class="token punctuation">.</span>addressComponents<span class="token punctuation">;</span>
+    <span class="token function">updateControls</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  oninitialized<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> addressComponents <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span>component<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token string">'map'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>location<span class="token punctuation">.</span>addressComponents<span class="token punctuation">;</span>
+    <span class="token function">updateControls</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col hide-on-small-only m3 l2">
+            <div class="toc-wrapper-document">
+              <div style="height: 1px;">
+                <ul class="table-of-contents">
+                  <li><a href="#DatePickers">Date Pickers</a></li>
+                  <li><a href="#TimePicker">Time Picker</a></li>
+                  <li><a href="#ColorPicker">Color Picker</a></li>
+                  <li><a href="#Spectrum">Spectrum</a></li>
+                  <li><a href="#LocationPicker">Location Picker</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- FOOTER-->
+    <footer class="page-footer no-mrpd grey lighten-4">
+      <div class="footer-copyright">
+        <div class="container primary-text">© 2017 Forge, All rights reserved.
+          <div class="right"><span class="left">Handcrafted with </span><a class="left" href="http://codigoforge.com"><i class="material-icons secondary-text tiny left" style="line-height:20px;margin:0px 8px;">favorite</i>By CodigoForge</a></div>
+        </div>
+      </div>
+    </footer>
+    <script src="../dist/js/all.js"></script>
+    <script>
+      (function(){
+          $('.toc-wrapper-document').pushpin({ top: $('.toc-wrapper-document').offset().top });
+      })();
+    </script>
+    <script type="text/javascript" src="../dist/plugins/pickers/lolliclock/lolliclock.js"></script>
+    <script type="text/javascript" src="../dist/plugins/pickers/jquery-timepicker/jquery.timepicker.js"></script>
+    <script type="text/javascript" src="../dist/plugins/pickers/tinyColorPicker/colors.js"></script>
+    <script type="text/javascript" src="../dist/plugins/pickers/tinyColorPicker/jqColorPicker.js"></script>
+    <script type="text/javascript" src="../dist/plugins/pickers/spectrum/spectrum.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb1h7KGGCmDIdyx1XT2jTHvmagtlYzyGQ&amp;sensor=false&amp;libraries=places"></script>
+    <script type="text/javascript" src="../dist/plugins/pickers/locationpicker/dist/locationpicker.jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.datepicker').pickadate({
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15 // Creates a dropdown of 15 years to control year
+        });
+        //- lolliclock
+        $("#clock1").lolliclock({autoclose:true});
+      
+        $("#clock2").lolliclock({
+          autoclose:true,
+          schemeActBtn:'grey darken-4',
+          schemePopover:'pink lighten-2',
+          schemeHead:'pink lighten-2',
+          schemePlat:'white'
+        });
+        $("#clock3").lolliclock({
+          autoclose:true,
+          schemeActBtn:'grey darken-4',
+          schemePopover:'amber lighten-2',
+          schemeHead:'amber lighten-2',
+          schemePlat:'white'
+        });
+        $("#clock4").lolliclock({
+          autoclose:true,
+          schemeActBtn:'grey darken-4',
+          schemePopover:'cyan lighten-2',
+          schemeHead:'cyan lighten-2',
+          schemePlat:'white'
+        });
+        //- jQuery TimePicker
+        $('#jq-timepick-basicExample').timepicker();
+        $('#scrollDefaultExample').timepicker({ 'scrollDefault': 'now' });
+        $('#setTimeExample').timepicker();
+        $('#setTimeButton').on('click', function (){
+          $('#setTimeExample').timepicker('setTime', new Date());
+        });
+        $('#durationExample').timepicker({
+          'minTime': '2:00pm',
+          'maxTime': '11:30pm',
+          'showDuration': true
+        });
+      
+        $('#onselectExample').timepicker();
+        $('#onselectExample').on('changeTime', function() {
+          $('#onselectTarget').text($(this).val());
+        });
+        $('#disableTimeRangesExample').timepicker({
+          'disableTimeRanges': [
+            ['1am', '2am'],
+            ['3am', '4:01am']
+          ]
+        });
+        $('#noneOptionExample').timepicker({
+          'noneOption': [
+            {
+              'label': 'Foobar',
+              'className': 'shibby',
+              'value': '42'
+            },
+            'Foobar2'
+          ]
+        });
+      
+        $('#timeformatExample1').timepicker({ 'timeFormat': 'H:i:s' });
+        $('#timeformatExample2').timepicker({ 'timeFormat': 'h:i A' });
+      
+        $('#stepExample1').timepicker({ 'step': 15 });
+        $('#stepExample2').timepicker({
+          'step': function(i) {
+            return (i%2) ? 15 : 45;
+          }
+        });
+        //- COLOR PICKER
+        $('.color').colorPicker({}); // that's it
+      
+        //- Spectrum
+        $("#spectrum1").spectrum({
+          color: "#f00"
+        });
+        //- Spectrum ; flat
+        $("#flat").spectrum({
+          flat: true,
+          showInput: true
+        });
+        $("#flatClearable").spectrum({
+          flat: true,
+          showInput: true,
+          allowEmpty:true
+        });
+        //- Spectrum - basic
+        $(".basic").spectrum();
+        $(".override").spectrum({
+          color: "yellow"
+        });
+        //- Show alpha
+        $("#showAlpha").spectrum({
+          showAlpha: true
+        });
+        //- showPalette
+        $("#showPalette").spectrum({
+          showPalette: true,
+          palette: [
+            ['black', 'white', 'blanchedalmond'],
+            ['rgb(255, 128, 0);', 'hsv 100 70 50', 'lightyellow']
+          ]
+        });
+        //- Show Palette Only
+        $("#showPaletteOnly").spectrum({
+          showPaletteOnly: true,
+          showPalette:true,
+          color: 'blanchedalmond',
+          palette: [
+            ['black', 'white', 'blanchedalmond',
+            'rgb(255, 128, 0);', 'hsv 100 70 50'],
+            ['red', 'yellow', 'green', 'blue', 'violet']
+          ]
+        });
+        //- Toggle Palette Only
+        $("#togglePaletteOnly").spectrum({
+          showPaletteOnly: true,
+          togglePaletteOnly: true,
+          togglePaletteMoreText: 'more',
+          togglePaletteLessText: 'less',
+          color: 'blanchedalmond',
+          palette: [
+            ["#000","#444","#666","#999","#ccc","#eee","#f3f3f3","#fff"],
+            ["#f00","#f90","#ff0","#0f0","#0ff","#00f","#90f","#f0f"],
+            ["#f4cccc","#fce5cd","#fff2cc","#d9ead3","#d0e0e3","#cfe2f3","#d9d2e9","#ead1dc"],
+            ["#ea9999","#f9cb9c","#ffe599","#b6d7a8","#a2c4c9","#9fc5e8","#b4a7d6","#d5a6bd"],
+            ["#e06666","#f6b26b","#ffd966","#93c47d","#76a5af","#6fa8dc","#8e7cc3","#c27ba0"],
+            ["#c00","#e69138","#f1c232","#6aa84f","#45818e","#3d85c6","#674ea7","#a64d79"],
+            ["#900","#b45f06","#bf9000","#38761d","#134f5c","#0b5394","#351c75","#741b47"],
+            ["#600","#783f04","#7f6000","#274e13","#0c343d","#073763","#20124d","#4c1130"]
+          ]
+        });
+        //- Location Picker
+        $('#us3').locationpicker({
+          location: {
+            latitude: 46.15242437752303,
+            longitude: 2.7470703125
+          },
+          radius: 300,
+          inputBinding: {
+            latitudeInput: $('#us3-lat'),
+            longitudeInput: $('#us3-lon'),
+            radiusInput: $('#us3-radius'),
+            locationNameInput: $('#us3-address')
+          },
+          enableAutocomplete: true,
+          onchanged: function (currentLocation, radius, isMarkerDropped) {
+            // Uncomment line below to show alert on each Location Changed event
+            alert("Location changed. New location (" + currentLocation.latitude + ", " + currentLocation.longitude + ")");
+          }
+        });
+        $('#us4').locationpicker({
+          location: {latitude: 46.15242437752303, longitude: 2.7470703125},
+          radius: 300,
+          onchanged: function(currentLocation, radius, isMarkerDropped) {
+            var mapContext = $(this).locationpicker('map');
+            mapContext.map.setZoom(20);
+          }
+        });
+        function updateControls(addressComponents) {
+          $('#us5-street1').val(addressComponents.addressLine1);
+          $('#us5-city').val(addressComponents.city);
+          $('#us5-state').val(addressComponents.stateOrProvince);
+          $('#us5-zip').val(addressComponents.postalCode);
+          $('#us5-country').val(addressComponents.country);
+        }
+        $('#us5').locationpicker({
+          location: {latitude: 42.00, longitude: -73.82480799999996},
+          radius: 300,
+          onchanged: function (currentLocation, radius, isMarkerDropped) {
+            var addressComponents = $(this).locationpicker('map').location.addressComponents;
+            updateControls(addressComponents);
+          },
+          oninitialized: function(component) {
+            var addressComponents = $(component).locationpicker('map').location.addressComponents;
+            updateControls(addressComponents);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

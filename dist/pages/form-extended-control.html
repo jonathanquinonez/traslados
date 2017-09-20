@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html class="loading" lang="en">
+  <!-- Item Name: Forge - Material Design Admin Template
+  Version: 1.0
+  Author: CodigoForge
+  Author URL: https://themeforest.net/user/codigoforge
+  WebSite : http://www.codigoforge.com
+  -->
+  <head>
+    <link rel="icon" href="../images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon-precomposed" href="../images/favicon/favicon-32x32.png">
+    <!-- ============================-->
+    <!-- META DATA-->
+    <!-- ============================-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="title" content="Forge is modern, responsive Material Admin Template.">
+    <meta name="description" content="Forge Material Admin Template is modern, responsive and based on Material Design by Google.It's Material Design Admin Template powered by MaterialCSS.">
+    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, materialcss, admin pages, material CMS, forge admin template, resoponsive material admin">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="../images/favicon/favicon-32x32.png">
+    <meta name="theme-color" content="#2a56c6">
+    <!-- ============================-->
+    <!-- TITLE-->
+    <!-- ============================-->
+    <title>Forge :: Form Extended Control</title>
+    <!-- ============================-->
+    <!-- FONTS-->
+    <!-- ============================-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- ============================-->
+    <!-- CSS-->
+    <!-- ============================-->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dynamic.min.css">
+    <link rel="stylesheet" href="../css/markup.min.css">
+    <link rel="stylesheet" href="../plugins/scrollbar/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="../plugins/jquery.numbox-1.2.0/jquery.numbox-1.2.0.css">
+    <link rel="stylesheet" href="../plugins/intl-tel-input/build/css/intlTelInput.css">
+  </head>
+  <body>
+    <!-- ============================-->
+    <!-- PRELOAD-->
+    <!-- ============================-->
+    <div id="preloader">
+      <div class="preloader-center">
+        <div class="dots-loader dot-circle"></div>
+      </div>
+    </div>
+    <!-- ============================-->
+    <!-- CONTENT AREA-->
+    <!-- ============================-->
+    <header>
+      <!-- ============================-->
+      <!-- TOP NAV-->
+      <!-- ============================-->
+      <div class="navbar-fixed full-top-nav">
+        <div id="current-menu" data-menu="default">
+          <nav><a class="morph menu small mob-menu button-collapse top-nav waves-effect waves-light circle hide-on-large-only" href="javascript:void(0)" id="sidebar-default-collapse" data-activates="nav-default"><span><span class="s1"></span><span class="s2"></span><span class="s3"></span></span></a>
+            <div class="nav-wrapper">
+              <!-- LOGO Set--><a class="animated brand-logo hide-on-large-only nav-logo" href="javascript:void(0)"><i class="material-icons logo-icon left base-text">whatshot</i><span class="left" style="margin-left:20px;">FORGE</span></a><a class="animated brand-logo hide-on-med-and-down defaultMenu-logo" href="javascript:void(0)"><i class="material-icons logo-icon left white-text">whatshot</i><span class="left" style="margin-left:20px;">FORGE</span></a>
+              <!-- Left menu options at top-nav-->
+              <ul class="left topnav-Menu-ls hide-on-med-and-down">
+                <li><a class="morph small iconizedToggle waves-effect waves-light" href="javascript:void(0)"><span><span class="s1"></span><span class="s2"></span><span class="s3"></span></span></a>
+                </li>
+                <li><a href="#">Sass</a></li>
+              </ul>
+              <!-- Right Menu-->
+              <ul class="right">
+                <li class="hide-on-med-and-down"><a class="waves-effect waves-set app-search-btn" href="#"><i class="material-icons">search</i></a></li>
+                <!-- MESSAGE SECTION-->
+                <li class="hide-on-med-and-down"><a class="dropdown-button waves-effect waves-set" href="#" data-beloworigin="true" data-activates="top-nav-msgsweb"><i class="material-icons">email</i><span class="badge-count">5</span></a></li>
+                <!-- ADMIN SETTINGS SECTION-->
+                <li><a class="dropdown-button waves-effect waves-set" href="#" data-beloworigin="true" data-activates="top-nav-userProfile"><img class="circle admin-profile-img-small" src="../images/placeholder/50x50g.jpg" alt=""></a></li>
+                <li class="hide-on-med-and-down"><a class="morph notify small notification-toggle-open waves-effect waves-light" href="javascript:void(0)"><span><span class="s1"></span><span class="s2"></span><span class="s3"></span></span></a>
+                </li>
+                <li class="hide-on-large-only"><a class="waves-effect waves-set toggle-topnav-hidden-menu" href="javascript:void(0);"><i class="material-icons">more_vert</i></a></li>
+              </ul>
+              <!-- Mobile Screen Nav Options-->
+              <ul class="right hide-on-large-only topnav-hidden-menu hide">
+                <li><a class="waves-effect waves-set app-search-btn" href="#"><i class="material-icons">search</i></a></li>
+                <li class="right"><a class="waves-effect waves-set toggle-topnav-hidden-menu" href="#"><i class="material-icons">more_vert</i></a></li>
+                <li class="right"><a class="morph notify small notification-toggle-open waves-effect waves-light" href="javascript:void(0)"><span><span class="s1"></span><span class="s2"></span><span class="s3"></span></span></a>
+                </li>
+                <li class="right"><a class="dropdown-button waves-effect waves-set" href="#" data-beloworigin="true" data-activates="top-nav-msgs"><i class="material-icons">email</i><span class="badge-count">5</span></a></li>
+              </ul>
+              <!-- DROP-DOWN-->
+              <div class="drop-down-bucket">
+                <ul class="collection dropdown-content" id="top-nav-msgsweb">
+                  <li class="collection-item msg-header">
+                    <ul>
+                      <li class="left"><span>Messages</span><a class="right" href="#"><i class="material-icons small">create</i></a></li>
+                    </ul>
+                  </li>
+                  <li class="collection-item msg-content">
+                    <ul class="collection" id="psTopNavMmsgsWeb">
+                      <li class="collection-item msg-items">
+                        <!-- REDIRECTION TO User-Profile--><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""><span class="chat-status with-badge online">10</span></a>
+                        <!-- Redirection to msg/chat--><a class="chat-content" href="#"><span class="title">Jenny Jordan</span>
+                          <div class="notify-desc">
+                             Hey, How are you doing?</div><span class="chat-time">30 Minutes ago.</span></a>
+                      </li>
+                      <li class="collection-item msg-items">
+                        <!-- REDIRECTION TO User-Profile--><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""><span class="chat-status with-badge offline">5</span></a>
+                        <!-- Redirection to msg/chat--><a class="chat-content" href="#"><span class="title">Jack Jordan</span>
+                          <div class="notify-desc">
+                             Wish you Happy birthday!</div><span class="chat-time">20 Minutes ago.</span></a>
+                      </li>
+                      <li class="collection-item msg-items"><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""><span class="chat-status with-badge away">10</span></a><a class="chat-content" href="#"><span class="title">Selena Morris</span>
+                          <div class="notify-desc">
+                             Envato is really awesome place to be.</div><span class="chat-time">15 Minutes ago.</span></a></li>
+                      <li class="collection-item msg-items"><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""><span class="chat-status with-badge busy">10</span></a><a class="chat-content" href="#"><span class="title">Mira Dellon</span>
+                          <div class="notify-desc">
+                             Let meet up at my place in this weekends.</div><span class="chat-time">10 Minutes ago.</span></a></li>
+                      <li class="collection-item msg-items"><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""><span class="chat-status with-badge online">10</span></a><a class="chat-content" href="#"><span class="title">Evi Willson</span>
+                          <div class="notify-desc">
+                             Are you ready for party on this weekend?</div><span class="chat-time">5 Minutes ago.</span></a></li>
+                    </ul>
+                  </li>
+                  <li class="collection-item msg-footer pos-relative"><a class="center tooltipped" href="#" data-position="top" data-tooltip="See all messages" style="padding:7px 16px;"><i class="material-icons small clear-style">more_horiz</i></a></li>
+                </ul>
+                <ul class="collection dropdown-content" id="top-nav-msgs">
+                  <li class="collection-item msg-header">
+                    <ul>
+                      <li class="left"><span>Messages</span><a class="right" href="#"><i class="material-icons small">create</i></a></li>
+                    </ul>
+                  </li>
+                  <li class="collection-item msg-content">
+                    <ul class="collection" id="psTopNavMmsgs">
+                      <li class="collection-item msg-items">
+                        <!-- REDIRECTION TO User-Profile--><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""><span class="chat-status with-badge online">10</span></a>
+                        <!-- Redirection to msg/chat--><a class="chat-content" href="#"><span class="title">Jenny Jordan</span>
+                          <div class="notify-desc">
+                             Hey, How are you doing?</div><span class="chat-time">30 Minutes ago.</span></a>
+                      </li>
+                      <li class="collection-item msg-items">
+                        <!-- REDIRECTION TO User-Profile--><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""><span class="chat-status with-badge offline">5</span></a>
+                        <!-- Redirection to msg/chat--><a class="chat-content" href="#"><span class="title">Jack Jordan</span>
+                          <div class="notify-desc">
+                             Wish you Happy birthday!</div><span class="chat-time">20 Minutes ago.</span></a>
+                      </li>
+                      <li class="collection-item msg-items"><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""><span class="chat-status with-badge away">10</span></a><a class="chat-content" href="#"><span class="title">Selena Morris</span>
+                          <div class="notify-desc">
+                             Envato is really awesome place to be.</div><span class="chat-time">15 Minutes ago.</span></a></li>
+                      <li class="collection-item msg-items"><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""><span class="chat-status with-badge busy">10</span></a><a class="chat-content" href="#"><span class="title">Mira Dellon</span>
+                          <div class="notify-desc">
+                             Let meet up at my place in this weekends.</div><span class="chat-time">10 Minutes ago.</span></a></li>
+                      <li class="collection-item msg-items"><a class="chat-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""><span class="chat-status with-badge online">10</span></a><a class="chat-content" href="#"><span class="title">Evi Willson</span>
+                          <div class="notify-desc">
+                             Are you ready for party on this weekend?</div><span class="chat-time">5 Minutes ago.</span></a></li>
+                    </ul>
+                  </li>
+                  <li class="collection-item msg-footer pos-relative"><a class="center tooltipped" href="#" data-position="top" data-tooltip="See all messages" style="padding:7px 16px;"><i class="material-icons small clear-style">more_horiz</i></a></li>
+                </ul>
+                <ul class="collection dropdown-content" id="top-nav-userProfile">
+                  <li class="collection-item">
+                    <div class="admin-profile-content"><img class="circle user-profile-img" src="../images/placeholder/50x50g.jpg" alt="">
+                      <p class="user-name primary-text">CodigoForge</p>
+                      <p class="user-designation secondary-text">CEO : Materialize-Z</p>
+                      <div class="divider"></div>
+                      <ul class="profile-ul">
+                        <li class="profile-li"><a class="btn waves-light collection-item" href="#"><i class="material-icons left">settings</i><span class="text-items">Profile</span></a></li>
+                        <li class="profile-li"><a class="btn waves-light collection-item" href="#"><i class="material-icons left">inbox</i><span class="badge right secondary-bg lighten-2 new">5</span><span class="text-items">Inbox</span></a></li>
+                        <li class="profile-li"><a class="btn waves-light collection-item" href="#"><i class="material-icons left">power_settings_new</i><span class="text-items">Sign Out</span></a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- Searchbar-->
+              <form class="inactive animated" id="app-search">
+                <div class="input-field">
+                  <input type="search" id="search">
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label><i class="material-icons app-search-Cls">close</i>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- ============================-->
+      <!-- Vertical Navigation (Default and Iconized)-->
+      <!-- ============================-->
+      <div class="vertical-navigations animated">
+        <ul class="side-nav fixed animated collapsible collapsible-accordion" id="nav-default">
+          <li class="logo"><a class="brand-logo hide-on-large-only" id="logo-container" href="/"></a></li>
+          <li class="usr-profile">
+            <div class="usr-profile-header"><a href="#"><img class="circle" src="../images/placeholder/50x50g.jpg" alt="Thor"></a></div>
+            <ul class="user-options">
+              <li class="waves-effect waves-set"><span class="usr-name">Johnson Doe</span></li>
+              <li class="user-option-item waves-effect waves-set"><a class="btn-floating btn-small waves-effect waves-light" href="#"><i class="material-icons">lock</i></a></li>
+              <li class="user-option-item waves-effect waves-set"><a class="btn-floating btn-small waves-effect waves-light" href="#"><i class="material-icons">settings</i></a></li>
+              <li class="user-option-item waves-effect waves-set"><a class="btn-floating btn-small waves-effect waves-light" href="#"><i class="material-icons">power_settings_new</i></a></li>
+            </ul>
+          </li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="index.html"><i class="material-icons">dashboard</i><span>Dashboard</span></a></li>
+          <li class="navigation-header"><span class="no-col-body">Card Widgets</span><i class="material-icons tooltipped" data-position="right" data-delay="50" data-tooltip="CSS Properties">more_horiz</i>
+          </li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="card-statistic.html"><i class="material-icons">show_chart</i><span>Statistic Card</span></a></li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="card-weather.html"><i class="material-icons">wb_sunny</i><span>Weather Card</span></a></li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="card-feeds.html"><i class="material-icons">view_list</i><span>Feeds Card</span></a></li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="card-travel.html"><i class="material-icons">panorama_fish_eye</i><span>Travel Card</span></a></li>
+          <li class="navigation-header"><span class="no-col-body">CSS Properties</span><i class="material-icons tooltipped" data-position="right" data-delay="50" data-tooltip="CSS Properties">more_horiz</i>
+          </li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="materialize-color.html"><i class="material-icons">color_lens</i><span>Color</span></a></li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="materialize-css-media.html"><i class="material-icons">photo_filter</i><span>CSS Media</span></a></li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="materialize-grid.html"><i class="material-icons">grid_on</i><span>Grid</span></a></li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">list</i><span>Tables</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-table.html"><span>Materialize Table</span></a></li>
+                <li class="menu-item">
+                  <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                      <div class="collapsible-header waves-effect waves-set"><span>Datatables</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></div>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a class="waves-effect waves-set" href="datatable-basic.html"><span>Basic Table</span></a></li>
+                          <li><a class="waves-effect waves-set" href="datatable-basic-style.html"><span>Basic Style</span></a></li>
+                          <li><a class="waves-effect waves-set" href="datatable-ordering.html"><span>Sort Datatable</span></a></li>
+                          <li><a class="waves-effect waves-set" href="datatable-advance.html"><span>Advance Datatable</span></a></li>
+                          <li><a class="waves-effect waves-set" href="datatable-template.html"><span>Datatable Templates</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="materialize-helper.html"><i class="material-icons">help</i><span>Helpers</span></a></li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="materialize-shadow.html"><i class="material-icons">queue</i><span>Shadow</span></a></li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="materialize-typography.html"><i class="material-icons">text_format</i><span>Typography</span></a></li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="materialize-icons.html"><i class="material-icons">gesture</i><span>Icon</span></a></li>
+          <li class="navigation-header"><span class="no-col-body">Components</span><i class="material-icons tooltipped" data-position="right" data-delay="50" data-tooltip="Components">more_horiz</i>
+          </li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">card_giftcard</i><span>UI Elements</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-badge.html"><span>Badges</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-button.html"><span>Button</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-breadcrumbs.html"><span>Breadcrumbs</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-cards.html"><span>Cards</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-chips.html"><span>Chips</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-collection.html"><span>Collections</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-pagination.html"><span>Pagination</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-preloader.html"><span>Preloader</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">library_books</i><span>Advance UI</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-collapsible.html"><span>Collapsible</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-dialogs.html"><span>Dialogs</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-dropdown.html"><span>Dropdown</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-media.html"><span>Media</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-carousel.html"><span>Carousel</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-modals.html"><span>Modals</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-pushpin.html"><span>PushPin</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-scrollFire.html"><span>ScrollFire</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-tabs.html"><span>Tabs</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-transitions.html"><span>Transactions</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="materialize-waves.html"><span>Waves</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect waves-set active current" href="#"><i class="material-icons">transform</i><span>Form Components</span><i class="material-icons mdi-navigation-chevron-left open-aside">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="form-basic-components.html"><span>Basic Inputs</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="form-checkbox-radios.html"><span>Checkboxes & Radios</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set active current" href="form-extended-control.html"><span>Extended controls</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="form-select.html"><span>Select inputs</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="form-taginput.html"><span>Tag Input</span></a></li>
+                <li class="menu-item">
+                  <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                      <div class="collapsible-header waves-effect waves-set"><span>Advance Inputs</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></div>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a class="waves-effect waves-set" href="editor-materializenote.html"><span>MaterializeNote</span></a></li>
+                          <li><a class="waves-effect waves-set" href="editor-ckeditor.html"><span>CK Editor</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">insert_chart</i><span>Charts</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item">
+                  <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                      <div class="collapsible-header waves-effect waves-set"><span>Bar-Charts</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></div>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a class="waves-effect waves-set" href="google-barchart.html"><span>Google Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="c3-barchart.html"><span>c3 Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="chartjs-barchart.html"><span>Chart Js</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                      <div class="collapsible-header waves-effect waves-set"><span>Line-Charts</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></div>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a class="waves-effect waves-set" href="google-linechart.html"><span>Google Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="c3-linechart.html"><span>c3 Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="chartjs-linechart.html"><span>Chart Js</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                      <div class="collapsible-header waves-effect waves-set"><span>Area Charts</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></div>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a class="waves-effect waves-set" href="google-areachart.html"><span>Google Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="c3-areachart.html"><span>c3 Chart</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                      <div class="collapsible-header waves-effect waves-set"><span>Pie Charts</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></div>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a class="waves-effect waves-set" href="google-piechart.html"><span>Google Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="c3-piechart.html"><span>c3 Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="chartjs-pie.html"><span>Chart Js</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                      <div class="collapsible-header waves-effect waves-set"><span>Scatter Charts</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></div>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a class="waves-effect waves-set" href="google-scatterchart.html"><span>Google Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="chartjs-scatter.html"><span>Chart JS</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                      <div class="collapsible-header waves-effect waves-set"><span>Extra</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></div>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a class="waves-effect waves-set" href="google-columnchart.html"><span>Google Column Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="google-combochart.html"><span>Google Combo Chart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="google-geocharts.html"><span>Google Geochart</span></a></li>
+                          <li><a class="waves-effect waves-set" href="c3-more.html"><span>C3 Extra</span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">invert_colors</i><span>Pickers</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="picker-datetime.html"><span>Date-Time</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="picker-color.html"><span>Color</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="picker-location.html"><span>Location</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="nestable.html"><i class="material-icons">format_align_right</i><span>Nestable</span></a></li>
+          <li><a class="collapsible-header no-col-body waves-effect waves-set" href="timeline.html"><i class="material-icons">timeline</i><span>Timeline</span></a></li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">photo_library</i><span>Gallary</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="image-effects.html"><span>Miketricking Effects</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="material-box-gallery.html"><span>Material Box</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="magnific-popup.html"><span>Magnific Popup</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">security</i><span>Authentication & Guard</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="user-signin.html"><span>Sign In</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="user-signin2.html"><span>Sign In (v2)</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="user-signup.html"><span>Sign Up</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="user-signup2.html"><span>Sign Up (v2)</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="user-lockscreen.html"><span>Lock Screen</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">format_bold</i><span>Blog</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="blog.html"><span>Blog List View</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="blog-detail.html"><span>Blog Detail View</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">person</i><span>Users</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="user-profile.html"><span>User Profile</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="user-cards.html"><span>Profile Cards</span></a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect waves-set" href="#"><i class="material-icons">pages</i><span>Extra</span><i class="material-icons mdi-navigation-chevron-left">keyboard_arrow_left</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li class="menu-item"><a class="waves-effect waves-set" href="404.html"><span>404</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="403.html"><span>403</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="500.html"><span>500</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="404-type2.html"><span>404 v2</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="403-type2.html"><span>403 v2</span></a></li>
+                <li class="menu-item"><a class="waves-effect waves-set" href="500-type2.html"><span>500 v2</span></a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- ============================-->
+      <!-- Horizontal Navigation (Default and Iconized)-->
+      <!-- ============================-->
+      <div class="horizontal-navigations navbar-fixed full-top-nav">
+        <nav class="hide-on-med-and-down">
+          <div class="nav-wrapper">
+            <ul class="iconized left">
+              <li class="menu-item"><a class="menu-link waves-effect waves-set" href="index.html"><i class="material-icons menu-icon left">dashboard</i><span class="menu-span">Dashboard</span></a></li>
+              <li class="menu-item"><a class="open_hor_sub menu-link waves-effect waves-set" href="#"><i class="material-icons menu-icon left">wb_sunny</i><span class="menu-span">Widgets</span><i class="material-icons menu-icon right">arrow_drop_down</i></a>
+                <div class="hor_sub standard hide">
+                  <ul class="collection collapsible collapsible-accordion">
+                    <li class="collection-item"><a class="waves-effect waves-set" href="card-statistic.html">Statistic Card<i class="material-icons left">show_chart</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="card-weather.html">Weather Card<i class="material-icons left">wb_sunny</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="card-feeds.html">Feeds Card<i class="material-icons left">view_list</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="card-travel.html">Travel Card<i class="material-icons left">panorama_fish_eye</i></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item"><a class="open_hor_sub menu-link waves-effect waves-set" href="#"><i class="material-icons menu-icon left">insert_chart</i><span class="menu-span">CSS Properties</span><i class="material-icons menu-icon right">arrow_drop_down</i></a>
+                <div class="hor_sub standard hide">
+                  <ul class="collection collapsible collapsible-accordion">
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-color.html">Color<i class="material-icons left">color_lens</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-css-media.html">CSS Media<i class="material-icons left">photo_filter</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-grid.html">Grid<i class="material-icons left">grid_on</i></a></li>
+                    <li class="collection-item"><a class="collapsible-header waves-effect waves-set" href="#">Tables<i class="mdi mdi-table left"></i><i class="material-icons right">arrow_drop_down</i></a>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li><a class="waves-effect waves-set" href="materialize-table.html">Materialize Table<i class="material-icons left">list</i></a></li>
+                          <li><a class="waves-effect waves-set" href="datatable-basic.html">Datatable Basic Table<i class="material-icons left">format_list_bulleted</i></a></li>
+                          <li><a class="waves-effect waves-set" href="datatable-basic-style.html">Datatable Basic Style<i class="material-icons left">format_paint</i></a></li>
+                          <li><a class="waves-effect waves-set" href="datatable-ordering.html">Datatable Sort Datatable<i class="material-icons left">sort</i></a></li>
+                          <li><a class="waves-effect waves-set" href="datatable-advance.html">Advance Datatable<i class="material-icons left">star</i></a></li>
+                          <li><a class="waves-effect waves-set" href="datatable-template.html">Datatable Templates<i class="material-icons left">style</i></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-helper.html">Helpers<i class="material-icons left">help</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-shadow.html">Shadow<i class="material-icons left">queue</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-typography.html">Typography<i class="material-icons left">text_format</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-icons.html">Icon<i class="material-icons left">gesture</i></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item active"><a class="active open_hor_sub menu-link waves-effect waves-set" href="#"><i class="material-icons menu-icon left">format_paint</i><span class="menu-span">Components</span><i class="material-icons menu-icon right">arrow_drop_down</i></a>
+                <div class="hor_sub full hide">
+                  <ul class="collection">
+                    <li class="collection-header">
+                      <h6>UI Elements</h6>
+                    </li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-badge.html">Badges<i class="material-icons left">turned_in</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-button.html">Button<i class="material-icons left">touch_app</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-breadcrumbs.html">Breadcrumbs<i class="material-icons left">swap_horiz</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-cards.html">Cards<i class="material-icons left">card_membership</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-chips.html">Chips<i class="material-icons left">label_outline</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-collection.html">Collections<i class="material-icons left">view_list</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-pagination.html">Pagination<i class="material-icons left">last_page</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-preloader.html">Preloader<i class="material-icons left">cached</i></a></li>
+                    <li class="collection-item"><a class="dropdown-button waves-effect waves-set" href="#" data-activates="form-components">Form Components<i class="material-icons active left">transform</i><i class="material-icons right">arrow_drop_down</i></a>
+                      <ul class="dropdown-content" id="form-components">
+                        <li><a class="waves-effect waves-set" href="form-basic-components.html">Basic Inputs<i class="material-icons left">format_align_center</i></a></li>
+                        <li><a class="waves-effect waves-set" href="form-checkbox-radios.html">Checkboxes & Radios<i class="material-icons left">check_box</i></a></li>
+                        <li><a class="active waves-effect waves-set" href="form-extended-control.html">Extended Control<i class="material-icons left">more</i></a></li>
+                        <li><a class="waves-effect waves-set" href="form-select.html">Select Inputs<i class="material-icons left">select_all</i></a></li>
+                        <li><a class="waves-effect waves-set" href="form-taginput.html">Tag Input<i class="material-icons left">label_outline</i></a></li>
+                        <li><a class="waves-effect waves-set">Advance Input<i class="material-icons left">power_input</i></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="collection">
+                    <li class="collection-header">
+                      <h6>Advance UI</h6>
+                    </li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-collapsible.html">Collapsible<i class="material-icons left">collections</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-dialogs.html">Dialogs<i class="material-icons left">notifications_active</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-dropdown.html">Dropdown<i class="material-icons left">arrow_drop_down_circle</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-media.html">Media<i class="material-icons left">perm_media</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-carousel.html">Carousel<i class="material-icons left">view_carousel</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-modals.html">Modals<i class="material-icons left">laptop_windows</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-pushpin.html">PushPin<i class="material-icons left">view_list</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-scrollFire.html">ScrollFire<i class="material-icons left">all_inclusive</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-tabs.html">Tabs<i class="material-icons left">label</i></a></li>
+                  </ul>
+                  <ul class="collection">
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-transitions.html">Transactions<i class="material-icons left">stars</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="materialize-waves.html">Waves<i class="material-icons left">polymer</i></a></li>
+                    <li class="collection-header">
+                      <h6>Form Component</h6>
+                    </li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="form-basic-components.html">Basic Inputs<i class="material-icons left">format_align_center</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="form-checkbox-radios.html">Checkboxes & Radios<i class="material-icons left">check_box</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="form-extended-control.html">Extended controls<i class="material-icons left">more</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="form-select.html">Select inputs<i class="material-icons left">select_all</i></a></li>
+                    <li class="collection-item"><a class="waves-effect waves-set" href="form-taginput.html">Tag Input<i class="material-icons left">label_outline</i></a></li>
+                    <li class="collection-item"><a class="dropdown-button waves-effect waves-set" href="#" data-activates="advance-inputs">Advance Inputs<i class="material-icons left">transform</i><i class="material-icons right">arrow_drop_down</i></a>
+                      <ul class="dropdown-content" id="advance-inputs">
+                        <li><a class="waves-effect waves-set" href="editor-materializenote.html">MaterializeNote<i class="material-icons left">note</i></a></li>
+                        <li><a class="waves-effect waves-set" href="editor-ckeditor.html">CK Editor<i class="material-icons left">keyboard</i></a></li>
+                      </ul>
+                    </li>
+                    <li class="collection-item"><a class="dropdown-button waves-effect waves-set" href="#" data-activates="picker-inputs">Pickers<i class="material-icons left">invert_colors</i><i class="material-icons right">arrow_drop_down</i></a>
+                      <ul class="dropdown-content" id="picker-inputs">
+                        <li class="menu-item"><a class="waves-effect waves-set" href="picker-datetime.html">Date-Time<i class="material-icons left">date_range</i></a></li>
+                        <li class="menu-item"><a class="waves-effect waves-set" href="picker-color.html">Color<i class="material-icons left">color_lens</i></a></li>
+                        <li class="menu-item"><a class="waves-effect waves-set" href="picker-location.html">Location<i class="material-icons left">pin_drop</i></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="collection">
+                    <li class="collection-header">
+                      <h6>Charts</h6>
+                    </li>
+                    <li class="collection-item"><a class="dropdown-button waves-effect waves-set" href="#" data-activates="bar-charts-collection">Bar-Charts<i class="mdi mdi-chart-bar left"></i><i class="material-icons right">arrow_drop_down</i></a>
+                      <ul class="dropdown-content" id="bar-charts-collection">
+                        <li><a class="waves-effect waves-set" href="google-barchart.html">Google Chart<i class="mdi mdi-google left"></i></a></li>
+                        <li><a class="waves-effect waves-set" href="c3-barchart.html">c3 Chart<i class="material-icons left">multiline_chart</i></a></li>
+                        <li><a class="waves-effect waves-set" href="chartjs-barchart.html">ChartJs<i class="mdi mdi-image-filter-hdr left"></i></a></li>
+                      </ul>
+                    </li>
+                    <li class="collection-item"><a class="dropdown-button waves-effect waves-set" href="#" data-activates="line-charts-collection">Line-Charts<i class="mdi mdi-chart-line left"></i><i class="material-icons right">arrow_drop_down</i></a>
+                      <ul class="dropdown-content" id="line-charts-collection">
+                        <li><a class="waves-effect waves-set" href="google-linechart.html">Google Chart<i class="mdi mdi-google left"></i></a></li>
+                        <li><a class="waves-effect waves-set" href="c3-linechart.html">c3 Chart<i class="material-icons">multiline_chart</i></a></li>
+                        <li><a class="waves-effect waves-set" href="chartjs-linechart.html">ChartJs<i class="mdi mdi-image-filter-hdr left"></i></a></li>
+                      </ul>
+                    </li>
+                    <li class="collection-item"><a class="dropdown-button waves-effect waves-set" href="#" data-activates="area-charts-collection">Line-Charts<i class="mdi mdi-chart-areaspline left"></i><i class="material-icons right">arrow_drop_down</i></a>
+                      <ul class="dropdown-content" id="area-charts-collection">
+                        <li><a class="waves-effect waves-set" href="google-areachart.html">Google Chart<i class="mdi mdi-google left"></i></a></li>
+                        <li><a class="waves-effect waves-set" href="c3-areachart.html">c3 Chart<i class="material-icons left">multiline_chart</i></a></li>
+                      </ul>
+                    </li>
+                    <li class="collection-item"><a class="dropdown-button waves-effect waves-set" href="#" data-activates="pieChart-charts-collection">Line-Charts<i class="material-icons left">pie_chart</i><i class="material-icons right">arrow_drop_down</i></a>
+                      <ul class="dropdown-content" id="pieChart-charts-collection">
+                        <li><a class="waves-effect waves-set" href="google-piechart.html">Google Chart<i class="mdi mdi-google left"></i></a></li>
+                        <li><a class="waves-effect waves-set" href="c3-piechart.html">c3 Chart<i class="material-icons left">multiline_chart</i></a></li>
+                        <li><a class="waves-effect waves-set" href="chartjs-pie.html">Chart Js<i class="mdi mdi-image-filter-hdr left"></i></a></li>
+                      </ul>
+                    </li>
+                    <li class="collection-item"><a class="dropdown-button waves-effect waves-set" href="#" data-activates="scatterChart-charts-collection">Scatter Charts<i class="mdi mdi-chart-scatterplot-hexbin left"></i><i class="material-icons right">arrow_drop_down</i></a>
+                      <ul class="dropdown-content" id="scatterChart-charts-collection">
+                        <li><a class="waves-effect waves-set" href="google-scatterchart.html">Google Chart<i class="mdi mdi-google left"></i></a></li>
+                        <li><a class="waves-effect waves-set" href="chartjs-scatter.html">Chart JS<i class="mdi mdi-image-filter-hdr left"></i></a></li>
+                      </ul>
+                    </li>
+                    <li class="collection-item"><a class="dropdown-button waves-effect waves-set" href="#" data-activates="Extra-charts-collection">Extra<i class="material-icons left">more</i><i class="material-icons right">arrow_drop_down</i></a>
+                      <ul class="dropdown-content" id="Extra-charts-collection">
+                        <li><a class="waves-effect waves-set" href="google-columnchart.html">Google Column Chart<i class="material-icons left">view_column</i></a></li>
+                        <li><a class="waves-effect waves-set" href="google-combochart.html">Google Combo Chart<i class="mdi mdi-chart-gantt left"></i></a></li>
+                        <li><a class="waves-effect waves-set" href="google-geocharts.html">Google Geochart<i class="mdi mdi-earth left"></i></a></li>
+                        <li><a class="waves-effect waves-set" href="c3-more.html">C3 Extra<i class="material-icons left">multiline_chart</i></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="other-verticalSections">
+        <!-- ============================-->
+        <!-- THEME SETTING-->
+        <!-- ============================-->
+        <div class="themeSetting z-depth-1" id="themeOptions"><a class="btn btn-small toggleThemesetting" href="#"><i class="material-icons">settings</i></a>
+          <div class="settings">
+            <div class="navigationSetting">
+              <h2>Navigation Type</h2>
+              <div class="navoptions row no-mrpd">
+                <p class="navopt s6 col left">
+                  <input class="rb-teal" type="radio" name="theme_nav" id="theme_nav_vertical" data-identfier="theme_nav" data-type="vertical">
+                  <label class="theme-setting-sv-label" for="theme_nav_vertical"><img class="theme-svg" src="../images/theme-svg/V49_opt3.svg" alt=""></label>
+                </p>
+                <p class="navopt s6 col hide-on-med-and-down right">
+                  <input class="rb-teal" type="radio" name="theme_nav" id="theme_nav_horizontal" data-identfier="theme_nav" data-type="horizontal">
+                  <label class="theme-setting-sv-label" for="theme_nav_horizontal"> <img class="theme-svg" src="../images/theme-svg/V48_opt3.svg" alt=""></label>
+                </p>
+              </div>
+              <h2>Navigation Options</h2>
+              <div class="navoptions row no-mrpd">
+                <p class="navopt s6 col left">
+                  <input class="rb-teal" type="radio" name="theme_nav_opts" id="navOpts_default" data-identfier="theme_nav_opts" data-type="default">
+                  <label class="theme-setting-sv-label" for="navOpts_default"> <img class="theme-svg horz-set-svg animated" src="../images/theme-svg/HD.svg" alt=""><img class="theme-svg vert-set-svg animated" src="../images/theme-svg/V.svg" alt=""></label>
+                </p>
+                <p class="navopt s6 col right">
+                  <input class="rb-teal" type="radio" name="theme_nav_opts" id="navOpts_iconized" data-identfier="theme_nav_opts" data-type="iconized">
+                  <label class="theme-setting-sv-label" for="navOpts_iconized"><img class="theme-svg vert-set-svg animated" src="../images/theme-svg/VI.svg" alt=""><img class="theme-svg horz-set-svg animated" src="../images/theme-svg/H.svg" alt=""></label>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================-->
+        <!-- RIGHT SIDEBAR NOTIFICATION SECTION-->
+        <!-- ============================-->
+        <!-- NOTIFICATION-SIDEBAR-->
+        <div class="row notification-sidebar fixed animated" id="sb-notification">
+          <div class="col s12">
+            <ul class="tabs rsb-notifications">
+              <li class="tab col s4"><a href="#rsb-shortcuts"><i class="material-icons small">widgets</i></a></li>
+              <li class="tab col s4"><a href="#rsb-notifications"><i class="material-icons small">notifications</i><span class="badge-count white">10</span></a></li>
+              <li class="tab col s4"><a href="#rsb-tasklist"><i class="material-icons small">playlist_add_check</i><span class="badge-count teal lighten-2 white-text">14</span></a></li>
+            </ul>
+            <div class="col s12" id="rsb-notifications">
+              <ul class="notification-list collection" id="psNotificationList">
+                <li class="collection-item notification-item waves-effect waves-set">
+                  <!-- REDIRECTION TO User-Profile--><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""></a>
+                  <!-- Redirection to msg/chat--><a class="notify-content" href="#"><span class="title">Amazon<i class="material-icons notify-type blue-text">add_shopping_cart</i></span>
+                    <div class="notify-desc">
+                       Envato account subsciption is added to your cart.</div><span class="notify-time">5 Minutes ago.</span></a>
+                </li>
+                <li class="collection-item notification-item waves-effect waves-set">
+                  <!-- REDIRECTION TO User-Profile--><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""></a>
+                  <!-- Redirection to msg/chat--><a class="notify-content" href="#"><span class="title">Jack Jordan<i class="material-icons notify-type green-text">attach_money</i></span>
+                    <div class="notify-desc">
+                       Payment received from John Doe for theme.</div><span class="notify-time">30 Minutes ago.</span></a>
+                </li>
+                <li class="collection-item notification-item waves-effect waves-set">
+                  <!-- REDIRECTION TO User-Profile--><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""></a>
+                  <!-- Redirection to msg/chat--><a class="notify-content" href="#"><span class="title">Jenny Jordan<i class="material-icons notify-type blue-text">poll</i></span>
+                    <div class="notify-desc">
+                       Esi has polled you.</div><span class="notify-time">35 Minutes ago.</span></a>
+                </li>
+                <li class="collection-item notification-item waves-effect waves-set">
+                  <!-- REDIRECTION TO User-Profile--><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""><span class="notify-status offline"></span></a>
+                  <!-- Redirection to msg/chat--><a class="notify-content" href="#"><span class="title">Selena Morris<i class="material-icons notify-type purple-text">share</i></span>
+                    <div class="notify-desc">
+                       Jeo has shared documents with you.</div><span class="notify-time">38 Minutes ago.</span></a>
+                </li>
+                <li class="collection-item notification-item waves-effect waves-set">
+                  <!-- REDIRECTION TO User-Profile--><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""></a>
+                  <!-- Redirection to msg/chat--><a class="notify-content" href="#"><span class="title">Jessica<i class="material-icons notify-type orange-text">notifications</i></span>
+                    <div class="notify-desc">
+                       Reminder to pay bill.</div><span class="notify-time">42 Minutes ago.</span></a>
+                </li>
+                <li class="collection-item notification-item waves-effect waves-set">
+                  <!-- REDIRECTION TO User-Profile--><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""></a>
+                  <!-- Redirection to msg/chat--><a class="notify-content" href="#"><span class="title">Mira Dellon<i class="material-icons notify-type yellow-text">attachment</i></span>
+                    <div class="notify-desc">
+                       You have received documents from Oghie.</div><span class="notify-time">49 Minutes ago.</span></a>
+                </li>
+                <li class="collection-item notification-item waves-effect waves-set"><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""></a><a class="notify-content" href="#"><span class="title">Evi Willson<i class="material-icons notify-type amber-text">message</i></span>
+                    <div class="notify-desc">
+                       Review and share Envato new products.</div><span class="notify-time">53 Minutes ago.</span></a></li>
+                <li class="collection-item notification-item waves-effect waves-set"><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""></a><a class="notify-content" href="#"><span class="title">Anisi Ojior<i class="material-icons notify-type red-text">battery_alert</i></span>
+                    <div class="notify-desc">
+                       10% battery remains.</div><span class="notify-time">54 Minutes ago.</span></a></li>
+                <li class="collection-item notification-item waves-effect waves-set"><a class="notify-content full" href="#"><span class="title">Macbook<i class="material-icons notify-type cyan-text">network_wifi</i></span>
+                    <div class="notify-desc">
+                       Thoriseum network is connected.</div><span class="notify-time">2 Hours ago.</span></a></li>
+                <li class="collection-item notification-item waves-effect waves-set"><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300t.jpg" alt=""></a><a class="notify-content" href="#"><span class="title">Macbook<i class="material-icons notify-type blue-text">wb_cloudy</i></span>
+                    <div class="notify-desc">
+                       Weather is cloudy.</div><span class="notify-time">2 Hours 30 Minutes ago.</span></a></li>
+                <li class="collection-item notification-item waves-effect waves-set"><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""></a><a class="notify-content" href="#"><span class="title">Canon Printer<i class="material-icons notify-type red-text">print</i></span>
+                    <div class="notify-desc">
+                       Your Request document is not printed.</div><span class="notify-time">3 Hours ago.</span></a></li>
+                <li class="collection-item notification-item waves-effect waves-set">
+                  <!-- REDIRECTION TO User-Profile--><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""></a>
+                  <!-- Redirection to msg/chat--><a class="notify-content" href="#"><span class="title">Apple<i class="material-icons notify-type blue-text">system_update_alt</i></span>
+                    <div class="notify-desc">
+                       New updates are ready to install.</div><span class="notify-time">3 Hours  5 Minutes ago.</span></a>
+                </li>
+                <li class="collection-item notification-item waves-effect waves-set">
+                  <!-- REDIRECTION TO User-Profile--><a class="notify-user" href="#"> <img class="circle" src="../images/placeholder/300x300g.jpg" alt=""></a>
+                  <!-- Redirection to msg/chat--><a class="notify-content" href="#"><span class="title">Jack Jordan<i class="material-icons notify-type green-text">file_download</i></span>
+                    <div class="notify-desc">
+                       File download complete.</div><span class="notify-time">3 Hours  8 Minutes ago.</span></a>
+                </li>
+              </ul>
+              <div class="footer"><a class="center tooltipped" href="#" data-position="top" data-tooltip="See all notifications"><i class="material-icons small">more_horiz</i></a></div>
+            </div>
+            <div class="col s12" id="rsb-tasklist">
+              <div class="tab-notelist" id="psTabNotelist">
+                <p>
+                  <input type="checkbox" id="task1">
+                  <label for="task1">Bring some milk</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="task2">
+                  <label for="task2">Promote envato</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="task3">
+                  <label for="task3">Make WP theme and submit for review</label>
+                </p>
+                <p>
+                  <input type="checkbox" id="task4">
+                  <label for="task4">Read atricle of Jeffrey. He has published a lots of tutorials for VueJS and Laravel 5.2. I want to learn unit-testing.</label>
+                </p>
+              </div>
+              <div class="notes-footer"><a class="tooltipped left waves-effect waves-set" href="#" data-position="top" data-tooltip="Clear selected"><i class="material-icons small">delete</i></a><a class="tooltipped right waves-effect waves-set" href="#" data-position="top" data-tooltip="Add new task"><i class="material-icons small">add</i></a></div>
+            </div>
+            <div class="col s12" id="rsb-shortcuts">
+              <ul class="tab-shortcut collection" id="psTabShortcut">
+                <li class="collection-item waves-effect waves-set"><a class="shortcut-aItem" href="#"><i class="material-icons blue-text">photo_library</i><span class="shortcut-name">Gallary</span></a></li>
+                <li class="collection-item waves-effect waves-set"><a class="shortcut-aItem" href="#"><i class="material-icons orange-text">mail</i><span class="shortcut-name">Mail</span></a></li>
+                <li class="collection-item waves-effect waves-set"><a class="shortcut-aItem" href="#"><i class="material-icons yellow-text">file_download</i><span class="shortcut-name">Downloads</span></a></li>
+                <li class="collection-item waves-effect waves-set"><a class="shortcut-aItem" href="#"><i class="material-icons green-text">event</i><span class="shortcut-name">Events</span></a></li>
+                <li class="collection-item waves-effect waves-set"><a class="shortcut-aItem" href="#"><i class="material-icons purple-text">contacts</i><span class="shortcut-name">Contacts</span></a></li>
+                <li class="collection-item waves-effect waves-set"><a class="shortcut-aItem" href="#"><i class="material-icons cyan-text">settings</i><span class="shortcut-name">Settings</span></a></li>
+                <li class="collection-item waves-effect waves-set"><a class="shortcut-aItem" href="#"><i class="material-icons amber-text">lock</i><span class="shortcut-name">Lock Screen</span></a></li>
+                <li class="collection-item waves-effect waves-set"><a class="shortcut-aItem" href="#"><i class="material-icons red-text">power_settings_new</i><span class="shortcut-name">Logout</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="animated">
+      <ul class="dropdown-content action-ex-opts" id="generalDropDown">
+        <li><a class="waves-effect waves-set" href="#"><i class="material-icons">account_box</i><span>Account</span></a></li>
+        <li><a class="waves-effect waves-set" href="#"><i class="material-icons">local_activity</i><span>Recent Activities</span></a></li>
+        <li><a class="waves-effect waves-set" href="#"><i class="mdi mdi-wheelchair-accessibility"></i><span>Accessibility</span></a></li>
+        <li class="divider"></li>
+        <li><a class="waves-effect waves-set" href="#"><i class="material-icons">settings</i><span>All Settings</span></a></li>
+      </ul>
+      <!-- ============================-->
+      <!-- MAIN HEADER-->
+      <!-- ============================-->
+      <div class="main-header">
+        <div class="sec-page">
+          <div class="page-title">
+            <h2>Extended Control</h2>
+          </div>
+          <div class="page-options"><a class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave" href="#" data-activates="generalDropDown" data-beloworigin="true" data-alignment="right" data-position="bottom" data-constrainwidth="false" data-delay="50" data-gutter="25"><i class="material-icons">perm_data_setting</i></a><a class="waves-effect waves-set page-opt-dropBtn setWave btn-floating" href="#"><i class="material-icons">chat_bubble_outline</i></a></div>
+        </div>
+        <!-- ============================-->
+        <!-- breadcrumb-->
+        <!-- ============================-->
+        <div class="sec-breadcrumb">
+          <nav class="breadcrumbs-nav left">
+            <div class="nav-wrapper">
+              <div class="col s12"><a class="breadcrumb" href="index.html">Home</a><a class="breadcrumb" href="#">Form Componets</a><a class="breadcrumb" href="#">Extended Control</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- ============================-->
+      <!-- Main container-->
+      <!-- ============================-->
+      <div class="main-container">
+        <div class="row">
+          <div class="col s12">
+            <h4 class="content-headline">Extended Control</h4>
+            <p>
+               Extended controls includes very handly input types, which extend you input paramters. These will expand your choice of input parameter while you develope an application.</p>
+          </div>
+          <!-- Masked Input-->
+          <form class="col s12">
+            <div class="card-panel">
+              <div class="row box-title">
+                <div class="col s12">
+                  <h5 class="content-headline">Masked Input</h5>
+                  <p><code class="language-markup">jquery.maskedinput.js</code> is being used for this extended control over the input. Add <code class="language-markup">masked-input/jquery.maskedinput.js</code> to your page and design your requirement to be performed. It's so easy.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-date1">
+                  <label for="masked-date1">Date</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input class="phone" type="text" id="masked-phone">
+                  <label for="masked-phone">Phone</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-phoneExt">
+                  <label for="masked-phoneExt">PhoneExt</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-iphone">
+                  <label for="masked-iphone">iPhone</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-tin">
+                  <label for="masked-tin">Tin</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-ssn">
+                  <label for="masked-ssn">ssn</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-product">
+                  <label for="masked-product">product</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-eyescript">
+                  <label for="masked-eyescript">eyescriptpo</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-po">
+                  <label for="masked-po">po</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-pct">
+                  <label for="masked-pct">pct</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-phoneAutoclearFalse">
+                  <label for="masked-phoneAutoclearFalse">phoneAutoclearFalse</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="masked-phoneExtAutoclearFalse">
+                  <label for="masked-phoneExtAutoclearFalse">phoneExtAutoclearFalse</label>
+                </div>
+                <div class="input-field col s12 m12 l12">
+                  <input type="number" id="intl-tel" name="myphone">
+                </div>
+                <div class="col s12">
+                  <p><code class="language-markup">$("#intl-tel").intlTelInput();</code>. We can effectively manage mobile numbers with country code with <code class="language-markup">intl-tel-input</code>.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-date1<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-date1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Date<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-phone<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>phone<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-phone<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Phone<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-phoneExt<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-phoneExt<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>PhoneExt<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-iphone<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-iphone<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>iPhone<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-tin<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-tin<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Tin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-ssn<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-ssn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>ssn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-product<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-product<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>product<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-eyescript<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-eyescript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>eyescriptpo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-po<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-po<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>po<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-pct<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-pct<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>pct<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-phoneAutoclearFalse<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-phoneAutoclearFalse<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>phoneAutoclearFalse<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-phoneExtAutoclearFalse<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>masked-phoneExtAutoclearFalse<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>phoneExtAutoclearFalse<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m12 l12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>intl-tel<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>myphone<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- Typeahead-->
+          <form class="col s12">
+            <div class="card-panel">
+              <div class="row box-title">
+                <div class="col s12">
+                  <h5 class="content-headline">Typeahead.JS</h5>
+                  <p>When initializing a typeahead using the <a href="https://twitter.github.io/typeahead.js/"><code class="language-markup">Typeahead</code></a> jQuery plugin, you pass the plugin method one or more datasets. The source of a dataset is responsible for computing a set of suggestions for a given query.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input" id="the-basics">
+                  <input class="typeahead box-input" type="text" placeholder="States of USA" id="StatesofUSA"><span class="input-info">Basic feature: Bring the states of USA.</span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input" id="prefetch">
+                  <input class="typeahead box-input" type="text" placeholder="Countries" id="Countries"><span class="input-info">Prefetched data is fetched and processed on initialization. If the browser supports local storage, the processed data will be cached there to prevent additional network requests on subsequent page loads.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input" id="remote">
+                  <input class="typeahead box-input" type="text" placeholder="Oscar winners for Best Picture" id="remote-input"><span class="input-info">Remote data is only used when the data provided by local and prefetch is insufficient. In order to prevent an obscene number of requests being made to the remote endpoint, requests are rate-limited.</span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input" id="custom-templates">
+                  <input class="typeahead box-input" type="text" placeholder="Oscar winners for Best Picture" id="custom-templates-input"><span class="input-info">Custom templates give you full control over how suggestions get rendered making it easy to customize the look and feel of your typeahead.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input" id="default-suggestions">
+                  <input class="typeahead box-input" type="text" placeholder="NFL Teams" id="default-suggestions-input"><span class="input-info">Default suggestions can be shown for empty queries by setting the minLength option to 0 and having the source return suggestions for empty queries.</span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input" id="multiple-datasets">
+                  <input class="typeahead box-input" type="text" placeholder="NBA and NHL teams" id="multiple-datasets-input"><span class="input-info">Bring set of data.</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input" id="scrollable-dropdown-menu">
+                  <input class="typeahead box-input" type="text" placeholder="Countries" id="scrollable-dropdown-menu-input"><span class="input-info">Scrollable Dropdown Menu</span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input" id="rtl-support">
+                  <input class="typeahead box-input" type="text" placeholder="نعم" id="rtl-support-input" dir="rtl"><span class="input-info">RTL Support</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 informatic-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>States of USA<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>StatesofUSA<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>typeahead box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-info<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Basic feature: Bring the states of USA.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>prefetch<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 informatic-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Countries<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Countries<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>typeahead box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-info<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Prefetched data is fetched and processed on initialization. If the browser supports local storage, the processed data will be cached there to prevent additional network requests on subsequent page loads.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>remote<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 informatic-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Oscar winners for Best Picture<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>remote-input<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>typeahead box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-info<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Remote data is only used when the data provided by local and prefetch is insufficient. In order to prevent an obscene number of requests being made to the remote endpoint, requests are rate-limited.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-templates<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 informatic-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Oscar winners for Best Picture<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom-templates-input<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>typeahead box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-info<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Custom templates give you full control over how suggestions get rendered making it easy to customize the look and feel of your typeahead.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>default-suggestions<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 informatic-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>NFL Teams<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>default-suggestions-input<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>typeahead box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-info<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Default suggestions can be shown for empty queries by setting the minLength option to 0 and having the source return suggestions for empty queries.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>multiple-datasets<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 informatic-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>NBA and NHL teams<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>multiple-datasets-input<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>typeahead box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-info<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Bring set of data.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scrollable-dropdown-menu<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 informatic-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Countries<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scrollable-dropdown-menu-input<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>typeahead box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-info<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Scrollable Dropdown Menu<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rtl-support<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 informatic-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>نعم<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rtl-support-input<span class="token punctuation">"</span></span> <span class="token attr-name">dir</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rtl<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>typeahead box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-info<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>RTL Support<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- FORMATTER-->
+          <form class="col s12">
+            <div class="card-panel">
+              <div class="row box-title">
+                <div class="col s12">
+                  <h5 class="content-headline">Formatter</h5>
+                  <p>Format user input to match a specified pattern.<a href="http://firstopinion.github.io/formatter.js/">Formatter </a>provide extensive feature which refines user inputs.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter crdit card" id="credit-input" pattern="d*" maxlength="19">
+                  <label for="credit-input">Credit Card</label><span class="input-info">Output: <code class="language-markup">4111-1111-1111-1111</code></span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Phone" id="phone-input" pattern="d*" maxlength="19">
+                  <label for="phone-input">Phone</label><span class="input-info">Output: <code class="language-markup">(802) 415-3411</code></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter starting date" id="format-date">
+                  <label for="format-date">Enter starting date</label><span class="input-info">Output: <code class="language-markup">99/99/9999</code></span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter your phone number" id="format-phone-ext">
+                  <label for="format-phone-ext">Enter your phone number</label><span class="input-info">Output: <code class="language-markup">(999) 999-9999 / a999</code></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter amount in USD" id="format-currency">
+                  <label for="format-currency">Enter amount in USD</label><span class="input-info">Output: <code class="language-markup">$999.99</code></span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter your phone in international format" id="format-international-phone">
+                  <label for="format-international-phone">Enter your phone in international format</label><span class="input-info">Output: <code class="language-markup">+39 999 999 999</code></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter your tax id" id="format-tax-id">
+                  <label for="format-tax-id">Enter your tax id</label><span class="input-info">Output: <code class="language-markup">99 - 9999999</code></span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter your social security number" id="format-ssn">
+                  <label for="format-ssn">Enter your social security number</label><span class="input-info">Output: <code class="language-markup">999 - 99 - 9999</code></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter your product key" id="format-product-key">
+                  <label for="format-product-key">Enter your product key</label><span class="input-info">Output: <code class="language-markup">a* - 999 - a999</code></span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter your order #" id="format-order-number">
+                  <label for="format-order-number">Enter your order #</label><span class="input-info">Output: <code class="language-markup">aaa - 999 - ***</code></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter your ISBN" id="format-isbn">
+                  <label for="format-isbn">Enter your ISBN</label><span class="input-info">Output: <code class="language-markup">999 - 99 - 999 - 9999 - 9</code></span>
+                </div>
+                <div class="input-field col s12 m6 informatic-input">
+                  <input class="input box-input" type="text" placeholder="Enter your phone #" id="format-persistent">
+                  <label for="format-persistent">Enter your phone #</label><span class="input-info">Output: <code class="language-markup">+3 (999) 999-99-99</code></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter crdit card<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>credit-input<span class="token punctuation">"</span></span> <span class="token attr-name">pattern</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>d*<span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>19<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>credit-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Credit Card<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Phone<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>phone-input<span class="token punctuation">"</span></span> <span class="token attr-name">pattern</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>d*<span class="token punctuation">"</span></span> <span class="token attr-name">maxlength</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>19<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>phone-input<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Phone<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter starting date<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-date<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-date<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter starting date<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your phone number<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-phone-ext<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-phone-ext<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter your phone number<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter amount in USD<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-currency<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-currency<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter amount in USD<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your phone in international format<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-international-phone<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-international-phone<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter your phone in international format<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your tax id<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-tax-id<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-tax-id<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter your tax id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your social security number<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-ssn<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-ssn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter your social security number<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your product key<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-product-key<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-product-key<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter your product key<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your order #<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-order-number<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-order-number<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter your order #<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your ISBN<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-isbn<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-isbn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter your ISBN<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>the-basics<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Enter your phone #<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-persistent<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>format-persistent<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Enter your phone #<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- NUM-BOX-->
+        <div class="row">
+          <form class="col s12">
+            <div class="card-panel">
+              <div class="row box-title">
+                <div class="col s12">
+                  <h5 class="content-headline">Num-Box</h5>
+                  <p>NumBox aims to work equally well on desktops and mobile devices, and helps ensure that a numeric keyboard will pop-up on mobile devices when a number is entered. It offers both real-time validation as you type plus display formatting, and has a lot of customization options.</p>
+                  <p><code class="language-markup">jquery.numbox-1.2.0/jquery.numbox-1.2.0.min.js</code> and <code class="language-markup">jquery.numbox-1.2.0/jquery.numbox-1.2.0.css</code> needs to be added to your scripting list and CSS list.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <input type="text" id="inputJPY" value="10">
+                  <label for="inputJPY">Japanese Yen</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="inputUSD" value="10">
+                  <label for="inputUSD">USD</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <input type="text" id="inputCNY">
+                  <label for="inputCNY">Chinese Yuan</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input type="text" id="chlorine">
+                  <label for="chlorine">Atomic Radius</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <input class="NumBox" type="text" id="inputSSN" value="023456789">
+                  <label for="inputSSN">Social Security #</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input class="NumBox" type="text" id="credcard" value="4111111111111111">
+                  <label for="credcard">Credit Card</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <input class="NumBox" type="text" id="amexcard" value="378282246310005">
+                  <label for="amexcard">American Express Card</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputJPY<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputJPY<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Japanese Yen<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputUSD<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputUSD<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>USD<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputCNY<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputCNY<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Chinese Yuan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chlorine<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chlorine<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Atomic Radius<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputSSN<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>023456789<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>NumBox<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputSSN<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Social Security #<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>credcard<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>4111111111111111<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>NumBox<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>credcard<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Credit Card<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>amexcard<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>378282246310005<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>NumBox<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>amexcard<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>American Express Card<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- PASSWORD GENERATOR-->
+        <div class="row">
+          <form class="col s12">
+            <div class="card-panel">
+              <div class="row box-title">
+                <div class="col s12">
+                  <h5 class="content-headline">Password Generator</h5>
+                  <p>Password generator will provide you random passwords.								</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 pass-gen">
+                  <input class="input-lg validate box-input" type="text" rel="gp" data-size="32" data-character-set="a-z,A-Z,0-9,#" id="input-lg1">
+                  <label for="input-lg1">Password : Using all of the character sets</label><a class="btn-floating getNewPass btn-small waves-effect waves-set white btn-flat" href="javascript:void(0)"><i class="material-icons secondary-text">refresh</i></a>
+                </div>
+                <div class="input-field col s12 m6 pass-gen">
+                  <input class="input-lg validate box-input" type="text" rel="gp" data-size="32" data-character-set="a-z,A-Z" id="input-lg2">
+                  <label for="input-lg2">Password : Using both the a-z and A-Z character sets</label><a class="btn-floating getNewPass btn-small waves-effect waves-set white btn-flat" href="javascript:void(0)"><i class="material-icons secondary-text">refresh</i></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 pass-gen">
+                  <input class="input-lg validate box-input" type="text" rel="gp" data-size="32" data-character-set="a-z" id="input-lg3">
+                  <label for="input-lg3">Password : Using a-z character set</label><a class="btn-floating getNewPass btn-small waves-effect waves-set white btn-flat" href="javascript:void(0)"><i class="material-icons secondary-text">refresh</i></a>
+                </div>
+                <div class="input-field col s12 m6 pass-gen">
+                  <input class="input-lg validate box-input" type="text" rel="gp" data-size="32" data-character-set="A-Z" id="input-lg4">
+                  <label for="input-lg4">Password : Using A-Z character sets</label><a class="btn-floating getNewPass btn-small waves-effect waves-set white btn-flat" href="javascript:void(0)"><i class="material-icons secondary-text">refresh</i></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m6 pass-gen">
+                  <input class="input-lg validate box-input" type="text" rel="gp" data-size="12" data-character-set="0-9" id="input-lg5">
+                  <label for="input-lg5">Password : Using 0-9 character set</label><a class="btn-floating getNewPass btn-small waves-effect waves-set white btn-flat" href="javascript:void(0)"><i class="material-icons secondary-text">refresh</i></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <pre class="language-markup"><code class="  language-markup">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 pass-gen<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gp<span class="token punctuation">"</span></span> <span class="token attr-name">data-size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token attr-name">data-character-set</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>a-z,A-Z,0-9,#<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg validate box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Password : Using all of the character sets<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 pass-gen<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gp<span class="token punctuation">"</span></span> <span class="token attr-name">data-size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token attr-name">data-character-set</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>a-z,A-Z<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg validate box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Password : Using both the a-z and A-Z character sets<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 pass-gen<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gp<span class="token punctuation">"</span></span> <span class="token attr-name">data-size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token attr-name">data-character-set</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>a-z<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg3<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg validate box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Password : Using a-z character set<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 pass-gen<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gp<span class="token punctuation">"</span></span> <span class="token attr-name">data-size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>32<span class="token punctuation">"</span></span> <span class="token attr-name">data-character-set</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>A-Z<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg4<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg validate box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Password : Using A-Z character sets<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m6 pass-gen<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gp<span class="token punctuation">"</span></span> <span class="token attr-name">data-size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>12<span class="token punctuation">"</span></span> <span class="token attr-name">data-character-set</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0-9<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg5<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg validate box-input<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-lg5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Password : Using 0-9 character set<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- FOOTER-->
+      <footer class="page-footer no-mrpd grey lighten-4">
+        <div class="footer-copyright">
+          <div class="container primary-text">© 2017 Forge, All rights reserved.
+            <div class="right"><span class="left">Handcrafted with </span><a class="left" href="http://codigoforge.com"><i class="material-icons secondary-text tiny left" style="line-height:20px;margin:0px 8px;">favorite</i>By CodigoForge</a></div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <!-- ============================-->
+    <!-- SCRIPTS-->
+    <!-- ============================-->
+    <script type="text/javascript" src="../js/all.js"></script>
+    <script type="text/javascript" src="../plugins/masked-input/jquery.maskedinput.js"></script>
+    <script type="text/javascript" src="../plugins/masked-input/user-config.js"></script>
+    <script type="text/javascript" src="../plugins/intl-tel-input/build/js/intlTelInput.js"></script>
+    <script type="text/javascript" src="../plugins/jquery.numbox-1.2.0/jquery.numbox-1.2.0.min.js"></script>
+    <script type="text/javascript" src="../plugins/typeahead/handlebars.js"></script>
+    <script type="text/javascript" src="../plugins/typeahead/typeahead.js"></script>
+    <script type="text/javascript" src="../plugins/typeahead/examples.js"></script>
+    <script type="text/javascript" src="../plugins/formatter/formatter.js"></script>
+    <script type="text/javascript" src="../plugins/formatter/example.js"></script>
+    <script type="text/javascript" src="../plugins/password-generator/passwordgenerator.js"></script>
+    <script>
+      $(document).ready(function()
+      {
+      	$("#intl-tel").intlTelInput();
+      	$('#inputUSD').NumBox();                                    // default: $0.00 to $999,999.99
+      	$('#inputJPY').NumBox({ symbol: '¥'});          // number of decimal places: 0
+      	$('#inputCNY').NumBox({ symbol: '元', location: 'r' });      // symbol location: [l]eft or [r]ight
+      	$('#chlorine').NumBox({ symbol: ' nanometers', places: 3, location: 'r' });
+      	$('#inputPct').NumBox({   type: 'percent'  });              // convenient preset for 0% to 100%
+      	$('#inputSSN').NumBox({   type: 'ssn'      });              // convenient preset for US SSNs
+      	$('#credcard').NumBox({   type: 'ccard-16' });              // convenient preset for credit cards
+      	$('#amexcard').NumBox({   type: 'ccard-15' });              // convenient preset for credit cards
+      	$('#inputZIP').NumBox({   type: 'zip'      });              // use 'zip9' instead for a nine digit zip code
+      
+      	$('.NumBox').NumBox('autoScroll', true);
+      });
+    </script>
+  </body>
+</html>
