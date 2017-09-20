@@ -1,0 +1,79 @@
+extends ../layout/defualt-layout.pug
+block title
+  title Forge :: Bar Chart
+block append css
+  
+block content
+  - var mainRoute="chart"
+  - var route = 'barChart'
+  - var func = 'chartjsBarChart'
+  - var nestedName=""
+  - var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"ChartJS Bar Chart"}]
+  include ../include/header.pug
+  main.animated
+    // ============================
+    // MAIN HEADER
+    // ============================
+    .main-header
+      .sec-page
+        .page-title
+          h2 Bar Charts
+      // ============================
+      // breadcrumb
+      // ============================
+      .sec-breadcrumb
+        +breadcrumb(breadcrumb,'left')
+    // ============================
+    // Main container
+    // ============================
+    .main-container
+      //- Intro
+      div.row
+        .col.s12
+          h4.content-headline Chart.js Bar Charts
+          p
+            | A bar chart is a way of showing data as bars. It is sometimes used to show trend data, and the comparison of multiple data sets side by side. Here, it is from 
+            a(href="http://www.chartjs.org/docs/#bar-chart-introduction") ChartJS.
+      //- Chart.js Bar-Charts
+      .row
+        .col.s12
+          .card-panel
+            // Basic Bar Chart
+            .row.box-title
+              div.col.s12
+                h5.content-headline Basic Bar Chart
+            .row
+              .col.s12
+                canvas#basic-bar&attributes({"height":"480"})
+        .col.s12
+          // Multi-Axis Bar Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Multi-Axis Bar Chart
+            .row
+              .col.s12
+                canvas#bar-multi-axis&attributes({"height":"480"})
+      .row
+        .col.s12
+          // Stacked Bar Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Stacked Bar Chart
+            .row
+              .col.s12
+                canvas#bar-stacked&attributes({"height":"480"})
+        .col.s12
+          // Combo Bar-line Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Combo Bar-line Chart
+            .row
+              .col.s12
+                canvas#comboBar-line&attributes({"height":"480"})
+    include ../include/footer.pug
+block append scripts
+  script(type='text/javascript', src='../plugins/charts/chartjs/dist/Chart.bundle.js')
+  script(type='text/javascript', src='../plugins/charts/chartjs/bar-Chart.js')

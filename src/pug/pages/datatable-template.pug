@@ -1,0 +1,3660 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Datatable Template
+block prepend css
+	link(type='text/css', rel='stylesheet', href='../plugins/datatable/jquery.dataTables.min.css')
+	link(type='text/css', rel='stylesheet', href='../plugins/datatable/select.dataTables.min.css')
+	
+block content
+	- var mainRoute="tables"
+	- var route = 'tables'
+	- var func = 'datatables'
+	- var nestedName="templateDatatable"
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Tables"},{"link":"#","title":"Datatable"},{"link":"#","title":"Datatable Template"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Datatable Template
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline Datatable Template
+					p
+						| This example shows a modification of datatable in different templates.
+			.row
+				// With Badges
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline With Badges
+								p Have the badges in tables and highlight your values. Add <code class="language-markup">table-badge</code> class to your <code class="language-markup">dt</code>'s <code class="language-markup">span</code>. You can use materialize color palette for background color.
+						.row
+							.col.s12
+								.datatable-wrapper
+									table.datatable-badges.display.cell-border
+										thead
+											tr
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+										tbody
+											tr
+												td Tiger Nixon
+												td System Architect
+												td Edinburgh
+												td 61
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $320,800
+											tr
+												td Leopard Nixon
+												td System Architect
+												td Edinburgh
+												td 61
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $320,800
+											tr
+												td CodigoForge
+												td CEO
+												td Boston
+												td 28
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $520,800
+											tr
+												td Vaja
+												td MD
+												td US
+												td 23
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $50,800
+											tr
+												td Mamta
+												td MD
+												td US
+												td 23
+												td 2011/04/15
+												td 
+													span.table-badge.primary-bg.light $520,800
+											tr
+												td Garrett Winters
+												td Accountant
+												td Tokyo
+												td 63
+												td 2011/07/25
+												td 
+													span.table-badge.primary-bg.light $170,750
+											tr
+												td Ashton Cox
+												td Junior Technical Author
+												td San Francisco
+												td 66
+												td 2009/01/12
+												td 
+													span.table-badge.primary-bg.light $86,000
+											tr
+												td Cedric Kelly
+												td Senior Javascript Developer
+												td Edinburgh
+												td 22
+												td 2012/03/29
+												td 
+													span.table-badge.primary-bg.light $433,060
+											tr
+												td Airi Satou
+												td Accountant
+												td Tokyo
+												td 33
+												td 2008/11/28
+												td 
+													span.table-badge.primary-bg.light $162,700
+											tr
+												td Brielle Williamson
+												td Integration Specialist
+												td New York
+												td 61
+												td 2012/12/02
+												td 
+													span.table-badge.primary-bg.light $372,000
+											tr
+												td Herrod Chandler
+												td Sales Assistant
+												td San Francisco
+												td 59
+												td 2012/08/06
+												td 
+													span.table-badge.primary-bg.light $137,500
+											tr
+												td Rhona Davidson
+												td Integration Specialist
+												td Tokyo
+												td 55
+												td 2010/10/14
+												td 
+													span.table-badge.primary-bg.light $327,900
+											tr
+												td Colleen Hurst
+												td Javascript Developer
+												td San Francisco
+												td 39
+												td 2009/09/15
+												td 
+													span.table-badge.primary-bg.light $205,500
+											tr
+												td Sonya Frost
+												td Software Engineer
+												td Edinburgh
+												td 23
+												td 2008/12/13
+												td 
+													span.table-badge.primary-bg.light $103,600
+											tr
+												td Jena Gaines
+												td Office Manager
+												td London
+												td 30
+												td 2008/12/19
+												td 
+													span.table-badge.primary-bg.light $90,560
+											tr
+												td Quinn Flynn
+												td Support Lead
+												td Edinburgh
+												td 22
+												td 2013/03/03
+												td 
+													span.table-badge.primary-bg.light $342,000
+											tr
+												td Charde Marshall
+												td Regional Director
+												td San Francisco
+												td 36
+												td 2008/10/16
+												td 
+													span.table-badge.primary-bg.light $470,600
+											tr
+												td Haley Kennedy
+												td Senior Marketing Designer
+												td London
+												td 43
+												td 2012/12/18
+												td 
+													span.table-badge.primary-bg.light $313,500
+											tr
+												td Tatyana Fitzpatrick
+												td Regional Director
+												td London
+												td 19
+												td 2010/03/17
+												td 
+													span.table-badge.primary-bg.light $385,750
+											tr
+												td Michael Silva
+												td Marketing Designer
+												td London
+												td 66
+												td 2012/11/27
+												td 
+													span.table-badge.primary-bg.light $198,500
+											tr
+												td Paul Byrd
+												td Chief Financial Officer (CFO)
+												td New York
+												td 64
+												td 2010/06/09
+												td 
+													span.table-badge.primary-bg.light $725,000
+											tr
+												td Gloria Little
+												td Systems Administrator
+												td New York
+												td 59
+												td 2009/04/10
+												td 
+													span.table-badge.primary-bg.light $237,500
+											tr
+												td Bradley Greer
+												td Software Engineer
+												td London
+												td 41
+												td 2012/10/13
+												td 
+													span.table-badge.primary-bg.light $132,000
+											tr
+												td Dai Rios
+												td Personnel Lead
+												td Edinburgh
+												td 35
+												td 2012/09/26
+												td 
+													span.table-badge.primary-bg.light $217,500
+											tr
+												td Jenette Caldwell
+												td Development Lead
+												td New York
+												td 30
+												td 2011/09/03
+												td 
+													span.table-badge.primary-bg.light $345,000
+											tr
+												td Yuri Berry
+												td Chief Marketing Officer (CMO)
+												td New York
+												td 40
+												td 2009/06/25
+												td 
+													span.table-badge.primary-bg.light $675,000
+											tr
+												td Caesar Vance
+												td Pre-Sales Support
+												td New York
+												td 21
+												td 2011/12/12
+												td 
+													span.table-badge.primary-bg.light $106,450
+											tr
+												td Doris Wilder
+												td Sales Assistant
+												td Sidney
+												td 23
+												td 2010/09/20
+												td 
+													span.table-badge.primary-bg.light $85,600
+											tr
+												td Angelica Ramos
+												td Chief Executive Officer (CEO)
+												td London
+												td 47
+												td 2009/10/09
+												td 
+													span.table-badge.primary-bg.light $1,200,000
+											tr
+												td Gavin Joyce
+												td Developer
+												td Edinburgh
+												td 42
+												td 2010/12/22
+												td 
+													span.table-badge.primary-bg.light $92,575
+											tr
+												td Jennifer Chang
+												td Regional Director
+												td Singapore
+												td 28
+												td 2010/11/14
+												td 
+													span.table-badge.primary-bg.light $357,650
+											tr
+												td Brenden Wagner
+												td Software Engineer
+												td San Francisco
+												td 28
+												td 2011/06/07
+												td 
+													span.table-badge.primary-bg.light $206,850
+											tr
+												td Fiona Green
+												td Chief Operating Officer (COO)
+												td San Francisco
+												td 48
+												td 2010/03/11
+												td 
+													span.table-badge.primary-bg.light $850,000
+											tr
+												td Shou Itou
+												td Regional Marketing
+												td Tokyo
+												td 20
+												td 2011/08/14
+												td 
+													span.table-badge.primary-bg.light $163,000
+											tr
+												td Michelle House
+												td Integration Specialist
+												td Sidney
+												td 37
+												td 2011/06/02
+												td 
+													span.table-badge.primary-bg.light $95,400
+											tr
+												td Suki Burks
+												td Developer
+												td London
+												td 53
+												td 2009/10/22
+												td 
+													span.table-badge.primary-bg.light $114,500
+											tr
+												td Prescott Bartlett
+												td Technical Author
+												td London
+												td 27
+												td 2011/05/07
+												td 
+													span.table-badge.primary-bg.light $145,000
+											tr
+												td Gavin Cortez
+												td Team Leader
+												td San Francisco
+												td 22
+												td 2008/10/26
+												td 
+													span.table-badge.primary-bg.light $235,500
+											tr
+												td Martena Mccray
+												td Post-Sales support
+												td Edinburgh
+												td 46
+												td 2011/03/09
+												td 
+													span.table-badge.primary-bg.light $324,050
+											tr
+												td Unity Butler
+												td Marketing Designer
+												td San Francisco
+												td 47
+												td 2009/12/09
+												td 
+													span.table-badge.primary-bg.light $85,675
+											tr
+												td Howard Hatfield
+												td Office Manager
+												td San Francisco
+												td 51
+												td 2008/12/16
+												td 
+													span.table-badge.primary-bg.light $164,500
+											tr
+												td Hope Fuentes
+												td Secretary
+												td San Francisco
+												td 41
+												td 2010/02/12
+												td 
+													span.table-badge.primary-bg.light $109,850
+											tr
+												td Vivian Harrell
+												td Financial Controller
+												td San Francisco
+												td 62
+												td 2009/02/14
+												td 
+													span.table-badge.primary-bg.light $452,500
+											tr
+												td Timothy Mooney
+												td Office Manager
+												td London
+												td 37
+												td 2008/12/11
+												td 
+													span.table-badge.primary-bg.light $136,200
+											tr
+												td Jackson Bradshaw
+												td Director
+												td New York
+												td 65
+												td 2008/09/26
+												td 
+													span.table-badge.primary-bg.light $645,750
+											tr
+												td Olivia Liang
+												td Support Engineer
+												td Singapore
+												td 64
+												td 2011/02/03
+												td 
+													span.table-badge.primary-bg.light $234,500
+											tr
+												td Bruno Nash
+												td Software Engineer
+												td London
+												td 38
+												td 2011/05/03
+												td 
+													span.table-badge.primary-bg.light $163,500
+											tr
+												td Sakura Yamamoto
+												td Support Engineer
+												td Tokyo
+												td 37
+												td 2009/08/19
+												td 
+													span.table-badge.primary-bg.light $139,575
+											tr
+												td Thor Walton
+												td Developer
+												td New York
+												td 61
+												td 2013/08/11
+												td 
+													span.table-badge.primary-bg.light $98,540
+											tr
+												td Finn Camacho
+												td Support Engineer
+												td San Francisco
+												td 47
+												td 2009/07/07
+												td 
+													span.table-badge.primary-bg.light $87,500
+											tr
+												td Serge Baldwin
+												td Data Coordinator
+												td Singapore
+												td 64
+												td 2012/04/09
+												td 
+													span.table-badge.primary-bg.light $138,575
+											tr
+												td Zenaida Frank
+												td Software Engineer
+												td New York
+												td 63
+												td 2010/01/04
+												td 
+													span.table-badge.primary-bg.light $125,250
+											tr
+												td Zorita Serrano
+												td Software Engineer
+												td San Francisco
+												td 56
+												td 2012/06/01
+												td 
+													span.table-badge.primary-bg.light $115,000
+											tr
+												td Jennifer Acosta
+												td Junior Javascript Developer
+												td Edinburgh
+												td 43
+												td 2013/02/01
+												td 
+													span.table-badge.primary-bg.light $75,650
+											tr
+												td Cara Stevens
+												td Sales Assistant
+												td New York
+												td 46
+												td 2011/12/06
+												td 
+													span.table-badge.primary-bg.light $145,600
+											tr
+												td Hermione Butler
+												td Regional Director
+												td London
+												td 47
+												td 2011/03/21
+												td 
+													span.table-badge.primary-bg.light $356,250
+											tr
+												td Lael Greer
+												td Systems Administrator
+												td London
+												td 21
+												td 2009/02/27
+												td 
+													span.table-badge.primary-bg.light $103,500
+											tr
+												td Jonas Alexander
+												td Developer
+												td San Francisco
+												td 30
+												td 2010/07/14
+												td 
+													span.table-badge.primary-bg.light $86,500
+											tr
+												td Shad Decker
+												td Regional Director
+												td Edinburgh
+												td 51
+												td 2008/11/13
+												td 
+													span.table-badge.primary-bg.light $183,000
+											tr
+												td Michael Bruce
+												td Javascript Developer
+												td Singapore
+												td 29
+												td 2011/06/27
+												td 
+													span.table-badge.primary-bg.light $183,000
+											tr
+												td Donna Snider
+												td Customer Support
+												td New York
+												td 27
+												td 2011/01/25
+												td 
+													span.table-badge.primary-bg.light $112,000
+										tfoot
+											tr
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col s12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>datatable-wrapper<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">cellspacing</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100%<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>datatable-badges display cell-border<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Position<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Office<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Age<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Start date<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Salary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tfoot</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Position<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Office<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Age<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Start date<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Salary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tfoot</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Tiger Nixon<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>System Architect<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Edinburgh<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>61<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>2011/04/25<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>table-badge teal<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>$320,800<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Leopard Nixon<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>System Architect<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Edinburgh<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>61<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>2011/04/25<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>table-badge teal<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>$320,800<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code>
+				// With Action
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline With Action
+								p
+									| Furnish you table with action buttons.
+						.row
+							.col.s12
+								.datatable-wrapper
+									table.datatable-badges.display.cell-border
+										thead
+											tr
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+												th Action
+										tbody
+											tr
+												td Tiger Nixon
+												td System Architect
+												td Edinburgh-Thor
+												td 80
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $320,800
+												td
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Leopard Nixon
+												td System Architect
+												td Edinburgh
+												td 61
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $320,800
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td CodigoForge
+												td CEO
+												td Boston
+												td 28
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $520,800
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Vaja
+												td MD
+												td US
+												td 23
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $50,800
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Mamta
+												td MD
+												td US
+												td 23
+												td 2011/04/15
+												td 
+													span.table-badge.primary-bg.light $520,800
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Garrett Winters
+												td Accountant
+												td Tokyo
+												td 63
+												td 2011/07/25
+												td 
+													span.table-badge.primary-bg.light $170,750
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Ashton Cox
+												td Junior Technical Author
+												td San Francisco
+												td 66
+												td 2009/01/12
+												td 
+													span.table-badge.primary-bg.light $86,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Cedric Kelly
+												td Senior Javascript Developer
+												td Edinburgh
+												td 22
+												td 2012/03/29
+												td 
+													span.table-badge.primary-bg.light $433,060
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Airi Satou
+												td Accountant
+												td Tokyo
+												td 33
+												td 2008/11/28
+												td 
+													span.table-badge.primary-bg.light $162,700
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Brielle Williamson
+												td Integration Specialist
+												td New York
+												td 61
+												td 2012/12/02
+												td 
+													span.table-badge.primary-bg.light $372,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Herrod Chandler
+												td Sales Assistant
+												td San Francisco
+												td 59
+												td 2012/08/06
+												td 
+													span.table-badge.primary-bg.light $137,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Rhona Davidson
+												td Integration Specialist
+												td Tokyo
+												td 55
+												td 2010/10/14
+												td 
+													span.table-badge.primary-bg.light $327,900
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Colleen Hurst
+												td Javascript Developer
+												td San Francisco
+												td 39
+												td 2009/09/15
+												td 
+													span.table-badge.primary-bg.light $205,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Sonya Frost
+												td Software Engineer
+												td Edinburgh
+												td 23
+												td 2008/12/13
+												td 
+													span.table-badge.primary-bg.light $103,600
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Jena Gaines
+												td Office Manager
+												td London
+												td 30
+												td 2008/12/19
+												td 
+													span.table-badge.primary-bg.light $90,560
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Quinn Flynn
+												td Support Lead
+												td Edinburgh
+												td 22
+												td 2013/03/03
+												td 
+													span.table-badge.primary-bg.light $342,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Charde Marshall
+												td Regional Director
+												td San Francisco
+												td 36
+												td 2008/10/16
+												td 
+													span.table-badge.primary-bg.light $470,600
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Haley Kennedy
+												td Senior Marketing Designer
+												td London
+												td 43
+												td 2012/12/18
+												td 
+													span.table-badge.primary-bg.light $313,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Tatyana Fitzpatrick
+												td Regional Director
+												td London
+												td 19
+												td 2010/03/17
+												td 
+													span.table-badge.primary-bg.light $385,750
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Michael Silva
+												td Marketing Designer
+												td London
+												td 66
+												td 2012/11/27
+												td 
+													span.table-badge.primary-bg.light $198,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Paul Byrd
+												td Chief Financial Officer (CFO)
+												td New York
+												td 64
+												td 2010/06/09
+												td 
+													span.table-badge.primary-bg.light $725,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Gloria Little
+												td Systems Administrator
+												td New York
+												td 59
+												td 2009/04/10
+												td 
+													span.table-badge.primary-bg.light $237,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Bradley Greer
+												td Software Engineer
+												td London
+												td 41
+												td 2012/10/13
+												td 
+													span.table-badge.primary-bg.light $132,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Dai Rios
+												td Personnel Lead
+												td Edinburgh
+												td 35
+												td 2012/09/26
+												td 
+													span.table-badge.primary-bg.light $217,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Jenette Caldwell
+												td Development Lead
+												td New York
+												td 30
+												td 2011/09/03
+												td 
+													span.table-badge.primary-bg.light $345,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Yuri Berry
+												td Chief Marketing Officer (CMO)
+												td New York
+												td 40
+												td 2009/06/25
+												td 
+													span.table-badge.primary-bg.light $675,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Caesar Vance
+												td Pre-Sales Support
+												td New York
+												td 21
+												td 2011/12/12
+												td 
+													span.table-badge.primary-bg.light $106,450
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Doris Wilder
+												td Sales Assistant
+												td Sidney
+												td 23
+												td 2010/09/20
+												td 
+													span.table-badge.primary-bg.light $85,600
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Angelica Ramos
+												td Chief Executive Officer (CEO)
+												td London
+												td 47
+												td 2009/10/09
+												td 
+													span.table-badge.primary-bg.light $1,200,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Gavin Joyce
+												td Developer
+												td Edinburgh
+												td 42
+												td 2010/12/22
+												td 
+													span.table-badge.primary-bg.light $92,575
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Jennifer Chang
+												td Regional Director
+												td Singapore
+												td 28
+												td 2010/11/14
+												td 
+													span.table-badge.primary-bg.light $357,650
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Brenden Wagner
+												td Software Engineer
+												td San Francisco
+												td 28
+												td 2011/06/07
+												td 
+													span.table-badge.primary-bg.light $206,850
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Fiona Green
+												td Chief Operating Officer (COO)
+												td San Francisco
+												td 48
+												td 2010/03/11
+												td 
+													span.table-badge.primary-bg.light $850,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Shou Itou
+												td Regional Marketing
+												td Tokyo
+												td 20
+												td 2011/08/14
+												td 
+													span.table-badge.primary-bg.light $163,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Michelle House
+												td Integration Specialist
+												td Sidney
+												td 37
+												td 2011/06/02
+												td 
+													span.table-badge.primary-bg.light $95,400
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Suki Burks
+												td Developer
+												td London
+												td 53
+												td 2009/10/22
+												td 
+													span.table-badge.primary-bg.light $114,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Prescott Bartlett
+												td Technical Author
+												td London
+												td 27
+												td 2011/05/07
+												td 
+													span.table-badge.primary-bg.light $145,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Gavin Cortez
+												td Team Leader
+												td San Francisco
+												td 22
+												td 2008/10/26
+												td 
+													span.table-badge.primary-bg.light $235,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Martena Mccray
+												td Post-Sales support
+												td Edinburgh
+												td 46
+												td 2011/03/09
+												td 
+													span.table-badge.primary-bg.light $324,050
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Unity Butler
+												td Marketing Designer
+												td San Francisco
+												td 47
+												td 2009/12/09
+												td 
+													span.table-badge.primary-bg.light $85,675
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Howard Hatfield
+												td Office Manager
+												td San Francisco
+												td 51
+												td 2008/12/16
+												td 
+													span.table-badge.primary-bg.light $164,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Hope Fuentes
+												td Secretary
+												td San Francisco
+												td 41
+												td 2010/02/12
+												td 
+													span.table-badge.primary-bg.light $109,850
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Vivian Harrell
+												td Financial Controller
+												td San Francisco
+												td 62
+												td 2009/02/14
+												td 
+													span.table-badge.primary-bg.light $452,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Timothy Mooney
+												td Office Manager
+												td London
+												td 37
+												td 2008/12/11
+												td 
+													span.table-badge.primary-bg.light $136,200
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Jackson Bradshaw
+												td Director
+												td New York
+												td 65
+												td 2008/09/26
+												td 
+													span.table-badge.primary-bg.light $645,750
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Olivia Liang
+												td Support Engineer
+												td Singapore
+												td 64
+												td 2011/02/03
+												td 
+													span.table-badge.primary-bg.light $234,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Bruno Nash
+												td Software Engineer
+												td London
+												td 38
+												td 2011/05/03
+												td 
+													span.table-badge.primary-bg.light $163,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Sakura Yamamoto
+												td Support Engineer
+												td Tokyo
+												td 37
+												td 2009/08/19
+												td 
+													span.table-badge.primary-bg.light $139,575
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Thor Walton
+												td Developer
+												td New York
+												td 61
+												td 2013/08/11
+												td 
+													span.table-badge.primary-bg.light $98,540
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Finn Camacho
+												td Support Engineer
+												td San Francisco
+												td 47
+												td 2009/07/07
+												td 
+													span.table-badge.primary-bg.light $87,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Serge Baldwin
+												td Data Coordinator
+												td Singapore
+												td 64
+												td 2012/04/09
+												td 
+													span.table-badge.primary-bg.light $138,575
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Zenaida Frank
+												td Software Engineer
+												td New York
+												td 63
+												td 2010/01/04
+												td 
+													span.table-badge.primary-bg.light $125,250
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Zorita Serrano
+												td Software Engineer
+												td San Francisco
+												td 56
+												td 2012/06/01
+												td 
+													span.table-badge.primary-bg.light $115,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Jennifer Acosta
+												td Junior Javascript Developer
+												td Edinburgh
+												td 43
+												td 2013/02/01
+												td 
+													span.table-badge.primary-bg.light $75,650
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Cara Stevens
+												td Sales Assistant
+												td New York
+												td 46
+												td 2011/12/06
+												td 
+													span.table-badge.primary-bg.light $145,600
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Hermione Butler
+												td Regional Director
+												td London
+												td 47
+												td 2011/03/21
+												td 
+													span.table-badge.primary-bg.light $356,250
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Lael Greer
+												td Systems Administrator
+												td London
+												td 21
+												td 2009/02/27
+												td 
+													span.table-badge.primary-bg.light $103,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Jonas Alexander
+												td Developer
+												td San Francisco
+												td 30
+												td 2010/07/14
+												td 
+													span.table-badge.primary-bg.light $86,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Shad Decker
+												td Regional Director
+												td Edinburgh
+												td 51
+												td 2008/11/13
+												td 
+													span.table-badge.primary-bg.light $183,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Michael Bruce
+												td Javascript Developer
+												td Singapore
+												td 29
+												td 2011/06/27
+												td 
+													span.table-badge.primary-bg.light $183,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td Donna Snider
+												td Customer Support
+												td New York
+												td 27
+												td 2011/01/25
+												td 
+													span.table-badge.primary-bg.light $112,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+										tfoot
+											tr
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+												th Action
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class="  language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>action-btns<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+										<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn-floating warning-bg<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>edit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+										<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn-floating info-bg<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>import_export<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+										<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn-floating error-bg<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>javascript:void(0)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code>
+
+				// With Checkbox
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline With Checkbox
+								p Make possible to perform operation over the multiple selected row. Select multiple rows with checkbox.
+						.row
+							.col.s12
+								.datatable-wrapper
+									table.datatable-with-checkbox.display.cell-border
+										thead
+											tr
+												th
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+												th Action
+										tbody
+											tr
+												td
+												td Tiger Nixon
+												td System Architect
+												td Edinburgh-Thor
+												td 80
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $320,800
+												td
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Leopard Nixon
+												td System Architect
+												td Edinburgh
+												td 61
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $320,800
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td CodigoForge
+												td CEO
+												td Boston
+												td 28
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $520,800
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Vaja
+												td MD
+												td US
+												td 23
+												td 2011/04/25
+												td 
+													span.table-badge.primary-bg.light $50,800
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Mamta
+												td MD
+												td US
+												td 23
+												td 2011/04/15
+												td 
+													span.table-badge.primary-bg.light $520,800
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Garrett Winters
+												td Accountant
+												td Tokyo
+												td 63
+												td 2011/07/25
+												td 
+													span.table-badge.primary-bg.light $170,750
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Ashton Cox
+												td Junior Technical Author
+												td San Francisco
+												td 66
+												td 2009/01/12
+												td 
+													span.table-badge.primary-bg.light $86,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Cedric Kelly
+												td Senior Javascript Developer
+												td Edinburgh
+												td 22
+												td 2012/03/29
+												td 
+													span.table-badge.primary-bg.light $433,060
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Airi Satou
+												td Accountant
+												td Tokyo
+												td 33
+												td 2008/11/28
+												td 
+													span.table-badge.primary-bg.light $162,700
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Brielle Williamson
+												td Integration Specialist
+												td New York
+												td 61
+												td 2012/12/02
+												td 
+													span.table-badge.primary-bg.light $372,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Herrod Chandler
+												td Sales Assistant
+												td San Francisco
+												td 59
+												td 2012/08/06
+												td 
+													span.table-badge.primary-bg.light $137,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Rhona Davidson
+												td Integration Specialist
+												td Tokyo
+												td 55
+												td 2010/10/14
+												td 
+													span.table-badge.primary-bg.light $327,900
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Colleen Hurst
+												td Javascript Developer
+												td San Francisco
+												td 39
+												td 2009/09/15
+												td 
+													span.table-badge.primary-bg.light $205,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Sonya Frost
+												td Software Engineer
+												td Edinburgh
+												td 23
+												td 2008/12/13
+												td 
+													span.table-badge.primary-bg.light $103,600
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Jena Gaines
+												td Office Manager
+												td London
+												td 30
+												td 2008/12/19
+												td 
+													span.table-badge.primary-bg.light $90,560
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Quinn Flynn
+												td Support Lead
+												td Edinburgh
+												td 22
+												td 2013/03/03
+												td 
+													span.table-badge.primary-bg.light $342,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Charde Marshall
+												td Regional Director
+												td San Francisco
+												td 36
+												td 2008/10/16
+												td 
+													span.table-badge.primary-bg.light $470,600
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Haley Kennedy
+												td Senior Marketing Designer
+												td London
+												td 43
+												td 2012/12/18
+												td 
+													span.table-badge.primary-bg.light $313,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Tatyana Fitzpatr
+												td Lead
+												td Regional Director
+												td London
+												td 19
+												td 2010/03/17
+												td 
+													span.table-badge.primary-bg.light $385,750
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Michael Silva
+												td Marketing Designer
+												td London
+												td 66
+												td 2012/11/27
+												td 
+													span.table-badge.primary-bg.light $198,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Paul Byrd
+												td Chief Financial Officer (CFO)
+												td New York
+												td 64
+												td 2010/06/09
+												td 
+													span.table-badge.primary-bg.light $725,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Gloria Little
+												td Systems Administr
+												td Leader
+												td New York
+												td 59
+												td 2009/04/10
+												td 
+													span.table-badge.primary-bg.light $237,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Bradley Greer
+												td Software Engineer
+												td London
+												td 41
+												td 2012/10/13
+												td 
+													span.table-badge.primary-bg.light $132,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Dai Rios
+												td Personnel Lead
+												td Edinburgh
+												td 35
+												td 2012/09/26
+												td 
+													span.table-badge.primary-bg.light $217,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Jenette Caldwell
+												td Development Lead
+												td New York
+												td 30
+												td 2011/09/03
+												td 
+													span.table-badge.primary-bg.light $345,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Yuri Berry
+												td Chief Marketing Officer (CMO)
+												td New York
+												td 40
+												td 2009/06/25
+												td 
+													span.table-badge.primary-bg.light $675,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Caesar Vance
+												td Pre-Sales Support
+												td New York
+												td 21
+												td 2011/12/12
+												td 
+													span.table-badge.primary-bg.light $106,450
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Doris Wilder
+												td Sales Assistant
+												td Sidney
+												td 23
+												td 2010/09/20
+												td 
+													span.table-badge.primary-bg.light $85,600
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Angelica Ramos
+												td Chief Executive Officer (CEO)
+												td London
+												td 47
+												td 2009/10/09
+												td 
+													span.table-badge.primary-bg.light $1,200,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Gavin Joyce
+												td Developer
+												td Edinburgh
+												td 42
+												td 2010/12/22
+												td 
+													span.table-badge.primary-bg.light $92,575
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Jennifer Chang
+												td Regional Director
+												td Singapore
+												td 28
+												td 2010/11/14
+												td 
+													span.table-badge.primary-bg.light $357,650
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Brenden Wagner
+												td Software Engineer
+												td San Francisco
+												td 28
+												td 2011/06/07
+												td 
+													span.table-badge.primary-bg.light $206,850
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Fiona Green
+												td Chief Operating Officer (COO)
+												td San Francisco
+												td 48
+												td 2010/03/11
+												td 
+													span.table-badge.primary-bg.light $850,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Shou Itou
+												td Regional Marketing
+												td Tokyo
+												td 20
+												td 2011/08/14
+												td 
+													span.table-badge.primary-bg.light $163,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Michelle House
+												td Integration Specialist
+												td Sidney
+												td 37
+												td 2011/06/02
+												td 
+													span.table-badge.primary-bg.light $95,400
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Suki Burks
+												td Developer
+												td London
+												td 53
+												td 2009/10/22
+												td 
+													span.table-badge.primary-bg.light $114,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Prescott Bartlett
+												td Technical Author
+												td London
+												td 27
+												td 2011/05/07
+												td 
+													span.table-badge.primary-bg.light $145,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Gavin Cortez
+												td Team Leader
+												td San Francisco
+												td 22
+												td 2008/10/26
+												td 
+													span.table-badge.primary-bg.light $235,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Martena Mccray
+												td Post-Sales support
+												td Edinburgh
+												td 46
+												td 2011/03/09
+												td 
+													span.table-badge.primary-bg.light $324,050
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Unity Butler
+												td Marketing Designer
+												td San Francisco
+												td 47
+												td 2009/12/09
+												td 
+													span.table-badge.primary-bg.light $85,675
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Howard Hatfield
+												td Office Manager
+												td San Francisco
+												td 51
+												td 2008/12/16
+												td 
+													span.table-badge.primary-bg.light $164,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Hope Fuentes
+												td Secretary
+												td San Francisco
+												td 41
+												td 2010/02/12
+												td 
+													span.table-badge.primary-bg.light $109,850
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Vivian Harrell
+												td Financial Contr
+												td oller
+												td San Francisco
+												td 62
+												td 2009/02/14
+												td 
+													span.table-badge.primary-bg.light $452,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Timothy Mooney
+												td Office Manager
+												td London
+												td 37
+												td 2008/12/11
+												td 
+													span.table-badge.primary-bg.light $136,200
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Jackson Bradshaw
+												td Director
+												td New York
+												td 65
+												td 2008/09/26
+												td 
+													span.table-badge.primary-bg.light $645,750
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Olivia Liang
+												td Support Engineer
+												td Singapore
+												td 64
+												td 2011/02/03
+												td 
+													span.table-badge.primary-bg.light $234,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Bruno Nash
+												td Software Engineer
+												td London
+												td 38
+												td 2011/05/03
+												td 
+													span.table-badge.primary-bg.light $163,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Sakura Yamamoto
+												td Support Engineer
+												td Tokyo
+												td 37
+												td 2009/08/19
+												td 
+													span.table-badge.primary-bg.light $139,575
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Thor Walton
+												td Developer
+												td New York
+												td 61
+												td 2013/08/11
+												td 
+													span.table-badge.primary-bg.light $98,540
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Finn Camacho
+												td Support Engineer
+												td San Francisco
+												td 47
+												td 2009/07/07
+												td 
+													span.table-badge.primary-bg.light $87,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Serge Baldwin
+												td Data Coordinator
+												td Singapore
+												td 64
+												td 2012/04/09
+												td 
+													span.table-badge.primary-bg.light $138,575
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Zenaida Frank
+												td Software Engineer
+												td New York
+												td 63
+												td 2010/01/04
+												td 
+													span.table-badge.primary-bg.light $125,250
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Zorita Serrano
+												td Software Engineer
+												td San Francisco
+												td 56
+												td 2012/06/01
+												td 
+													span.table-badge.primary-bg.light $115,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Jennifer Acosta
+												td Junior Javascript Developer
+												td Edinburgh
+												td 43
+												td 2013/02/01
+												td 
+													span.table-badge.primary-bg.light $75,650
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Cara Stevens
+												td Sales Assistant
+												td New York
+												td 46
+												td 2011/12/06
+												td 
+													span.table-badge.primary-bg.light $145,600
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Hermione Butler
+												td Regional Director
+												td London
+												td 47
+												td 2011/03/21
+												td 
+													span.table-badge.primary-bg.light $356,250
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Lael Greer
+												td Systems Administr
+												td Lead
+												td London
+												td 21
+												td 2009/02/27
+												td 
+													span.table-badge.primary-bg.light $103,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Jonas Alexander
+												td Developer
+												td San Francisco
+												td 30
+												td 2010/07/14
+												td 
+													span.table-badge.primary-bg.light $86,500
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Shad Decker
+												td Regional Director
+												td Edinburgh
+												td 51
+												td 2008/11/13
+												td 
+													span.table-badge.primary-bg.light $183,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Michael Bruce
+												td Javascript Developer
+												td Singapore
+												td 29
+												td 2011/06/27
+												td 
+													span.table-badge.primary-bg.light $183,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+											tr
+												td
+												td Donna Snider
+												td Customer Support
+												td New York
+												td 27
+												td 2011/01/25
+												td 
+													span.table-badge.primary-bg.light $112,000
+												td 
+													.action-btns
+														a(href='javascript:void(0)',class="btn-floating warning-bg")
+															i.material-icons edit
+														a(href='javascript:void(0)',class="btn-floating info-bg")
+															i.material-icons import_export
+														a(href='javascript:void(0)',class="btn-floating error-bg")
+															i.material-icons delete
+										tfoot
+											tr
+												th
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+												th Action
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'table.datatable-with-checkbox'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">DataTable</span><span class="token punctuation">(</span> <span class="token punctuation">{</span>
+										columnDefs<span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span>
+										    orderable<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+										    className<span class="token punctuation">:</span> <span class="token string">'select-checkbox'</span><span class="token punctuation">,</span>
+										    targets<span class="token punctuation">:</span>   <span class="token number">0</span>
+										<span class="token punctuation">}</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
+										select<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+										    style<span class="token punctuation">:</span>    <span class="token string">'os'</span><span class="token punctuation">,</span>
+										    selector<span class="token punctuation">:</span> <span class="token string">'td:first-child'</span>
+										<span class="token punctuation">}</span><span class="token punctuation">,</span>
+										order<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'asc'</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
+									<span class="token punctuation">}</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+				// Single row selection
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Single row selection
+								p
+									|This example shows a modification of the multiple row selection example, where just a single can now be selected.
+						.row
+							.col.s12
+								.datatable-wrapper
+									table.datatable-selection-single.display.cell-border
+										thead
+											tr
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+										tbody
+											tr
+												td Tiger Nixon
+												td System Architect
+												td Edinburgh
+												td 61
+												td 2011/04/25
+												td $320,800
+											tr
+												td Leopard Nixon
+												td System Architect
+												td Edinburgh
+												td 61
+												td 2011/04/25
+												td $320,800
+											tr
+												td CodigoForge
+												td CEO
+												td Boston
+												td 28
+												td 2011/04/25
+												td $520,800
+											tr
+												td Vaja
+												td MD
+												td US
+												td 23
+												td 2011/04/25
+												td $50,800
+											tr
+												td Mamta
+												td MD
+												td US
+												td 23
+												td 2011/04/15
+												td $520,800
+											tr
+												td Garrett Winters
+												td Accountant
+												td Tokyo
+												td 63
+												td 2011/07/25
+												td $170,750
+											tr
+												td Ashton Cox
+												td Junior Technical Author
+												td San Francisco
+												td 66
+												td 2009/01/12
+												td $86,000
+											tr
+												td Cedric Kelly
+												td Senior Javascript Developer
+												td Edinburgh
+												td 22
+												td 2012/03/29
+												td $433,060
+											tr
+												td Airi Satou
+												td Accountant
+												td Tokyo
+												td 33
+												td 2008/11/28
+												td $162,700
+											tr
+												td Brielle Williamson
+												td Integration Specialist
+												td New York
+												td 61
+												td 2012/12/02
+												td $372,000
+											tr
+												td Herrod Chandler
+												td Sales Assistant
+												td San Francisco
+												td 59
+												td 2012/08/06
+												td $137,500
+											tr
+												td Rhona Davidson
+												td Integration Specialist
+												td Tokyo
+												td 55
+												td 2010/10/14
+												td $327,900
+											tr
+												td Colleen Hurst
+												td Javascript Developer
+												td San Francisco
+												td 39
+												td 2009/09/15
+												td $205,500
+											tr
+												td Sonya Frost
+												td Software Engineer
+												td Edinburgh
+												td 23
+												td 2008/12/13
+												td $103,600
+											tr
+												td Jena Gaines
+												td Office Manager
+												td London
+												td 30
+												td 2008/12/19
+												td $90,560
+											tr
+												td Quinn Flynn
+												td Support Lead
+												td Edinburgh
+												td 22
+												td 2013/03/03
+												td $342,000
+											tr
+												td Charde Marshall
+												td Regional Director
+												td San Francisco
+												td 36
+												td 2008/10/16
+												td $470,600
+											tr
+												td Haley Kennedy
+												td Senior Marketing Designer
+												td London
+												td 43
+												td 2012/12/18
+												td $313,500
+											tr
+												td Tatyana Fitzpatrick
+												td Regional Director
+												td London
+												td 19
+												td 2010/03/17
+												td $385,750
+											tr
+												td Michael Silva
+												td Marketing Designer
+												td London
+												td 66
+												td 2012/11/27
+												td $198,500
+											tr
+												td Paul Byrd
+												td Chief Financial Officer (CFO)
+												td New York
+												td 64
+												td 2010/06/09
+												td $725,000
+											tr
+												td Gloria Little
+												td Systems Administrator
+												td New York
+												td 59
+												td 2009/04/10
+												td $237,500
+											tr
+												td Bradley Greer
+												td Software Engineer
+												td London
+												td 41
+												td 2012/10/13
+												td $132,000
+											tr
+												td Dai Rios
+												td Personnel Lead
+												td Edinburgh
+												td 35
+												td 2012/09/26
+												td $217,500
+											tr
+												td Jenette Caldwell
+												td Development Lead
+												td New York
+												td 30
+												td 2011/09/03
+												td $345,000
+											tr
+												td Yuri Berry
+												td Chief Marketing Officer (CMO)
+												td New York
+												td 40
+												td 2009/06/25
+												td $675,000
+											tr
+												td Caesar Vance
+												td Pre-Sales Support
+												td New York
+												td 21
+												td 2011/12/12
+												td $106,450
+											tr
+												td Doris Wilder
+												td Sales Assistant
+												td Sidney
+												td 23
+												td 2010/09/20
+												td $85,600
+											tr
+												td Angelica Ramos
+												td Chief Executive Officer (CEO)
+												td London
+												td 47
+												td 2009/10/09
+												td $1,200,000
+											tr
+												td Gavin Joyce
+												td Developer
+												td Edinburgh
+												td 42
+												td 2010/12/22
+												td $92,575
+											tr
+												td Jennifer Chang
+												td Regional Director
+												td Singapore
+												td 28
+												td 2010/11/14
+												td $357,650
+											tr
+												td Brenden Wagner
+												td Software Engineer
+												td San Francisco
+												td 28
+												td 2011/06/07
+												td $206,850
+											tr
+												td Fiona Green
+												td Chief Operating Officer (COO)
+												td San Francisco
+												td 48
+												td 2010/03/11
+												td $850,000
+											tr
+												td Shou Itou
+												td Regional Marketing
+												td Tokyo
+												td 20
+												td 2011/08/14
+												td $163,000
+											tr
+												td Michelle House
+												td Integration Specialist
+												td Sidney
+												td 37
+												td 2011/06/02
+												td $95,400
+											tr
+												td Suki Burks
+												td Developer
+												td London
+												td 53
+												td 2009/10/22
+												td $114,500
+											tr
+												td Prescott Bartlett
+												td Technical Author
+												td London
+												td 27
+												td 2011/05/07
+												td $145,000
+											tr
+												td Gavin Cortez
+												td Team Leader
+												td San Francisco
+												td 22
+												td 2008/10/26
+												td $235,500
+											tr
+												td Martena Mccray
+												td Post-Sales support
+												td Edinburgh
+												td 46
+												td 2011/03/09
+												td $324,050
+											tr
+												td Unity Butler
+												td Marketing Designer
+												td San Francisco
+												td 47
+												td 2009/12/09
+												td $85,675
+											tr
+												td Howard Hatfield
+												td Office Manager
+												td San Francisco
+												td 51
+												td 2008/12/16
+												td $164,500
+											tr
+												td Hope Fuentes
+												td Secretary
+												td San Francisco
+												td 41
+												td 2010/02/12
+												td $109,850
+											tr
+												td Vivian Harrell
+												td Financial Controller
+												td San Francisco
+												td 62
+												td 2009/02/14
+												td $452,500
+											tr
+												td Timothy Mooney
+												td Office Manager
+												td London
+												td 37
+												td 2008/12/11
+												td $136,200
+											tr
+												td Jackson Bradshaw
+												td Director
+												td New York
+												td 65
+												td 2008/09/26
+												td $645,750
+											tr
+												td Olivia Liang
+												td Support Engineer
+												td Singapore
+												td 64
+												td 2011/02/03
+												td $234,500
+											tr
+												td Bruno Nash
+												td Software Engineer
+												td London
+												td 38
+												td 2011/05/03
+												td $163,500
+											tr
+												td Sakura Yamamoto
+												td Support Engineer
+												td Tokyo
+												td 37
+												td 2009/08/19
+												td $139,575
+											tr
+												td Thor Walton
+												td Developer
+												td New York
+												td 61
+												td 2013/08/11
+												td $98,540
+											tr
+												td Finn Camacho
+												td Support Engineer
+												td San Francisco
+												td 47
+												td 2009/07/07
+												td $87,500
+											tr
+												td Serge Baldwin
+												td Data Coordinator
+												td Singapore
+												td 64
+												td 2012/04/09
+												td $138,575
+											tr
+												td Zenaida Frank
+												td Software Engineer
+												td New York
+												td 63
+												td 2010/01/04
+												td $125,250
+											tr
+												td Zorita Serrano
+												td Software Engineer
+												td San Francisco
+												td 56
+												td 2012/06/01
+												td $115,000
+											tr
+												td Jennifer Acosta
+												td Junior Javascript Developer
+												td Edinburgh
+												td 43
+												td 2013/02/01
+												td $75,650
+											tr
+												td Cara Stevens
+												td Sales Assistant
+												td New York
+												td 46
+												td 2011/12/06
+												td $145,600
+											tr
+												td Hermione Butler
+												td Regional Director
+												td London
+												td 47
+												td 2011/03/21
+												td $356,250
+											tr
+												td Lael Greer
+												td Systems Administrator
+												td London
+												td 21
+												td 2009/02/27
+												td $103,500
+											tr
+												td Jonas Alexander
+												td Developer
+												td San Francisco
+												td 30
+												td 2010/07/14
+												td $86,500
+											tr
+												td Shad Decker
+												td Regional Director
+												td Edinburgh
+												td 51
+												td 2008/11/13
+												td $183,000
+											tr
+												td Michael Bruce
+												td Javascript Developer
+												td Singapore
+												td 29
+												td 2011/06/27
+												td $183,000
+											tr
+												td Donna Snider
+												td Customer Support
+												td New York
+												td 27
+												td 2011/01/25
+												td $112,000
+										tfoot
+											tr
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token keyword">var</span> singleSelect <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.datatable-selection-single'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">DataTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.datatable-selection-single tbody'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token string">'tr'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasClass</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									        <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span>
+									    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+									        singleSelect<span class="token punctuation">.</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'tr.success'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+				// Multiple rows selection
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Multiple rows selection
+								p
+									|It can be quite useful at times to provide the user with the option to select rows in a DataTable. This can be done by simply using a click event to add / remove a class on the table rows. 
+						.row
+							.col.s12
+								.datatable-wrapper
+									table.datatable-selection-multiple.display.cell-border
+										thead
+											tr
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+										tbody
+											tr
+												td Tiger Nixon
+												td System Architect
+												td Edinburgh
+												td 61
+												td 2011/04/25
+												td $320,800
+											tr
+												td Leopard Nixon
+												td System Architect
+												td Edinburgh
+												td 61
+												td 2011/04/25
+												td $320,800
+											tr
+												td CodigoForge
+												td CEO
+												td Boston
+												td 28
+												td 2011/04/25
+												td $520,800
+											tr
+												td Vaja
+												td MD
+												td US
+												td 23
+												td 2011/04/25
+												td $50,800
+											tr
+												td Mamta
+												td MD
+												td US
+												td 23
+												td 2011/04/15
+												td $520,800
+											tr
+												td Garrett Winters
+												td Accountant
+												td Tokyo
+												td 63
+												td 2011/07/25
+												td $170,750
+											tr
+												td Ashton Cox
+												td Junior Technical Author
+												td San Francisco
+												td 66
+												td 2009/01/12
+												td $86,000
+											tr
+												td Cedric Kelly
+												td Senior Javascript Developer
+												td Edinburgh
+												td 22
+												td 2012/03/29
+												td $433,060
+											tr
+												td Airi Satou
+												td Accountant
+												td Tokyo
+												td 33
+												td 2008/11/28
+												td $162,700
+											tr
+												td Brielle Williamson
+												td Integration Specialist
+												td New York
+												td 61
+												td 2012/12/02
+												td $372,000
+											tr
+												td Herrod Chandler
+												td Sales Assistant
+												td San Francisco
+												td 59
+												td 2012/08/06
+												td $137,500
+											tr
+												td Rhona Davidson
+												td Integration Specialist
+												td Tokyo
+												td 55
+												td 2010/10/14
+												td $327,900
+											tr
+												td Colleen Hurst
+												td Javascript Developer
+												td San Francisco
+												td 39
+												td 2009/09/15
+												td $205,500
+											tr
+												td Sonya Frost
+												td Software Engineer
+												td Edinburgh
+												td 23
+												td 2008/12/13
+												td $103,600
+											tr
+												td Jena Gaines
+												td Office Manager
+												td London
+												td 30
+												td 2008/12/19
+												td $90,560
+											tr
+												td Quinn Flynn
+												td Support Lead
+												td Edinburgh
+												td 22
+												td 2013/03/03
+												td $342,000
+											tr
+												td Charde Marshall
+												td Regional Director
+												td San Francisco
+												td 36
+												td 2008/10/16
+												td $470,600
+											tr
+												td Haley Kennedy
+												td Senior Marketing Designer
+												td London
+												td 43
+												td 2012/12/18
+												td $313,500
+											tr
+												td Tatyana Fitzpatrick
+												td Regional Director
+												td London
+												td 19
+												td 2010/03/17
+												td $385,750
+											tr
+												td Michael Silva
+												td Marketing Designer
+												td London
+												td 66
+												td 2012/11/27
+												td $198,500
+											tr
+												td Paul Byrd
+												td Chief Financial Officer (CFO)
+												td New York
+												td 64
+												td 2010/06/09
+												td $725,000
+											tr
+												td Gloria Little
+												td Systems Administrator
+												td New York
+												td 59
+												td 2009/04/10
+												td $237,500
+											tr
+												td Bradley Greer
+												td Software Engineer
+												td London
+												td 41
+												td 2012/10/13
+												td $132,000
+											tr
+												td Dai Rios
+												td Personnel Lead
+												td Edinburgh
+												td 35
+												td 2012/09/26
+												td $217,500
+											tr
+												td Jenette Caldwell
+												td Development Lead
+												td New York
+												td 30
+												td 2011/09/03
+												td $345,000
+											tr
+												td Yuri Berry
+												td Chief Marketing Officer (CMO)
+												td New York
+												td 40
+												td 2009/06/25
+												td $675,000
+											tr
+												td Caesar Vance
+												td Pre-Sales Support
+												td New York
+												td 21
+												td 2011/12/12
+												td $106,450
+											tr
+												td Doris Wilder
+												td Sales Assistant
+												td Sidney
+												td 23
+												td 2010/09/20
+												td $85,600
+											tr
+												td Angelica Ramos
+												td Chief Executive Officer (CEO)
+												td London
+												td 47
+												td 2009/10/09
+												td $1,200,000
+											tr
+												td Gavin Joyce
+												td Developer
+												td Edinburgh
+												td 42
+												td 2010/12/22
+												td $92,575
+											tr
+												td Jennifer Chang
+												td Regional Director
+												td Singapore
+												td 28
+												td 2010/11/14
+												td $357,650
+											tr
+												td Brenden Wagner
+												td Software Engineer
+												td San Francisco
+												td 28
+												td 2011/06/07
+												td $206,850
+											tr
+												td Fiona Green
+												td Chief Operating Officer (COO)
+												td San Francisco
+												td 48
+												td 2010/03/11
+												td $850,000
+											tr
+												td Shou Itou
+												td Regional Marketing
+												td Tokyo
+												td 20
+												td 2011/08/14
+												td $163,000
+											tr
+												td Michelle House
+												td Integration Specialist
+												td Sidney
+												td 37
+												td 2011/06/02
+												td $95,400
+											tr
+												td Suki Burks
+												td Developer
+												td London
+												td 53
+												td 2009/10/22
+												td $114,500
+											tr
+												td Prescott Bartlett
+												td Technical Author
+												td London
+												td 27
+												td 2011/05/07
+												td $145,000
+											tr
+												td Gavin Cortez
+												td Team Leader
+												td San Francisco
+												td 22
+												td 2008/10/26
+												td $235,500
+											tr
+												td Martena Mccray
+												td Post-Sales support
+												td Edinburgh
+												td 46
+												td 2011/03/09
+												td $324,050
+											tr
+												td Unity Butler
+												td Marketing Designer
+												td San Francisco
+												td 47
+												td 2009/12/09
+												td $85,675
+											tr
+												td Howard Hatfield
+												td Office Manager
+												td San Francisco
+												td 51
+												td 2008/12/16
+												td $164,500
+											tr
+												td Hope Fuentes
+												td Secretary
+												td San Francisco
+												td 41
+												td 2010/02/12
+												td $109,850
+											tr
+												td Vivian Harrell
+												td Financial Controller
+												td San Francisco
+												td 62
+												td 2009/02/14
+												td $452,500
+											tr
+												td Timothy Mooney
+												td Office Manager
+												td London
+												td 37
+												td 2008/12/11
+												td $136,200
+											tr
+												td Jackson Bradshaw
+												td Director
+												td New York
+												td 65
+												td 2008/09/26
+												td $645,750
+											tr
+												td Olivia Liang
+												td Support Engineer
+												td Singapore
+												td 64
+												td 2011/02/03
+												td $234,500
+											tr
+												td Bruno Nash
+												td Software Engineer
+												td London
+												td 38
+												td 2011/05/03
+												td $163,500
+											tr
+												td Sakura Yamamoto
+												td Support Engineer
+												td Tokyo
+												td 37
+												td 2009/08/19
+												td $139,575
+											tr
+												td Thor Walton
+												td Developer
+												td New York
+												td 61
+												td 2013/08/11
+												td $98,540
+											tr
+												td Finn Camacho
+												td Support Engineer
+												td San Francisco
+												td 47
+												td 2009/07/07
+												td $87,500
+											tr
+												td Serge Baldwin
+												td Data Coordinator
+												td Singapore
+												td 64
+												td 2012/04/09
+												td $138,575
+											tr
+												td Zenaida Frank
+												td Software Engineer
+												td New York
+												td 63
+												td 2010/01/04
+												td $125,250
+											tr
+												td Zorita Serrano
+												td Software Engineer
+												td San Francisco
+												td 56
+												td 2012/06/01
+												td $115,000
+											tr
+												td Jennifer Acosta
+												td Junior Javascript Developer
+												td Edinburgh
+												td 43
+												td 2013/02/01
+												td $75,650
+											tr
+												td Cara Stevens
+												td Sales Assistant
+												td New York
+												td 46
+												td 2011/12/06
+												td $145,600
+											tr
+												td Hermione Butler
+												td Regional Director
+												td London
+												td 47
+												td 2011/03/21
+												td $356,250
+											tr
+												td Lael Greer
+												td Systems Administrator
+												td London
+												td 21
+												td 2009/02/27
+												td $103,500
+											tr
+												td Jonas Alexander
+												td Developer
+												td San Francisco
+												td 30
+												td 2010/07/14
+												td $86,500
+											tr
+												td Shad Decker
+												td Regional Director
+												td Edinburgh
+												td 51
+												td 2008/11/13
+												td $183,000
+											tr
+												td Michael Bruce
+												td Javascript Developer
+												td Singapore
+												td 29
+												td 2011/06/27
+												td $183,000
+											tr
+												td Donna Snider
+												td Customer Support
+												td New York
+												td 27
+												td 2011/01/25
+												td $112,000
+										tfoot
+											tr
+												th Name
+												th Position
+												th Office
+												th Age
+												th Start date
+												th Salary
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.datatable-selection-multiple'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">DataTable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.datatable-selection-multiple tbody'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token string">'tr'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toggleClass</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	</code>
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src="../plugins/datatable/jquery.dataTables.min.js")
+	script(type='text/javascript', src="../plugins/datatable/dataTables.select.min.js")
+	script(type='text/javascript', src="../plugins/datatable/templates.js")
+	script(type='text/javascript', src="../plugins/datatable/using-api.js")
+	script.
+		$(document).ready(function(){
+			$('select').material_select();
+		});

@@ -1,0 +1,109 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: C3 Line Charts
+block append css
+	link(type='text/css', rel='stylesheet', href='../css/plugins/c3/c3.css')
+	
+block content
+	- var mainRoute="chart"
+	- var route = 'lineChart'
+	- var func = 'c3LineChart'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"C3 Line Charts"}]
+	- var dropdown1=[{"type":"normal","link":'http://c3js.org/samples/chart_area.html',"icon":"link","iType":"material","title":"c3 Example"},{"type":"normal","link":'https://github.com/c3js/c3',"icon":"mdi-git","iType":"mdi","title":"Git Hub"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('c3breadcrumbOption',dropdown1)
+		.main-header
+			.sec-page
+				.page-title
+					h2 Line Charts
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set",data-activates='c3breadcrumbOption',data-beloworigin='true',data-alignment='right',data-position="bottom",data-delay="50")
+						+mi('more_vert')
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			div.row
+				.col.s12
+					h4.content-headline C3 Line Charts
+					p 
+						| C3 
+						a(href="http://c3js.org/samples/simple_multiple.html",target="_blank") 
+							| line charts 
+						| look like as below.
+			.row
+				.col.s12
+					// Basic Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic Chart
+						.row
+							.col.s12
+								#line-basic
+				.col.s12
+					// Spline chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Spline chart
+						.row
+							.col.s12
+								#lineSpline
+				.col.s12
+					// Step Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Step Chart
+						.row
+							.col.s12
+								#chartStep
+			.row
+				.col.s12
+					h4.content-headline Timeseries Axis
+			.row
+				.col.s12
+					// Line Chart With Timeseries Data
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Line Chart With Timeseries Data
+						.row
+							.col.s12
+								#chart-timeseries
+
+				.col.s12
+					// Line Chart With Descendent Timeseries Data
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Line Chart With Descendent Timeseries Data
+						.row
+							.col.s12
+								#descendent-timeseries
+			.row
+				.col.s12
+					// Line Chart With Timeseries Data As Number
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Line Chart With Timeseries Data As Number
+						.row
+							.col.s12
+								#timeseriesData-number
+				.col.s12
+					// Line Chart With Timeseries Data As Date Object
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Line Chart With Timeseries Data As Date Object
+						.row
+							.col.s12
+								#timeseriesData-obj
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/charts/c3/c3.js', charset="utf-8")
+	script(type='text/javascript', src='../plugins/charts/c3/c3.js')
+	script(type='text/javascript', src='../plugins/charts/c3/line-chart.js')

@@ -1,0 +1,313 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Blog
+block content
+	- var mainRoute=""
+	- var route = 'blogRoute'
+	- var func = 'blog'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Blog"},{"link":"#","title":"Posts"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Blog
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline Blog
+					p
+						| A regularly updated website or web page, typically one run by an individual or small group, that is written in an informal or conversational style.
+			.row
+				// SMALL
+				.col.s12.m6.l3
+					.card
+						.card-image
+							img(alt="placeholder",class="responsive-img", src="../images/placeholder/580x250g.jpg")&attributes({"style":"height:210px;"})
+							span.card-title Small Post
+							div&attributes({"style":"position: relative;"})
+								.fixed-action-btn&attributes({"style":"position: absolute; right: 24px; bottom:-20px;"})
+									a(class='btn-floating waves-effect waves-light grey darken-3 tooltipped')&attributes({"data-position":"left","data-delay":"50","data-tooltip":"More Options"})
+										i.material-icons more_vert
+									ul
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Like"
+											})
+												i.material-icons favorite
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Share"
+											})
+												i.material-icons share
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Bookmark"
+											})
+												i.material-icons bookmark
+						.card-content
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action
+							a(class='waves-effect waves-light grey-text')
+								| Share (10K)
+								i.material-icons.left share
+							a(class='waves-effect waves-light grey-text')
+								| Likes (100+)
+								i.material-icons.left favorite
+							a(class='waves-effect waves-light grey-text')
+								| Read More
+								i.material-icons.left more_vert
+				.col.s12.m6.l3
+					.card
+						.card-image
+							img(alt="placeholder",class="responsive-img", src="../images/placeholder/580x250t.jpg")&attributes({"style":"height:210px;"})
+							span.card-title Small Post
+							div&attributes({"style":"position: relative;"})
+								.fixed-action-btn&attributes({"style":"position: absolute; right: 24px; bottom:-20px;"})
+									a(class='btn-floating waves-effect waves-light grey darken-3 tooltipped')&attributes({"data-position":"left","data-delay":"50","data-tooltip":"More Options"})
+										i.material-icons more_vert
+									ul
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Like"
+											})
+												i.material-icons favorite
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Share"
+											})
+												i.material-icons share
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Bookmark"
+											})
+												i.material-icons bookmark
+						.card-content
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action
+							a(class='waves-effect waves-light grey-text')
+								| Share (10K)
+								i.material-icons.left share
+							a(class='waves-effect waves-light grey-text')
+								| Likes (100+)
+								i.material-icons.left favorite
+							a(class='waves-effect waves-light grey-text')
+								| Read More
+								i.material-icons.left more_vert
+				.col.s12.m6.l3
+					.card
+						.card-image
+							img(alt="placeholder",class="responsive-img", src="../images/placeholder/580x250t.jpg")&attributes({"style":"height:210px;"})
+							span.card-title Small Post
+							div&attributes({"style":"position: relative;"})
+								.fixed-action-btn&attributes({"style":"position: absolute; right: 24px; bottom:-20px;"})
+									a(class='btn-floating waves-effect waves-light grey darken-3 tooltipped')&attributes({"data-position":"left","data-delay":"50","data-tooltip":"More Options"})
+										i.material-icons more_vert
+									ul
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Like"
+											})
+												i.material-icons favorite
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Share"
+											})
+												i.material-icons share
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Bookmark"
+											})
+												i.material-icons bookmark
+						.card-content
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action
+							a(class='waves-effect waves-light grey-text')
+								| Share (10K)
+								i.material-icons.left share
+							a(class='waves-effect waves-light grey-text')
+								| Likes (100+)
+								i.material-icons.left favorite
+							a(class='waves-effect waves-light grey-text')
+								| Read More
+								i.material-icons.left more_vert
+				.col.s12.m6.l3
+					.card
+						.card-image
+							img(alt="placeholder",class="responsive-img", src="../images/placeholder/580x250r.jpg")&attributes({"style":"height:210px;"})
+							span.card-title Small Post
+							div&attributes({"style":"position: relative;"})
+								.fixed-action-btn&attributes({"style":"position: absolute; right: 24px; bottom:-20px;"})
+									a(class='btn-floating waves-effect waves-light grey darken-3 tooltipped')&attributes({"data-position":"left","data-delay":"50","data-tooltip":"More Options"})
+										i.material-icons more_vert
+									ul
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Like"
+											})
+												i.material-icons favorite
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Share"
+											})
+												i.material-icons share
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Bookmark"
+											})
+												i.material-icons bookmark
+						.card-content
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action
+							a(class='waves-effect waves-light grey-text')
+								| Share (10K)
+								i.material-icons.left share
+							a(class='waves-effect waves-light grey-text')
+								| Likes (100+)
+								i.material-icons.left favorite
+							a(class='waves-effect waves-light grey-text')
+								| Read More
+								i.material-icons.left more_vert
+			.row
+				// Medium
+				.col.s12.m6
+					.card
+						.card-image
+							img(alt="placeholder",class="responsive-img", src="../images/placeholder/580x250t.jpg")&attributes({"style":"height:300px;"})
+							span.card-title Medium Post
+							div&attributes({"style":"position: relative;"})
+								.fixed-action-btn&attributes({"style":"position: absolute; right: 24px; bottom:-28px;"})
+									a(class='btn-floating waves-effect waves-light grey darken-3 btn-large tooltipped')&attributes({"data-position":"left","data-delay":"50","data-tooltip":"More Options"})
+										i.material-icons more_vert
+									ul
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Like"
+											})
+												i.material-icons favorite
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Share"
+											})
+												i.material-icons share
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Bookmark"
+											})
+												i.material-icons bookmark
+						.card-content
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action
+							a(class='waves-effect waves-light btn btn-flat')
+								| Share (10K)
+								i.material-icons.left share
+							a(class='waves-effect waves-light btn btn-flat')
+								| Likes (100+)
+								i.material-icons.left favorite
+							a(class='waves-effect waves-light btn btn-flat')
+								| Read More
+								i.material-icons.left more_vert
+				.col.s12.m6
+					.card
+						.card-image
+							img(alt="placeholder",class="responsive-img", src="../images/placeholder/580x250g.jpg")&attributes({"style":"height:300px;"})
+							span.card-title Medium Post
+							div&attributes({"style":"position: relative;"})
+								.fixed-action-btn&attributes({"style":"position: absolute; right: 24px; bottom:-28px;"})
+									a(class='btn-floating waves-effect waves-light grey darken-3 btn-large tooltipped')&attributes({"data-position":"left","data-delay":"50","data-tooltip":"More Options"})
+										i.material-icons more_vert
+									ul
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Like"
+											})
+												i.material-icons favorite
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Share"
+											})
+												i.material-icons share
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Bookmark"
+											})
+												i.material-icons bookmark
+						.card-content
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action
+							a(class='waves-effect waves-light btn btn-flat')
+								| Share (10K)
+								i.material-icons.left share
+							a(class='waves-effect waves-light btn btn-flat')
+								| Likes (100+)
+								i.material-icons.left favorite
+							a(class='waves-effect waves-light btn btn-flat')
+								| Read More
+								i.material-icons.left more_vert
+			.row
+				// FULL WIDTH POST
+				.col.s12
+					.card
+						.card-image
+							img(alt="placeholder",class="responsive-img", src="../images/placeholder/800x400r.jpg")&attributes({"style":"height:300px;"})
+							span.card-title Full Width Post
+							div&attributes({"style":"position: relative;"})
+								.fixed-action-btn&attributes({"style":"position: absolute; right: 24px; bottom:-28px;"})
+									a(class='btn-floating waves-effect waves-light grey darken-3 btn-large tooltipped')&attributes({"data-position":"left","data-delay":"50","data-tooltip":"More Options"})
+										i.material-icons more_vert
+									ul
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Like"
+											})
+												i.material-icons favorite
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Share"
+											})
+												i.material-icons share
+										li
+											a.btn-floating.grey.darken-4.tooltipped&attributes({
+											 "data-position":"left","data-delay":"50","data-tooltip":"Bookmark"
+											})
+												i.material-icons bookmark
+						.card-content
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action
+							a(class='waves-effect waves-light btn btn-flat')
+								| Share (10K)
+								i.material-icons.left share
+							a(class='waves-effect waves-light btn btn-flat')
+								| Likes (100+)
+								i.material-icons.left favorite
+							a(class='waves-effect waves-light btn btn-flat')
+								| Read More
+								i.material-icons.left more_vert
+    	//- FOOTER
+		include ../include/footer.pug

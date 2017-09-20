@@ -1,0 +1,357 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Bar Chart
+block content
+	- var mainRoute="cardWidget"
+	- var route = 'cardWidgetTravel'
+	- var func = ''
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Cards"},{"link":"#","title":"Travel Cards"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Travel Cards
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline Travel Cards
+					p
+						| Awesome & attractive travel widgets!
+			// Travel Cards with details
+			.row
+				.col.s12
+					h5.content-headline Travel Cards With Details
+					p
+						| Travel Cards with image, details, title and action button.
+				.col.s12.m6
+					.card.hoverable
+						.card-image
+							img(src="../images/placeholder/600x400g.jpg",class='responsive-img',alt="placeholder")
+							span.card-title
+								strong Statue of liberty
+						.card-content
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+				.col.s12.m6
+					.card.hoverable
+						.card-image.has-overlay
+							.overlay.grey-overlay.overlay-darken-4
+							img(src="../images/placeholder/600x400g.jpg",class='responsive-img',alt="placeholder")
+							span.card-title
+								strong Crezy Ocean
+						.card-content
+							p
+								|My <code class='language-markup'>card-image</code> has <code class='language-markup'>has-overlay</code> class. Under this element, we have a div with
+								|<code class='language-markup'>overlay</code> <code class='language-markup'>grey-overlay</code> <code class='language-markup'>overlay-darken-4</code> classes.
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+			// Travel Cards with details + floating fab
+			.row
+				.col.s12
+					h5.content-headline Travel Cards With Details + Floating Fab
+					p
+						| Travel Cards with image, details, title, floating fab and action button.
+				.col.s12.m6
+					.card.hoverable
+						.card-image
+							img(src="../images/placeholder/1024x720g.jpg",class='responsive-img',alt="placeholder")
+							span.card-title
+								strong Icee Route
+							a.btn-floating.halfway-fab.waves-effect.waves-light.red
+								i.material-icons add
+						.card-content
+							h5 Awesome Ridding
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I also consume <code class='language-markup'>a.btn-floating</code> with the class <code class='language-markup'> halfway-fab</code>.
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+				.col.s12.m6
+					.card.hoverable
+						.card-image
+							img(src="../images/placeholder/1024x720g.jpg",class='responsive-img',alt="placeholder")
+							span.card-title
+								strong Nature is beautiful
+							a.btn-floating.halfway-fab.waves-effect.waves-light.red.btn-large
+								i.material-icons add
+						.card-content
+							h5 Feel Pleasant
+							p
+								| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I also consume <code class='language-markup'>a.btn-floating</code> with the class <code class='language-markup'> halfway-fab</code>.
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+			// Travel Cards with background placeholder , card content, image overlay and card action
+			.row
+				.col.s12
+					h5.content-headline Travel Cards With Background Placeholder
+					p
+						| Travel Cards with background placeholder ,image overlay, card content and card action.
+				.col.s12.m6
+					.card.hoverable
+						.card-image.bg-only
+							.bg-placeholder-1x.primary-bg
+							span.card-title
+								strong Plants Of Korea
+							a.btn-floating.halfway-up-fab.waves-effect.waves-light.secondary-bg
+								i.material-icons favorite
+						.card-content
+							img(src="../images/placeholder/1024x723g.jpg",class='responsive-img',alt="placeholder")
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+				// Image overlay
+				.col.s12.m6
+					.card.hoverable
+						.card-image.bg-only
+							.bg-placeholder-1x.secondary-bg
+							span.card-title
+								strong Bird Santuary
+							a.btn-floating.halfway-up-fab.waves-effect.waves-light.primary-bg
+								i.material-icons favorite
+						.card-content.has-overlay
+							.overlay.white
+							img(src="../images/placeholder/1024x723g.jpg",class='responsive-img',alt="placeholder")
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+			// Travel Cards with TABS
+			.row
+				.col.s12
+					h5.content-headline Travel Cards With TABS
+					p
+						| Travel Cards with tabs and transparent tabs
+				//- #9 Visible Tabs
+				.col.s12.m6
+					.card.hoverable
+						.card-image.bg-only
+							.bg-placeholder-1x.secondary-bg
+							span.card-title
+								strong Love these sea-shore
+							a.btn-floating.halfway-up-fab.waves-effect.waves-light.primary-bg
+								i.material-icons add
+						.card-content
+							p
+								| I am a tab card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. Yeah, but I do have tabs as container.
+						.card-tabs
+							ul.tabs.tabs-fixed-width
+								li.tab
+									a(href='#test4') Beach 1
+								li.tab
+									a.active(href='#test5') Beach 2
+								li.tab
+									a(href='#test6') BEach 3
+						.card-content.info-bg
+							#test4
+								img(src="../images/placeholder/1024x720g.jpg",class='responsive-img',alt="placeholder")
+							#test5
+								img(src="../images/placeholder/1024x720g.jpg",class='responsive-img',alt="placeholder")
+							#test6
+								img(src="../images/placeholder/1024x720g.jpg",class='responsive-img',alt="placeholder")
+				//- #10 transperant Tabs
+				.col.s12.m6
+					.card.hoverable.primary-bg.light
+						.card-image.bg-only
+							.bg-placeholder-1x.secondary-bg
+							span.card-title
+								strong Nature Love
+							a.btn-floating.halfway-up-fab.waves-effect.waves-light.primary-bg
+								i.material-icons add
+						.card-content
+							p
+								| I am a tab card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.I do have transparent tabs as container.
+						.card-tabs
+							ul.tabs.tabs-fixed-width.tabs-transparent
+								li.tab
+									a(href='#test8') Bridge
+								li.tab
+									a.active(href='#test9') Mountain
+								li.tab
+									a(href='#test10') Shore
+						.card-content
+							#test8
+								img(src="../images/placeholder/1024x720g.jpg",class='responsive-img',alt="placeholder")
+							#test9
+								img(src="../images/placeholder/1024x720g.jpg",class='responsive-img',alt="placeholder")
+							#test10
+								img(src="../images/placeholder/1024x720g.jpg",class='responsive-img',alt="placeholder")
+			// Travel Cards with slider
+			.row
+				.col.s12
+					h5.content-headline Travel Cards With Slider
+					p
+						| Watch your wonderful trip in slider.
+				.col.s12
+					.card.hoverable
+						.card-image.bg-only
+							.bg-placeholder-1x.warning-bg
+							span.card-title
+								strong Top 10 Australian Beach
+							a.btn-floating.halfway-up-fab.waves-effect.waves-light.error-bg
+								i.material-icons add
+						.card-content.grey
+							.slider
+								ul.slides
+									li
+										img(src="../images/placeholder/1024x723g.jpg",class='responsive-img',alt="placeholder")
+										.caption.center-align
+											h3.primary-text This is our big Tagline!
+											h5.light.white-text Here's our small slogan.
+									li
+										img(src="../images/placeholder/1024x723g.jpg",class='responsive-img',alt="placeholder")
+										.caption.left-align
+											h3 Left Aligned Caption
+											h5.light.white-text Here's our small slogan.
+									li
+										img(src="../images/placeholder/1024x723g.jpg",class='responsive-img',alt="placeholder")
+										.caption.right-align
+											h3 Right Aligned Caption
+											h5.light.white-text Here's our small slogan.
+									li
+										img(src="../images/placeholder/1024x723g.jpg",class='responsive-img',alt="placeholder")
+										.caption.center-align
+											h3 This is our big Tagline!
+											h5.light.white-text Here's our small slogan.
+			// Travel Cards with carousel
+			.row
+				.col.s12
+					h5.content-headline Travel Cards With Carousel
+					p
+						| Travel Cards with carousel and more content.
+				.col.s12.m6
+					.card
+						.card-image
+							.carousel.carousel-slider.center(data-indicators='true',style="height: 400px;")
+								.carousel-fixed-item.center.with-indicators
+										a.btn.waves-effect.white.grey-text.darken-text-2 button
+								.carousel-item.primary-bg.light.white-text(href='#one!')
+										h2 First Panel
+										p.white-text This is your first panel
+								.carousel-item.secondary-bg.light.white-text(href='#two!')
+										h2 Second Panel
+										p.white-text This is your second panel
+								.carousel-item.success-bg.light.white-text(href='#three!')
+										h2 Third Panel
+										p.white-text This is your third panel
+								.carousel-item.error-bg.light.white-text(href='#four!')
+										h2 Fourth Panel
+										p.white-text This is your fourth panel
+						.card-content
+							h5 Nature is beautiful
+							p
+								| I am a very rich card. I am good at <code class='language-markup'>carousel</code> in the <code class='language-markup'>card-image</code> div. I am convenient because I require little markup to use effectively. I have fixed-item in the center which is available at each carousel items.
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+				.col.s12.m6
+					.card
+						.card-content
+							h5 Nature is beautiful
+							p
+								| I am a very rich card. I am good at <code class='language-markup'>carousel</code> in the <code class='language-markup'>card-image</code> div. I am convenient because I require little markup to use effectively. I have fixed-item in the center which is available at each carousel items.
+						.card-image
+							.carousel.carousel-slider.center(data-indicators='true',style="height: 400px;")
+								.carousel-fixed-item.center.with-indicators
+										a.btn.waves-effect.white.grey-text.darken-text-2 button
+								.carousel-item.primary-bg.light.white-text(href='#one!')
+										h2 First Panel
+										p.white-text This is your first panel
+								.carousel-item.secondary-bg.light.white-text(href='#two!')
+										h2 Second Panel
+										p.white-text This is your second panel
+								.carousel-item.success-bg.light.white-text(href='#three!')
+										h2 Third Panel
+										p.white-text This is your third panel
+								.carousel-item.error-bg.light.white-text(href='#four!')
+										h2 Fourth Panel
+										p.white-text This is your fourth panel
+						
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+				.col.s12.m6
+					.card.hoverable
+						.card-image.bg-only
+							.bg-placeholder-1x.primary-bg
+							span.card-title
+								strong Top 10 Australian Beach
+							a.btn-floating.halfway-up-fab.waves-effect.waves-light.secondary-bg
+								i.material-icons add
+						.carousel.carousel-slider.center(data-indicators='true')
+							.carousel-item.secondary-bg.white-text(href='#five!')
+								h2 First Panel
+								p.white-text This is your first panel
+							.carousel-item.primary-bg.white-text(href='#six!')
+								h2 Second Panel
+								p.white-text This is your first panel
+							.carousel-item.error-bg.white-text(href='#seven!')
+								h2 Third Panel
+								p.white-text This is your first panel
+							.carousel-item.warning-bg.white-text(href='#eight!')
+								h2 Forth Panel
+								p.white-text This is your first panel
+						.card-content
+							p
+								| I am a card with <code class='language-markup'>card-image</code> as background colour. I also have carousel slider running inside card.
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+				.col.s12.m6
+					.card.hoverable
+						.card-image.bg-only
+							.bg-placeholder-1x.primary-bg
+							span.card-title
+								strong Top 10 Australian Beach
+							a.btn-floating.halfway-up-fab.waves-effect.waves-light.secondary-bg
+								i.material-icons add
+						.card-content
+							p
+								| I am a card with <code class='language-markup'>card-image</code> as background colour. I also have carousel slider running inside card.
+						.carousel.carousel-slider.center(data-indicators='true')
+							.carousel-item.secondary-bg.white-text(href='#five!')
+								h2 First Panel
+								p.white-text This is your first panel
+							.carousel-item.primary-bg.white-text(href='#six!')
+								h2 Second Panel
+								p.white-text This is your first panel
+							.carousel-item.error-bg.white-text(href='#seven!')
+								h2 Third Panel
+								p.white-text This is your first panel
+							.carousel-item.warning-bg.white-text(href='#eight!')
+								h2 Forth Panel
+								p.white-text This is your first panel
+						
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+		include ../include/footer.pug
+block append scripts
+	script.
+		(function(){
+		  	$('.carousel.carousel-slider').carousel({fullWidth: true});
+		    $('.slider').slider();
+		})();

@@ -1,0 +1,40 @@
+.themeSetting.z-depth-1#themeOptions
+  a.btn.btn-small.toggleThemesetting(href="#")
+      i.material-icons settings
+  .settings
+    //- .layoutSetting
+    //-   h2 Layout
+    //-   form.theme_layout(action="#")
+    //-     p
+    //-       input(type="radio",name='theme_layout',id='fluid_layout',checked)
+    //-       label(for="fluid_layout") Fluid
+    //-     p
+    //-       input(type="radio",name='theme_layout',id='box_layout')
+    //-       label(for="box_layout") Box
+    .navigationSetting
+      h2 Navigation Type
+      .navoptions.row.no-mrpd
+        p.navopt.s6.col.left
+          input.rb-teal(type="radio",name='theme_nav',id='theme_nav_vertical')&attributes({"data-identfier":"theme_nav","data-type":"vertical"})
+          label(for="theme_nav_vertical",class="theme-setting-sv-label")
+            img(class="theme-svg",src="../images/theme-svg/V49_opt3.svg", alt="")
+        p.navopt.s6.col.hide-on-med-and-down.right
+          input.rb-teal(type="radio",name='theme_nav',id='theme_nav_horizontal')&attributes({"data-identfier":"theme_nav","data-type":"horizontal"})
+          label(for="theme_nav_horizontal",class="theme-setting-sv-label") 
+            img(class="theme-svg",src="../images/theme-svg/V48_opt3.svg", alt="")
+      h2 Navigation Options
+      .navoptions.row.no-mrpd
+        p.navopt.s6.col.left
+          input.rb-teal(type="radio",name='theme_nav_opts',id='navOpts_default')&attributes({"data-identfier":"theme_nav_opts","data-type":"default"})
+          label(for="navOpts_default",class="theme-setting-sv-label") 
+            img(class="theme-svg horz-set-svg animated",src="../images/theme-svg/HD.svg", alt="")
+            img(class="theme-svg vert-set-svg animated",src="../images/theme-svg/V.svg", alt="")
+        p.navopt.s6.col.right
+          input.rb-teal(type="radio",name='theme_nav_opts',id='navOpts_iconized')&attributes({"data-identfier":"theme_nav_opts","data-type":"iconized"})
+          label(for="navOpts_iconized",class="theme-setting-sv-label")
+              img(class="theme-svg vert-set-svg animated",src="../images/theme-svg/VI.svg", alt="")
+              img(class="theme-svg horz-set-svg animated",src="../images/theme-svg/H.svg", alt="")
+        //- p.navopt
+        //-   input.with-gap(type="radio",name='theme_nav_opts',id='horizontalnav_compact')&attributes({"data-identfier":"theme_nav_opts","data-navOpt":"compact"})
+        //-   label(for="horizontalnav_compact") Compact
+    

@@ -1,0 +1,39 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Lock Screen
+	- var setBodyClass='signin'
+block append css
+	
+block content
+	- var route = 'loginRegistration'
+	- var func = 'lockScreen'
+	
+	//- Apply norepeat-bg class if you want to set full image
+	//- .row.page-lock.norepeat-bg&attributes({"style":"background-image: url('../images/child-children-girl-happy.jpg');"})
+	.row.page-lock
+		.col.s10.m6.l4
+			.page-lock-wrap
+				.row
+					.col.s12.lock-logo
+						.lock-logo-inner
+							a.animated.app-logo(href="index.html")
+								+mi('whatshot').app-icon.left.white-text&attributes({"style":"top:0;height:52px;line-height:52px;"})
+								span.text-white&attributes({"style":"margin-left:50px;line-height:52px;"})
+									|FORGE
+				.row.card-panel.inner-content
+					.col.s12.m4.lock-pic
+						img(src='../images/placeholder/500x500g.jpg',alt="placeholder")
+					.col.s12.m8.lock-content
+						h2.user-name.white-text John Doe
+						a(href='#',class='user-email white-text') 
+							|john.doe@hotmail.com
+						.content-form
+							.row
+								form.col.s12
+									.row
+										.input-field.col.s10
+											input#password.validate.white-text(type='password')
+										.input-field.col.s2
+											a(href="#",class='btn-floating btn-flat btn-small waves-effect waves-light white')
+												i.material-icons.grey-text navigate_next
+						a(href="#!",class='not-user blue-text') Not John Doe?

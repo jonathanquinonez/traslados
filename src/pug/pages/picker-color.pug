@@ -1,0 +1,319 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Form Color Picker
+block append css
+	link(rel="stylesheet", href="../plugins/pickers/spectrum/spectrum.css")
+	
+block content
+	- var mainRoute="UIElements"
+	- var route = 'picker'
+	- var func = 'color-picker'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Pickers"},{"link":"#","title":"Color Picker"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Color Picker
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			// Color Picker
+			div.row
+				.col.s12
+					h4.content-headline Color Picker
+					p
+						|Searching for that perfect color has never been easier, use our HTML color picker to browse millions of colors and color harmonies.
+				// Tiny ColorPicker
+				form.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Tiny ColorPicker
+								p
+									| 
+									a(href="https://github.com/PitPik/tinyColorPicker") Tiny color-picker 
+									| is an efficient color picket tool to make you input colorized.
+						.row
+							.input-field.col.s12
+								input(type="color",name='crnt-color',id="crnt-color")
+						.row
+							.input-field.col.s12.m4.l4
+								input(type="text",class="color",value="#ffa000")
+							.input-field.col.s12.m4.l4
+								input(type="text",class="color",value="rgb(29,233,182)")
+							.input-field.col.s12.m4.l4
+								input(type="text",class="color",value="hsl(32, 95%, 23%)")
+						.row
+							.col.s12
+								p Tiny jQuery color picker for mobile and desktop with alpha channel.
+							.col.s12
+								pre.language-markup.
+									<code class="  language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Basic Input<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>crnt-color<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>crnt-color<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m4 l4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#ffa000<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m4 l4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rgb(29,233,182)<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12 m4 l4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hsl(32, 95%, 23%)<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code>
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"jqColorPicker.min.js"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+									<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">&gt;</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.color'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">colorPicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// that's it</span>
+									    <span class="token comment" spellcheck="true">// $().colorPicker.destroy(); // for singlePageApps</span>
+									<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span></code>
+				// Spectrum
+				form.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Spectrum
+								p
+									a(href="http://bgrins.github.io/spectrum/") Spectrum 
+									| is compress library for color picker. I I has started using canvas, then switched to CSS gradients, since it turned out to be easier to manage, and provided better cross browser support.
+						.row
+							// Custom
+							div.col.s12
+								p.flow-text Custom
+								p If you want to get more into the functionality, just create a normal input and initialize it as a normal jQuery plugin. You can set a lot of options when initializing the colorpicker. See the 'Options' section below.
+							.input-field.col.s12.m4.l4
+								input(type="text",name='spectrum1',id="spectrum1")
+							.col.s12.m8.l8
+								pre.language-markup.
+									<code class="  language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>custom<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span></code>
+								pre.language-markup.
+									<code class="  language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#custom"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    color<span class="token punctuation">:</span> <span class="token string">"#f00"</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code>
+						.row
+							// Flat
+							div.col.s12
+								p.flow-text Flat
+								p Flat This means that it will always show up at full size, and be positioned as an inline-block element. Look to the left for a full sized flat picker.
+							.input-field.col.s12.m6.l6
+								input(type="text",name='flat',id="flat")
+							.input-field.col.s12.m6.l6
+								input(type="text",name='flatClearable',id="flatClearable")
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#flat"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    flat<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+									    showInput<span class="token punctuation">:</span> <span class="token boolean">true</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#flatClearable"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    flat<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+									    showInput<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+									    allowEmpty<span class="token punctuation">:</span><span class="token boolean">true</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span></code>
+						// Color
+						.row
+							div.col.s12
+								p.flow-text Color
+								p The initial color will be set with the color option. If you don't pass in a color, Spectrum will use the value attribute on the input.
+							
+							.input-field.col.s3.m3.l3
+								input(type="text",class='basic',value='red')
+							.input-field.col.s3.m3.l3
+								input(type="text",class='basic',value='orange')
+							.input-field.col.s3.m3.l3
+								input(type="text",class='basic',value='green')
+							.input-field.col.s3.m3.l3
+								input(type="text",class='override')
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>basic<span class="token punctuation">'</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>red<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>basic<span class="token punctuation">'</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>orange<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>basic<span class="token punctuation">'</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>green<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>override<span class="token punctuation">'</span></span> <span class="token punctuation">/&gt;</span></span></code>
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".basic"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".override"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    color<span class="token punctuation">:</span> <span class="token string">"yellow"</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									</code>
+						// Show Alpha
+						.row
+							div.col.s12
+								p.flow-text Show Alpha
+								p You can allow alpha transparency selection. Check out these examples:
+							.input-field.col.s12.m4.l4
+								input(type="text",name='showAlpha',id="showAlpha",value="rgba(67, 47, 26, 0.498039)")
+							.input-field.col.s12.m8.l8
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#showAlpha"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    showAlpha<span class="token punctuation">:</span> <span class="token boolean">true</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span></code>
+						// Show Palette
+						.row
+							div.col.s12
+								p.flow-text Show Palette
+								p Spectrum can show a palette below the colorpicker to make it convenient for users to choose from frequently or recently used colors. When the colorpicker is closed, the current color will be added to the palette if it isn't there already. Check it out here:
+							.input-field.col.s12.m4.l4
+								input(type="text",name='showPalette',id="showPalette",value="rgb(173, 216, 230)")
+							.input-field.col.s12.m8.l8
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#showPalette"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    showPalette<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+									    palette<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+									        <span class="token punctuation">[</span><span class="token string">'black'</span><span class="token punctuation">,</span> <span class="token string">'white'</span><span class="token punctuation">,</span> <span class="token string">'blanchedalmond'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">'rgb(255, 128, 0);'</span><span class="token punctuation">,</span> <span class="token string">'hsv 100 70 50'</span><span class="token punctuation">,</span> <span class="token string">'lightyellow'</span><span class="token punctuation">]</span>
+									    <span class="token punctuation">]</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						// Show Palette Only
+						.row
+							div.col.s12
+								p.flow-text Show Palette Only
+								p If you'd like, spectrum can show the palettes you specify, and nothing else.
+							.input-field.col.s12.m4.l4
+								input(type="text",name='showPaletteOnly',id="showPaletteOnly",value="rgb(173, 216, 230)")
+							.input-field.col.s12.m8.l8
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#showPaletteOnly"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    showPaletteOnly<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+									    showPalette<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+									    color<span class="token punctuation">:</span> <span class="token string">'blanchedalmond'</span><span class="token punctuation">,</span>
+									    palette<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+									        <span class="token punctuation">[</span><span class="token string">'black'</span><span class="token punctuation">,</span> <span class="token string">'white'</span><span class="token punctuation">,</span> <span class="token string">'blanchedalmond'</span><span class="token punctuation">,</span>
+									        <span class="token string">'rgb(255, 128, 0);'</span><span class="token punctuation">,</span> <span class="token string">'hsv 100 70 50'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'yellow'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'violet'</span><span class="token punctuation">]</span>
+									    <span class="token punctuation">]</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						// Toggle Palette Only
+						.row
+							div.col.s12
+								p.flow-text Toggle Palette Only
+								p Spectrum can show a button to toggle the colorpicker next to the palette. This way, the user can choose from a limited number of colors in the palette, but still be able to pick a color that's not in the palette.
+								p The default value for <code class="language-markup">togglePaletteOnly</code> is FALSE. Set it to TRUE to enable the Toggle button.
+							.input-field.col.s12.m4.l4
+								input(type="text",name='togglePaletteOnly',id="togglePaletteOnly",value="rgb(103, 216, 230)")
+							.input-field.col.s12.m8.l8
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#togglePaletteOnly"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">spectrum</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    showPaletteOnly<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+									    togglePaletteOnly<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+									    togglePaletteMoreText<span class="token punctuation">:</span> <span class="token string">'more'</span><span class="token punctuation">,</span>
+									    togglePaletteLessText<span class="token punctuation">:</span> <span class="token string">'less'</span><span class="token punctuation">,</span>
+									    color<span class="token punctuation">:</span> <span class="token string">'blanchedalmond'</span><span class="token punctuation">,</span>
+									    palette<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+									        <span class="token punctuation">[</span><span class="token string">"#000"</span><span class="token punctuation">,</span><span class="token string">"#444"</span><span class="token punctuation">,</span><span class="token string">"#666"</span><span class="token punctuation">,</span><span class="token string">"#999"</span><span class="token punctuation">,</span><span class="token string">"#ccc"</span><span class="token punctuation">,</span><span class="token string">"#eee"</span><span class="token punctuation">,</span><span class="token string">"#f3f3f3"</span><span class="token punctuation">,</span><span class="token string">"#fff"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">"#f00"</span><span class="token punctuation">,</span><span class="token string">"#f90"</span><span class="token punctuation">,</span><span class="token string">"#ff0"</span><span class="token punctuation">,</span><span class="token string">"#0f0"</span><span class="token punctuation">,</span><span class="token string">"#0ff"</span><span class="token punctuation">,</span><span class="token string">"#00f"</span><span class="token punctuation">,</span><span class="token string">"#90f"</span><span class="token punctuation">,</span><span class="token string">"#f0f"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">"#f4cccc"</span><span class="token punctuation">,</span><span class="token string">"#fce5cd"</span><span class="token punctuation">,</span><span class="token string">"#fff2cc"</span><span class="token punctuation">,</span><span class="token string">"#d9ead3"</span><span class="token punctuation">,</span><span class="token string">"#d0e0e3"</span><span class="token punctuation">,</span><span class="token string">"#cfe2f3"</span><span class="token punctuation">,</span><span class="token string">"#d9d2e9"</span><span class="token punctuation">,</span><span class="token string">"#ead1dc"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">"#ea9999"</span><span class="token punctuation">,</span><span class="token string">"#f9cb9c"</span><span class="token punctuation">,</span><span class="token string">"#ffe599"</span><span class="token punctuation">,</span><span class="token string">"#b6d7a8"</span><span class="token punctuation">,</span><span class="token string">"#a2c4c9"</span><span class="token punctuation">,</span><span class="token string">"#9fc5e8"</span><span class="token punctuation">,</span><span class="token string">"#b4a7d6"</span><span class="token punctuation">,</span><span class="token string">"#d5a6bd"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">"#e06666"</span><span class="token punctuation">,</span><span class="token string">"#f6b26b"</span><span class="token punctuation">,</span><span class="token string">"#ffd966"</span><span class="token punctuation">,</span><span class="token string">"#93c47d"</span><span class="token punctuation">,</span><span class="token string">"#76a5af"</span><span class="token punctuation">,</span><span class="token string">"#6fa8dc"</span><span class="token punctuation">,</span><span class="token string">"#8e7cc3"</span><span class="token punctuation">,</span><span class="token string">"#c27ba0"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">"#c00"</span><span class="token punctuation">,</span><span class="token string">"#e69138"</span><span class="token punctuation">,</span><span class="token string">"#f1c232"</span><span class="token punctuation">,</span><span class="token string">"#6aa84f"</span><span class="token punctuation">,</span><span class="token string">"#45818e"</span><span class="token punctuation">,</span><span class="token string">"#3d85c6"</span><span class="token punctuation">,</span><span class="token string">"#674ea7"</span><span class="token punctuation">,</span><span class="token string">"#a64d79"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">"#900"</span><span class="token punctuation">,</span><span class="token string">"#b45f06"</span><span class="token punctuation">,</span><span class="token string">"#bf9000"</span><span class="token punctuation">,</span><span class="token string">"#38761d"</span><span class="token punctuation">,</span><span class="token string">"#134f5c"</span><span class="token punctuation">,</span><span class="token string">"#0b5394"</span><span class="token punctuation">,</span><span class="token string">"#351c75"</span><span class="token punctuation">,</span><span class="token string">"#741b47"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">"#600"</span><span class="token punctuation">,</span><span class="token string">"#783f04"</span><span class="token punctuation">,</span><span class="token string">"#7f6000"</span><span class="token punctuation">,</span><span class="token string">"#274e13"</span><span class="token punctuation">,</span><span class="token string">"#0c343d"</span><span class="token punctuation">,</span><span class="token string">"#073763"</span><span class="token punctuation">,</span><span class="token string">"#20124d"</span><span class="token punctuation">,</span><span class="token string">"#4c1130"</span><span class="token punctuation">]</span>
+									    <span class="token punctuation">]</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+		include ../include/footer.pug
+block append scripts
+	script(type="text/javascript", src="../plugins/pickers/tinyColorPicker/colors.js")
+	script(type="text/javascript", src="../plugins/pickers/tinyColorPicker/jqColorPicker.js")
+	script(type="text/javascript", src="../plugins/pickers/spectrum/spectrum.js")
+	script.
+		$(document).ready(function(){
+			$('.color').colorPicker({}); // that's it
+
+			// Spectrum
+			$("#spectrum1").spectrum({
+			    color: "#f00"
+			});
+			// Spectrum ; flat
+			$("#flat").spectrum({
+			    flat: true,
+			    showInput: true
+			});
+			$("#flatClearable").spectrum({
+			    flat: true,
+			    showInput: true,
+			    allowEmpty:true
+			});
+			// Spectrum - basic
+			$(".basic").spectrum();
+			$(".override").spectrum({
+			    color: "yellow"
+			});
+			// Show alpha
+			$("#showAlpha").spectrum({
+			    showAlpha: true
+			});
+			// showPalette
+			$("#showPalette").spectrum({
+			    showPalette: true,
+			    palette: [
+			        ['black', 'white', 'blanchedalmond'],
+			        ['rgb(255, 128, 0);', 'hsv 100 70 50', 'lightyellow']
+			    ]
+			});
+			// Show Palette Only
+			$("#showPaletteOnly").spectrum({
+			    showPaletteOnly: true,
+			    showPalette:true,
+			    color: 'blanchedalmond',
+			    palette: [
+			        ['black', 'white', 'blanchedalmond',
+			        'rgb(255, 128, 0);', 'hsv 100 70 50'],
+			        ['red', 'yellow', 'green', 'blue', 'violet']
+			    ]
+			});
+			// Toggle Palette Only
+			$("#togglePaletteOnly").spectrum({
+			    showPaletteOnly: true,
+			    togglePaletteOnly: true,
+			    togglePaletteMoreText: 'more',
+			    togglePaletteLessText: 'less',
+			    color: 'blanchedalmond',
+			    palette: [
+			        ["#000","#444","#666","#999","#ccc","#eee","#f3f3f3","#fff"],
+			        ["#f00","#f90","#ff0","#0f0","#0ff","#00f","#90f","#f0f"],
+			        ["#f4cccc","#fce5cd","#fff2cc","#d9ead3","#d0e0e3","#cfe2f3","#d9d2e9","#ead1dc"],
+			        ["#ea9999","#f9cb9c","#ffe599","#b6d7a8","#a2c4c9","#9fc5e8","#b4a7d6","#d5a6bd"],
+			        ["#e06666","#f6b26b","#ffd966","#93c47d","#76a5af","#6fa8dc","#8e7cc3","#c27ba0"],
+			        ["#c00","#e69138","#f1c232","#6aa84f","#45818e","#3d85c6","#674ea7","#a64d79"],
+			        ["#900","#b45f06","#bf9000","#38761d","#134f5c","#0b5394","#351c75","#741b47"],
+			        ["#600","#783f04","#7f6000","#274e13","#0c343d","#073763","#20124d","#4c1130"]
+			    ]
+			});
+		});

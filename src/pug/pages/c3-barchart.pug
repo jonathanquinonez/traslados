@@ -1,0 +1,63 @@
+extends ../layout/defualt-layout.pug
+block title
+  title Forge :: Bar Chart
+block append css
+  link(type='text/css', rel='stylesheet', href='../css/plugins/c3/c3.css')
+  
+block content
+  - var mainRoute="chart"
+  - var route = 'barChart'
+  - var func = 'c3BarChart'
+  - var nestedName=""
+  - var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"C3 Bar Chart"}]
+  - var dropdown1=[{"type":"normal","link":'http://c3js.org/samples/chart_area.html',"icon":"link","iType":"material","title":"c3 Example"},{"type":"normal","link":'https://github.com/c3js/c3',"icon":"mdi-git","iType":"mdi","title":"Git Hub"}]
+  include ../include/header.pug
+  main.animated
+    +dropdownContent('c3breadcrumbOption',dropdown1)
+    .main-header
+      .sec-page
+        .page-title
+          h2 Bar Charts
+        //- a(href="#",class="theme-tooltipped dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set",data-activates='dropdown1',data-beloworigin='true',data-alignment='right',data-position="bottom",data-delay="50",data-tooltip="More Reference")
+        .page-options
+          a(href="#",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set",data-activates='c3breadcrumbOption',data-beloworigin='true',data-alignment='right',data-position="bottom",data-delay="50")
+            +mi('more_vert')
+      .sec-breadcrumb
+        +breadcrumb(breadcrumb,'left')
+    .main-container
+      //- Intro
+      div.row
+        .col.s12
+          h4.content-headline C3 Bar Charts
+          p 
+            | C3
+            a(href="http://c3js.org/samples/chart_bar.html",target="_blank") 
+              | bar charts 
+            | looks like as below.
+
+      //- c3 Bar-Charts
+      .row
+        .col.s12
+          // Basic Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Basic Chart
+            .row
+              div.col.s12
+                #bar-basic
+      .row
+        .col.s12
+          // Stacked Bar Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Stacked Bar Chart
+            .row
+              div.col.s12
+                #bar-stack
+    include ../include/footer.pug
+block append scripts
+  script(type='text/javascript', src='../plugins/charts/d3/d3.v3.min.js', charset="utf-8")
+  script(type='text/javascript', src='../plugins/charts/c3/c3.js')
+  script(type='text/javascript', src='../plugins/charts/c3/bar-chart.js')

@@ -1,0 +1,93 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: SignIn
+	- var setBodyClass='signin'
+block append css
+	
+block content
+	- var route = 'loginRegistration'
+	- var func = 'signin'
+	//- Logo
+	.logo-section.valign-wrapper.circle.primary-bg
+		img(src="../logo/ic_whatshot_48px.svg", alt="Forge",class="valign")
+	//-  Sign In Form
+	.signin-wrapper.auth-wrap
+		.signin-form
+			.row
+				form(action="#",class="col s12",method="get")
+					.row
+						div.input-field.col.s12
+							i.material-icons.prefix person
+							input(type="email",class='validate grey-text lowercase-text',id='email')
+							label(for="email",data-error="Please enter correct email" data-success="Email is validated!") Email
+						div.input-field.col.s12
+							i.material-icons.prefix vpn_key
+							input(type="password",class='validate grey-text',id='password')
+							label(for="password") Password
+
+						div.input-field.col.s6.no-mrpd
+							input(type="checkbox",class="cb-secondary",id="remember_me")
+							label(for="remember_me") Remember Me
+						div.input-field.col.s6.no-mrpd.right-align
+							label(for="label-label",class='forgot-password')
+								a(href="#",class="grey-text") forgot password?
+
+						//- Submit Button
+						div.input-field.col.s12.center
+							button(type="submit",class="btn mm-btn waves-effect waves-light sigin-submit",name="login",data-preloader='blue',data-text="Login",data-icon='send',data-redirection="home.html")
+								| Login
+								i.material-icons.right.white-text send
+						div.col.s12.center.nav-link
+							a(href="javascript:void(0)",class="switchVisibility",data-ref="signup-wrapper") Create account
+	//- Sign Up Form
+	.signup-wrapper.auth-wrap.hide
+		.signup-form
+			.row
+				form(action="#",class="col s12",method="get")
+					.row.no-mrpd
+						div.input-field.col.s4.signup-profile
+							.profile-pic
+								img(src="", alt="",id="image_upload_preview",class='hide')
+								input(type="file",id="signup-pic")
+								a.btn-floating.btn-large.waves-effect.waves-light.primary-bg
+									i.material-icons.white-text add_a_photo
+
+						div.input-field.col.s8
+							.row
+								div.input-field.s12.col
+									input(type="text",class='validate grey-text capitalize-text',id='firstname')
+									label(for="firstname") First Name
+								div.input-field.s12.col
+									input(type="text",class='validate grey-text capitalize-text',id='lastname')
+									label(for="lastname") Last Name
+					.row
+						div.input-field.col.s12
+							i.material-icons.prefix person
+							input(type="email",class='validate grey-text lowercase-text',id='email')
+							label(for="email",data-error="Please enter correct email" data-success="Email is validated!") Email
+
+						div.input-field.col.s12
+							i.material-icons.prefix vpn_key
+							input(type="password",class='validate grey-text',id='sign-password')
+							label(for="sign-password") Password
+
+						div.input-field.col.s12
+							i.material-icons.prefix vpn_key
+							input(type="password",class='validate grey-text',id='confirmpassword')
+							label(for="confirmpassword",data-error="Password does not match!" data-success="Password matched!") Confirm Password
+
+						div.input-field.col.s12
+							input(type="checkbox",class="cb-secondary",id="terms")
+							label(for="terms") Agree to terms & conditions?
+
+						//- Submit Button
+						div.input-field.col.s12.center
+							button(type="submit",class="btn waves-effect waves-light sigin-submit",name="login")
+								| Register Me
+								i.material-icons.right.white-text send
+
+						div.col.s12.center.nav-link
+							a(href="javascript:void(0)",class="switchVisibility",data-ref="signin-wrapper") Already have an account?
+	
+block append scripts
+	script(type='text/javascript', src='../js/signin.js')

@@ -1,0 +1,1131 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Dashboard
+block append css
+	link(type='text/css', rel='stylesheet', href='../css/plugins/c3/c3.css')
+block content
+	- var mainRoute=""
+	- var route = 'dashboard'
+	- var breadcrumb=[{"link":"index.html","title":"Dashboard"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		+dropdownContent('marketingCompaign',pageGeneralDropDown)
+		+dropdownContent('marketingCompaignInternal',pageGeneralDropDown)
+		+dropdownContent('supportTicket',pageGeneralDropDown)
+		+dropdownContent('supportTicketInternal',pageGeneralDropDown)
+		.main-header
+			.sec-page
+				.page-title
+					h2 Dashboard
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			//- Dashboard chart
+			.row( style="margin-top:10px !important;" )
+				.col.s12.m12.l6
+					.card.card-dash.card-stats
+						.card-header.primary-bg.dark.z-depth-2
+							+mi('trending_up')
+						.card-content
+							h5.title.grey-text.text-darken-2 Popularity
+							p.category 128 Sales/day
+						.card-content.pos-relative
+							canvas#salesVisit&attributes({"height":"180"})
+							a(href="javascript:void(0)", class="btn-floating activator halfway-fab waves-effect waves-light primary-bg dark")
+								+mi('add')
+						.card-action
+							a(href="#",class="primary-text dark")
+								+mi('trending_up').left
+								| Increment in sales
+						.card-reveal
+							span.card-title.grey-text.text-darken-4
+								| Sale & Earnings
+								i.material-icons.right close
+							table.grey-text
+								thead
+									tr
+										th ID
+										th Day
+										th Sale
+										th Earned
+								tbody
+									tr
+										td 1
+										td Monday
+										td 35
+										td $560
+									tr
+										td 2
+										td Tuesday
+										td 56
+										td $896
+									tr
+										td 3
+										td Wednesday
+										td 88
+										td $1480
+									tr
+										td 4
+										td Thurday
+										td 105
+										td $1976
+									tr
+										td 5
+										td Friday
+										td 77
+										td $1540
+									tr
+										td 6
+										td Saturday
+										td 49
+										td $980
+									tr
+										td 7
+										td Sunday
+										td 68
+										td $1496
+				.col.s12.m12.l6
+					.card.card-dash.card-stats
+						.card-header.secondary-bg.z-depth-2
+							+mi('traffic')
+						.card-content
+							h5.title.grey-text.text-darken-2 Traffic
+							p.category 20K/day 
+						.card-content.pos-relative
+							canvas#trafficSource&attributes({"height":"180"})
+							a(href="javascript:void(0)", class="btn-floating activator halfway-fab waves-effect waves-light secondary-bg")
+								+mi('add')
+						.card-action
+							a(href="#",class="secondary-text")
+								+mi('lightbulb_outline').left
+								| Pupularity increased by 40%
+						.card-reveal
+							span.card-title.grey-text.text-darken-4
+								| Traffic
+								i.material-icons.right close
+							table.grey-text
+								thead
+									tr
+										th ID
+										th Day
+										th New Users
+										th Session
+										th Online
+								tbody
+									tr
+										td 1
+										td Monday
+										td 38
+										td 38
+										td 38
+									tr
+										td 2
+										td Tuesday
+										td 127
+										td 354
+										td 234
+									tr
+										td 3
+										td Wednesday
+										td 123
+										td 238
+										td 348
+									tr
+										td 4
+										td Thurday
+										td 271
+										td 345
+										td 356
+									tr
+										td 5
+										td Friday
+										td 244
+										td 434
+										td 249
+									tr
+										td 6
+										td Saturday
+										td 467
+										td 1234
+										td 1239
+									tr
+										td 7
+										td Sunday
+										td 239
+										td 748
+										td 1090
+			//- Lists
+			.row
+				.col.s12.m12.l8
+					//- Campaign
+					.card
+						.card-content
+							.row.no-mrpd
+								.col.s12.m8
+									span.card-title Marketing Campaign
+								.col.s12.m4.right-align.hide-on-small-only
+									a(href="javascript:void(0)",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set setWave",data-activates='marketingCompaign',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+										+mi('menu').grey-text.text-darken-2
+							table.responsive-table.statistic-table
+								thead
+									tr
+										th Campaign
+										th Client
+										th Changes
+										th Budget
+										th Status
+										th.expand_more.center-align.hide-on-small-only
+											+mi('expand_more')
+								tbody
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave blue darken-4")
+													+mdiIcon('mdi-facebook')
+											div.left.pad-left-8
+												p Facebook
+												p.no-mrpd
+													small
+													 	| 02:00 - 03:00
+										td.client-name
+											| Matthew Melifont
+										td.green-text
+											+mi('trending_up').left
+											| 2.22%
+										td
+											strong $4423
+										td.green-text
+											| Active
+										td.center-align.hide-on-small-only
+											a(href="javascript:void(0)",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set setWave",data-activates='marketingCompaign',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+												+mi('more_vert').grey-text.text-darken-2
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave light-blue")
+													+mdiIcon('mdi-twitter')
+											div.left.pad-left-8
+												p Twitter
+												p.no-mrpd
+													small
+													 	| 03:00 - 04:00
+										td.client-name
+											| Sarah Willson
+										td.blue-text
+											+mi('trending_flat').left
+											| 2.22%
+										td
+											strong $2345
+										td.grey-text
+											| Hold
+										td.center-align.hide-on-small-only
+											a(href="javascript:void(0)",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set setWave",data-activates='marketingCompaign',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+												+mi('more_vert').grey-text.text-darken-2
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave red accent-4")
+													+mdiIcon('mdi-youtube-play')
+											div.left.pad-left-8
+												p YouTube
+												p.no-mrpd
+													small
+													 	| 04:00 - 05:00
+										td.client-name
+											| Samantana Cruiz
+										td.red-text
+											+mi('trending_down').left
+											| 2.22%
+										td
+											strong $1234
+										td.red-text
+											| Closed
+										td.center-align.hide-on-small-only
+											a(href="javascript:void(0)",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set setWave",data-activates='marketingCompaign',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+												+mi('more_vert').grey-text.text-darken-2
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave green accent-4")
+													+mdiIcon('mdi-spotify')
+											div.left.pad-left-8
+												p Spotify
+												p.no-mrpd
+													small
+													 	| 05:00 - 06:00
+										td.client-name
+											| Jemmy Desuza
+										td.green-text
+											+mi('trending_up').left
+											| 2.22%
+										td
+											strong $6554
+										td.green-text
+											| Active
+										td.center-align.hide-on-small-only
+											a(href="javascript:void(0)",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set setWave",data-activates='marketingCompaign',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+												+mi('more_vert').grey-text.text-darken-2
+									tr.grey.lighten-3.hide-on-small-only
+										td  Yesterday
+										td
+										td
+										td
+										td
+										td.center-align
+											span.taskblue25
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave grey darken-4")
+													+mdiIcon('mdi-amazon')
+											div.left.pad-left-8
+												p Amazon
+												p.no-mrpd
+													small
+													 	| 03:00 - 04:00
+										td.client-name
+											| Arash Tim
+										td.green-text
+											+mi('trending_up').left
+											| 2.25%
+										td
+											strong $1237
+										td.amber-text
+											| Pending
+										td.center-align.hide-on-small-only
+											a(href="javascript:void(0)",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set setWave",data-activates='marketingCompaign',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+												+mi('more_vert').grey-text.text-darken-2
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave red accent-4")
+													+mdiIcon('mdi-pinterest')
+											div.left.pad-left-8
+												p Pinterest
+												p.no-mrpd
+													small
+													 	| 04:00 - 05:00
+										td.client-name
+											| Willson Lou
+										td.amber-text
+											+mi('trending_flat').left
+											| 4.23%
+										td
+											strong $2666
+										td.red-text
+											| Closed
+										td.center-align.hide-on-small-only
+											a(href="javascript:void(0)",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set setWave",data-activates='marketingCompaign',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+												+mi('more_vert').grey-text.text-darken-2
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave pink accent-4")
+													+mdiIcon('mdi-dribbble')
+											div.left.pad-left-8
+												p Dribbble
+												p.no-mrpd
+													small
+													 	| 05:00 - 06:00
+										td.client-name
+											| Kelly
+										td.green-text
+											+mi('trending_up').left
+											| 9.33%
+										td
+											strong $4536
+										td.green-text
+											| Active
+										td.center-align.hide-on-small-only
+											a(href="javascript:void(0)",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set setWave",data-activates='marketingCompaign',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+												+mi('more_vert').grey-text.text-darken-2
+					//- Support Tickets
+					.card
+						.card-content
+							.row.no-mrpd
+								.col.s8
+									span.card-title Support Tickets
+								.col.s4.right-align
+									a(href="javascript:void(0)",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set setWave",data-activates='supportTicket',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+										+mi('menu').grey-text.text-darken-2
+							table.responsive-table.statistic-table
+								thead
+									tr
+										th.user-th User
+										th.description-th Description
+										th.expand_more.center-align Due
+								tbody
+									tr
+										td.grey-text 
+											strong Active Tickets
+										td
+										td
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave pink accent-4 center-align")
+													| JW
+											div.left.pad-left-8
+												p Joy Will
+												p.blue-text
+													small
+													 	| Active
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#187] User widgets could not found.
+											p.grey-text.text-darken-1
+												| User widget usage is not described. How can I use user widget?
+
+										td.center-align
+											p.caption 3
+											p.grey-text Hours
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave amber accent-4 center-align")
+													| VC
+											div.left.pad-left-8
+												p Valentina Champlin 
+												p.blue-text
+													small
+													 	| Active
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#185] How to deal with laravel multiauth?
+											p.grey-text.text-darken-1
+												| Need assistance to deal with Laravel Multiauth. It will be great if you could suggest module manager for it as well.
+										td.center-align
+											p.caption 16
+											p.grey-text Hours
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave blue accent-4 center-align")
+													| SM
+											div.left.pad-left-8
+												p Stefany McDerious
+												p.blue-text
+													small
+													 	| Active
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#184] Gulp Compilation getting stucked!
+											p.grey-text.text-darken-1
+												| Gulp command show an error: gulp does not exits.
+										td.center-align
+											p.caption 20
+											p.grey-text Hours
+									tr
+										td.green-text 
+											strong Resolved Tickets
+										td
+										td
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave cyan accent-4 center-align")
+													| HG
+											div.left.pad-left-8
+												p Haylie Gusikowski
+												p.blue-text
+													small
+													 	| Resolved
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#179] Sass file megre is not working!
+											p.grey-text.text-darken-1
+												| Could not added newly created .sass file to main sass file.
+										td.center-align
+											a(href="#!",class='green-text')
+												+mi('check')
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave red accent-4 center-align")
+													| AS
+											div.left.pad-left-8
+												p Anastasia Schmidt
+												p.blue-text
+													small
+													 	| Resolved
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#176] Card spacing mismatch with card-dash
+											p.grey-text.text-darken-1
+												| Card spacing does not match in all cases. card-dash is varying in this case.
+										td.center-align
+											a(href="#!",class='green-text')
+												+mi('check')
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave orange accent-4 center-align")
+													| KM
+											div.left.pad-left-8
+												p Kyle Moen
+												p.blue-text
+													small
+													 	| Resolved
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#175] Accordian styles
+											p.grey-text.text-darken-1
+												| According(collapsible ) is not working with <code class="language-markup">.popout</code> class.
+										td.center-align
+											a(href="#!",class='green-text')
+												+mi('check')
+									tr
+										td.red-text 
+											strong Closed Tickets
+										td
+										td
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave yellow accent-4 center-align")
+													| LB
+											div.left.pad-left-8
+												p Lonny Beatty
+												p.blue-text
+													small
+													 	| closed
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#177] Card Tab distubes in small area.
+											p.grey-text.text-darken-1
+												| Setting card with tab in small area is too difficult.
+										td.center-align
+											a(href="#!",class='red-text')
+												+mi('close')
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave green accent-4 center-align")
+													| JH
+											div.left.pad-left-8
+												p Janae Hackett
+												p.blue-text
+													small
+													 	| closed
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#160] Need more animations.
+											p.grey-text.text-darken-1
+												| Could we have some more animation in the theme?
+										td.center-align
+											a(href="#!",class='red-text')
+												+mi('close')
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave blue accent-4 center-align")
+													| PJ
+											div.left.pad-left-8
+												p Patrick John
+												p.blue-text
+													small
+													 	| closed
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#159] System architecture diagram
+											p.grey-text.text-darken-1
+												| Flow of company creation is not properly attached with other modules.
+										td.center-align
+											a(href="#!",class='red-text')
+												+mi('close')
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave pink accent-4 center-align")
+													| JK
+											div.left.pad-left-8
+												p Joel Kodra
+												p.blue-text
+													small
+													 	| closed
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#158] Change Request
+											p.grey-text.text-darken-1
+												| Support for the theme in Laravel 5.4 integration.
+										td.center-align
+											a(href="#!",class='red-text')
+												+mi('close')
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave cyan accent-4 center-align")
+													| AS
+											div.left.pad-left-8
+												p Ashly Simpsons
+												p.blue-text
+													small
+													 	| closed
+										td
+											a(href="#!",class="black-text")
+												strong
+													| [#157] Change Request : VueJS
+											p.grey-text.text-darken-1
+												| Expecting a launch for VueJS version integrated with Forge.
+										td.center-align
+											a(href="#!",class='red-text')
+												+mi('close')
+				.col.s12.m12.l4
+					.card.card-user-widget01
+						.card-image.bg-only
+							.overlay.deep-purple-overlay
+							img(src="../images/placeholder/1000x700g.jpg",class='bg-placeholder',alt="placeholder")
+							//- span.card-title Card Title
+							a.card-userpic
+								img(src="../images/placeholder/300x300t.jpg",alt="placeholder")
+							a.btn-floating.halfway-fab.waves-effect.waves-light.secondary-bg
+								i.material-icons add
+						.card-content
+							h5.center.grey-text.text-darken-1 Slade Wilson
+							p.center
+								| Web Designer 
+							.collection.widget-inline-static
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('remove_red_eye').secondary-text
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('person_add').secondary-text
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('message').secondary-text
+					.card-panel.snow-grade
+						.row
+							.col.s8.no-mrpd
+								h6.no-mrpd.white-text Washington
+								p.no-mrpd.white-text Distroct of Columbia
+								
+							.col.s4.no-mrpd
+								+weather2('snow-cloud','fill-white')
+						.row
+							.col.s8.no-mrpd
+								h2.left.no-mrpd.white-text
+									| -06
+									+wi('wi-celsius')
+								p.left.sticky-bottom-lr.white-text
+									+wi('wi-direction-right')
+									+wi('wi-snowflake-cold')
+									|50%
+							.col.s4
+								p.left.white-text
+									| 20:19
+					.user-widget
+						.card.blue-grey.darken-1.user-widget-type4
+							.card-image
+								img(src="../images/placeholder/1280x853g.jpg", alt="placeholder",class="responsive-img")
+								.card-title.center Selena Cruiz
+								a(href="javascript:void(0)",class='btn-floating np-bg btn-flat waves-effect waves-light activator')
+									+mi('more_vert').grey-text
+							.card-content
+								.designation.center.grey-text.text-darken-3 Designer
+								.socialization.center
+									a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+										i.mdi.mdi-facebook
+									a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+										i.mdi.mdi-twitter
+									a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+										i.mdi.mdi-github-circle
+									a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+										i.mdi.mdi-google-plus
+							.card-reveal
+								span(class='card-title grey-text text-darken-4') Selena Cruiz
+									+mi('close').right
+								p Here is some more information about this product that is only revealed once clicked on.
+					.card
+						.card-content
+							span.card-title Application Requests
+							table
+								thead
+									tr
+										th.application-th Applicatioin
+										th.time-th Time
+								tbody
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave brown accent-4 center-align")
+													| GK
+											div.left.pad-left-8
+												p Greenholt-Kiehn
+												a(href="#!",class="green-text")
+													| New
+													+mi('add').left
+										td.center-align
+											p.grey-text 08:00AM
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave red accent-3 center-align")
+													| WO
+											div.left.pad-left-8
+												p Ward-O'Keefe
+												a(href="#!",class="blue-text")
+													| Renew
+													+mi('autorenew').left
+										td.center-align
+											p.grey-text 09:00AM
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave  light-blue accent-3 center-align")
+													| RG
+											div.left.pad-left-8
+												p Reichert Group
+												a(href="#!",class="amber-text")
+													| Support
+													+mi('language').left
+										td.center-align
+											p.grey-text 11:00AM
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave yellow center-align")
+													| SB
+											div.left.pad-left-8
+												p Simonis-Breiten
+												a(href="#!",class="blue-text")
+													| Renew
+													+mi('autorenew').left
+										td.center-align
+											p.grey-text 01:00AM
+									tr
+										td
+											div.left
+												a(href="#",class="btn-floating waves-effect waves-set setWave cyan accent-3 center-align")
+													| C
+											div.left.pad-left-8
+												p Collier Ltd
+												a(href="#!",class="green-text")
+													| New
+													+mi('add').left
+										td.center-align
+											p.grey-text 02:00AM
+					.card
+						.card-image
+							.carousel.carousel-slider
+								a.carousel-item(href='#one!')
+									img(src='http://forge.codigoforge.com/lorempixel/720x400/food/1',alt="placeholder")
+								a.carousel-item(href='#two!')
+									img(src='http://forge.codigoforge.com/lorempixel/720x400/food/2',alt="placeholder")
+								a.carousel-item(href='#three!')
+									img(src='http://forge.codigoforge.com/lorempixel/720x400/food/3',alt="placeholder")
+								a.carousel-item(href='#four!')
+									img(src='http://forge.codigoforge.com/lorempixel/720x400/food/4',alt="placeholder")
+						.card-action
+							ul.collection.horz.right-align
+								li.collection-item
+									a(href="#").primary-text
+										i.material-icons favorite
+								li.collection-item
+									a(href="#").primary-text
+										i.material-icons share
+								li.collection-item
+									a(href="#").primary-text
+										i.material-icons bookmark
+			//- Dashboard sub-charts
+			.row
+				.col.s12.m6
+					.card.card-dash
+					    .card-header.primary-bg.z-depth-2
+					        +mi('style').left
+					        span.caption
+					        	|Products Type
+					    .card-content
+					    	p.category
+					            | Sales: 128/day (Avg)
+					        canvas#productTypeSales&attributes({"height":"140"})
+					    .card-footer
+					        .stats
+					            +mi('favorite').red-text 
+					            a(href='#') HTML Template most favorite.
+				.col.s12.m6
+					.card.card-dash
+					    .card-header.secondary-bg.light.z-depth-2
+					        +mi('star').left
+					        span.caption
+					        	| Traffic Audiance
+					    .card-content
+					        p.category
+					            | Visits: 20K/day
+					        canvas#trafficAudiance&attributes({"height":"140"})
+					    .card-footer
+					        .stats
+					            +mi('import_export').red-text 
+					            a(href='#') Export Statistic
+			//- Projects & Task
+			.row
+				.col.s12.m12.l6
+					.card
+						.card-content
+							span.card-title Projects
+							table.responsive-table
+								thead.primary-text
+									tr
+										th(data-field='id') ID
+										th(data-field='name') Name
+										th(data-field='completed') Completed
+										th(data-field='data') Date
+										th(data-field='action') Action
+								tbody.black-text
+									tr
+										td 1
+										td Forge
+										td
+											span.taskred75
+										td April 14,2017
+										td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+									tr
+										td 2
+										td Forge Laravel
+										td
+											span.taskyellow50
+										td May 17,2017
+										td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+									tr
+										td 3
+										td Forge Vue
+										td
+											span.taskblue25
+										td August 8,2017
+										td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+									tr
+										td 4
+										td CodigoForge
+										td
+											span.taskgreen
+										td Novemver 26,2017
+										td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+				.col.s12.m12.l6
+					.card
+						.card-content
+							span.card-title Projects Execution
+							table
+								thead.primary-text
+									tr
+										th(data-field='id') ID
+										th(data-field='name') Name
+										th(data-field='Status').center-align Status
+										th(data-field='progress').center-align Progress
+								tbody.black-text
+									//- SET HIGHT JUST TO MATCH WITH ANOTHER PARALLEL TABLE
+									tr.height-60
+										td 1
+										td Prepare flow charts
+										td.center-align
+											span.success-bg.project-status Completed
+										td.center-align
+											span.progress1
+									tr.height-60
+										td 2
+										td Define database schema
+										td.center-align
+											span.info-bg.project-status Developing
+										td.center-align
+											span.progress2
+									tr.height-60
+										td 3
+										td Define module sequence
+										td.center-align
+											span.error-bg.project-status Cancelled
+										td.center-align
+											span.progress3
+									tr.height-60
+										td 4
+										td Choose Technologies
+										td.center-align
+											span.warning-bg.project-status In Progress
+										td.center-align
+											span.progress4
+			.row
+				.col.s12.m12.l4
+					.card.card-dash
+						.card-header.primary-bg.dark
+							.card-tabs
+								ul.tabs.tabs-fixed-width.tabs-transparent
+									li.tab
+										a(href="#dash-bugs")
+											|Bugs
+									li.tab
+										a(href="#dash-web")
+											|Website
+									li.tab
+										a(href="#dash-server")
+											|Server
+						.card-content
+							#dash-bugs
+								table
+									tbody
+										tr
+											td&attributes({"style":"width:10%;"})
+												input(type="checkbox" ,class="filled-in",id="bug1" checked)
+												label(for="bug1").block-ele
+											td.black-text System execute takes much time. Optimization required.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="bug2")
+												label(for="bug2").block-ele
+											td.black-text Email goes in spam.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="bug3")
+												label(for="bug3").block-ele
+											td.black-text Site color and fonts are not matched with PSD.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="bug4")
+												label(for="bug4").block-ele
+											td.black-text Page should not take much time to load. Assets & code optimization is required.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="bug5")
+												label(for="bug5").block-ele
+											td.black-text Menu is not working properly in Mobile device.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+							#dash-web
+								table
+									tbody
+										tr
+											td&attributes({"style":"width:10%;"})
+												input(type="checkbox" ,class="filled-in",id="web1" checked)
+												label(for="web1").block-ele
+											td.black-text Get the list of material source.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="web2")
+												label(for="web2").block-ele
+											td.black-text Design achitecture of website
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="web3")
+												label(for="web3").block-ele
+											td.black-text List down all feature and choose bundle manager which will handle assets.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="web4")
+												label(for="web4").block-ele
+											td.black-text Optimize for quick loading contents.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="web5")
+												label(for="web5").block-ele
+											td.black-text Define base color palette and fonts readability.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+							#dash-server
+								table
+									tbody
+										tr
+											td&attributes({"style":"width:10%;"})
+												input(type="checkbox" ,class="filled-in",id="server1" checked)
+												label(for="server1").block-ele
+											td.black-text Inquire about server and its facilities with cost.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="server2")
+												label(for="server2").block-ele
+											td.black-text Choose server and operating system.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="server3")
+												label(for="server3").block-ele
+											td.black-text Install essenstial software and extenstions.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="server4")
+												label(for="server4").block-ele
+											td.black-text Google Scalling tool implementation.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+										tr
+											td&attributes({"style":"width:25px;"})
+												input(type="checkbox" ,class="filled-in",id="server5")
+												label(for="server5").block-ele
+											td.black-text Check AWS Route53 host zone and S3 permission policy.
+											td&attributes({"style":"width:25%;"})
+												.action-btns
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('edit').primary-text
+													a(href="javascript:void(0)", class="btn-floating waves-effect waves-light btn-flat")
+														+mi('close').secondary-text
+				.col.s12.m12.l4.user-widget
+					.card.blue-grey.darken-1.user-widget-type3
+						.card-image
+							img(src="../images/placeholder/1024x600t.jpg", alt="placeholder",class="responsive-img")
+							.card-title.white-text Mack Carroll
+							.internal-action-top
+								.user-action
+									.actions-list.no-fixed-action
+										a.btn-floating.pink.lighten-2
+											i.material-icons favorite
+										
+										a.btn-floating.green
+											i.material-icons chat
+										a.btn-floating.blue.lighten-2
+											i.material-icons rss_feed
+						.card-content
+							//- p.center.about-text No matter of economy of Jungle, I will never eat the grass.
+							.row.user-statistics
+								.col.s12.with-top-text
+									button.s4.waves-effect.waves-light.col.btn-flat
+										span.statistic-title Friends
+										span.counter 137
+									button.s4.waves-effect.waves-light.col.btn-flat
+										span.statistic-title Followers
+										span.counter 137
+									button.s4.waves-effect.waves-light.col.btn-flat
+										span.statistic-title Following
+										span.counter 137
+						.card-action
+							a(href="#",class='waves-effect waves-light btn basic-btn')
+								+mi('person_add').left
+								| Send Request
+							a(href="javascript:void(0)",class='activator waves-effect waves-light btn-floating no-bg btn-flat right') 
+								+mi('more_vert').grey-text.text-darken-4
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Card Title
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+				.col.s12.m12.l4.user-widget
+					.card.blue-grey.darken-1.user-widget-type3
+						.card-image
+							img(src="../images/placeholder/1024x600t.jpg", alt="placeholder",class="responsive-img")
+							.card-title Kennedy Wisozk
+						.card-content
+							p I am a very simple card. I am good at containing small bits of information.
+						.card-action
+							a(href="#",class='waves-effect waves-light btn basic-btn')
+								+mi('person_add').left
+								| Send Request
+							a(href="javascript:void(0)",class='activator waves-effect waves-light btn-floating no-bg btn-flat right') 
+								+mi('more_vert').grey-text.text-darken-4
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Card Title
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+    	//- FOOTER
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/charts/chartjs/dist/Chart.bundle.js')
+	script(type='text/javascript', src='../plugins/sparkline/jquery.sparkline.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/loader.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/jsapi.js')
+	script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAoqM2ajGLymYCyt14bhxOEfcjHDShZDm8', type='text/javascript')
+	script(src='../js/dashboard.js')

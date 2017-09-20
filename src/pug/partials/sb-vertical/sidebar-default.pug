@@ -1,0 +1,549 @@
+//- DEFAULT SIDENAV
+ul#nav-default.side-nav.fixed.animated.collapsible.collapsible-accordion&attributes()
+	//- 1. LOGO SECTION
+	li.logo
+		a#logo-container.brand-logo.hide-on-large-only(href="/")
+			//- img(src="dist/logo/original-3147-10778540.png", alt="",height='44')
+			//- img(src="logo/original-5028-987789.png", alt="Thoriseum",height='44',class="left")
+			//- span.animated.left Thoriseum
+	//- 2. User Profile
+	li.usr-profile
+		.usr-profile-header
+			a(href="#")
+				img(src="../images/placeholder/50x50g.jpg", alt="Thor",class="circle")
+		ul.user-options
+			li.waves-effect.waves-set
+				span.usr-name Johnson Doe
+			li.user-option-item.waves-effect.waves-set
+				a(href="#",class="btn-floating btn-small waves-effect waves-light")
+					+mi('lock')
+			li.user-option-item.waves-effect.waves-set
+				a(href="#",class="btn-floating btn-small waves-effect waves-light")
+					+mi('settings')
+			li.user-option-item.waves-effect.waves-set
+				a(href="#",class="btn-floating btn-small waves-effect waves-light")
+					+mi('power_settings_new')
+	
+	//- 3. Dashboard
+	li(class={active: currentUrl === 'dashboard', current: currentUrl === 'dashboard' })
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=dashboardPath,class={active: route === 'dashboard',current: route === 'dashboard' })
+			+mi('dashboard')
+			span
+				| Dashboard
+	//- ### NAV HEADER :  CARDS WIDGETS ###
+	li.navigation-header
+		span.no-col-body
+			| Card Widgets
+		+mi('more_horiz').tooltipped&attributes({"data-position":"right","data-delay":"50","data-tooltip":"CSS Properties"})
+	//- CARDS WIDGETS: Statistic
+	li(class={active: route === 'cardWidgetStatistic', current: route === 'cardWidgetStatistic' })
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=cardWidgetStatistic,class={active: route === 'cardWidgetStatistic', current: route === 'cardWidgetStatistic'})
+			+mi('show_chart')
+			span
+				| Statistic Card
+	//- CARDS WIDGETS: Weather
+	li(class={active: route === 'cardWidgetWeather', current: route === 'cardWidgetWeather' })
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=cardWidgetWeather,class={active: route === 'cardWidgetWeather', current: route === 'cardWidgetWeather' })
+			+mi('wb_sunny')
+			span
+				| Weather Card
+	//- CARDS WIDGETS: Feeds
+	li(class={active: route === 'cardWidgetFeeds',current: route === 'cardWidgetFeeds'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=cardWidgetFeeds,class={active: route === 'cardWidgetFeeds',current: route === 'cardWidgetFeeds'})
+			+mi('view_list')
+			span
+				| Feeds Card
+	//- CARDS WIDGETS: Travel
+	li(class={active: route === 'cardWidgetTravel',current: route === 'cardWidgetTravel'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=cardWidgetTravel,class={active: route === 'cardWidgetTravel',current: route === 'cardWidgetTravel'})
+			+mi('panorama_fish_eye')
+			span
+				| Travel Card
+	
+	//- Nav header
+	li.navigation-header
+		span.no-col-body
+			| CSS Properties
+		+mi('more_horiz').tooltipped&attributes({"data-position":"right","data-delay":"50","data-tooltip":"CSS Properties"})
+	//- Color
+	li(class={active: route === 'materializeColor',current: route === 'materializeColor'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=materializeColor,class={active: route === 'materializeColor',current: route === 'materializeColor'})
+			+mi('color_lens')
+			span
+				| Color
+	//- CSS MEDIA
+	li(class={active: route === 'materializeCssMedia',current: route === 'materializeCssMedia'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=materializeCssMedia,class={active: route === 'materializeCssMedia',current: route === 'materializeCssMedia'})
+			+mi('photo_filter')
+			span
+				| CSS Media
+	//- Grid
+	li(class={active: route === 'materializeGrid',current: route === 'materializeGrid'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=materializeGrid,class={active: route === 'materializeGrid',current: route === 'materializeGrid'})
+			+mi('grid_on')
+			span
+				| Grid
+	//- Tables
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'tables',current: route === 'tables'})
+			+mi('list')
+			//- i.mdi.mdi-table
+			span
+				| Tables
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'tables' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeTable,class={active: func === 'materializeTable',current: materializeTable === 'materializeTable'})
+						//- +mi('list')
+						span Materialize Table
+				li.menu-item
+					//- Nested menu
+					ul.collapsible&attributes({"data-collapsible":"expandable"})
+						li
+							.collapsible-header(class={active: func === 'datatables', current: func === 'datatables'}).waves-effect.waves-set
+								span
+									| Datatables
+								i.material-icons.mdi-navigation-chevron-left(class=(func === 'datatables' ? 'open-aside' : '')) keyboard_arrow_left
+							.collapsible-body
+								ul
+									li
+										a.waves-effect.waves-set(href=basicDatatable,class={active: nestedName === 'basicDatatable', current: nestedName === 'basicDatatable'})
+											span Basic Table
+									li
+										a.waves-effect.waves-set(href=basicStyleDatatable,class={active: nestedName === 'basicStyleDatatable',current: nestedName === 'basicStyleDatatable'})
+											span Basic Style
+									li
+										a.waves-effect.waves-set(href=orderingDatatable,class={active: nestedName === 'orderingDatatable', current: nestedName === 'orderingDatatable'})
+											span Sort Datatable
+									li
+										a.waves-effect.waves-set(href=advanceDatatable,class={active: nestedName === 'advanceDatatable', current: nestedName === 'advanceDatatable'})
+											span Advance Datatable
+									li
+										a.waves-effect.waves-set(href=templateDatatable,class={active: nestedName === 'templateDatatable', current: nestedName === 'templateDatatable'})
+											span Datatable Templates
+	//- Helpers
+	li(class={active: route === 'materializeHelper'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=materializeHelper,class={active: route === 'materializeHelper', current: route === 'materializeHelper'})
+			+mi('help')
+			span
+				| Helpers
+	//- Shadow
+	li(class={active: route === 'materializeShadow'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=materializeShadow,class={active: route === 'materializeShadow', current: route === 'materializeShadow'})
+			+mi('queue')
+			span
+				| Shadow
+	//- Typography
+	li(class={active: route === 'materializeTypography'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=materializeTypography,class={active: route === 'materializeTypography', current: route === 'materializeTypography'})
+			+mi('text_format')
+			span
+				| Typography
+	//- Icon
+	li(class={active: route === 'materializeIcons'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=materializeIcons,class={active: route === 'materializeIcons', current: route === 'materializeIcons'})
+			+mi('gesture')
+			span
+				| Icon
+	//- Nav header
+	li.navigation-header
+		span.no-col-body
+			| Components
+		+mi('more_horiz').tooltipped&attributes({"data-position":"right","data-delay":"50","data-tooltip":"Components"})
+			//- UI Elements
+			//- Badges
+			//- Button
+			//- Breadcrumbs
+			//- Cards
+			//- Chips
+			//- Collections
+			//- Pagination
+			//- Preloader
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'appComponents', current: route === 'appComponents'})
+			+mi('card_giftcard')
+			span
+				| UI Elements
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'appComponents' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeBadge,class={active: func === 'materializeBadge', current: func === 'materializeBadge'})
+						span Badges
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeButton,class={active: func === 'materializeButton', current: func === 'materializeButton'})
+						span Button
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeBreadcrumbs,class={active: func === 'materializeBreadcrumbs', current: func === 'materializeBreadcrumbs'})
+						span Breadcrumbs
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeCards,class={active: func === 'materializeCards',current: func === 'materializeCards'})
+						span Cards
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeChips,class={active: func === 'materializeChips',current: func === 'materializeChips'})
+						span Chips
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeCollection,class={active: func === 'materializeCollection',current: func === 'materializeCollection'})
+						span Collections
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializePagination,class={active: func === 'materializePagination',current: func === 'materializePagination'})
+						span Pagination
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializePreloader,class={active: func === 'materializePreloader',current: func === 'materializePreloader'})
+						span Preloader
+	//- Advance UI
+	//- Collapsible
+	//- Dialogs
+	//- Dropdown
+	//- Media
+	//- Carousel
+	//- Modals
+	//- PushPin
+	//- ScrollFire
+	//- Tabs
+	//- Transactions
+	//- Waves
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'appJsComponents', current: route === 'appJsComponents'})
+			+mi('library_books')
+			span
+				| Advance UI
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'appJsComponents' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeCollapsible,class={active: func === 'materializeCollapsible',current: func === 'materializeCollapsible'})
+						span Collapsible
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeDialogs,class={active: func === 'materializeDialogs',current: func === 'materializeDialogs'})
+						span Dialogs
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeDropdown,class={active: func === 'materializeDropdown',current: func === 'materializeDropdown'})
+						span Dropdown
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeMedia,class={active: func === 'materializeMedia',current: func === 'materializeMedia'})
+						span Media
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeCarousel,class={active: func === 'materializeCarousel',current: func === 'materializeCarousel'})
+						span Carousel
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeModals,class={active: func === 'materializeModals',current: func === 'materializeModals'})
+						span Modals
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializePushpin,class={active: func === 'materializePushpin',current: func === 'materializePushpin'})
+						span PushPin
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeScrollFire,class={active: func === 'materializeScrollFire',current: func === 'materializeScrollFire'})
+						span ScrollFire
+
+
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeTabs,class={active: func === 'materializeTabs',current: func === 'materializeTabs'})
+						span Tabs
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeTransitions,class={active: func === 'materializeTransitions',current: func === 'materializeTransitions'})
+						span Transactions
+				li.menu-item
+					a.waves-effect.waves-set(href=materializeWaves,class={active: func === 'materializeWaves',current: func === 'materializeWaves'})
+						span Waves
+	
+	//- Form Components
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'formComponets', current: route === 'formComponets'})
+			+mi('transform')
+			span
+				| Form Components
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'formComponets' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=formBasicComponents,class={active: func === 'basic',current: func === 'basic'})
+						span Basic Inputs
+				li.menu-item
+					a.waves-effect.waves-set(href=formCheckboxesRadio,class={active: func === 'checkboxradio',current: func === 'checkboxradio'})
+						span Checkboxes & Radios
+				li.menu-item
+					a.waves-effect.waves-set(href=formExtendedControl,class={active: func === 'extendedControl',current: func === 'extendedControl'})
+						span Extended controls
+				li.menu-item
+					a.waves-effect.waves-set(href=formSelect,class={active: func === 'selectBox',current: func === 'selectBox'})
+						span Select inputs
+				li.menu-item
+					a.waves-effect.waves-set(href=formTaginput,class={active: func === 'taginputs',current: func === 'taginputs'})
+						span Tag Input
+				li.menu-item
+					//- Nested menu
+					ul.collapsible&attributes({"data-collapsible":"expandable"})
+						li
+							.collapsible-header(class={active: func === 'advanceInputs', current: func === 'advanceInputs'}).waves-effect.waves-set
+								span
+									| Advance Inputs
+								i.material-icons.mdi-navigation-chevron-left(class=(func === 'advanceInputs' ? 'open-aside' : '')) keyboard_arrow_left
+							.collapsible-body
+								ul
+									li
+										a.waves-effect.waves-set(href=materializenote,class={active: nestedName === 'editor-materializenote', current: nestedName === 'editor-materializenote'})
+											span MaterializeNote
+									li
+										a.waves-effect.waves-set(href=ckeditor,class={active: nestedName === 'editor-ckeditor', current: nestedName === 'editor-ckeditor'})
+											span CK Editor
+					//- Nested menu Ends
+	//- Charts
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: mainRoute === 'chart', current: mainRoute === 'chart'})
+			+mi('insert_chart')
+			span
+				| Charts
+			i.material-icons.mdi-navigation-chevron-left(class=(mainRoute === 'chart' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					//- Nested menu
+					ul.collapsible&attributes({"data-collapsible":"expandable"})
+						li
+							.collapsible-header(class={active: route === 'barChart', current: route === 'barChart'}).waves-effect.waves-set
+								span
+									| Bar-Charts
+								i.material-icons.mdi-navigation-chevron-left(class=(route === 'barChart' ? 'open-aside' : '')) keyboard_arrow_left
+							.collapsible-body
+								ul
+									li
+										a.waves-effect.waves-set(href=googleBarChart,class={active: func === 'googleBarChart', current: func === 'googleBarChart'})
+											span Google Chart
+									li
+										a.waves-effect.waves-set(href=c3BarChart,class={active: func === 'c3BarChart', current: func === 'c3BarChart'})
+											span c3 Chart
+									li
+										a.waves-effect.waves-set(href=chartjsBarChart,class={active: func === 'chartjsBarChart', current: func === 'chartjsBarChart'})
+											span Chart Js
+				li.menu-item
+					ul.collapsible&attributes({"data-collapsible":"expandable"})
+						li
+							.collapsible-header(class={active: route === 'lineChart', current: route === 'lineChart'}).waves-effect.waves-set
+								span
+									| Line-Charts
+								i.material-icons.mdi-navigation-chevron-left(class=(route === 'lineChart' ? 'open-aside' : '')) keyboard_arrow_left
+							.collapsible-body
+								ul
+									li
+										a.waves-effect.waves-set(href=googleLineChart,class={active: func === 'googleLineChart', current: func === 'googleLineChart'})
+											span Google Chart
+									li
+										a.waves-effect.waves-set(href=c3LineChart,class={active: func === 'c3LineChart', current: func === 'c3LineChart'})
+											span c3 Chart
+									li
+										a.waves-effect.waves-set(href=chartjsLineChart,class={active: func === 'chartjsLineChart', current: func === 'chartjsLineChart'})
+											span Chart Js
+				li.menu-item
+					ul.collapsible&attributes({"data-collapsible":"expandable"})
+						li
+							.collapsible-header(class={active: route === 'areaChart', current: route === 'areaChart'}).waves-effect.waves-set
+								span
+									| Area Charts
+								i.material-icons.mdi-navigation-chevron-left(class=(route === 'areaChart' ? 'open-aside' : '')) keyboard_arrow_left
+							.collapsible-body
+								ul
+									li
+										a.waves-effect.waves-set(href=googleAreaChart,class={active: func === 'googleAreaChart', current: func === 'googleAreaChart'})
+											span Google Chart
+									li
+										a.waves-effect.waves-set(href=c3AreaChart,class={active: func === 'c3AreaChart', current: func === 'c3AreaChart'})
+											span c3 Chart
+				li.menu-item
+					ul.collapsible&attributes({"data-collapsible":"expandable"})
+						li
+							.collapsible-header(class={active: route === 'pieChart', current: route === 'pieChart'}).waves-effect.waves-set
+								span
+									| Pie Charts
+								i.material-icons.mdi-navigation-chevron-left(class=(route === 'pieChart' ? 'open-aside' : '')) keyboard_arrow_left
+							.collapsible-body
+								ul
+									li
+										a.waves-effect.waves-set(href=googlePieChart,class={active: func === 'googlePieChart', current: func === 'googlePieChart'})
+											span Google Chart
+									li
+										a.waves-effect.waves-set(href=c3PieChart,class={active: func === 'c3PieChart', current: func === 'c3PieChart'})
+											span c3 Chart
+									li
+										a.waves-effect.waves-set(href=chartjsPieChart,class={active: func === 'chartjsPieChart', current: func === 'chartjsPieChart'})
+											span Chart Js
+				li.menu-item
+					ul.collapsible&attributes({"data-collapsible":"expandable"})
+						li
+							.collapsible-header(class={active: route === 'scatterChart', current: route === 'scatterChart'}).waves-effect.waves-set
+								span
+									| Scatter Charts
+								i.material-icons.mdi-navigation-chevron-left(class=(route === 'scatterChart' ? 'open-aside' : '')) keyboard_arrow_left
+							.collapsible-body
+								ul
+									li
+										a.waves-effect.waves-set(href=googleScatterChart,class={active: func === 'googleScatterChart', current: func === 'googleScatterChart'})
+											span Google Chart
+									li
+										a.waves-effect.waves-set(href=chartjsScatterChart,class={active: func === 'chartjsScatterChart', current: func === 'chartjsScatterChart'})
+											span Chart JS
+				li.menu-item
+					ul.collapsible&attributes({"data-collapsible":"expandable"})
+						li
+							.collapsible-header(class={active: route === 'extraCharts', current: route === 'extraCharts'}).waves-effect.waves-set
+								span
+									| Extra
+								i.material-icons.mdi-navigation-chevron-left(class=(route === 'extraCharts' ? 'open-aside' : '')) keyboard_arrow_left
+							.collapsible-body
+								ul
+									li
+										a.waves-effect.waves-set(href=googleColumnChart,class={active: func === 'googleColumnChart', current: func === 'googleColumnChart'})
+											span Google Column Chart
+									li
+										a.waves-effect.waves-set(href=googleComboChart,class={active: func === 'googleComboChart', current: func === 'googleComboChart'})
+											span Google Combo Chart
+									li
+										a.waves-effect.waves-set(href=googleGeoChart,class={active: func === 'googleGeoChart', current: func === 'googleGeoChart'})
+											span Google Geochart
+									li
+										a.waves-effect.waves-set(href=c3ExtraCharts,class={active: func === 'c3ExtraCharts', current: func === 'c3ExtraCharts'})
+											span C3 Extra
+					//- Nested menu Ends
+	//- Pickers
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'picker',current: route === 'picker'})
+			+mi('invert_colors')
+			span
+				| Pickers
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'picker' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=pickerDateTime,class={active: func === 'datetime-picker',current: func === 'datetime-picker'})
+						span Date-Time
+				li.menu-item
+					a.waves-effect.waves-set(href=pickerColor,class={active: func === 'color-picker',current: func === 'color-picker'})
+						span Color
+				li.menu-item
+					a.waves-effect.waves-set(href=pickerLocation,class={active: func === 'location-picker',current: func === 'location-picker'})
+						span Location
+	//- Nestable
+	li(class={active: route === 'nestable', current: route === 'nestable'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=nestable,class={active: route === 'nestable', current: route === 'nestable'})
+			+mi('format_align_right')
+			span
+				| Nestable
+	//- Timeline
+	li(class={active: route === 'timeline', current: route === 'timeline'})
+		a.collapsible-header.no-col-body.waves-effect.waves-set(href=timeline,class={active: route === 'timeline', current: route === 'timeline'})
+			+mi('timeline')
+			span
+				| Timeline
+	//- Gallery
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'gallery', current: route === 'gallery'})
+			+mi('photo_library')
+			span
+				| Gallary
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'gallery' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=imgMikeTrick,class={active: func === 'imgMikeTrick', current: func === 'imgMikeTrick'})
+						span Miketricking Effects
+				li.menu-item
+					a.waves-effect.waves-set(href=materialBoxGallery,class={active: func === 'materialBoxGallery', current: func === 'materialBoxGallery'})
+						span Material Box
+				li.menu-item
+					a.waves-effect.waves-set(href=magnificPopup,class={active: func === 'magnificPopup', current: func === 'magnificPopup'})
+						span Magnific Popup
+	//- Login & Registration
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'loginRegistration', current: route === 'loginRegistration'})
+			+mi('security')
+			span
+				| Authentication & Guard
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'loginRegistration' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=signin,class={active: func === 'signin',current: func === 'signin'})
+						span Sign In
+				li.menu-item
+					a.waves-effect.waves-set(href=signin2,class={active: func === 'signin2',current: func === 'signin2'})
+						span Sign In (v2)
+				li.menu-item
+					a.waves-effect.waves-set(href=signup,class={active: func === 'signup',current: func === 'signup'})
+						span Sign Up
+				li.menu-item
+					a.waves-effect.waves-set(href=signup2,class={active: func === 'signup2',current: func === 'signup2'})
+						span Sign Up (v2)
+				li.menu-item
+					a.waves-effect.waves-set(href=lockScreen,class={active: func === 'lockScreen',current: func === 'lockScreen'})
+						span Lock Screen
+	//- Blog
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'blogRoute',current: route === 'blogRoute'})
+			+mi('format_bold')
+			span
+				| Blog
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'blogRoute' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=blog,class={active: func === 'blog',current: func === 'blog'})
+						span Blog List View
+				li.menu-item
+					a.waves-effect.waves-set(href=blogDetail,class={active: func === 'blogDetail',current: func === 'blogDetail'})
+						span Blog Detail View
+	//- User Pages
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'userPages',current: route === 'userPages'})
+			+mi('person')
+			span
+				| Users
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'userPages' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=userProfile,class={active: func === 'userProfile',current: func === 'userProfile'})
+						span User Profile
+				li.menu-item
+					a.waves-effect.waves-set(href=userWidget,class={active: func === 'userWidget',current: func === 'userWidget'})
+						span Profile Cards
+	//- Extra Pages
+	li
+		a.collapsible-header.waves-effect.waves-set(href="#",class={active: route === 'extraPages',current: route === 'extraPages'})
+			+mi('pages')
+			span
+				| Extra
+			i.material-icons.mdi-navigation-chevron-left(class=(route === 'extraPages' ? 'open-aside' : '')) keyboard_arrow_left
+		.collapsible-body
+			ul
+				li.menu-item
+					a.waves-effect.waves-set(href=page404,class={active: func === 'page404',current: func === 'page404'})
+						span 404
+				li.menu-item
+					a.waves-effect.waves-set(href=page403,class={active: func === 'page403',current: func === 'page403'})
+						span 403
+				li.menu-item
+					a.waves-effect.waves-set(href=page500,class={active: func === 'page500',current: func === 'page500'})
+						span 500
+
+				li.menu-item
+					a.waves-effect.waves-set(href=page404type2,class={active: func === 'page404type2',current: func === 'page404type2'})
+						span 404 v2
+				li.menu-item
+					a.waves-effect.waves-set(href=page403type2,class={active: func === 'page403type2',current: func === 'page403type2'})
+						span 403 v2
+				li.menu-item
+					a.waves-effect.waves-set(href=page500type2,class={active: func === 'page500type2',current: func === 'page500type2'})
+						span 500 v2

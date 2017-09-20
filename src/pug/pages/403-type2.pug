@@ -1,0 +1,26 @@
+extends ../layout/defualt-layout.pug
+
+block title
+	title Forge :: 403
+	- var setBodyClass='error-page'
+block append css
+	
+block content
+	- var route = 'extraPages'
+	- var func = 'page403type2'	
+	
+	.fullpage-flex-center.grey.darken-4
+		.flex-center.pos-relative.full-height
+			.row
+				.col.s12
+					.card.center-align
+						.card-content.white-text.pos-relative
+							h2.warning-text 403
+							p.caption.grey-text
+								| Opps! You access is forbidden for that page!
+							a.btn-floating.halfway-fab.waves-effect.waves-light.warning-bg
+								i.material-icons home
+						.card-action.grey.darken-3
+							a(href="#!",class='btn btn-flat white-text')
+								i.material-icons.left reply
+								| Back

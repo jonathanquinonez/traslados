@@ -1,0 +1,102 @@
+extends ../layout/defualt-layout.pug
+block title
+  title Forge :: Chart.js Line Charts
+block append css
+  
+block content
+  - var mainRoute="chart"
+  - var route = 'lineChart'
+  - var func = 'chartjsLineChart'
+  - var nestedName=""
+  - var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Chart"},{"link":"#","title":"ChartJS Line Charts"}]
+  include ../include/header.pug
+  main.animated
+    // ============================
+    // MAIN HEADER
+    // ============================
+    .main-header
+      .sec-page
+        .page-title
+          h2 Line Charts
+      // ============================
+      // breadcrumb
+      // ============================
+      .sec-breadcrumb
+        +breadcrumb(breadcrumb,'left')
+    // ============================
+    // Main container
+    // ============================
+    .main-container
+      //- Intro
+      div.row
+        .col.s12
+          h4.content-headline Chart.js Line Charts
+          p
+            | A line chart is a way of plotting data points on a line. Often, it is used to show trend data, and the comparison of two data sets. Here, it is from 
+            a(href="http://www.chartjs.org/docs/#line-chart-introduction") ChartJS.
+
+      //- Chart.js Line-Charts
+      .row
+        .col.s12
+          // Custom Tooltip Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Custom Tooltip Chart
+            //- CUSTOM - ToolTip chart
+            .row
+              div.col.s12
+                canvas#chart1&attributes({"height":"480"})
+        .col.s12
+          // Line Ledgend
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Line Ledgend
+            .row
+              div.col.s12
+                canvas#line-legend&attributes({"height":"480"})
+      .row
+        .col.s12
+          // Logarithmic
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Logarithmic
+            .row
+              div.col.s12
+                canvas#line-logarithmic&attributes({"height":"480"})
+        .col.s12
+          // Mutli-axis
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Mutli-axis
+            .row
+              div.col.s12
+                canvas#line-multi-axis&attributes({"height":"480"})
+      .row
+        .col.s12
+          // Skip Points
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Skip Points
+            .row
+              div.col.s12
+                canvas#line-skip-points&attributes({"height":"480"})
+        .col.s12
+          // Different Point Size
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Different Point Size
+            .row
+              div.col.s12
+                canvas#different-point-sizes&attributes({"height":"480"})
+    include ../include/footer.pug
+block append scripts
+  script(type='text/javascript', src='../plugins/charts/chartjs/dist/Chart.bundle.js')
+  script(type='text/javascript', src='../plugins/charts/chartjs/line-Chart.js')
+  
+  

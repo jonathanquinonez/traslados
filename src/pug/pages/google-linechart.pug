@@ -1,0 +1,120 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Google Line-chart
+block append css
+	
+block content
+	- var mainRoute="chart"
+	- var route = 'lineChart'
+	- var func = 'googleLineChart'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"Google Line Charts"}]
+	include ../include/header.pug
+	main.animated
+		.main-header
+			.sec-page
+				.page-title
+					h2 Line Charts
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Google Line Charts
+					p 
+						a(href="https://developers.google.com/chart/interactive/docs/gallery/linechart",target="_blank") Google 
+						|line chart that is rendered within the browser using SVG or VML. Displays tooltips when hovering over points. 
+			//- Google Line-Charts
+			.row
+				.col.s12
+					// Basic Line-chart With Default Styling
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic Line-chart With Default Styling
+						.row
+							div.col.s12
+								#chart_basicLine
+				.col.s12
+					// Multiline With Custom Color
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Multiline With Custom Color
+						.row
+							div.col.s12
+								#lineChart1
+			.row
+				.col.s12
+					// Crosshairs
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Crosshairs
+						.row
+							div.col.s12
+								#chart_crosshairs
+				.col.s12
+					// Trendlines
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Trendlines
+						.row
+							div.col.s12
+								#chart_trendlines
+			.row
+				.col.s12
+					// LineStyles
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline LineStyles
+						.row
+							div.col.s12
+								#chart_lineStyles
+				.col.s12
+					// Curving The Lines
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Curving The Lines
+						.row
+							div.col.s12
+								#drawChartSales
+			.row
+				.col.s12
+					// Material Line-charts
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Material Line-charts
+						.row
+							div.col.s12
+								#linechart_material
+			.row
+				.col.s12
+					// Dual-Y Charts
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Dual-Y Charts
+						.row
+							div.col.s12
+								#materialLine
+			.row
+				.col.s12
+					// Top-X Charts
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Top-X Charts
+						.row
+							div.col.s12
+								#line_top_x
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/charts/google-chart/loader.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/jsapi.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/linechart.js')

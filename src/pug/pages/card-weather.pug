@@ -1,0 +1,376 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Weather Cards
+block content
+	- var mainRoute="cardWidget"
+	- var route = 'cardWidgetWeather'
+	- var func = ''
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Cards"},{"link":"#","title":"Weather Cards"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Weather Cards
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline Weather Cards
+					p
+						| Awesome & attractive weather widgets!
+			// Standard Weather Card
+			.row
+				.col.s12
+					h5.content-headline Standard Weather Card
+					p Weather cards of medium size.
+				.col.s12.m4.l4
+					// weather2 : thunder-cloud
+					.card-panel.gradiant-light-blue-9lr
+						.row
+							.col.s8.no-mrpd
+								h6.no-mrpd.white-text Washington
+								p.no-mrpd.white-text Columbia
+							.col.s4.no-mrpd
+								+weather2('thunder-cloud','fill-white')
+						.row
+							.col.s8.no-mrpd
+								h2.left.no-mrpd.white-text
+									| 24
+									+wi('wi-celsius')
+								p.left.sticky-bottom-lr.white-text
+									+wi('wi-direction-right')
+									+wi('wi-umbrella')
+									|98%
+							.col.s4
+								p.left.white-text
+									| 20:19
+				.col.s12.m4.l4
+					// weather2 : rain-cloud
+					.card-panel.gradiant-blue-grey-1
+						.row
+							.col.s8.no-mrpd
+								h6.no-mrpd.white-text Canada
+								p.no-mrpd.white-text British Columbia
+							.col.s4.no-mrpd
+								+weather2('rain-cloud','fill-white')
+						.row
+							.col.s8.no-mrpd
+								h2.left.no-mrpd.white-text
+									| 23
+									+wi('wi-celsius')
+								p.left.sticky-bottom-lr.white-text
+									+wi('wi-direction-right')
+									+wi('wi-umbrella')
+									|98%
+							.col.s4
+								p.left.white-text
+									| 20:19
+				.col.s12.m4.l4
+					// weather2 : snow-cloud
+					.card-panel.gradiant-light-blue-9rl.accent-5
+						.row
+							.col.s8.no-mrpd
+								h6.no-mrpd.white-text India
+								p.no-mrpd.white-text Shimla
+								
+							.col.s4.no-mrpd
+								+weather2('snow-cloud','fill-white')
+						.row
+							.col.s8.no-mrpd
+								h2.left.no-mrpd.white-text
+									| -06
+									+wi('wi-celsius')
+								p.left.sticky-bottom-lr.white-text
+									+wi('wi-direction-right')
+									+wi('wi-snowflake-cold')
+									|50%
+							.col.s4
+								p.left.white-text
+									| 20:19
+				.col.s12.m4.l4
+					// weather2 : sun-cloud
+					.card-panel.gradiant-yellow-9rl.darken-1
+						.row
+							.col.s8.no-mrpd
+								h6.no-mrpd.white-text Washington
+								p.no-mrpd.white-text Distroct of Columbia
+							.col.s4.no-mrpd
+								+weather2('sun-cloud','fill-white')
+						.row
+							.col.s8.no-mrpd
+								h2.left.no-mrpd.white-text
+									| 24
+									+wi('wi-celsius')
+								p.left.sticky-bottom-lr.white-text
+									+wi('wi-cloud-up')
+									|63%
+									+wi('wi-direction-up-right')
+							.col.s4
+								p.left.white-text
+									| 20:19
+				.col.s12.m4.l4
+					// weather2 : sunshine
+					.card-panel.gradiant-amber-8lr.accent-2
+						.row
+							.col.s8.no-mrpd
+								h6.no-mrpd.white-text Washington
+								p.no-mrpd.white-text Distroct of Columbia
+								
+							.col.s4.no-mrpd
+								+weather2('sunshine','fill-white')
+						.row
+							.col.s8.no-mrpd
+								h2.left.no-mrpd.white-text
+									| 28
+									+wi('wi-celsius')
+								p.left.sticky-bottom-lr.white-text
+									+wi('wi-wind-beaufort-4')
+									+wi('wi-hot')
+									|44%
+							.col.s4
+								p.left.white-text
+									| 20:19
+				.col.s12.m4.l4
+					// weather2 : windy-cloud
+					.card-panel.gradiant-grey-2lr
+						.row
+							.col.s8.no-mrpd
+								h6.no-mrpd.white-text Washington
+								p.no-mrpd.white-text Distroct of Columbia
+								
+							.col.s4.no-mrpd
+								+weather2('windy-cloud','fill-white')
+						.row
+							.col.s8.no-mrpd
+								h2.left.no-mrpd.white-text
+									| 21
+									+wi('wi-celsius')
+								p.left.sticky-bottom-lr.white-text
+									+wi('wi-cloud-refresh')
+									|18%
+									+wi('wi-direction-up-right')
+							.col.s4
+								p.left.white-text
+									| 20:19
+			// Compact Weather Cards
+			.row
+				.col.s12
+					h5.content-headline Compact Weather Cards
+					p Awesome weather icon based small weather cards.
+				.col.s12.m6.l4
+					.card-panel.gradiant-light-blue-8lr.lighten-2
+						.row.weather-row
+							.col.s3.center-align
+								+wi('wi-sprinkle font-size-32 white-text vert-center')
+							.col.s5.center-align
+								h3.no-mrpd.white-text
+									|28
+									+wi('wi-celsius')
+							.col.s4.center-align
+								p.white-text Kapada
+								p.white-text Tuesday
+				.col.s12.m6.l4
+					.card-panel.gradiant-grey-8
+						.row.weather-row
+							.col.s4.left-align.no-mrpd
+								p.white-text 10:25PM
+								p.white-text.font-size-10  Mon, 6 Mar
+							.col.s2
+								+wi('wi-night-alt-snow-thunderstorm font-size-32 white-text vert-center')
+							.col.s6.right-align.no-mrpd
+								h3.white-text
+									+wi('wi-thermometer-internal')
+									|-6
+									+wi('wi-celsius')
+				.col.s12.m6.l4
+					.card-panel.gradiant-orange-8lr
+						.row.weather-row
+							.col.s6.no-mrpd
+								h3.white-text
+									+wi('wi-thermometer white-text')
+									|40
+									+wi('wi-celsius white-text')
+							.col.s3
+								+wi('wi-hot font-size-32 yellow-text vert-center')
+							.col.s3.center-align.no-mrpd
+								p.white-text 10:25PM
+								p.white-text.font-size-8  Mon, 6 Mar
+			// SVG CARDS
+			.row
+				.col.s12
+					h5.content-headline Large Cards
+					p Large animated weather widgets!
+				.col.s12.m6.l4
+					// sunny
+					.card.hoverable.sunny-grade
+						.card-image.bg-only
+							.bg-placeholder-2x
+							.sunny.weather-pos.top-left&attributes({"style":'top:25%;left:51%;'})
+						.card-content
+							div.row
+								.col.s12
+									h5.white-text MONDAY
+									p.caption.white-text Sunny
+							div.row.center-align
+								.col.s12
+									h1.white-text
+										| 36&#176;
+							div.row
+								.col.s6.m5.hide-on-med-and-down
+								.col.s6.m7.right
+									p.white-text Precipitation: 98%
+									p.white-text Humidity: 70%
+									p.white-text Wind: 8 km/h
+				.col.s12.m6.l4
+					// cloudy
+					.card.hoverable.cloudy-grade
+						.card-image.bg-only
+							.bg-placeholder-2x
+							.cloudy.weather-pos.top-left&attributes({"style":'top:30%;left:50%;'})
+						.card-content
+							div.row
+								.col.s12
+									h5.white-text TUESDAY
+									p.caption.white-text Cloudy
+							div.row.center-align
+								.col.s12
+									h1.amber-text.text-lighten-3
+										| 21&#176;
+							div.row
+								.col.s6.m5.hide-on-med-and-down
+								.col.s6.m7.right
+									p.white-text Precipitation: 96%
+									p.white-text Humidity: 70%
+									p.white-text Wind: 12km/h
+				.col.s12.m6.l4
+					// rainy
+					.card.hoverable.rainy-grade
+						.card-image.bg-only
+							.bg-placeholder-2x
+							.rainy.weather-pos.top-left&attributes({"style":'top:30%;left:50%;'})
+						.card-content
+							div.row
+								.col.s12
+									h5.white-text WEDNESDAY
+									p.caption.white-text Rainy
+							div.row.center-align
+								.col.s12
+									h1.amber-text.text-lighten-3
+										| 19&#176;
+							div.row
+								.col.s6.m5.hide-on-med-and-down
+								.col.s6.m7.right
+									p.white-text Precipitation: 96%
+									p.white-text Humidity: 80%
+									p.white-text Wind: 7km/h
+				.col.s12.m6.l4
+					// rainbow
+					.card.hoverable.rainbow-grade
+						.card-image.bg-only
+							.bg-placeholder-2x
+							.rainbow.weather-pos.top-left&attributes({"style":'top:40%;left:40%;'})
+						.card-content
+							div.row
+								.col.s12
+									h5.white-text THURSDAY
+									p.caption.white-text Rainbow
+							div.row.center-align
+								.col.s12
+									h1.yellow-text.text-lighten-3
+										| 21&#176;
+							div.row
+								.col.s6.m5.hide-on-med-and-down
+								.col.s6.m7.right
+									p.white-text Precipitation: 96%
+									p.white-text Humidity: 70%
+									p.white-text Wind: 7km/h
+				.col.s12.m6.l4
+					// moon
+					.card.hoverable.moon-grade
+						.card-image.bg-only
+							.bg-placeholder-2x
+							.starry.weather-pos.top-left&attributes({"style":'left:50%;'})
+						.card-content
+							div.row
+								.col.s12
+									h5.white-text FRIDAY
+									p.caption.white-text Moon Night
+							div.row.center-align
+								.col.s12
+									h1.grey-text.text-lighten-3
+										| 18&#176;
+							div.row
+								.col.s6.m5.hide-on-med-and-down
+								.col.s6.m7.right
+									p.white-text Precipitation: 96%
+									p.white-text Humidity: 66%
+									p.white-text Wind: 9km/h
+				.col.s12.m6.l4
+					// stormy
+					.card.hoverable.stormy-grade
+						.card-image.bg-only
+							.bg-placeholder-2x
+							.stormy.weather-pos.top-left&attributes({"style":'top:30%;left:50%;'})
+						.card-content
+							div.row
+								.col.s12
+									h5.white-text SATURDAY
+									p.caption.white-text Strome
+							div.row.center-align
+								.col.s12
+									h1.grey-text.text-lighten-3
+										| 20&#176;
+							div.row
+								.col.s6.m5.hide-on-med-and-down
+								.col.s6.m7.right
+									p.white-text Precipitation: 80%
+									p.white-text Humidity: 56%
+									p.white-text Wind: 16km/h
+				.col.s12.m6.l4
+					// snow
+					.card.hoverable.snow-grade
+						.card-image.bg-only
+							.bg-placeholder-2x
+							.snowy.weather-pos.top-left&attributes({"style":'top:30%;left:50%;'})
+						.card-content
+							div.row
+								.col.s12
+									h5.white-text SUNDAY
+									p.caption.white-text Snowy
+							div.row.center-align
+								.col.s12
+									h1.grey-text.text-lighten-3
+										| -5&#176;
+							div.row
+								.col.s6.m5.hide-on-med-and-down
+								.col.s6.m7.right
+									p.white-text Precipitation: 80%
+									p.white-text Humidity: 89%
+									p.white-text Wind: 8km/h
+		include ../include/footer.pug
+block append scripts
+	script.
+		(function(){
+		  	$('.carousel.carousel-slider').carousel({fullWidth: true});
+		    $('.slider').slider();
+		})();		
+	

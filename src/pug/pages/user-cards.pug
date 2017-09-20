@@ -1,0 +1,390 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: User Widgets
+block content
+	- var route = 'userPages'
+	- var func = 'userWidget'
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"User Pages"},{"link":"#","title":"Widgets"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 User Pages - Widget
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			// Three sectional cards
+			.row(style="margin-top:10px !important;")
+				.col.s12.m6.user-widget
+					.card.blue-grey.darken-1.user-widget-type3
+						.card-image
+							img(src="../images/placeholder/1024x600g.jpg", alt="placeholder",class="responsive-img")
+							.card-title John Doe
+						.card-content
+							p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action
+							a(href="#",class='waves-effect waves-light btn basic-btn')
+								+mi('person_add').left
+								| Send Request
+							a(href="javascript:void(0)",class='activator waves-effect waves-light btn-floating no-bg btn-flat right') 
+								+mi('more_vert').grey-text.text-darken-4
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Card Title
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+				
+				.col.s12.m6.user-widget
+					.card.blue-grey.darken-1.user-widget-type3
+						.card-image
+							img(src="../images/placeholder/1024x600g.jpg", alt="placeholder",class="responsive-img")
+							.card-title John Doe
+							.internal-action-bottom-mid.center
+								a(href="#",class='waves-effect waves-light btn basic-btn')
+									+mi('person_add').left
+									| Send Request
+							.internal-action-top
+								.user-action
+									.actions-list.no-fixed-action
+										a.btn-floating.pink.lighten-2
+											i.material-icons favorite
+										a.btn-floating.green
+											i.material-icons chat
+										a.btn-floating.blue.lighten-2
+											i.material-icons rss_feed
+						.card-content
+							p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.card-action.no-mrpd
+							.row.user-statistics
+								.col.s12.with-top-text
+									p.s4.col.center.statistic-set
+										span.statistic-title Friends
+										span.counter 1K
+									p.s4.col.center.statistic-set
+										span.statistic-title Followers
+										span.counter 137
+									p.s4.col.center.statistic-set
+										span.statistic-title Following
+										span.counter 3K
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Card Title
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+			
+			.row
+				.col.s12.m6.user-widget
+					.card.blue-grey.darken-1.user-widget-type3
+						.card-image
+							img(src="../images/placeholder/1024x600g.jpg", alt="placeholder",class="responsive-img")
+							.card-title.white-text John Doe
+							.internal-action-top
+								.user-action
+									.actions-list.no-fixed-action
+										a.btn-floating.pink.lighten-2
+											i.material-icons favorite
+										
+										a.btn-floating.green
+											i.material-icons chat
+										a.btn-floating.blue.lighten-2
+											i.material-icons rss_feed
+						.card-content
+							//- p.center.about-text No matter of economy of Jungle, I will never eat the grass.
+							.row.user-statistics
+								.col.s12.with-top-text
+									p.s4.col.center.statistic-set
+										span.statistic-title Friends
+										span.counter 137
+									p.s4.col.center.statistic-set
+										span.statistic-title Followers
+										span.counter 137
+									p.s4.col.center.statistic-set
+										span.statistic-title Following
+										span.counter 137
+						.card-action
+							a(href="#",class='waves-effect waves-light btn basic-btn')
+								+mi('person_add').left
+								| Send Request
+							a(href="javascript:void(0)",class='activator waves-effect waves-light btn-floating no-bg btn-flat right') 
+								+mi('more_vert').grey-text.text-darken-4
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Card Title
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+				.col.s12.m6.user-widget
+					.card.blue-grey.darken-1.user-widget-type3
+						.card-image
+							img(src="../images/placeholder/1024x600g.jpg", alt="placeholder",class="responsive-img")
+							.card-title.white-text John Doe
+							.internal-action-top
+								.user-action
+									.actions-list.no-fixed-action
+										a.btn-floating.pink.lighten-2
+											i.material-icons favorite
+										
+										a.btn-floating.green
+											i.material-icons chat
+										a.btn-floating.blue.lighten-2
+											i.material-icons rss_feed
+						.card-content
+							//- p.center.about-text No matter of economy of Jungle, I will never eat the grass.
+							.row.user-statistics
+								.col.s12.with-top-text
+									button.s4.waves-effect.waves-light.col.btn-flat
+										span.statistic-title Friends
+										span.counter 137
+									button.s4.waves-effect.waves-light.col.btn-flat
+										span.statistic-title Followers
+										span.counter 137
+									button.s4.waves-effect.waves-light.col.btn-flat
+										span.statistic-title Following
+										span.counter 137
+						.card-action
+							a(href="#",class='waves-effect waves-light btn basic-btn')
+								+mi('person_add').left
+								| Send Request
+							a(href="javascript:void(0)",class='activator waves-effect waves-light btn-floating no-bg btn-flat right') 
+								+mi('more_vert').grey-text.text-darken-4
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Card Title
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+			// Simple Cards
+			.row
+				.col.s12.m6.l4.user-widget
+					.card.blue-grey.darken-1.user-widget-type4
+						.card-image
+							img(src="../images/placeholder/1280x853g.jpg", alt="placeholder",class="responsive-img")
+							.card-title.center Joe Alexander
+							a(href="javascript:void(0)",class='btn-floating np-bg btn-flat waves-effect waves-light activator')
+								+mi('more_vert').grey-text
+						.card-content
+							.designation.center.grey-text.text-darken-3 Founder
+							.socialization.center
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-facebook
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-twitter
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-github-circle
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-google-plus
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Joe Alexander
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+				.col.s12.m6.l4.user-widget
+					.card.blue-grey.darken-1.user-widget-type4
+						.card-image
+							img(src="../images/placeholder/1280x853g.jpg", alt="placeholder",,class="responsive-img")
+							.card-title.center Mary Watson
+							a(href="javascript:void(0)",class='btn-floating np-bg btn-flat waves-effect waves-light activator')
+								+mi('more_vert').grey-text
+						.card-content
+							.designation.center.grey-text.text-darken-3 Co-Founder
+							.socialization.center
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-facebook
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-twitter
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-github-circle
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-google-plus
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Mary Watson
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+				.col.s12.m6.l4.user-widget
+					.card.blue-grey.darken-1.user-widget-type4
+						.card-image
+							img(src="../images/placeholder/1280x853g.jpg", alt="placeholder",,class="responsive-img")
+							.card-title.center Selena Cruiz
+							a(href="javascript:void(0)",class='btn-floating np-bg btn-flat waves-effect waves-light activator')
+								+mi('more_vert').grey-text
+						.card-content
+							.designation.center.grey-text.text-darken-3 Designer
+							.socialization.center
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-facebook
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-twitter
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-github-circle
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-google-plus
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Selena Cruiz
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+			// Simple cards with circle image
+			.row
+				.col.s12.m6.l4.user-widget
+					.card.blue-grey.darken-1.user-widget-type4
+						.card-content.center
+							a(href="javascript:void(0)",class='btn-floating np-bg btn-flat waves-effect waves-light activator set-top-right')
+								+mi('more_vert').grey-text
+							img(src="../images/placeholder/1280x853g.jpg", alt="placeholder",class='circle responsive-img round-img')
+							.card-title.center Joe Alexander
+							.designation.center.grey-text.text-darken-3 Founder
+							.socialization.center
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-facebook
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-twitter
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-github-circle
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-google-plus
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Joe Alexander
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+				.col.s12.m6.l4.user-widget
+					.card.blue-grey.darken-1.user-widget-type4
+						.card-content.center
+							a(href="javascript:void(0)",class='btn-floating np-bg btn-flat waves-effect waves-light activator set-top-right')
+								+mi('more_vert').grey-text
+							img(src="../images/placeholder/1280x853g.jpg", alt="placeholder",class='circle responsive-img round-img')
+							.card-title.center Mary Watson
+							.designation.center.grey-text.text-darken-3 Co-Founder
+							.socialization.center
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-facebook
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-twitter
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-github-circle
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-google-plus
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Mary Watson
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+				.col.s12.m6.l4.user-widget
+					.card.blue-grey.darken-1.user-widget-type4
+						.card-content.center
+							a(href="javascript:void(0)",class='btn-floating np-bg btn-flat waves-effect waves-light activator set-top-right')
+								+mi('more_vert').grey-text
+							img(src="../images/placeholder/1280x853g.jpg", alt="placeholder",class='circle responsive-img round-img')
+							.card-title.center Selena Cruiz
+							.designation.center.grey-text.text-darken-3 Designer
+							.socialization.center
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-facebook
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-twitter
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-github-circle
+								a(href="#!",class='btn-floating  grey darken-3 btn-flat waves-effect waves-light')
+									i.mdi.mdi-google-plus
+						.card-reveal
+							span(class='card-title grey-text text-darken-4') Selena Cruiz
+								+mi('close').right
+							p Here is some more information about this product that is only revealed once clicked on.
+			
+			// FAB CARDS
+			.row
+				.col.s12.m4
+					.card.card-user-widget01
+						.card-image.bg-only
+							.bg-placeholder.blue
+							//- span.card-title Card Title
+							a.card-userpic
+								img(src='../images/placeholder/300x300g.jpg',alt="placeholder")
+							a.btn-floating.halfway-fab.waves-effect.waves-light.red
+								i.material-icons add
+						.card-content
+							h5.center.grey-text.text-darken-1 Slade Wilson
+							p.center
+								| Web Designer 
+							.collection.widget-inline-static
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('remove_red_eye').blue-text.text-accent-2
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('person_add').blue-text.text-accent-2
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('message').blue-text.text-accent-2
+				.col.s12.m4
+					.card.card-user-widget01
+						.card-image.bg-only
+							img(src='../images/placeholder/1000x700g.jpg',class='bg-placeholder',alt="placeholder")
+							//- span.card-title Card Title
+							a.card-userpic
+								img(src='../images/placeholder/300x300g.jpg',alt="placeholder")
+							a.btn-floating.halfway-fab.waves-effect.waves-light.red
+								i.material-icons add
+
+						.card-content
+							h5.center.grey-text.text-darken-1 Slade Wilson
+							p.center
+								| Web Designer 
+							.collection.widget-inline-static
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('remove_red_eye').cyan-text
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('person_add').cyan-text
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('message').cyan-text
+				.col.s12.m4
+					.card.card-user-widget01
+						.card-image.bg-only
+							.overlay.grey-overlay.overlay-darken-4
+							img(src='../images/placeholder/1000x700g.jpg',class='bg-placeholder',alt="placeholder")
+							//- span.card-title Card Title
+							a.card-userpic
+								img(src='../images/placeholder/300x300g.jpg',alt="placeholder")
+							a.btn-floating.halfway-fab.waves-effect.waves-light.red
+								i.material-icons add
+						.card-content
+							h5.center.grey-text.text-darken-1 Slade Wilson
+							p.center
+								| Web Designer 
+							.collection.widget-inline-static
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('remove_red_eye').orange-text.text-accent-2
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('person_add').orange-text.text-accent-2
+								a.collection-item.inline-static-item(href='#!',class='col s4')
+									+mi('message').orange-text.text-accent-2
+			.row(style="margin-bottom:10px !important;")
+				.col.s12.m6
+					.card-image-widget
+						.overlay.grey-overlay.overlay-darken-4
+						img(src='../images/placeholder/1024x720g.jpg',class='bg-image',alt="placeholder")
+						a.btn-floating.halfway-up-fab.waves-effect.waves-light.red
+							i.material-icons add
+						.widget-container
+							span.white-text
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							h5.white-text Welcome to Forge
+							p.caption.white-text
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.Lorem ipsum dolor sit amet.
+				.col.s12.m6
+					.card-image-widget
+						.overlay.grey-overlay.overlay-darken-4
+						img(src='../images/placeholder/1024x720g.jpg',class='bg-image',alt="placeholder")
+						a.btn-floating.halfway-up-fab.waves-effect.waves-light.red
+							i.material-icons add
+						.widget-container
+							span.white-text
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							h5.white-text Welcome to Forge
+							p.caption.white-text
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.Lorem ipsum dolor sit amet.
+		include ../include/footer.pug

@@ -1,0 +1,49 @@
+{
+  "name": "matgulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gulp:task": "gulp",
+    "gulp:dev": "gulp dev",
+    "gulp:prod": "gulp prod",
+    "gulp:w": "gulp watch",
+    "gulp:assets": "gulp assets",
+    "start": "concurrently \"npm run gulp:assets\" \"npm run gulp:prod\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.11",
+    "concurrently": "^3.4.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-changed": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-download-stream": "0.0.13",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-pug-beautify": "0.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-generate-contents": "^0.3.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-util": "^3.0.8",
+    "gulp-w3cjs": "^1.3.0"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "chart.js": "^2.5.0",
+    "jquery": "^2.1.4",
+    "materialize-css": "^0.98.2",
+    "mdi": "^1.9.33"
+  }
+}

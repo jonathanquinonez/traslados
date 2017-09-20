@@ -1,0 +1,420 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Date & Time Pickers
+block append css
+	link(rel="stylesheet", href="../css/plugins/lolliclock.css")
+	link(rel="stylesheet", href="../plugins/pickers/jquery-timepicker/jquery.timepicker.css")
+	
+block content
+	- var mainRoute="UIElements"
+	- var route = 'picker'
+	- var func = 'datetime-picker'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Pickers"},{"link":"#","title":"Date & Time Pickers"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Date & Time Pickers
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			// Date Pickers
+			div.row
+				.col.s12
+					h4.content-headline Date Pickers
+					p
+						|We use a modified version of pickadate.js to create a materialized date picker. Test it out below!
+				form.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Date Picker
+								p
+									| Setting up with material color scheme. Pretty is as usual. Set the class name <code class="language-markup">pck-*</code> to inpute. Here you can use entire material color palette with color tones that's lighten/darken/accent. For color tones, you can set <code class="language-markup">pck-darken-*</code> or <code class="language-markup">pck-lighten-*</code> or <code class="language-markup">pck-accent-*</code>. But make you initialize class to connect with Material TimePicker JS.
+						.row
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker")
+								span.input-info.inline-block
+									| No class
+
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-primary pck-dark")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-primary pck-dark</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-primary")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-primary</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-primary pck-light")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-primary pck-light</code> class to input datepicker.
+							// SECONDARY COLOR
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-secondary pck-dark")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-secondary pck-dark</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-secondary")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-secondary</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-secondary pck-light")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-secondary pck-light</code> class to input datepicker.
+							// SUCCESS COLOR
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-success pck-dark")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-success pck-dark</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-success")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-success</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-success pck-light")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-success pck-light</code> class to input datepicker.
+							// ERROR COLOR
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-error pck-dark")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-error pck-dark</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-error")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-error</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-error pck-light")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-error pck-light</code> class to input datepicker.
+							// WARNING COLOR
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-warning pck-dark")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-warning pck-dark</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-warning")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-warning</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-warning pck-light")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-warning pck-light</code> class to input datepicker.
+							// INFO COLOR
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-info pck-dark")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-info pck-dark</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-info")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-info</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-info pck-light")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-info pck-light</code> class to input datepicker.
+							// OTHER
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-cyan")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-cyan</code> class to input datepicker.
+							.input-field.informatic-input.col.s12.m6.l4
+								input(type="date",class="datepicker pck-teal")
+								span.input-info.inline-block
+									| set <code class="language-markup">pck-teal</code> class to input datepicker.
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class="  language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>datepicker pck-pink<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span></code>
+			// Time Picker
+			div.row
+				.col.s12
+					h4.content-headline Time Picker
+					p Timepicket element can be useful in different aspects. Like your task management, events, scheduler, reminders, etc...
+				form.col.s12
+					// TimePicker : LolliClock
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline TimePicker : LolliClock
+								p
+									|A material design timepicker based on clockpicker with customize UI. You can customize it as you want. Each element of this clock can be colorized.
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class="  language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pick-a-time<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#pick-a-time'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lolliclock</span><span class="token punctuation">(</span><span class="token punctuation">{</span>autoclose<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code>
+						.row
+							.input-field.informatic-input.col.s12.m6.l6
+								input(type="text",id="clock1",name='clock1')
+								label(for="clock1") Default
+							.input-field.col.s12.m6.l6
+								input(type="text",id="clock2",name='clock2')
+								label(for="clock2") Primary
+						.row
+							.input-field.informatic-input.col.s12.m6.l6
+								input(type="text",id="clock3",name='clock3')
+								label(for="clock3") Secondary
+							.input-field.col.s12.m6.l6
+								input(type="text",id="clock4",name='clock4')
+								label(for="clock4") Info
+						.row
+							// Customize UI by defining option.
+							div.col.s12
+								p Customize UI by defining option.
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#clock2"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">lolliclock</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+										autoclose<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+										schemeActBtn<span class="token punctuation">:</span><span class="token string">'teal'</span><span class="token punctuation">,</span>
+										schemePopover<span class="token punctuation">:</span><span class="token string">'white'</span><span class="token punctuation">,</span>
+										schemeHead<span class="token punctuation">:</span><span class="token string">'teal'</span><span class="token punctuation">,</span>
+										schemePlat<span class="token punctuation">:</span><span class="token string">'grey'</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+				// jQuery Time Picker
+				form.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline jQuery TimePicker
+								p
+									|jQuery Timepicker can parse the most used time representations allowing you and your users to enter time using their prefered way for writing it.
+						.row
+							// Basic Example
+							.col.s12
+								h5.content-headline Basic Example
+							.input-field.informatic-input.col.s6.m4.l4
+								input(type="text",id="jq-timepick-basicExample",name='jq-timepick-basicExample',class='box-input',placeholder="Basic")
+							.input-field.col.s6.m8.l8
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#jq-timepick-basicExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							// Scroll Default Example
+							.col.s12
+								h5.content-headline Scroll Default Example
+								p Set the scroll position to local time if no value selected.
+							.input-field.col.s6.m4.l4
+								input(type="text",id="scrollDefaultExample",name='scrollDefaultExample',class='box-input',placeholder="Basic")
+							.input-field.col.s6.m8.l8
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#scrollDefaultExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">'scrollDefault'</span><span class="token punctuation">:</span> <span class="token string">'now'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							//  Scroll Default Example
+							.col.s12
+								h5.content-headline Scroll Default Example
+								p Set the scroll position to local time if no value selected.
+							.input-field.col.s6.m4.l4
+								input(type="text",id="setTimeExample",name='setTimeExample',class='box-input',placeholder="Basic")
+								a(href="javascript:void(0)",id="setTimeButton",class='waves-effect waves-light btn') Set Current Time
+									+mi('timer').left
+							.input-field.col.s6.m8.l8
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#setTimeExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#setTimeButton'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#setTimeExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token string">'setTime'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						// Duration Example
+						.row
+							.col.s12
+								h5.content-headline Duration Example
+							.input-field.col.s6.m4.l4
+								input(type="text",id="durationExample",name='durationExample',class='box-input',placeholder="Basic")
+								p Set a starting time and see duration from that starting time. You can optionally set an maxTime as well.
+							.input-field.col.s6.m8.l8
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#durationExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    <span class="token string">'minTime'</span><span class="token punctuation">:</span> <span class="token string">'2:00pm'</span><span class="token punctuation">,</span>
+									    <span class="token string">'maxTime'</span><span class="token punctuation">:</span> <span class="token string">'11:30pm'</span><span class="token punctuation">,</span>
+									    <span class="token string">'showDuration'</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						// Event Example
+						.row
+							.col.s12
+								h5.content-headline Event Example
+								p Trigger an event after selecting a value. Fires before the input onchange event.
+							.input-field.col.s6.m4.l4
+								input(type="text",id="onselectExample",name='onselectExample',placeholder="Basic")
+							.input-field.col.s6.m8.l8
+								label(for="onselectExample",id="onselectTarget")
+						.row
+							.input-field.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#onselectExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#onselectExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'changeTime'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#onselectTarget'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						// DisableTimeRanges Example
+						.row
+							.col.s12
+								h5.content-headline DisableTimeRanges Example
+							.input-field.col.s6.m4.l4
+								input(type="text",id="disableTimeRangesExample",name='disableTimeRangesExample',placeholder="Basic")
+								p Prevent selection of certain time values.
+							.input-field.col.s6.m8.l8
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#disableTimeRangesExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    <span class="token string">'disableTimeRanges'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+									        <span class="token punctuation">[</span><span class="token string">'1am'</span><span class="token punctuation">,</span> <span class="token string">'2am'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									        <span class="token punctuation">[</span><span class="token string">'3am'</span><span class="token punctuation">,</span> <span class="token string">'4:01am'</span><span class="token punctuation">]</span>
+									    <span class="token punctuation">]</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						// noneOption Example
+						.row
+							.col.s12
+								h5.content-headline noneOption Example
+							.input-field.col.s6.m4.l4
+								input(type="text",id="noneOptionExample",name='noneOptionExample',placeholder="Basic")
+								p Custom options can be added to the dropdown menu.
+							.input-field.col.s6.m8.l8
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#noneOptionExample'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    <span class="token string">'noneOption'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+									        <span class="token punctuation">{</span>
+									            <span class="token string">'label'</span><span class="token punctuation">:</span> <span class="token string">'Foobar'</span><span class="token punctuation">,</span>
+									            <span class="token string">'className'</span><span class="token punctuation">:</span> <span class="token string">'shibby'</span><span class="token punctuation">,</span>
+									            <span class="token string">'value'</span><span class="token punctuation">:</span> <span class="token string">'42'</span>
+									        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+									        <span class="token string">'Foobar2'</span>
+									    <span class="token punctuation">]</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						// timeFormat Example
+						.row
+							.col.s12
+								h5.content-headline timeFormat Example
+								p timepicker.jquery uses the time portion of PHP's date formatting commands.
+							.input-field.col.s6.m6.l6
+								input(type="text",id="timeformatExample1",name='timeformatExample1',placeholder="Basic")
+							.input-field.col.s6.m6.l6
+								input(type="text",id="timeformatExample2",name='timeformatExample2',placeholder="Basic")
+							.input-field.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#timeformatExample1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">'timeFormat'</span><span class="token punctuation">:</span> <span class="token string">'H:i:s'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#timeformatExample2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">'timeFormat'</span><span class="token punctuation">:</span> <span class="token string">'h:i A'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						// Step Example
+						.row
+							.col.s12
+								h5.content-headline Step Example
+								p Generate drop-down options with varying levels of precision.
+							.input-field.col.s6.m6.l6
+								input(type="text",id="stepExample1",name='stepExample1',placeholder="Basic")
+							.input-field.col.s6.m6.l6
+								input(type="text",id="stepExample2",name='stepExample2',placeholder="Basic")
+							.input-field.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#stepExample1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">'step'</span><span class="token punctuation">:</span> <span class="token number">15</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#stepExample2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">timepicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    <span class="token string">'step'</span><span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									        <span class="token keyword">return</span> <span class="token punctuation">(</span>i<span class="token operator">%</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">15</span> <span class="token punctuation">:</span> <span class="token number">45</span><span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+		include ../include/footer.pug
+block append scripts
+	script(type="text/javascript",src="../plugins/pickers/lolliclock/lolliclock.js")
+	script(type="text/javascript",src="../plugins/pickers/jquery-timepicker/jquery.timepicker.js")
+	script.
+		$(document).ready(function(){
+			$('.datepicker').pickadate({
+				selectMonths: true, // Creates a dropdown to control month
+				selectYears: 15 // Creates a dropdown of 15 years to control year
+			});
+			//- lolliclock
+			$("#clock1").lolliclock({autoclose:true});
+
+			$("#clock2").lolliclock({
+				autoclose:true,
+				schemeActBtn:'secondary-bg',
+				schemePopover:'primary-bg',
+				schemeHead:'primary-bg dark',
+				schemePlat:'white'
+			});
+			$("#clock3").lolliclock({
+				autoclose:true,
+				schemeActBtn:'primary-bg',
+				schemePopover:'secondary-bg',
+				schemeHead:'secondary-bg dark',
+				schemePlat:'white'
+			});
+			$("#clock4").lolliclock({
+				autoclose:true,
+				schemeActBtn:'error-bg',
+				schemePopover:'info-bg',
+				schemeHead:'info-bg dark',
+				schemePlat:'white'
+			});
+			//- jQuery TimePicker
+			$('#jq-timepick-basicExample').timepicker();
+			$('#scrollDefaultExample').timepicker({ 'scrollDefault': 'now' });
+			$('#setTimeExample').timepicker();
+			$('#setTimeButton').on('click', function (){
+			    $('#setTimeExample').timepicker('setTime', new Date());
+			});
+			$('#durationExample').timepicker({
+			    'minTime': '2:00pm',
+			    'maxTime': '11:30pm',
+			    'showDuration': true
+			});
+
+			$('#onselectExample').timepicker();
+			$('#onselectExample').on('changeTime', function() {
+			    $('#onselectTarget').text($(this).val());
+			});
+			$('#disableTimeRangesExample').timepicker({
+			    'disableTimeRanges': [
+			        ['1am', '2am'],
+			        ['3am', '4:01am']
+			    ]
+			});
+			$('#noneOptionExample').timepicker({
+			    'noneOption': [
+			        {
+			            'label': 'Foobar',
+			            'className': 'shibby',
+			            'value': '42'
+			        },
+			        'Foobar2'
+			    ]
+			});
+
+			$('#timeformatExample1').timepicker({ 'timeFormat': 'H:i:s' });
+			$('#timeformatExample2').timepicker({ 'timeFormat': 'h:i A' });
+
+			$('#stepExample1').timepicker({ 'step': 15 });
+			$('#stepExample2').timepicker({
+			    'step': function(i) {
+			        return (i%2) ? 15 : 45;
+			    }
+			});
+
+		});

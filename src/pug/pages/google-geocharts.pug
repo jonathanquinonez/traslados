@@ -1,0 +1,83 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Geo Charts
+block append css
+	
+block content
+	- var mainRoute="chart"
+	- var route = 'extraCharts'
+	- var func = 'googleGeoChart'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"Google Geo Charts"}]
+	include ../include/header.pug
+	main.animated
+		.main-header
+			.sec-page
+				.page-title
+					h2 Geo Charts
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Geo Chart
+					p
+						| Google 
+						a(href="https://developers.google.com/chart/interactive/docs/gallery/geochart") 
+							| geo chart 
+						|  is a map of a country, a continent, or a region with areas identified in one of three ways:
+					ol
+						li
+							| The region mode colors whole regions, such as countries, provinces, or states.
+						li
+							| The markers mode uses circles to designate regions that are scaled according to a value that you specify.
+						li 
+							| The text mode labels the regions with identifiers (e.g., "Russia" or "Asia").
+			//- Google Geo-Charts
+			.row
+				.col.s12
+					// Region Geo Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Region Geo Chart
+						.row
+							.col.s12
+								#regions_div
+			.row
+				.col.s12.m6
+					// Marker Geo Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Marker Geo Chart
+						.row
+							.col.s12
+								#chart_markersMap
+				.col.s12.m6
+					// Text Geo Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Text Geo Chart
+						.row
+							.col.s12
+								#regionstext_div
+			.row
+				.col.s12
+					// Coloring your chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Coloring your chart
+						.row
+							.col.s12
+								#geochart-colors
+		include ../include/footer.pug
+block append scripts
+	//- AIzaSyAoqM2ajGLymYCyt14bhxOEfcjHDShZDm8
+	script(type='text/javascript', src='../plugins/charts/google-chart/loader.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/jsapi.js')
+	script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAoqM2ajGLymYCyt14bhxOEfcjHDShZDm8', type='text/javascript')
+	script(type='text/javascript', src='../plugins/charts/google-chart/geochart.js')

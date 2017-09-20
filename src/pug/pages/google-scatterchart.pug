@@ -1,0 +1,84 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Google Scatter Charts
+block append css
+	
+block content
+	- var mainRoute="chart"
+	- var route = 'scatterChart'
+	- var func = 'googleScatterChart'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"Google Scatter Charts"}]
+	include ../include/header.pug
+	main.animated
+		.main-header
+			.sec-page
+				.page-title
+					h2 Scatter Charts
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Google Scatter Charts
+					p
+						| Scatter charts plot points on a graph. When the user hovers over the points, tooltips are displayed with more information. Google 
+						a(href="https://developers.google.com/chart/interactive/docs/gallery/scatterchart") 
+							| scatter charts 
+						| are rendered within the browser using SVG or VML depending on browser capabilities.
+
+			//- Google Scatter-Charts
+			.row
+				.col.s12
+					// Basic Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic Chart
+						.row
+							.col.s12
+								#chart_scatterChart
+				.col.s12
+					// Changing And Animating Shapes
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Changing And Animating Shapes
+						.row
+							.col.s12
+								#animatedshapes_div
+			.row
+				.col.s12
+					// Material Scatter-charts
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Material Scatter-charts
+						.row
+							.col.s12
+								#scatterchart_material
+			.row
+				.col.s12
+					// Dual-Y charts 
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Dual-Y charts 
+						.row
+							.col.s12
+								#scatter_dual_y
+				.col.s12
+					// Top-X charts
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Top-X charts
+						.row
+							.col.s12
+								#scatter_top_x
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/charts/google-chart/loader.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/jsapi.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/scatterchart.js')

@@ -1,0 +1,368 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Form TagInput
+block append css
+	link(rel="stylesheet", href="../css/plugins/materialize-tags.css")
+	
+block content
+	- var mainRoute="UIElements"
+	- var route = 'formComponets'
+	- var func = 'taginputs'
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Form Componets"},{"link":"#","title":"Tag Input"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Tag Input
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Tags
+			div.row
+				.col.s12
+					h4.content-headline Tag-Inputs
+					p 
+						a(href="http://henrychavez.github.io/materialize-tags/examples/") Materialize-tags
+						|  is a jQuery plugin providing a Material Design user interface for managing tags. 
+
+				form.col.s12
+					// Basic Tag-Input
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic Tag-Input
+								p Just add <code class="language-markup">data-role="materialtags"</code> to your input field to automatically change it to a tags input field.
+						.row
+							.input-field.col.s12
+								input(type="text",value="Amsterdam,Washington,Sydney,Beijing,Cairo",data-role="materialtags",id="materialtags1",class="materialize-tag")
+								label(for="materialtags1") Basic Taginput
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class="  language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Amsterdam,Washington,Sydney,Beijing,Cairo<span class="token punctuation">"</span></span> <span class="token attr-name">data-role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialtags<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialize-tag<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span></code>
+				
+				form.col.s12
+					// Set Max Characters For Input
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Set Max Characters For Input
+								p
+									|Set the limitation for each tag characters entered.
+						.row
+							.input-field.col.s12
+								input(type="text",value="",data-role="materialtags",id="materialtags3",class="materialize-tag tagchars")
+								label(for="materialtags3") Taginput maxChars(8)
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input.tagchars'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    maxChars<span class="token punctuation">:</span> <span class="token number">8</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						
+				form.col.s12
+					// MaxTags
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline MaxTags
+								p
+									| Setting limitation on the number of tags allow to enter in an input.
+						.row
+							.input-field.col.s12
+								input(type="text",value="Envato",data-role="materialtags",id="maxTags",class="materialize-tag maxTags")
+								label(for="maxTags") Taginput maxTags(3)
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    maxTags<span class="token punctuation">:</span> <span class="token number">3</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						
+				// Typeahead
+				form.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Typeahead Bind
+								p
+									| Typeahead is not included in Materializecss, so you'll have to include your own typeahead library. I'd recommed typeahead.js. An example of using this is shown below.
+						.row
+							.input-field.col.s12
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",id="materialtags2",class="materialize-tag typeaheader")
+								label(for="materialtags2") Materialize Select
+						.row
+							div.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token keyword">var</span> citynames <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bloodhound</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    datumTokenizer<span class="token punctuation">:</span> Bloodhound<span class="token punctuation">.</span>tokenizers<span class="token punctuation">.</span>obj<span class="token punctuation">.</span><span class="token function">whitespace</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+									    queryTokenizer<span class="token punctuation">:</span> Bloodhound<span class="token punctuation">.</span>tokenizers<span class="token punctuation">.</span>whitespace<span class="token punctuation">,</span>
+									    prefetch<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+									        url<span class="token punctuation">:</span> <span class="token string">'https://raw.githubusercontent.com/henrychavez/materialize-tags/master/examples/assets/data/citynames.json'</span><span class="token punctuation">,</span>
+									        filter<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									            <span class="token keyword">return</span> $<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>cityname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									                <span class="token keyword">return</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> cityname <span class="token punctuation">}</span><span class="token punctuation">;</span>
+									            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        <span class="token punctuation">}</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+									citynames<span class="token punctuation">.</span><span class="token function">initialize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input.typeaheader'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    typeaheadjs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+									        name<span class="token punctuation">:</span> <span class="token string">'citynames'</span><span class="token punctuation">,</span>
+									        displayKey<span class="token punctuation">:</span> <span class="token string">'name'</span><span class="token punctuation">,</span>
+									        valueKey<span class="token punctuation">:</span> <span class="token string">'name'</span><span class="token punctuation">,</span>
+									        source<span class="token punctuation">:</span> citynames<span class="token punctuation">.</span><span class="token function">ttAdapter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+							div.col.s12
+								pre.language-markup.
+									<code class="  language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Amsterdam,Washington,Sydney,Beijing,Cairo<span class="token punctuation">"</span></span> <span class="token attr-name">data-role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialtags<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialize-tag typeaheader<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span></code>
+						
+				// Color your tags
+				form.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Coloring Tags
+								p
+									|Set color of tag by providing classes to <code class="language-markup">.input-field</code>. Assign <code class="language-markup">.taginput</code> to identify the tag input and assign your color class <code class="language-markup">.tag-*</code> to the same. You can also set color tone (material) <code class="language-markup">tag-lighten-*</code> or <code class="language-markup">tag-darken-*</code> and so on...
+								
+						.row
+							// PRIMARY SHADES
+							.input-field.col.s12.m6.l4.taginput.tag-primary.tag-dark
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags11")
+								label(for="materialtags11") Basic Taginput Primary Dark
+							.input-field.col.s12.m6.l4.taginput.tag-primary
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags12")
+								label(for="materialtags12") Basic Taginput Primary
+							.input-field.col.s12.m6.l4.taginput.tag-primary.tag-light
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags13")
+								label(for="materialtags13") Basic Taginput Primary Light
+							// SECONDARY SHADES
+							.input-field.col.s12.m6.l4.taginput.tag-secondary.tag-dark
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags14")
+								label(for="materialtags14") Basic Taginput Secondary Dark
+							.input-field.col.s12.m6.l4.taginput.tag-secondary
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags15")
+								label(for="materialtags15") Basic Taginput Secondary
+							.input-field.col.s12.m6.l4.taginput.tag-secondary.tag-light
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags16")
+								label(for="materialtags16") Basic Taginput Secondary Light
+							// SUCCESS SHADES
+							.input-field.col.s12.m6.l4.taginput.tag-success.tag-dark
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags17")
+								label(for="materialtags17") Basic Taginput Success Dark
+							.input-field.col.s12.m6.l4.taginput.tag-success
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags18")
+								label(for="materialtags18") Basic Taginput Success
+							.input-field.col.s12.m6.l4.taginput.tag-success.tag-light
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags19")
+								label(for="materialtags19") Basic Taginput Success Light
+							// ERROR SHADES
+							.input-field.col.s12.m6.l4.taginput.tag-error.tag-dark
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags20")
+								label(for="materialtags20") Basic Taginput Error Dark
+							.input-field.col.s12.m6.l4.taginput.tag-error
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags21")
+								label(for="materialtags21") Basic Taginput Error
+							.input-field.col.s12.m6.l4.taginput.tag-error.tag-light
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags22")
+								label(for="materialtags22") Basic Taginput Error Light
+							// WARNING SHADES
+							.input-field.col.s12.m6.l4.taginput.tag-warning.tag-dark
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags23")
+								label(for="materialtags23") Basic Taginput Warning Dark
+							.input-field.col.s12.m6.l4.taginput.tag-warning
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags24")
+								label(for="materialtags24") Basic Taginput Warning
+							.input-field.col.s12.m6.l4.taginput.tag-warning.tag-light
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags25")
+								label(for="materialtags25") Basic Taginput Warning Light
+							// INFO SHADES
+							.input-field.col.s12.m6.l4.taginput.tag-info.tag-dark
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags26")
+								label(for="materialtags26") Basic Taginput Info Dark
+							.input-field.col.s12.m6.l4.taginput.tag-info
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags27")
+								label(for="materialtags27") Basic Taginput Info
+							.input-field.col.s12.m6.l4.taginput.tag-info.tag-light
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags28")
+								label(for="materialtags28") Basic Taginput Info Light
+							// OTHER COLORS
+							.input-field.col.s12.m6.l4.taginput.tag-light-blue
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags29")
+								label(for="materialtags29") Basic Taginput Light-blue
+							.input-field.col.s12.m6.l4.taginput.tag-teal
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags30")
+								label(for="materialtags30") Basic Taginput Teal
+							.input-field.col.s12.m6.l4.taginput.tag-orange.tag-lighten-2
+								input(type="text",value="Amsterdam,Washington",data-role="materialtags",class="materialize-tag",id="materialtags31")
+								label(for="materialtags31") Basic Taginput Orange Lighten-2
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class="  language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s6 taginput tag-yellow tag-lighten-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Amsterdam,Washington,Sydney,Beijing,Cairo<span class="token punctuation">"</span></span> <span class="token attr-name">data-role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialtags<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialtags-red<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialize-tag<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialtags-red<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Basic Taginput<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code>
+				// More Options
+				form.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline More Options
+						.row
+							.col.s12
+								p <code class="language-markup">tagClass</code>
+								p  Classname for the tags, or a function returning a classname.
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    tagClass<span class="token punctuation">:</span> <span class="token string">'big'</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    tagClass<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									        <span class="token keyword">return</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">10</span> <span class="token operator">?</span> <span class="token string">'big'</span> <span class="token punctuation">:</span> <span class="token string">'small'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							.col.s12
+								p <code class="language-markup">itemValue</code>
+								p  When adding objects as tags, itemValue must be set to the name of the property containing the item's value, or a function returning an item's value.
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    itemValue<span class="token punctuation">:</span> <span class="token string">'id'</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    itemValue<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									        <span class="token keyword">return</span> item<span class="token punctuation">.</span>id<span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							.col.s12
+								p <code class="language-markup">itemText</code>
+								p  When adding objects as tags, you can set itemText to the name of the property of item to use for a its tag's text. You may also provide a function which returns an item's value. When this options is not set, the value of <code class="language-markup">itemValue</code> will be used.
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    itemText<span class="token punctuation">:</span> <span class="token string">'label'</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							.col.s12
+								p <code class="language-markup">confirmKeys</code>
+								p  Array of keycodes which will add a tag when typing in the input. (default: [13, 188], which are ENTER and comma).
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    confirmKeys<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">]</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							.col.s12
+								p <code class="language-markup">trimValue</code>
+								p When true, automatically removes all whitespace around tags. (default: false)
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    trimValue<span class="token punctuation">:</span> <span class="token boolean">true</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+
+						.row
+							.col.s12
+								p <code class="language-markup">allowDuplicates</code>
+								p When true, the same tag can be added multiple times. (default: false)
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    allowDuplicates<span class="token punctuation">:</span> <span class="token boolean">true</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							.col.s12
+								p <code class="language-markup">freeInput</code>
+								p Allow creating tags which are not returned by typeahead's source (default: true). This is only possible when using string as tags. When itemValue option is set, this option will be ignored.
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    typeahead<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+									        source<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Amsterdam'</span><span class="token punctuation">,</span> <span class="token string">'Washington'</span><span class="token punctuation">,</span> <span class="token string">'Sydney'</span><span class="token punctuation">,</span> <span class="token string">'Beijing'</span><span class="token punctuation">,</span> <span class="token string">'Cairo'</span><span class="token punctuation">]</span>
+									    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+									    freeInput<span class="token punctuation">:</span> <span class="token boolean">true</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							.col.s12
+								p <code class="language-markup">source</code>
+								p An array (or function returning a promise or array), which will be used as source for a typeahead.
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    typeahead<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+									        source<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Amsterdam'</span><span class="token punctuation">,</span> <span class="token string">'Washington'</span><span class="token punctuation">,</span> <span class="token string">'Sydney'</span><span class="token punctuation">,</span> <span class="token string">'Beijing'</span><span class="token punctuation">,</span> <span class="token string">'Cairo'</span><span class="token punctuation">]</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    typeahead<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+									        source<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									            <span class="token keyword">return</span> $<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'http://someservice.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        <span class="token punctuation">}</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							.col.s12
+								p <code class="language-markup">cancelConfirmKeysOnEmpty</code>
+								p Boolean value controlling whether form submissions get processed when pressing enter in a field converted to a materialtags (default: false).
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    cancelConfirmKeysOnEmpty<span class="token punctuation">:</span> <span class="token boolean">true</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							.col.s12
+								p <code class="language-markup">onTagExists</code>
+								p Function invoked when trying to add an item which allready exists. By default, the existing tag hides and fades in.
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialtags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    onTagExists<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> $tag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									        $tag<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fadeIn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+		include ../include/footer.pug
+block append scripts
+	//- TYPEAHEAD
+	script(type="text/javascript",src="../plugins/typeahead/handlebars.js")
+	script(type="text/javascript",src="../plugins/typeahead/typeahead.js")
+	//- materialize-tags
+	script(type='text/javascript', src='../plugins/materialize-tags/js/materialize-tags.js')
+	script(type='text/javascript', src='../plugins/materialize-tags/example.js')

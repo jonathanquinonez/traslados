@@ -1,0 +1,117 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize Transitions
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'appJsComponents'
+	- var func = 'materializeTransitions'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Advance UI"},{"link":"#","title":"Transitions"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Materialize Transitions
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Transitions
+					p We've made some custom animation functions that will transition your content. It's recommended to use this with our ScrollFire Plugin to make your content transition in as you scroll.
+				// Show Staggered List
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Show Staggered List
+								p Use this to create a staggered reveal effect for any UL Tag with list items. Just make sure the list items in the UL are opacity: 0; to ensure the animation works correctly.
+						.row
+							.col.s12
+								table.highlight
+									thead
+										tr
+											th Option Name
+											th Description
+									tbody
+										tr
+											td SelectorOrEl
+											td The selector or element that the transition targets.
+						.row
+							.col.s12
+								a.btn(href='#!', onclick="Materialize.showStaggeredList('#staggered-test')") Click Me
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#!<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Materialize.showStaggeredList('#staggered-test')<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click Me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+						.row
+							.col.s12
+								ul#staggered-test
+									li(style='transform: translateX(0px);')
+										h4
+											a(href='#') List Item
+										p This is a description
+									li(style='transform: translateX(0px);')
+										h4
+											a(href='#') List Item
+										p This is a description
+									li(style='transform: translateX(0px);')
+										h4
+											a(href='#') List Item
+										p This is a description
+									li(style='transform: translateX(0px);')
+										h4
+											a(href='#') List Item
+										p This is a description
+									li(style='transform: translateX(0px);')
+										h4
+											a(href='#') List Item
+										p This is a description
+				// Fade In Image
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Fade In Image
+								p Use this to fade in images. It also animates grayscale and brightness to give it a unique effect.
+						.row
+							.col.s12
+								table.highlight
+									thead
+										tr
+											th Option Name
+											th Description
+									tbody
+										tr
+											td SelectorOrEl	
+											td The selector or element that the transition targets.
+							.col.s12
+								a.btn(href='#!', onclick="Materialize.fadeInImage('#image-test')") Click Me
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#!<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Materialize.fadeInImage('#image-test')<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Click Me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+						.row
+							.col.s12
+								img#image-test.responsive-img(src='../images/placeholder/1024x915t.jpg',alt="placeholder")
+		include ../include/footer.pug

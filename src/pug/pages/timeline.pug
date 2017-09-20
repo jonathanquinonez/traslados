@@ -1,0 +1,99 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Timeline
+block content
+	- var mainRoute=""
+	- var route = 'timeline'
+	- var func = 'timeline'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Timeline"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Timeline
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline Timeline
+					p
+						| A graphical representation of a period of time, on which important events are marked. Timeline is eye catching view for any social media. But as Admin panel it may also can be used for User activities, or any administrating events.
+			.timeline
+		        .timeline-event
+		            .card.timeline-content
+		                .card-image.waves-effect.waves-block.waves-light
+		                    img.activator(src='../images/placeholder/800x400t.jpg')
+		                .card-content
+		                    span.card-title.activator.grey-text.text-darken-4
+		                        | Lovely food
+		                        +mi('more_vert').right
+		                .card-reveal
+		                    span.card-title.grey-text.text-darken-4
+		                        | Lovely Food Recipe
+		                        +mi('close').right
+		                    p
+		                        | Here is some more information about this product that is only revealed once clicked on.
+		            .timeline-badge.blue.white-text
+		                +mi('language')
+		        .timeline-event
+		            .card.timeline-content
+		                .card-image
+		                    img(src='../images/placeholder/800x400r.jpg',alt="placeholder")
+		                    a.btn-floating.halfway-fab.waves-effect.waves-light.pink
+		                    	+mi('favorite')
+		                .card-content
+		                    span.card-title.activator.grey-text.text-darken-4
+		                        | Awesome card with Fab
+		                        +mi('more_vert').right
+		                .card-reveal
+		                    span.card-title.grey-text.text-darken-4
+		                        | Card Title
+		                        +mi('close').right
+		                    p
+		                        | Here is some more information about this product that is only revealed once clicked on.
+		            .timeline-badge.red.white-text
+		                +mi('work')
+		        .timeline-event
+		            .card.timeline-content
+		                .card-image
+		                    img(src='../images/placeholder/800x400g.jpg',alt="placeholder")
+		                    a.btn-floating.halfway-fab.waves-effect.waves-light.blue
+		                    	+mi('share')
+		                .card-content
+		                    span.card-title.activator.grey-text.text-darken-4
+		                        | Card with fab and action
+		                        +mi('more_vert').right
+		                .card-reveal
+		                    span.card-title.grey-text.text-darken-4
+		                        | Card Title
+		                        +mi('close').right
+		                    p
+		                        | Here is some more information about this product that is only revealed once clicked on.
+		                .card-action
+		                	a(href="#")
+		                		| 108 Likes
+		                	a(href="#")
+		                		| 108 Comments
+	            	.timeline-badge.green.white-text
+	            		+mi('person')
+    	//- FOOTER
+		include ../include/footer.pug

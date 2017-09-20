@@ -1,0 +1,143 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize ScrollFire
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'appJsComponents'
+	- var func = 'materializeScrollFire'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Advance UI"},{"link":"#","title":"ScrollFire"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Materialize ScrollFire
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			// Intro
+			div.row
+				.col.s12
+					h4.content-headline ScrollFire
+					p ScrollFire is a jQuery Plugin that executes callback functions depending on how far into the page you've scrolled. We'll show you how you can use this plugin with many demos and examples.
+				// jQuery Plugin Initialization
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline jQuery Plugin Initialization
+								p ScrollFire is basically working on jQuery. Here is the initialization.
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token keyword">var</span> options<span class="token operator">=</span><span class="token punctuation">[</span>
+										<span class="token punctuation">{</span>selector<span class="token punctuation">:</span> <span class="token string">'.class'</span><span class="token punctuation">,</span> offset<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> callback<span class="token punctuation">:</span> <span class="token function">customCallbackFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+										<span class="token punctuation">{</span>selector<span class="token punctuation">:</span> <span class="token string">'.other-class'</span><span class="token punctuation">,</span> offset<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> callback<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+											<span class="token function">customCallbackFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+										<span class="token punctuation">}</span><span class="token punctuation">}</span>
+									<span class="token punctuation">]</span><span class="token punctuation">;</span>
+									Materialize<span class="token punctuation">.</span><span class="token function">scrollFire</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+									</code>
+				// jQuery Plugin Options
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline jQuery Plugin Options
+								p We have below options to work with ScrollFire.
+						.row
+							.col.s12
+								table.highlight
+									thead
+										tr
+											th Option Name
+											th Description
+									tbody
+										tr
+											td Selector
+											td The selector for the element that is being tracked.
+										tr
+											td Offset
+											td
+												| If this is 0, the callback will be fired when the selector element is at the very bottom of the user's window.
+										tr
+											td Callback
+											td
+												| Execute a callback function when the user scrolls to the threshold. It will only be called once. 
+												br
+												|  The callback provides a parameter which refers to the current element selected.
+				// ScrollFire Demo
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline ScrollFire Demo
+								p Scroll through slowly to get sense of what ScrollFire can do for you. This is the ScrollFire code that we have used on this page.
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">[</span>
+									  <span class="token punctuation">{</span>selector<span class="token punctuation">:</span> <span class="token string">'#staggered-test'</span><span class="token punctuation">,</span> offset<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span> callback<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									    Materialize<span class="token punctuation">.</span><span class="token function">toast</span><span class="token punctuation">(</span><span class="token string">"This is our ScrollFire Demo!"</span><span class="token punctuation">,</span> <span class="token number">1500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#call-1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">velocity</span><span class="token punctuation">(</span><span class="token punctuation">{</span> backgroundColor<span class="token punctuation">:</span> <span class="token string">"#333"</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> <span class="token string">"#ef5350"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>duration<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+									  <span class="token punctuation">{</span>selector<span class="token punctuation">:</span> <span class="token string">'#staggered-test'</span><span class="token punctuation">,</span> offset<span class="token punctuation">:</span> <span class="token number">205</span><span class="token punctuation">,</span> callback<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									    Materialize<span class="token punctuation">.</span><span class="token function">toast</span><span class="token punctuation">(</span><span class="token string">"Please continue scrolling!"</span><span class="token punctuation">,</span> <span class="token number">1500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#call-2"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">velocity</span><span class="token punctuation">(</span><span class="token punctuation">{</span> backgroundColor<span class="token punctuation">:</span> <span class="token string">"#333"</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> <span class="token string">"#ef5350"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>duration<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+									  <span class="token punctuation">{</span>selector<span class="token punctuation">:</span> <span class="token string">'#staggered-test'</span><span class="token punctuation">,</span> offset<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">,</span> callback<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									    Materialize<span class="token punctuation">.</span><span class="token function">showStaggeredList</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#call-3"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">velocity</span><span class="token punctuation">(</span><span class="token punctuation">{</span> backgroundColor<span class="token punctuation">:</span> <span class="token string">"#333"</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> <span class="token string">"#ef5350"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>duration<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+									  <span class="token punctuation">{</span>selector<span class="token punctuation">:</span> <span class="token string">'#image-test'</span><span class="token punctuation">,</span> offset<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">,</span> callback<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									    Materialize<span class="token punctuation">.</span><span class="token function">fadeInImage</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#call-4"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">velocity</span><span class="token punctuation">(</span><span class="token punctuation">{</span> backgroundColor<span class="token punctuation">:</span> <span class="token string">"#333"</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> <span class="token string">"#ef5350"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>duration<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+									<span class="token punctuation">]</span><span class="token punctuation">;</span>
+									Materialize<span class="token punctuation">.</span><span class="token function">scrollFire</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+						.row
+							.col.s12
+								ul#staggered-test
+									li(style='transform: translateX(0px); opacity: 1;')
+										h4
+											a(href='#') List Item
+										p This is a description
+									li(style='transform: translateX(0px); opacity: 1;')
+										h4
+											a(href='#') List Item
+										p This is a description
+									li(style='transform: translateX(0px); opacity: 1;')
+										h4
+											a(href='#') List Item
+										p This is a description
+									li(style='transform: translateX(0px); opacity: 1;')
+										h4
+											a(href='#') List Item
+										p This is a description
+									li(style='transform: translateX(0px); opacity: 1;')
+										h4
+											a(href='#') List Item
+										p This is a description
+								img#image-test.responsive-img(src='../images/placeholder/1024x915t.jpg', style='opacity: 1;',alt="placeholder")
+		include ../include/footer.pug

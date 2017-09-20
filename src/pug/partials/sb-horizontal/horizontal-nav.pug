@@ -1,0 +1,314 @@
+//- We need to remove padding from header and main
+//- Handlers
+nav.hide-on-med-and-down
+	.nav-wrapper
+		ul.iconized.left
+			//- SIMPLE LINK
+			li.menu-item(class={active: route === 'dashboard'})
+				a(href=dashboardPath,class={active: route === 'dashboard'}).menu-link.waves-effect.waves-set
+					+mi('dashboard').menu-icon.left
+					span.menu-span Dashboard
+			//- STANDARD LIST : WIDGET
+			li.menu-item
+				a(href="#",class='').open_hor_sub.menu-link.waves-effect.waves-set
+					+mi('wb_sunny').menu-icon.left
+					span.menu-span Widgets
+					i.material-icons.menu-icon.right arrow_drop_down
+				.hor_sub.standard.hide
+					ul.collection.collapsible.collapsible-accordion
+						li.collection-item(class={active: route === 'cardWidgetStatistic'})
+							a(href=cardWidgetStatistic,class={active: func === 'cardWidgetStatistic'}).waves-effect.waves-set
+								| Statistic Card
+								+mi('show_chart').left
+						li.collection-item(class={active: route === 'cardWidgetWeather'})
+							a(href=cardWidgetWeather,class={active: func === 'cardWidgetWeather'}).waves-effect.waves-set
+								| Weather Card
+								+mi('wb_sunny').left
+						li.collection-item(class={active: route === 'cardWidgetFeeds'})
+							a(href=cardWidgetFeeds,class={active: func === 'cardWidgetFeeds'}).waves-effect.waves-set
+								| Feeds Card
+								+mi('view_list').left
+						li.collection-item(class={active: route === 'cardWidgetTravel'})
+							a(href=cardWidgetTravel,class={active: func === 'cardWidgetTravel'}).waves-effect.waves-set
+								| Travel Card
+								+mi('panorama_fish_eye').left
+			//- STANDARD LIST : APPREARANCE
+			li.menu-item
+				a(href="#",class={active: mainRoute === 'appearance'}).open_hor_sub.menu-link.waves-effect.waves-set
+					+mi('insert_chart').menu-icon.left
+					span.menu-span CSS Properties
+					i.material-icons.menu-icon.right arrow_drop_down
+				.hor_sub.standard.hide
+					ul.collection.collapsible.collapsible-accordion
+						li.collection-item(class={active: route === 'materializeColor'})
+							a(href=materializeColor,class={active: route === 'materializeColor'}).waves-effect.waves-set
+								| Color
+								+mi('color_lens').left
+						li.collection-item(class={active: route === 'materializeCssMedia'})
+							a(href=materializeCssMedia,class={active: route === 'materializeCssMedia'}).waves-effect.waves-set
+								| CSS Media
+								+mi('photo_filter').left
+						li.collection-item(class={active: route === 'materializeGrid'})
+							a(href=materializeGrid,class={active: route === 'materializeGrid'}).waves-effect.waves-set
+								| Grid
+								+mi('grid_on').left
+						li.collection-item
+							a(href="#",class="").collapsible-header.waves-effect.waves-set Tables
+								i.mdi.mdi-table.left
+								i.material-icons.right arrow_drop_down
+							.collapsible-body
+								ul
+									li
+										a(href=materializeTable,class={active: func === 'materializeTable'}).waves-effect.waves-set Materialize Table
+											+mi('list').left
+									li
+										a(href=basicDatatable,class={active: func === 'basicDatatable'}).waves-effect.waves-set Datatable Basic Table
+											+mi('format_list_bulleted').left
+									li
+										a(href=basicStyleDatatable,class={active: func === 'basicStyleDatatable'}).waves-effect.waves-set Datatable Basic Style
+											+mi('format_paint').left
+									li
+										a(href=orderingDatatable,class={active: func === 'orderingDatatable'}).waves-effect.waves-set Datatable Sort Datatable
+											+mi('sort').left
+									li
+										a(href=advanceDatatable,class={active: func === 'advanceDatatable'}).waves-effect.waves-set Advance Datatable
+											+mi('star').left
+									li
+										a(href=templateDatatable,class={active: func === 'templateDatatable'}).waves-effect.waves-set Datatable Templates
+											+mi('style').left
+						li.collection-item(class={active: route === 'materializeHelper'})
+							a(href=materializeHelper,class={active: route === 'materializeHelper'}).waves-effect.waves-set
+								| Helpers
+								+mi('help').left
+						li.collection-item(class={active: route === 'materializeShadow'})
+							a(href=materializeShadow,class={active: route === 'materializeShadow'}).waves-effect.waves-set
+								| Shadow
+								+mi('queue').left
+						li.collection-item(class={active: route === 'materializeTypography'})
+							a(href=materializeTypography,class={active: route === 'materializeTypography'}).waves-effect.waves-set
+								| Typography
+								+mi('text_format').left
+						li.collection-item(class={active: route === 'materializeIcons'})
+							a(href=materializeIcons,class={active: route === 'materializeIcons'}).waves-effect.waves-set
+								| Icon
+								+mi('gesture').left
+			li.menu-item(class={active: mainRoute === 'UIElements'})
+				a(href="#",class={active: mainRoute === 'UIElements'}).open_hor_sub.menu-link.waves-effect.waves-set
+					+mi('format_paint').menu-icon.left
+					span.menu-span Components
+					+mi('arrow_drop_down').menu-icon.right 
+				.hor_sub.full.hide
+					ul.collection
+						li.collection-header
+							h6 UI Elements
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeBadge,class={active: func === 'materializeBadge'}) Badges
+								i.material-icons.left turned_in
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeButton,class={active: func === 'materializeButton'}) Button
+								i.material-icons.left touch_app
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeBreadcrumbs,class={active: func === 'materializeBreadcrumbs'}) Breadcrumbs
+								i.material-icons.left swap_horiz
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeCards,class={active: func === 'materializeCards'}) Cards
+								i.material-icons.left card_membership
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeChips,class={active: func === 'materializeChips'}) Chips
+								i.material-icons.left label_outline
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeCollection,class={active: func === 'materializeCollection'}) Collections
+								i.material-icons.left view_list
+						li.collection-item
+							a.waves-effect.waves-set(href=materializePagination,class={active: func === 'materializePagination'}) Pagination
+								i.material-icons.left last_page
+						li.collection-item
+							a.waves-effect.waves-set(href=materializePreloader,class={active: func === 'materializePreloader'}) Preloader
+								i.material-icons.left cached
+						li.collection-item
+							a(href="#").dropdown-button.waves-effect.waves-set&attributes({"data-activates":"form-components"}) Form Components
+								+mi('transform')(class={active: route === 'formComponets'}).left
+								+mi('arrow_drop_down').right
+							ul#form-components.dropdown-content
+								li
+									a(href=formBasicComponents,class={active: func === 'basic'}).waves-effect.waves-set Basic Inputs
+										+mi('format_align_center').left
+								li
+									a(href=formCheckboxesRadio,class={active: func === 'checkboxradio'}).waves-effect.waves-set Checkboxes & Radios
+										+mi('check_box').left
+								li
+									a(href=formExtendedControl,class={active: func === 'extendedControl'}).waves-effect.waves-set Extended Control
+										+mi('more').left
+								li
+									a(href=formSelect,class={active: func === 'selectBox'}).waves-effect.waves-set Select Inputs
+										+mi('select_all').left
+								li
+									a(href=formTaginput,class={active: func === 'taginputs'}).waves-effect.waves-set Tag Input
+										+mi('label_outline').left
+								li
+									a(href=advanceInputs,class={active: func === 'advanceInputs'}).waves-effect.waves-set Advance Input
+										+mi('power_input').left
+					ul.collection
+						li.collection-header
+							h6 Advance UI
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeCollapsible,class={active: func === 'materializeCollapsible'}) Collapsible
+								+mi('collections').left
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeDialogs,class={active: func === 'materializeDialogs'}) Dialogs
+								+mi('notifications_active').left
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeDropdown,class={active: func === 'materializeDropdown'}) Dropdown
+								+mi('arrow_drop_down_circle').left
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeMedia,class={active: func === 'materializeMedia'}) Media
+								+mi('perm_media').left
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeCarousel,class={active: func === 'materializeCarousel'}) Carousel
+								+mi('view_carousel').left
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeModals,class={active: func === 'materializeModals'}) Modals
+								+mi('laptop_windows').left
+						li.collection-item
+							a.waves-effect.waves-set(href=materializePushpin,class={active: func === 'materializePushpin'}) PushPin
+								+mi('view_list').left
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeScrollFire,class={active: func === 'materializeScrollFire'}) ScrollFire
+								+mi('all_inclusive').left
+
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeTabs,class={active: func === 'materializeTabs'}) Tabs
+								+mi('label').left
+					ul.collection
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeTransitions,class={active: func === 'materializeTransitions'}) Transactions
+								+mi('stars').left
+						li.collection-item
+							a.waves-effect.waves-set(href=materializeWaves,class={active: func === 'materializeWaves'}) Waves
+								+mi('polymer').left
+						li.collection-header
+							h6 Form Component
+						li.collection-item
+							a.waves-effect.waves-set(href=formBasicComponents,class={active: func === 'formBasicComponents'}) Basic Inputs
+								+mi('format_align_center').left
+						li.collection-item
+							a.waves-effect.waves-set(href=formCheckboxesRadio,class={active: func === 'formCheckboxesRadio'}) Checkboxes & Radios
+								+mi('check_box').left
+						li.collection-item
+							a.waves-effect.waves-set(href=formExtendedControl,class={active: func === 'formExtendedControl'}) Extended controls
+								+mi('more').left
+						li.collection-item
+							a.waves-effect.waves-set(href=formSelect,class={active: func === 'formSelect'}) Select inputs
+								+mi('select_all').left
+						li.collection-item
+							a.waves-effect.waves-set(href=formTaginput,class={active: func === 'formTaginput'}) Tag Input
+								+mi('label_outline').left
+						li.collection-item
+							a(href="#").dropdown-button.waves-effect.waves-set&attributes({"data-activates":"advance-inputs"}) Advance Inputs
+								+mi('transform')(class={active: func === 'advanceInputs'}).left
+								+mi('arrow_drop_down').right
+							ul#advance-inputs.dropdown-content
+								li
+									a(href=materializenote,class={active: nestedName === 'editor-materializenote'}).waves-effect.waves-set MaterializeNote
+										+mi('note').left
+								li
+									a(href=ckeditor,class={active: nestedName === 'editor-ckeditor'}).waves-effect.waves-set CK Editor
+										+mi('keyboard').left
+						li.collection-item
+							a(href="#").dropdown-button.waves-effect.waves-set&attributes({"data-activates":"picker-inputs"}) Pickers
+								+mi('invert_colors')(class={active: func === 'picker'}).left
+								+mi('arrow_drop_down').right
+							ul#picker-inputs.dropdown-content
+								li.menu-item
+									a.waves-effect.waves-set(href=pickerDateTime,class={active: func === 'datetime-picker'}) Date-Time
+										+mi('date_range').left
+								li.menu-item
+									a.waves-effect.waves-set(href=pickerColor,class={active: func === 'color-picker'}) Color
+										+mi('color_lens').left
+								li.menu-item
+									a.waves-effect.waves-set(href=pickerLocation,class={active: func === 'location-picker'}) Location
+										+mi('pin_drop').left
+					ul.collection
+						li.collection-header
+							h6 Charts
+						li.collection-item
+							a(href="#").dropdown-button.waves-effect.waves-set&attributes({"data-activates":"bar-charts-collection"}) Bar-Charts
+								i.mdi.mdi-chart-bar(class={active: route === 'barChart'}).left
+								+mi('arrow_drop_down').right
+							ul#bar-charts-collection.dropdown-content
+								li
+									a.waves-effect.waves-set(href=googleBarChart,class={active: func === 'googleBarChart'}) Google Chart
+										i.mdi.mdi-google.left
+								li
+									a.waves-effect.waves-set(href=c3BarChart,class={active: func === 'c3BarChart'}) c3 Chart
+										+mi('multiline_chart').left
+								li
+									a.waves-effect.waves-set(href=chartjsBarChart,class={active: func === 'chartjsBarChart'}) ChartJs
+										i.mdi.mdi-image-filter-hdr.left
+						li.collection-item
+							a(href="#").dropdown-button.waves-effect.waves-set&attributes({"data-activates":"line-charts-collection"}) Line-Charts
+								i.mdi.mdi-chart-line(class={active: route === 'lineChart'}).left
+								+mi('arrow_drop_down').right
+							ul#line-charts-collection.dropdown-content
+								li
+									a.waves-effect.waves-set(href=googleLineChart,class={active: func === 'googleLineChart'}) Google Chart
+										i.mdi.mdi-google.left
+								li
+									a.waves-effect.waves-set(href=c3LineChart,class={active: func === 'c3LineChart'}) c3 Chart
+										+mi('multiline_chart') .left
+								li
+									a.waves-effect.waves-set(href=chartjsLineChart,class={active: func === 'chartjsLineChart'}) ChartJs
+										i.mdi.mdi-image-filter-hdr.left
+						li.collection-item
+							a(href="#").dropdown-button.waves-effect.waves-set&attributes({"data-activates":"area-charts-collection"}) Line-Charts
+								i.mdi.mdi-chart-areaspline(class={active: route === 'areaChart'}).left
+								+mi('arrow_drop_down').right
+							ul#area-charts-collection.dropdown-content
+								li
+									a.waves-effect.waves-set(href=googleAreaChart,class={active: func === 'googleAreaChart'}) Google Chart
+										i.mdi.mdi-google.left
+								li
+									a.waves-effect.waves-set(href=c3AreaChart,class={active: func === 'c3AreaChart'}) c3 Chart
+										+mi('multiline_chart').left
+						li.collection-item
+							a(href="#").dropdown-button.waves-effect.waves-set&attributes({"data-activates":"pieChart-charts-collection"}) Line-Charts
+								+mi('pie_chart')(class={active: route === 'pieChart'}).left
+								+mi('arrow_drop_down').right
+							ul#pieChart-charts-collection.dropdown-content
+								li
+									a.waves-effect.waves-set(href=googlePieChart,class={active: func === 'googlePieChart'}) Google Chart
+										i.mdi.mdi-google.left
+								li
+									a.waves-effect.waves-set(href=c3PieChart,class={active: func === 'c3PieChart'}) c3 Chart
+										+mi('multiline_chart').left
+								li
+									a.waves-effect.waves-set(href=chartjsPieChart,class={active: func === 'chartjsPieChart'}) Chart Js
+										i.mdi.mdi-image-filter-hdr.left
+						li.collection-item
+							a(href="#").dropdown-button.waves-effect.waves-set&attributes({"data-activates":"scatterChart-charts-collection"}) Scatter Charts
+								i.mdi.mdi-chart-scatterplot-hexbin(class={active: route === 'scatterChart'}).left
+								+mi('arrow_drop_down').right
+							ul#scatterChart-charts-collection.dropdown-content
+								li
+									a.waves-effect.waves-set(href=googleScatterChart,class={active: func === 'googleScatterChart'}) Google Chart
+										i.mdi.mdi-google.left
+								li
+									a.waves-effect.waves-set(href=chartjsScatterChart,class={active: func === 'chartjsScatterChart'}) Chart JS
+										i.mdi.mdi-image-filter-hdr.left
+						li.collection-item
+							a(href="#").dropdown-button.waves-effect.waves-set&attributes({"data-activates":"Extra-charts-collection"}) Extra
+								+mi('more')(class={active: route === 'extraCharts'}).left
+								+mi('arrow_drop_down').right
+							ul#Extra-charts-collection.dropdown-content
+								li
+									a.waves-effect.waves-set(href=googleColumnChart,class={active: func === 'googleColumnChart'}) Google Column Chart
+										+mi('view_column').left
+								li
+									a.waves-effect.waves-set(href=googleComboChart,class={active: func === 'googleComboChart'}) Google Combo Chart
+										i.mdi.mdi-chart-gantt.left
+								li
+									a.waves-effect.waves-set(href=googleGeoChart,class={active: func === 'googleGeoChart'}) Google Geochart
+										i.mdi.mdi-earth.left
+								li
+									a.waves-effect.waves-set(href=c3ExtraCharts,class={active: func === 'c3ExtraCharts'}) C3 Extra
+										+mi('multiline_chart').left

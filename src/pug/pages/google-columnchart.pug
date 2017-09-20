@@ -1,0 +1,165 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Google Column Charts
+block append css
+	
+block content
+	- var mainRoute="chart"
+	- var route = 'extraCharts'
+	- var func = 'googleColumnChart'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"Google Column Charts"}]
+	include ../include/header.pug
+	main.animated
+		.main-header
+			.sec-page
+				.page-title
+					h2 Column Charts
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Google Column Charts
+					p
+						| Google 
+						a(href="https://developers.google.com/chart/interactive/docs/gallery/columnchart") 
+							| column chart 
+						| is a vertical bar chart rendered in the browser using SVG or VML, whichever is appropriate for the user's browser. Like all Google charts, column charts display tooltips when the user hovers over the data. For a horizontal version of this chart, see the bar chart.
+
+			//- Google Column-Charts
+			.row
+				.col.s12
+					// Basic Column-chart With Default Styling
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic Column-chart With Default Styling
+						.row
+							.col.s12
+								#chart_columnBasic
+				.col.s12
+					// Basic Column-chart With Multiple Series
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic Column-chart With Multiple Series
+						.row
+							.col.s12
+								#chart_columnMultipleSeries
+			.row
+				.col.s12
+					// Customizable Column Colors
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Customizable Column Colors
+						.row
+							.col.s12
+								#chart_colColors
+				.col.s12
+					// Customizable Axis And Tick Labels
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Customizable Axis And Tick Labels
+						.row
+							.col.s12
+								#chart_axisTickColors
+			.row
+				.col.s12
+					// Stacked Columns
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Stacked Columns
+						.row
+							.col.s12
+								#chart_stacked
+
+				.col.s12
+					// Annotations
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Annotations
+						.row
+							.col.s12
+								#chart_annotations
+
+			.row
+				.col.s12
+					// Trendlines
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Trendlines
+						.row
+							.col.s12
+								#chart_trendlines
+				.col.s12
+					// Basic Material Column-chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic Material Column-chart
+						.row
+							.col.s12
+								#chart_drawMaterial
+
+			.row
+				.col.s12
+					// Title And Subtitle
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Title And Subtitle
+						.row
+							.col.s12
+								#chart_materialTitleSubtitle
+				.col.s12
+					// Dual Y-axes
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Dual Y-axes
+						.row
+							.col.s12
+								#chart_dualY
+			.row
+				.col.s12
+					// Top X-axis
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Top X-axis
+						.row
+							.col.s12
+								#chart_topX
+				.col.s12
+					// Color Columns
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Color Columns
+						.row
+							.col.s12
+								#chart_colorCols
+			.row
+				.col.s12
+					// Three Columns
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Three Columns
+						.row
+							.col.s12
+								#chart_3cols
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/charts/google-chart/loader.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/jsapi.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/columnChart.js')
+	
+	

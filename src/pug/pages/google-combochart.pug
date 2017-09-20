@@ -1,0 +1,46 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Google Combo Chart
+block append css
+	
+block content
+	- var mainRoute="chart"
+	- var route = 'extraCharts'
+	- var func = 'googleComboChart'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"Google Combo Chart"}]
+	include ../include/header.pug
+	main.animated
+		.main-header
+			.sec-page
+				.page-title
+					h2 Combo Chart
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Google Combo Chart
+					p
+						| Google 
+						a(href="https://developers.google.com/chart/interactive/docs/gallery/combochart") 
+							| combo chart 
+						| that lets you render each series as a different marker type from the following list: line, area, bars, candlesticks, and stepped area.
+			//- Google Combo-Charts
+			.row
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Visualization
+						.row
+							.col.s12
+								#visualization_combo
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/charts/google-chart/loader.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/jsapi.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/combochart.js')
+	
+	

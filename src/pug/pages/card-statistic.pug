@@ -1,0 +1,1089 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Statistic Cards
+block content
+	- var mainRoute="cardWidget"
+	- var route = 'cardWidgetStatistic'
+	- var func = ''
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Cards"},{"link":"#","title":"Statistic Cards"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Statistic Cards
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline Statistic cards
+					p
+						| Awesome & attractive statistic widgets!
+			// Minimal Statistics Cards
+			.row
+				.col.s12
+					h5.content-headline Minimal Statistics Cards
+					p Minimal statistics cards with material feel.
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.primary-text work
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 278
+								p New Projects
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.secondary-text favorite_border
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 450
+								p New Likes
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.success-text comment
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 118
+								p New Comments
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}).error-text 48.08%
+								p Bounce Rate
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.error-text trending_up
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}).primary-text 118
+								p New Posts
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.primary-text edit
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}).secondary-text 10
+								p AWS IAM Keys
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.secondary-text vpn_key
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}).primary-text 70%
+								p Storage Used
+								.progress
+									.determinate(style='width: 70%').primary-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.primary-text sd_storage
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}).secondary-text 800
+								p New Downloads
+								.progress
+									.determinate(style='width: 71%').secondary-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.secondary-text file_download
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}).success-text 88
+								p Support Request
+								.progress
+									.determinate(style='width: 68%').success-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.success-text help_outline
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}).error-text 400
+								p Bug Reports
+								.progress
+									.determinate(style='width: 70%').error-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.error-text bug_report
+
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}).primary-text 180
+								p New Purchases
+								.progress
+									.determinate(style='width: 70%').primary-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.primary-text shopping_cart
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}).secondary-text 200
+								p Earnings
+								.progress
+									.determinate(style='width: 70%').secondary-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.secondary-text monetization_on
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.secondary-text storage
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).secondary-text 82%
+								p Server Storage
+							.card-action
+								.progress
+									.determinate(style='width: 80%').secondary-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.primary-text usb
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).primary-text 48/80
+								p USB Connetion
+							.card-action
+								.progress
+									.determinate(style='width: 60%').primary-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.error-text memory
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).error-text 90%
+								p RAM In Use
+							.card-action
+								.progress
+									.determinate(style='width: 90%').error-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.success-text notifications
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).success-text 99%
+								p Notification Queue
+							.card-action
+								.progress
+									.determinate(style='width: 90%').success-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.secondary-text network_check
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).secondary-text 80%
+								p Network
+							.card-action
+								.progress
+									.determinate(style='width: 90%').secondary-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.error-text battery_charging_full
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).error-text 99.9%
+								p Battery
+							.card-action
+								.progress
+									.determinate(style='width: 90%').error-bg
+
+			// Minimal Statistics With Background Color
+			.row
+				.col.s12
+					h5.content-headline Minimal Statistics With Background Color And White Icons.
+					p Statistics on minimal cards with background color with white icons as indicator of an action in left/right side.
+				.col.s12.m6.l4
+					.card.horizontal.primary-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign work
+						.card-stacked
+							.card-content.right-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 278
+								p.white-text New Projects
+				.col.s12.m6.l4
+					.card.horizontal.secondary-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign favorite_border
+						.card-stacked
+							.card-content.right-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 450
+								p.white-text New Likes
+				.col.s12.m6.l4
+					.card.horizontal.success-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign comment
+						.card-stacked
+							.card-content.right-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 118
+								p.white-text New Comments
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal.error-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 48.08%
+								p.white-text Bounce Rate
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign trending_up
+				.col.s12.m6.l4
+					.card.horizontal.primary-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 118
+								p.white-text New Posts
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign edit
+				.col.s12.m6.l4
+					.card.horizontal.secondary-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 10
+								p.white-text AWS IAM Keys
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign vpn_key
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal.primary-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 70%
+								p.white-text Storage Used
+								.progress
+									.determinate(style='width: 70%').white
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign sd_storage
+				.col.s12.m6.l4
+					.card.horizontal.secondary-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 800
+								p.white-text New Downloads
+								.progress
+									.determinate(style='width: 71%').white
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign file_download
+				.col.s12.m6.l4
+					.card.horizontal.success-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 88
+								p.white-text Support Request
+								.progress
+									.determinate(style='width: 68%').white
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign help_outline
+				.col.s12.m6.l4
+					.card.horizontal.error-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 400
+								p.white-text Bug Reports
+								.progress
+									.determinate(style='width: 70%').white
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign bug_report
+				
+				.col.s12.m6.l4
+					.card.horizontal.primary-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 200
+								p.white-text New Purchases
+								.progress
+									.determinate(style='width: 70%').white
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign shopping_cart
+				.col.s12.m6.l4
+					.card.horizontal.secondary-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 980
+								p.white-text Earning
+								.progress
+									.determinate(style='width: 70%').white
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.white-text.medium.valign monetization_on
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal.secondary-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.white-text storage
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 82%
+								p.white-text Server Storage
+							.card-action
+								.progress
+									.determinate(style='width: 80%').white
+				.col.s12.m6.l4
+					.card.horizontal.primary-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.white-text usb
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 48/80
+								p.white-text USB Connetion
+							.card-action
+								.progress
+									.determinate(style='width: 60%').white
+				.col.s12.m6.l4
+					.card.horizontal.error-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.white-text memory
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 90%
+								p.white-text RAM In Use
+							.card-action
+								.progress
+									.determinate(style='width: 90%').white
+				.col.s12.m6.l4
+					.card.horizontal.success-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.white-text notifications
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 99%
+								p.white-text Notification Queue
+							.card-action
+								.progress
+									.determinate(style='width: 90%').white
+				.col.s12.m6.l4
+					.card.horizontal.error-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.white-text battery_charging_full
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 99.9%
+								p.white-text Battery
+							.card-action
+								.progress
+									.determinate(style='width: 90%').white
+				.col.s12.m6.l4
+					.card.horizontal.secondary-bg
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.white-text network_check
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 80%
+								p.white-text Network
+							.card-action
+								.progress
+									.determinate(style='width: 90%').white
+			// Icon Section
+			.row
+				.col.s12
+					h5.content-headline Icon Highlight As Background
+					p Statistics on minimal cards with attractive highlighted icon section.
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.primary-bg
+							i.material-icons.medium.valign.white-text work
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 278
+								p New Projects
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg
+							i.material-icons.medium.valign.white-text favorite_border
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 450
+								p New Likes
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.success-bg
+							i.material-icons.medium.valign.white-text comment
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 118
+								p New Comments
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 48.08%
+								p Bounce Rate
+						.card-image.valign-wrapper.pad-lr-20.error-bg
+							i.material-icons.medium.valign.white-text trending_up
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 118
+								p New Posts
+						.card-image.valign-wrapper.pad-lr-20.primary-bg
+							i.material-icons.medium.valign.white-text edit
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 10
+								p AWS IAM Keys
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg
+							i.material-icons.medium.valign.white-text vpn_key
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 70%
+								p Storage Used
+								.progress
+									.determinate(style='width: 70%').primary-bg
+						.card-image.valign-wrapper.pad-lr-20.primary-bg
+							i.material-icons.medium.valign.white-text sd_storage
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 800
+								p New Downloads
+								.progress
+									.determinate(style='width: 71%').secondary-bg
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg
+							i.material-icons.medium.valign.white-text file_download
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 88
+								p Support Request
+								.progress
+									.determinate(style='width: 68%').success-bg
+						.card-image.valign-wrapper.pad-lr-20.success-bg
+							i.material-icons.medium.valign.white-text help_outline
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 400
+								p Bug Reports
+								.progress
+									.determinate(style='width: 70%').error-bg
+						.card-image.valign-wrapper.pad-lr-20.error-bg
+							i.material-icons.medium.valign.white-text bug_report
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 302
+								p New Purchases
+								.progress
+									.determinate(style='width: 70%').primary-bg
+						.card-image.valign-wrapper.pad-lr-20.primary-bg
+							i.material-icons.medium.valign.white-text shopping_cart
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked
+							.card-content.left-align
+								.card-title&attributes({"style":"font-weight:bold;"}) 890
+								p Earning
+								.progress
+									.determinate(style='width: 70%').secondary-bg
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg
+							i.material-icons.medium.valign.white-text monetization_on
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg
+							i.material-icons.medium.valign.white-text storage
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).secondary-text 82%
+								p Server Storage
+							.card-action
+								.progress
+									.determinate(style='width: 80%').secondary-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.error-bg
+							i.material-icons.medium.valign.white-text memory
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).error-text 90%
+								p RAM In Use
+							.card-action
+								.progress
+									.determinate(style='width: 90%').error-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.primary-bg
+							i.material-icons.medium.valign.white-text usb
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).primary-text 48/80
+								p USB Connetion
+							.card-action
+								.progress
+									.determinate(style='width: 60%').primary-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.error-bg
+							i.material-icons.medium.valign.white-text battery_charging_full
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).error-text 99%
+								p Battery
+							.card-action
+								.progress
+									.determinate(style='width: 90%').error-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.success-bg
+							i.material-icons.medium.valign.white-text notifications
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).success-text 99%
+								p Notification Queue
+							.card-action
+								.progress
+									.determinate(style='width: 90%').success-bg
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg
+							i.material-icons.medium.valign.white-text network_check
+						.card-stacked
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).secondary-text 78%
+								p Network
+							.card-action
+								.progress
+									.determinate(style='width: 90%').secondary-bg
+			// Icon Section With Background Color
+			.row
+				.col.s12
+					h5.content-headline Icon Section With Background Color
+					p Statistics on minimal cards with attractive highlighted Icon with background and also apply background to content in color shade.
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.primary-bg.dark
+							i.material-icons.medium.valign.white-text work
+						.card-stacked
+							.card-content.right-align.primary-bg
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 278
+								p.white-text New Projects
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg.dark
+							i.material-icons.medium.valign.white-text favorite_border
+						.card-stacked
+							.card-content.right-align.secondary-bg
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 450
+								p.white-text New Likes
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.success-bg.dark
+							i.material-icons.medium.valign.white-text comment
+						.card-stacked
+							.card-content.right-align.success-bg
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 118
+								p.white-text New Comments
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked.error-bg
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 48.08%
+								p.white-text Bounce Rate
+						.card-image.valign-wrapper.pad-lr-20.error-bg.dark
+							i.material-icons.white-text.medium.valign trending_up
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked.primary-bg
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 118
+								p.white-text New Posts
+						.card-image.valign-wrapper.pad-lr-20.primary-bg.dark
+							i.material-icons.white-text.medium.valign edit
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-stacked.secondary-bg
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 10
+								p.white-text AWS IAM Keys
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg.dark
+							i.material-icons.white-text.medium.valign vpn_key
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.primary-bg.dark
+							i.material-icons.white-text.medium.valign sd_storage
+						.card-stacked.primary-bg
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 70%
+								p.white-text Storage Used
+								.progress
+									.determinate(style='width: 70%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg.dark
+							i.material-icons.white-text.medium.valign file_download
+						.card-stacked.secondary-bg
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 800
+								p.white-text New Downloads
+								.progress
+									.determinate(style='width: 71%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.success-bg.dark
+							i.material-icons.white-text.medium.valign help_outline
+						.card-stacked.success-bg
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 88
+								p.white-text Support Request
+								.progress
+									.determinate(style='width: 68%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.error-bg.dark
+							i.material-icons.white-text.medium.valign bug_report
+						.card-stacked.error-bg
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 400
+								p.white-text Bug Reports
+								.progress
+									.determinate(style='width: 70%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.primary-bg.dark
+							i.material-icons.white-text.medium.valign shopping_cart
+						.card-stacked.primary-bg
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 400
+								p.white-text New Purchases
+								.progress
+									.determinate(style='width: 70%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg.dark
+							i.material-icons.white-text.medium.valign monetization_on
+						.card-stacked.secondary-bg
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) 400
+								p.white-text Earning
+								.progress
+									.determinate(style='width: 70%').white
+				//- 
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg.dark
+							i.material-icons.medium.valign.white-text storage
+						.card-stacked.secondary-bg
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 82%
+								p.white-text Server Storage
+							.card-action
+								.progress
+									.determinate(style='width: 80%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.error-bg.dark
+							i.material-icons.medium.valign.white-text memory
+						.card-stacked.error-bg
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 90%
+								p.white-text RAM In Use
+							.card-action
+								.progress
+									.determinate(style='width: 90%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.primary-bg.dark
+							i.material-icons.medium.valign.white-text usb
+						.card-stacked.primary-bg
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 48/80
+								p.white-text USB Connetion
+							.card-action
+								.progress
+									.determinate(style='width: 60%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.error-bg.dark
+							i.material-icons.medium.valign.white-text battery_charging_full
+						.card-stacked.error-bg
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 99%
+								p.white-text Battery
+							.card-action
+								.progress
+									.determinate(style='width: 90%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.success-bg.dark
+							i.material-icons.medium.valign.white-text notifications
+						.card-stacked.success-bg
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 99%
+								p.white-text Notification Queue
+							.card-action
+								.progress
+									.determinate(style='width: 90%').white
+				.col.s12.m6.l4
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg.dark
+							i.material-icons.medium.valign.white-text network_check
+						.card-stacked.secondary-bg
+							.card-content.right-align
+								.card-title&attributes({"style":"font-weight:bold;"}).white-text 99%
+								p.white-text Network
+							.card-action
+								.progress
+									.determinate(style='width: 90%').white
+			.row
+				.col.s12
+					h5.content-headline Statistics With Subtitle
+					p Statistics on minimal cards with Title & Sub Title.
+				.col.s12.m6
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.secondary-text comment
+						.card-stacked
+							.card-content
+								.row.no-mrpd
+									.col.s6
+										.card-title&attributes({"style":"font-weight:bold;"}) Total Comments
+										p New comments on Forge
+									.col.s6.right-align
+										h5 
+											strong 50,800
+				.col.s12.m6
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.warning-text work
+						.card-stacked
+							.card-content
+								.row.no-mrpd
+									.col.s6
+										.card-title&attributes({"style":"font-weight:bold;"}) New Projects
+										p New Projects in a year.
+									.col.s6.right-align
+										h5 
+											strong 30 Units
+				.col.s12.m6
+					.card.horizontal
+						.card-stacked
+							.card-content
+								.row.no-mrpd
+									.col.s6
+										.card-title&attributes({"style":"font-weight:bold;"}) Total Income
+										p Yearly Income
+									.col.s6.right-align
+										h5
+											strong $80,800
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.primary-text attach_money
+				.col.s12.m6
+					.card.horizontal
+						.card-stacked
+							.card-content
+								.row.no-mrpd
+									.col.s6
+										.card-title&attributes({"style":"font-weight:bold;"}) Total Articles
+										p Total Articles/month
+									.col.s6.right-align
+										h5
+											strong 300
+						.card-image.valign-wrapper.pad-lr-20
+							i.material-icons.medium.valign.info-text edit
+			.row
+				.col.s12
+					h5.content-headline Statistics With Icon Section & Subtitle
+					p Statistics on minimal cards with icon section and Title, Sub Title.
+				.col.s12.m6
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg
+							i.material-icons.medium.valign.white-text comment
+						.card-stacked
+							.card-content
+								.row.no-mrpd
+									.col.s6
+										.card-title&attributes({"style":"font-weight:bold;"}) Total Comments
+										p New comments on Forge
+									.col.s6.right-align
+										h5 
+											strong 50,800
+				.col.s12.m6
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.warning-bg
+							i.material-icons.medium.valign.white-text work
+						.card-stacked
+							.card-content
+								.row.no-mrpd
+									.col.s6
+										.card-title&attributes({"style":"font-weight:bold;"}) New Projects
+										p New Projects in a year.
+									.col.s6.right-align
+										h5 
+											strong 30 Units
+				.col.s12.m6
+					.card.horizontal
+						.card-stacked
+							.card-content
+								.row.no-mrpd
+									.col.s6
+										.card-title&attributes({"style":"font-weight:bold;"}) Total Income
+										p Yearly Income
+									.col.s6.right-align
+										h5
+											strong $80,800
+						.card-image.valign-wrapper.pad-lr-20.primary-bg
+							i.material-icons.medium.valign.white-text attach_money
+				.col.s12.m6
+					.card.horizontal
+						.card-stacked
+							.card-content
+								.row.no-mrpd
+									.col.s6
+										.card-title&attributes({"style":"font-weight:bold;"}) Total Articles
+										p Total Articles/month
+									.col.s6.right-align
+										h5
+											strong 300
+						.card-image.valign-wrapper.pad-lr-20.info-bg
+							i.material-icons.medium.valign.white-text edit
+			.row
+				.col.s12
+					h5.content-headline Statistics With Icon Section, Subtitle & Bg Color
+					p Statistics on minimal cards with icon section, title, sub title and background color.
+				.col.s12.m6
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.secondary-bg.dark
+							i.material-icons.medium.valign.white-text comment
+						.card-stacked
+							.card-content.secondary-bg
+								.row.no-mrpd
+									.col.s6
+										.card-title.white-text&attributes({"style":"font-weight:bold;"}) Total Comments
+										p.white-text New comments on Forge
+									.col.s6.right-align
+										h5.white-text 
+											strong 50,800
+				.col.s12.m6
+					.card.horizontal
+						.card-image.valign-wrapper.pad-lr-20.warning-bg.dark
+							i.material-icons.medium.valign.white-text work
+						.card-stacked
+							.card-content.warning-bg
+								.row.no-mrpd
+									.col.s6
+										.card-title.white-text&attributes({"style":"font-weight:bold;"}) New Projects
+										p.white-text New Projects in a year.
+									.col.s6.right-align
+										h5.white-text 
+											strong 30 Units
+				.col.s12.m6
+					.card.horizontal
+						.card-stacked
+							.card-content.primary-bg
+								.row.no-mrpd
+									.col.s6
+										.card-title.white-text&attributes({"style":"font-weight:bold;"}) Total Income
+										p.white-text Yearly Income
+									.col.s6.right-align
+										h5.white-text
+											strong $80,800
+						.card-image.valign-wrapper.pad-lr-20.primary-bg.dark
+							i.material-icons.medium.valign.white-text attach_money
+				.col.s12.m6
+					.card.horizontal
+						.card-stacked
+							.card-content.info-bg
+								.row.no-mrpd
+									.col.s6
+										.card-title.white-text&attributes({"style":"font-weight:bold;"}) Total Articles
+										p.white-text Total Articles/month
+									.col.s6.right-align
+										h5.white-text
+											strong 300
+						.card-image.valign-wrapper.pad-lr-20.info-bg.dark
+							i.material-icons.medium.valign.white-text edit
+			//- Dash Card
+			.row
+				.col.s12
+					h5.content-headline Dash Card With Icon
+					p Statistics on dash cards with icon section in square.
+				.col.s12.m6.l4
+					.card.card-dash.card-stats
+					    .card-header.z-depth-2.error-bg
+					        +mi('bug_report')
+					    .card-content
+					        p.category Fixed Issues
+					        h5.title
+					            | 27
+					            small Bugs
+					    .card-footer
+					        .stats
+					            +mi('report').error-text
+					            a(href='#') Push to Git
+				.col.s12.m6.l4
+					.card.card-dash.card-stats
+					    .card-header.z-depth-2.success-bg
+					        +mdiIcon('mdi-square-inc-cash')
+					    .card-content
+					        p.category Revenue
+					        h5.title
+					            small $
+					            | 32000
+					    .card-footer
+					        .stats
+					            +mi('trending_up').success-text
+					            a(href='#') Increament In Funds
+				.col.s12.m6.l4
+					.card.card-dash.card-stats
+					    .card-header.z-depth-2.info-bg
+					        +mi('help_outline')
+					    .card-content
+					        p.category Support Request
+					        h5.title
+					            | 24
+					            small Requests/day
+					    .card-footer
+					        .stats
+					            +mi('check')
+					            a(href='#') Resolve request
+				.col.s12.m6.l4
+					.card.card-dash.card-stats
+					    .card-header.z-depth-2.warning-bg
+					        +mi('edit')
+					    .card-content
+					        p.category Total Articles
+					        h5.title
+					            | 32000
+					            small Articles
+					    .card-footer
+					        .stats
+					            +mi('add_alert').warning-text
+					            a(href='#') Published
+				.col.s12.m6.l4
+					.card.card-dash.card-stats
+					    .card-header.z-depth-2.secondary-bg
+					        +mi('comment')
+					    .card-content
+					        p.category Total Comments
+					        h5.title
+					            | 78
+					            small Comments
+					    .card-footer
+					        .stats
+					            +mi('alarm_add').secondary-text
+					            a(href='#') New Comments
+				.col.s12.m6.l4
+					.card.card-dash.card-stats
+					    .card-header.z-depth-2.primary-bg
+					        +mi('tag_faces')
+					    .card-content
+					        p.category Tagging
+					        h5.title
+					            | 100
+					            small Tags
+					    .card-footer
+					        .stats
+					            +mi('face').primary-text
+					            a(href='#') Happy Faces
+			//- Dash Card - Full Header
+			.row
+				.col.s12
+					h5.content-headline Dash Card With Full Header
+					p Statistics on dash cards with full width header.
+				.col.s6.m6
+					.card.card-dash
+					    .card-header.z-depth-2.primary-bg
+					        +mi('album').left
+					        span.caption
+					        	|System Disk
+					    .card-content
+					        p.category Used Space
+					        h5.title
+					            | 256/500
+					            small GB
+					    .card-footer
+					        .stats
+					            +mi('warning').primary-text
+					            a(href='#') Get More Space...
+				.col.s6.m6
+					.card.card-dash.card-nav-tabs
+					    .card-header.z-depth-2.secondary-bg
+					        +mi('memory').right
+					        span.caption
+					        	|System Memory
+					    .card-content
+					        p.category Memory In Use
+					        h5.title
+					            | 80
+					            small %
+					    .card-footer
+					        .stats
+					            +mi('clear_all').secondary-text
+					            a(href='#') Clean Application
+			.row
+				.col.s6.m6
+					.card.card-dash
+					    .card-header.z-depth-2.info-bg
+					        +mi('help_outline').left
+					        span.caption
+					        	|Support Request
+					    .card-content
+					        p.category Resolved
+					        h5.title
+					            | 24
+					            small Requests
+					    .card-footer
+					        .stats
+					            +mi('check').info-text
+					            a(href='#') Resolve request
+				.col.s6.m6
+					.card.card-dash.card-nav-tabs
+					    .card-header.z-depth-2.warning-bg
+					        +mi('edit').right
+					        span.caption
+					        	| Total Articles
+					    .card-content
+					        p.category New Articles
+					        h5.title
+					            | 32000
+					            small Posts
+					    .card-footer
+					        .stats
+					            +mi('add_alert').warning-text
+					            a(href='#') Published
+    	//- FOOTER
+		include ../include/footer.pug

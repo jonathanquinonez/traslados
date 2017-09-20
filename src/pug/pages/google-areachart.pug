@@ -1,0 +1,83 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Google Area Charts
+block append css
+	
+block content
+	- var mainRoute="chart"
+	- var route = 'areaChart'
+	- var func = 'googleAreaChart'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"Google Area Charts"}]
+	include ../include/header.pug
+	main.animated
+		.main-header
+			.sec-page
+				.page-title
+					h2 Area Charts
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Google Area Charts
+					p
+						| Google 
+						a(href="https://developers.google.com/chart/interactive/docs/gallery/areachart") area chart 
+						| that is rendered within the browser using SVG or VML. Displays tips when hovering over points.
+
+			//- Google Area-Charts
+			.row
+				.col.s12
+					// Basic
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline A Simple Cart
+						.row
+							.col.s12
+								#chart_div
+				.col.s12
+					// Stacked
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Stacked
+						.row
+							.col.s12
+								#chart_stacked
+			.row
+				.col.s12
+					// 100% STACKED
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline 100% STACKED
+						.row
+							.col.s12
+								#chart_stacked100
+				.col.s12
+					// Steped Area Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Steped Area Chart
+						.row
+							.col.s12
+								#chart_steppedAreaChart
+			.row
+				.col.s12
+					// Stacked Stepped Area Charts
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Stacked Stepped Area Charts
+						.row
+							.col.s12
+								#chart_stackedSteppedAreaCharts
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/charts/google-chart/loader.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/jsapi.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/areachart.js')

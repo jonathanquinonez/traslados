@@ -1,0 +1,122 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: MaterialNotes
+block append css
+	link(rel="stylesheet", href="../plugins/materialNote/css/materialNote.css")
+	link(rel="stylesheet", href="../plugins/materialNote/css/codeMirror/codemirror.css")
+	link(rel="stylesheet", href="../plugins/materialNote/css/codeMirror/monokai.css")
+	
+block content
+	- var mainRoute="UIElements"
+	- var route = 'formComponets'
+	- var func = 'advanceInputs'
+	- var nestedName="editor-materializenote"
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Form Componets"},{"link":"#","title":"Advance Inputs"},{"link":"#","title":"Material Note"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Material Note
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Tags
+			div.row
+				.col.s12
+					h4.content-headline Material Note
+					p
+						| A Summernote wysiwyg editor version converted for Materialize.The only difference from Summernote is that you have to call <code class="language-markup">materialnote()</code> instad of <code class="language-markup">summernote()</code>.
+				form.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline MaterialNote
+								p
+									| MaterialNote is a fork of Summernote wysiwyg editor (See the Original API) Edited by CK.
+						.row 
+							div.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>input-field col s12<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+										<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>first<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>editor<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code>
+							.input-field.col.s12
+								.editor#first
+						.row
+							.col.s12
+								h5.content-headline Toolbar
+								p
+									|MaterialNote uses a javascript function to keep always visible the toolbar during scrolling. If you don't want this to be enabled, pass <code class="language-markup">followingToolbar: false</code> option to the constructor.
+						.row
+							.col.s12
+								h5.content-headline Paragraph buttons
+								p
+									| The paragraph buttons are available in dropdown format like Summernote <code class="language-markup">(['paragraph']</code> option in the toolbar array) or as separate buttons <code class="language-markup">(['leftButton', 'centerButton', 'rightButton', 'justifyButton', 'outdentButton', 'indentButton'])</code>.
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+										<span class="token keyword">var</span> toolbar <span class="token operator">=</span> <span class="token punctuation">[</span>
+										    <span class="token punctuation">[</span><span class="token string">'style'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'style'</span><span class="token punctuation">,</span> <span class="token string">'bold'</span><span class="token punctuation">,</span> <span class="token string">'italic'</span><span class="token punctuation">,</span> <span class="token string">'underline'</span><span class="token punctuation">,</span> <span class="token string">'strikethrough'</span><span class="token punctuation">,</span> <span class="token string">'clear'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+										    <span class="token punctuation">[</span><span class="token string">'fonts'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'fontsize'</span><span class="token punctuation">,</span> <span class="token string">'fontname'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+										    <span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'color'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+										    <span class="token punctuation">[</span><span class="token string">'undo'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'undo'</span><span class="token punctuation">,</span> <span class="token string">'redo'</span><span class="token punctuation">,</span> <span class="token string">'help'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+										    <span class="token punctuation">[</span><span class="token string">'ckMedia'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'ckImageUploader'</span><span class="token punctuation">,</span> <span class="token string">'ckVideoEmbeeder'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+										    <span class="token punctuation">[</span><span class="token string">'misc'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'link'</span><span class="token punctuation">,</span> <span class="token string">'picture'</span><span class="token punctuation">,</span> <span class="token string">'table'</span><span class="token punctuation">,</span> <span class="token string">'hr'</span><span class="token punctuation">,</span> <span class="token string">'codeview'</span><span class="token punctuation">,</span> <span class="token string">'fullscreen'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+										    <span class="token punctuation">[</span><span class="token string">'para'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'ul'</span><span class="token punctuation">,</span> <span class="token string">'ol'</span><span class="token punctuation">,</span> <span class="token string">'paragraph'</span><span class="token punctuation">,</span> <span class="token string">'leftButton'</span><span class="token punctuation">,</span> <span class="token string">'centerButton'</span><span class="token punctuation">,</span> <span class="token string">'rightButton'</span><span class="token punctuation">,</span> <span class="token string">'justifyButton'</span><span class="token punctuation">,</span> <span class="token string">'outdentButton'</span><span class="token punctuation">,</span> <span class="token string">'indentButton'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+										    <span class="token punctuation">[</span><span class="token string">'height'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'lineheight'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+										<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+										<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.editor'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialnote</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+										    toolbar<span class="token punctuation">:</span> toolbar<span class="token punctuation">,</span>
+										    height<span class="token punctuation">:</span> <span class="token number">350</span><span class="token punctuation">,</span>
+										    minHeight<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+										    defaultBackColor<span class="token punctuation">:</span> <span class="token string">'#fff'</span>
+										<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/materialNote/js/ckMaterializeOverrides.js')
+	script(type='text/javascript', src='../plugins/materialNote/lib/codeMirror/codemirror.js')
+	script(type='text/javascript', src='../plugins/materialNote/lib/codeMirror/xml.js')
+	script(type='text/javascript', src='../plugins/materialNote/js/materialNote.js')
+	
+	
+	script.
+		$(document).ready(function() {
+			var toolbar = [
+			    ['style', ['style', 'bold', 'italic', 'underline', 'strikethrough', 'clear']],
+			    ['fonts', ['fontsize', 'fontname']],
+			    ['color', ['color']],
+			    ['undo', ['undo', 'redo', 'help']],
+			    ['ckMedia', ['ckImageUploader', 'ckVideoEmbeeder']],
+			    ['misc', ['link', 'picture', 'table', 'hr', 'codeview', 'fullscreen']],
+			    ['para', ['ul', 'ol', 'paragraph', 'leftButton', 'centerButton', 'rightButton', 'justifyButton', 'outdentButton', 'indentButton']],
+			    ['height', ['lineheight']],
+			];
+
+			$('.editor').materialnote({
+			    toolbar: toolbar,
+			    height: 350,
+			    minHeight: 100,
+			    defaultBackColor: '#fff'
+			});
+		});

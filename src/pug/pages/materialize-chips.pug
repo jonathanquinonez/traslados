@@ -1,0 +1,254 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Chips
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'appComponents'
+	- var func = 'materializeChips'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"UI Elements"},{"link":"#","title":"Chips"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Chips
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Chips
+					p Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.
+				.col.s12
+					// Basic Chips
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Introduction
+								p Chips can be used to represent small blocks of information. They are most commonly used either for contacts or for tags.				
+								.chip
+									img(src='../images/placeholder/100x100g.jpg', alt='Contact Person')
+									|    Jane Doe
+								.chip
+									| Tag
+									i.close.material-icons close
+						.row
+							.col.s12
+								p To create a contact chip just add an img inside.
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chip<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/300x300t.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Contact Person<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    Jane Doe
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+							.col.s12
+								p To create a tag chip just add an close icon inside with the class close.
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chip<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    Tag
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>close material-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+			// Use
+			.row
+				.col.s12
+					// Javascript Plugin Usage
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Javascript Plugin Usage
+								p To add tags, just enter your tag text and press enter. You can delete them by clicking on the close icon or by using your delete button.
+						.row
+							.col.s12
+								.chips
+							.col.s12
+								.chips.chips-initial
+							.col.s12
+								.chips.chips-placeholder
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chips<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chips chips-initial<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>chips chips-placeholder<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+							.col.s12
+								p jQuery Initialization
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.chips'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">material_chip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.chips-initial'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">material_chip</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    data<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+									      tag<span class="token punctuation">:</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span>
+									    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+									      tag<span class="token punctuation">:</span> <span class="token string">'Microsoft'</span><span class="token punctuation">,</span>
+									    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+									      tag<span class="token punctuation">:</span> <span class="token string">'Google'</span><span class="token punctuation">,</span>
+									    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+									  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.chips-placeholder'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">material_chip</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    placeholder<span class="token punctuation">:</span> <span class="token string">'Enter a tag'</span><span class="token punctuation">,</span>
+									    secondaryPlaceholder<span class="token punctuation">:</span> <span class="token string">'+Tag'</span><span class="token punctuation">,</span>
+									  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+							.col.s12
+								p Chip data object
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token keyword">var</span> chip <span class="token operator">=</span> <span class="token punctuation">{</span>
+									    tag<span class="token punctuation">:</span> <span class="token string">'chip content'</span><span class="token punctuation">,</span>
+									    image<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//optional
+									</span>    id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//optional
+									</span>  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+									        </code>
+					// jQuery Plugin Options
+					.card-panel
+						.row.box-title
+							.col.s12
+								h5.content-headline jQuery Plugin Options
+						.row
+							.col.s12
+								table.table.highlight
+									thead
+										tr
+											th Option Name
+											th Type
+											th Description
+									tbody
+										tr
+											td data
+											td array
+											td Set the chip data (look at the Chip data object)
+										tr
+											td placeholder
+											td string
+											td Set first placeholder when there are no tags.
+										tr
+											td secondaryPlaceholder
+											td string
+											td Set second placeholder when adding additional tags.
+					// Events
+					.card-panel
+						.row.box-title
+							.col.s12
+								h5.content-headline Events
+								p Material chips exposes a few events for hooking into chips functionality.
+						.row
+							.col.s12
+								table.table.highlight
+									thead
+										tr
+											th Event
+											th Description
+									tbody
+										tr
+											td chips.add
+											td
+												| this method is triggered when a chip is 
+												strong added
+												| .
+										tr
+											td chips.delete
+											td
+												| this method is triggered when a chip is 
+												strong deleted
+												| .
+										tr
+											td chips.select
+											td
+												| this method is triggered when a chip is 
+												strong selected
+												| .
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.chips'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'chip.add'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> chip<span class="token punctuation">)</span><span class="token punctuation">{</span>
+									    <span class="token comment" spellcheck="true">// you have the added chip here
+									</span>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+									  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.chips'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'chip.delete'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> chip<span class="token punctuation">)</span><span class="token punctuation">{</span>
+									    <span class="token comment" spellcheck="true">// you have the deleted chip here
+									</span>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+									  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.chips'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'chip.select'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> chip<span class="token punctuation">)</span><span class="token punctuation">{</span>
+									    <span class="token comment" spellcheck="true">// you have the selected chip here
+									</span>  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+					// Methods
+					.card-panel
+							.row.box-title
+									.col.s12
+											h5.content-headline Methods
+											p Use these methods to access the chip data.
+							.row
+									.col.s12
+											table.table.highlight
+													thead
+															tr
+																	th Parameter
+																	th Description
+													tbody
+															tr
+																	td data
+																	td It returns the stored data.
+															tr
+																	td options
+																	td It returns the given options.
+									.col.s12
+											pre.language-javascript.
+													<code class=" language-javascript">
+															<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.chips-initial'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">material_chip</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+															<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.chips-initial'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">material_chip</span><span class="token punctuation">(</span><span class="token string">'options'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+																	</code>
+					
+		include ../include/footer.pug
+block append scripts
+	script.
+		$(document).ready(function(){
+			$('.chips').material_chip();
+		    $('.chips-initial').material_chip({
+		      readOnly: true,
+		      data: [{
+		        tag: 'Apple',
+		      }, {
+		        tag: 'Microsoft',
+		      }, {
+		        tag: 'Google',
+		      }]
+		    });
+		    $('.chips-placeholder').material_chip({
+		      placeholder: 'Enter a tag',
+		      secondaryPlaceholder: '+Tag',
+		    });
+		    $('.chips-autocomplete').material_chip({
+		      autocompleteOptions: {
+		        data: {
+		          'Apple': null,
+		          'Microsoft': null,
+		          'Google': null
+		        }
+		      },
+		    });
+		});

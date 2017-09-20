@@ -1,0 +1,146 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize Dropdown
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'appJsComponents'
+	- var func = 'materializeDropdown'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Advance UI"},{"link":"#","title":"Dropdown"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Materialize Dropdown
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Introduction
+					p Dropdown us mostly used element in all web application. It occupies low space and provides much option in the application.
+				// Basic
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic
+								p Add a dropdown list to any button. Make sure that the <code class="language-markup">data-activates</code> attribute matches the id in the <code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span></code> tag.
+								p You can add a divider with the <code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span></code> tag. 
+						.row
+							.col.s12
+								// Dropdown Trigger
+								a.dropdown-button.btn(href='#', data-activates='dropdown1') Drop Me!
+								// Dropdown Structure
+								ul#dropdown1.dropdown-content
+									li
+										a(href='#!') one
+									li
+										a(href='#!') two
+									li.divider
+									li
+										a(href='#!') three
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token comment" spellcheck="true">&lt;!-- Dropdown Trigger --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span>'dropdown-button btn'</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>'#'</span> <span class="token attr-name">data-activates</span><span class="token attr-value"><span class="token punctuation">=</span>'dropdown1'</span><span class="token punctuation">&gt;</span></span>Drop Me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+
+									  <span class="token comment" spellcheck="true">&lt;!-- Dropdown Structure --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span>'dropdown1'</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span>'dropdown-content'</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>one<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>divider<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+
+				// Options
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Options
+								p Dropdown comes with below list of options.
+						.row
+							.col.s12
+								table.striped
+									thead
+										tr
+											th Option Name
+											th Description
+									tbody
+										tr
+											td induration
+											td The duration of the transition enter in milliseconds. Default: 300
+										tr
+											td outduration
+											td The duration of the transition out in milliseconds. Default: 225
+										tr
+											td constrainwidth
+											td If true, constrainWidth to the size of the dropdown activator. Default: true
+										tr
+											td hover
+											td If true, the dropdown will open on hover. Default: false
+										tr
+											td gutter
+											td This defines the spacing from the aligned edge. Default: 0
+										tr
+											td beloworigin
+											td If true, the dropdown will show below the activator. Default: false
+										tr
+											td alignment
+											td Defines the edge the menu is aligned to. Default: 'left'
+										tr
+											td stoppropagation
+											td
+												| If true, stops the event propagating from the dropdown origin click handler. Default: false
+
+								p To use these inline you have to add them as data attributes. If you want more dynamic control, you can define them using the jQuery plugin below.
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span>'dropdown-button btn'</span> <span class="token attr-name">data-beloworigin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>'#'</span> <span class="token attr-name">data-activates</span><span class="token attr-value"><span class="token punctuation">=</span>'dropdown1'</span><span class="token punctuation">&gt;</span></span>Drop Me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+				// jQuery Plugin Initialization
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline jQuery Plugin Initialization
+								p Initialization for dropdowns is only necessary if you create them dynamically.
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.dropdown-button'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">dropdown</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									      inDuration<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+									      outDuration<span class="token punctuation">:</span> <span class="token number">225</span><span class="token punctuation">,</span>
+									      constrain_width<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Does not change width of dropdown to that of the activator
+									</span>      hover<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Activate on hover
+									</span>      gutter<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Spacing from edge
+									</span>      belowOrigin<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Displays dropdown below the button
+									</span>      alignment<span class="token punctuation">:</span> <span class="token string">'left'</span> <span class="token comment" spellcheck="true">// Displays dropdown with edge aligned to the left of button
+									</span>    <span class="token punctuation">}</span>
+									  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+		include ../include/footer.pug

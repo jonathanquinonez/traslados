@@ -1,0 +1,324 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Feeds Chart
+block content
+	- var mainRoute="cardWidget"
+	- var route = 'cardWidgetFeeds'
+	- var func = ''
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Cards"},{"link":"#","title":"Feeds Cards"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Feeds Cards
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline Feeds Cards
+					p
+						| Awesome & attractive feeds widgets!
+			// Minimal feeds card with background.
+			.row
+				.col.s12
+					h5.content-headline Minimal Feeds Card With Background.
+					p Minimal Feed Cards with <code class="language-markup">clamp-text-*</code>.
+				.col.s12.m12.l4
+					.card-panel.hoverable.secondary-bg.light
+						.row.no-mp
+							.col.s8
+								h5.no-mp.white-text Ariana
+								span.caption.clamp-line-2.white-text
+									| Ariana Grande is an American singer and actress. 
+							.col.s4.right-align
+								img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+				.col.s12.m12.l4
+					.card-panel.hoverable.secondary-bg
+						.row.no-mp
+							.col.s8
+								h5.no-mp.white-text Selena
+								span.caption.clamp-line-2.white-text
+									| Selena Gomez is an American actress and singer.
+							.col.s4.right-align
+								img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+				.col.s12.m12.l4
+					.card-panel.hoverable.secondary-bg.dark
+						.row.no-mp
+							.col.s8
+								h5.no-mp.white-text Inna
+								span.caption.clamp-line-2.white-text
+									| Inna Elena is a beautiful Romanian singer and songwriter.
+							.col.s4.right-align
+								img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+			// Minimal feeds horizontal card with background.
+			.row
+				.col.s12
+					h5.content-headline Minimal Feeds Horizontal Card With Background.
+					p Minimal Feed Cards with <code class="language-markup">horizontal</code> class.
+				.col.s12.m6.l3
+					.card.horizontal.success-bg
+						.card-image.valign-wrapper.pad-lr-20
+							img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) Ariana
+								p.white-text Ariana Grande is an American singer and actress.
+				.col.s12.m6.l3
+					.card.horizontal.error-bg
+						.card-image.valign-wrapper.pad-lr-20
+							img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) Selena
+								p.white-text Selena Gomez is an American actress and singer.
+				.col.s12.m6.l3
+					.card.horizontal.warning-bg
+						.card-image.valign-wrapper.pad-lr-20
+							img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) Inna
+								p.white-text Inna Elena is a beautiful Romanian singer and songwriter.
+				.col.s12.m6.l3
+					.card.horizontal.info-bg
+						.card-image.valign-wrapper.pad-lr-20
+							img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) Ariana
+								p.white-text Ariana Grande is an American singer and actress.
+				//- 
+				.col.s12.m6.l3
+					.card.horizontal.info-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) Ariana
+								p.white-text Ariana Grande is an American singer and actress.
+						.card-image.valign-wrapper.pad-lr-20
+							img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+				.col.s12.m6.l3
+					.card.horizontal.success-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) Selena
+								p.white-text Selena Gomez is an American actress and singer.
+						.card-image.valign-wrapper.pad-lr-20
+							img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+				.col.s12.m6.l3
+					.card.horizontal.error-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) Inna
+								p.white-text Inna Elena is a beautiful Romanian singer and songwriter.
+						.card-image.valign-wrapper.pad-lr-20
+							img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+				.col.s12.m6.l3
+					.card.horizontal.warning-bg
+						.card-stacked
+							.card-content.left-align
+								.card-title.white-text&attributes({"style":"font-weight:bold;"}) Ariana
+								p.white-text Ariana Grande is an American singer and actress.
+						.card-image.valign-wrapper.pad-lr-20
+							img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+			// Minimal feeds plain card.
+			.row
+				.col.s12
+					h5.content-headline Minimal Feeds Plain Card.
+					p Minimal Plain Feed Cards with <code class="language-markup">row</code> structure.
+				.col.s12.m12.l6
+					.card-panel.hoverable
+						.row.no-mp
+							.col.s8
+								span.clamp-line-2
+									| Love beautiful code? We do too. - Laravel
+							.col.s4.right-align
+								img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+					.pos-relative
+						span.ago-time
+							| 1 hour
+				.col.s12.m12.l6
+					.card-panel.hoverable
+						.row.no-mp
+							.col.s8
+								span.clamp-line-2
+									| VueJS - The Progressive JavaScript Framework
+							.col.s4.right-align
+								img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img')
+					.pos-relative
+						span.ago-time
+							| 1 hour
+				//- 
+				.col.s12.m12.l6
+					.card-panel.hoverable
+						.row.no-mp
+							.col.s8
+								span.clamp-line-2
+									| Ariana Grande is an American singer and actress.
+							.col.s4.right-align
+								img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img circle')
+					.pos-relative
+						span.ago-time
+							| 1 hour
+				.col.s12.m12.l6
+					.card-panel.hoverable
+						.row.no-mp
+							.col.s8
+								span.clamp-line-2
+									| Selena Gomez is an American actress and singer.
+							.col.s4.right-align
+								img(alt="placeholder",src="../images/placeholder/100x100g.jpg",class='responsive-img circle')
+					.pos-relative
+						span.ago-time
+							| 1 hour
+				.col.s12.m12.l6
+					.card.hoverable
+						.card-content
+							.row.no-mp
+								.col.s10.m8
+									span.grey-text.text-lighten-1 Travel
+									h5 New York City
+								.col.s2.m4.right-align
+									img(alt="placeholder",src="../images/placeholder/75x75t.jpg",class='responsive-img')
+							.row.no-mp
+								.col.s12
+									p
+										| New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major financial and cultural centers.
+						.card-action
+							a(href='#') Share
+							a(href='#') Explore
+				.col.s12.m12.l6
+					.card.hoverable
+						.card-content
+							.row.no-mp
+								.col.s2.m3.left-align
+									img(alt="placeholder",src="../images/placeholder/75x75t.jpg",class='responsive-img')
+								.col.s10.m9
+									span.grey-text.text-lighten-1 Recreation
+									h5 Fun At Beach
+							.row.no-mp
+								.col.s12
+									p
+										| A beach is a landform along a body of water. It usually consists of loose particles, which are often composed of rock, such as sand, gravel, shingle, pebbles, shell or cobblestones.
+						.card-action.right-align
+							a(href='#') Share
+							a(href='#') Explore	
+			
+			// Discover Feed Cards
+			.row
+				.col.s12
+					h5.content-headline Discover Feed Cards
+					p Feed cards with photo and action.
+				.col.s12.m12.l4
+					.card
+						.card-image
+							img(alt="placeholder",src="../images/placeholder/720x480g.jpg",class='responsive-img')
+						.card-action
+							ul.collection.horz.right-align
+								li.collection-item
+									a(href="#")
+										i.material-icons favorite
+								li.collection-item
+									a(href="#")
+										i.material-icons share
+								li.collection-item
+									a(href="#")
+										i.material-icons bookmark
+				.col.s12.m12.l4
+					.card
+						.card-image
+							img(alt="placeholder",src="../images/placeholder/720x480g.jpg",class='responsive-img')
+						.card-action
+							ul.collection.horz
+								li.collection-item
+									a(href="#")
+										i.material-icons favorite
+								li.collection-item
+									a(href="#")
+										i.material-icons share
+								li.collection-item
+									a(href="#")
+										i.material-icons bookmark
+				.col.s12.m12.l4
+					.card
+						.card-image
+							img(alt="placeholder",src="../images/placeholder/720x480g.jpg",class='responsive-img')
+						.card-action
+							ul.collection.horz.center-align
+								li.collection-item
+									a(href="#")
+										i.material-icons favorite
+								li.collection-item
+									a(href="#")
+										i.material-icons share
+								li.collection-item
+									a(href="#")
+										i.material-icons bookmark
+			.row
+				.col.s12.m12.l6
+					.card
+						.card-image
+							.carousel.carousel-slider
+								a.carousel-item(href='#one!')
+									img(alt="placeholder",src=imgUrl1)
+								a.carousel-item(href='#two!')
+									img(alt="placeholder",src=imgUrl2)
+								a.carousel-item(href='#three!')
+									img(alt="placeholder",src=imgUrl3)
+								a.carousel-item(href='#four!')
+									img(alt="placeholder",src=imgUrl4)
+						.card-action
+							ul.collection.horz
+								li.collection-item
+									a(href="#")
+										i.material-icons favorite
+								li.collection-item
+									a(href="#")
+										i.material-icons share
+								li.collection-item
+									a(href="#")
+										i.material-icons bookmark
+				.col.s12.m12.l6
+					.card
+						.card-image.has-overlay
+							.overlay.purple-overlay.overlay-lighten-2
+							img(alt="placeholder",src="../images/placeholder/800x400g.jpg",class='responsive-img')
+							span.card-title
+								strong Top 10 Australian Beach
+						.card-action
+							ul.collection.horz
+								li.collection-item
+									a(href="#")
+										i.material-icons favorite
+								li.collection-item
+									a(href="#")
+										i.material-icons share
+								li.collection-item
+									a(href="#")
+										i.material-icons bookmark
+		include ../include/footer.pug
+block append scripts
+	script.
+		(function(){
+		  	$('.carousel.carousel-slider').carousel({fullWidth: true});
+		    $('.slider').slider();
+		})();		
+	

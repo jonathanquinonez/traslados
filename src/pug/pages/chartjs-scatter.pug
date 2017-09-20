@@ -1,0 +1,62 @@
+extends ../layout/defualt-layout.pug
+block title
+  title Forge :: Chart.js Scatter Charts
+block append css
+  
+block content
+  - var mainRoute="chart"
+  - var route = 'scatterChart'
+  - var func = 'chartjsScatterChart'
+  - var nestedName=""
+  - var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"ChartJS Scatter Charts"}]
+  include ../include/header.pug
+  main.animated
+    // ============================
+    // MAIN HEADER
+    // ============================
+    .main-header
+      .sec-page
+        .page-title
+          h2 Scatter Charts
+      // ============================
+      // breadcrumb
+      // ============================
+      .sec-breadcrumb
+        +breadcrumb(breadcrumb,'left')
+    // ============================
+    // Main container
+    // ============================
+    .main-container
+      //- Intro
+      div.row
+        .col.s12
+          h4.content-headline Chart.js Scatter Charts
+          p
+            | Scatter line charts can be created by changing the X axis to a linear axis. To use a scatter chart, data must be passed as objects containing X and Y properties.  Here, it is from 
+            a(href="http://www.chartjs.org/docs/#line-chart-scatter-line-charts") ChartJS.
+      //- Chart.js Scatter
+      .row
+        .col.s12
+          // Scatter Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Scatter Chart
+            .row
+              .col.s12
+                canvas#chart-scatter&attributes({"height":"480"})
+        .col.s12
+          // ScatterlogX Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline ScatterlogX Chart
+            .row
+              .col.s12
+                canvas#chart-scatterlogX&attributes({"height":"480"})
+    include ../include/footer.pug
+block append scripts
+  script(type='text/javascript', src='../plugins/charts/chartjs/dist/Chart.bundle.js')
+  script(type='text/javascript', src='../plugins/charts/chartjs/chart-scatter.js')
+  
+  

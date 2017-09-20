@@ -1,0 +1,155 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize Dialogs
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'appJsComponents'
+	- var func = 'materializeDialogs'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Advance UI"},{"link":"#","title":"Dialogs"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Dialogs
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Introduction
+					p Dialogs are content that are not originally visible on a page but show up with extra information if needed. The transitions should make the appearance of the dialog make sense and not jarring to the user.
+				// Toasts			
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Toasts
+								p Materialize provides an easy way for you to send unobtrusive alerts to your users through toasts. These toasts are also placed and sized responsively, try it out by clicking the button below on different device sizes.
+						.row
+							.col.s12
+								a(href="javascript:void(0)",class="waves-effect waves-light btn",onclick="Materialize.toast('I am a toast', 4000)") Toast!
+								p To do this, call the Materialize.toast() function programatically in JavaScript.
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token comment" spellcheck="true">// Materialize.toast(message, displayLength, className, completeCallback);
+									</span>  Materialize<span class="token punctuation">.</span><span class="token function">toast</span><span class="token punctuation">(</span><span class="token string">'I am a toast!'</span><span class="token punctuation">,</span> <span class="token number">4000</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 4000 is the duration of the toast
+									</span>        </code>
+								p One way to add this into your application is to add this as an onclick event to a button.
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Materialize.toast('I am a toast', 4000)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Toast!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+						.row
+							.col.s12
+								h5.light Custom HTML
+								p You can pass in an HTML String as the first argument as well. Take a look at the example below, where we pass in text as well as a flat button. If you call an external function instead of in-line JavaScript, you will not need to escape quotation marks.
+						.row
+							.col.s12
+								a(href="javascript:void(0);",class="waves-effect waves-light btn",onclick="displayCustomHTMLToast()") Toast with Action
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token keyword">var</span> $toastContent <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'&lt;span&gt;I am toast content&lt;/span&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  Materialize<span class="token punctuation">.</span><span class="token function">toast</span><span class="token punctuation">(</span>$toastContent<span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+						.row
+							div.col.s12
+								h5.light Callback
+								p You can have the toast callback a function when it has been dismissed
+						.row
+							.col.s12
+								a(href="javascript:void(0)",class='btn',onclick="Materialize.toast('I am a toast', 4000,'',function(){alert('Your toast was dismissed')})") Toast!
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Materialize.toast('I am a toast', 4000,'',function(){alert('Your toast was dismissed')})<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Toast!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+						.row
+							div.col.s12
+								h5.light Styling Toasts
+								p We've added the ability to customize your toasts easily. You can pass in classes as an optional parameter into the toast function. We've added a rounded class for you, but you can create your own CSS classes and apply them to toasts. Checkout out our full example below.
+						.row
+							.col.s12
+								a(href="javascript:void(0)",class='waves-effect waves-light btn',onclick="Materialize.toast('I am a toast!', 3000, 'rounded')") Round Toast
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  Materialize<span class="token punctuation">.</span><span class="token function">toast</span><span class="token punctuation">(</span><span class="token string">'I am a toast!'</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">,</span> <span class="token string">'rounded'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 'rounded' is the class I'm applying to the toast
+									</span>        </code>
+				// Tooltips
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Tooltips
+								p Tooltips are small, interactive, textual hints for mainly graphical elements. When using icons for actions you can use a tooltip to give people clarification on its function.
+						.row
+							.col.s12
+								a.btn.tooltipped.col.s4.offset-s4.l2.offset-l1(data-position='bottom', data-delay='50', data-tooltip='I am tooltip', data-tooltip-id='1353fe74-9115-48c7-22d2-af6cf60ae8ec')  Bottom
+								a.btn.tooltipped.col.s4.offset-s4.l2.offset-l1(data-position='top', data-delay='50', data-tooltip='I am tooltip', data-tooltip-id='8d9cb171-aba1-a36b-2434-1ef329d61862')  Top
+								a.btn.tooltipped.col.s4.offset-s4.l2.offset-l1(data-position='left', data-delay='50', data-tooltip='I am tooltip', data-tooltip-id='724282c3-9be0-5efc-f029-7ce9914e1a80')  Left
+								a.btn.tooltipped.col.s4.offset-s4.l2.offset-l1(data-position='right', data-delay='50', data-tooltip='I am tooltip', data-tooltip-id='96881ae4-fdb5-be6e-a847-022d8db54d35')  Right
+							.col.s12
+								p Add the Tooltipped class to your element and add either top, bottom, left, right on data-tooltip to control the position.
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token comment" spellcheck="true">&lt;!-- data-position can be : bottom, top, left, or right --&gt;</span>
+									  <span class="token comment" spellcheck="true">&lt;!-- data-delay controls delay before tooltip shows (in milliseconds)--&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn tooltipped<span class="token punctuation">"</span></span> <span class="token attr-name">data-position</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bottom<span class="token punctuation">"</span></span> <span class="token attr-name">data-delay</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span> <span class="token attr-name">data-tooltip</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>I am tooltip<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Hover me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+						//- Initialization
+						.row
+							div.col.s12
+								h5.light Initialization
+								p Tooltips are initialized automatically, but if you have dynamically added tooltips, you will need to initialize them.
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.tooltipped'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tooltip</span><span class="token punctuation">(</span><span class="token punctuation">{</span>delay<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+						//- Initialization
+						.row
+							div.col.s12
+								h5.light Removal
+								p To remove the tooltip from the button, pass in 'remove' as the option to the tooltip function
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token comment" spellcheck="true">// This will remove the tooltip functionality for the buttons on this page
+									</span>  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.tooltipped'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tooltip</span><span class="token punctuation">(</span><span class="token string">'remove'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+		include ../include/footer.pug
+block append scripts
+	script.
+		function displayCustomHTMLToast(){
+			var $toastContent = $('<span>I am toast content</span>');
+			Materialize.toast($toastContent, 5000);
+		}
+		$(document).ready(function(){
+			var $toastContent = $('<span>I am toast content</span>');
+			Materialize.toast($toastContent, 5000);
+		});

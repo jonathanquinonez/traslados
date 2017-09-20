@@ -1,0 +1,136 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize Typography
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'materializeTypography'
+	- var func = ''
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Typography"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Typography
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Roboto 2.0
+			div.row
+				.col.s12
+					h4.content-headline Typography
+					p
+						|The style and appearance of content is very important for any textual content.
+				.col.s12
+					// Roboto 2.0
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Roboto 2.0
+								p.caption The standard font Material Design uses is Roboto. We have included the font files with our framework.
+						.row
+							p.col.s12.m4
+								| We bundle our framework with the latest iteration of Roboto Google has released. It comes with 5 different font weights you can use: 200, 300, 400, 500, 600.
+								br
+								br
+								| Here is an image from Google's Roboto Specimen document displaying the different font weights.
+							img.col.s12.m8(src='http://material-design.storage.googleapis.com/publish/v_2/material_ext_publish/0Bx4BSt6jniD7SW9CUzR4MnRpOTg/style_typography_roboto1.png')
+				.col.s12
+					// Removing Roboto
+					.card-panel
+						.row.box-title
+							.col.s12
+								h5 Removing Roboto
+								p In case you don't want to use Roboto on your webpage, fear not. Simply change the font stack by modifying the code below to your liking and add it to your custom css.
+						.row
+							pre.language-css.
+								<code class=" language-css">
+								  <span class="token selector">html </span><span class="token punctuation">{</span>
+								    <span class="token property">font-family</span><span class="token punctuation">:</span> GillSans, Calibri, Trebuchet, sans-serif<span class="token punctuation">;</span>
+								  <span class="token punctuation">}</span>
+								        </code>
+				// Headers
+				.col.s12
+					// Headers
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Headers
+								p We provide some basic styling on header tags. In the example, you can see the the 6 header tags' different sizes.
+						.row.section
+							.col.s12
+								h1 Heading h1
+								h2 Heading h2
+								h3 Heading h3
+								h4 Heading h4
+								h5 Heading h5
+								h6 Heading h6
+				// Blockquotes
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Blockquotes
+								p Blockquotes are mainly used to give emphasis to a quote or citation. You can also use these for some extra text hierarchy and emphasis.
+							.col.s12
+								blockquote
+									| This is an example quotation that uses the blockquote tag. 
+									br
+									| Here is another line to make it look bigger.
+								pre.language-markup.
+									<code class=" language-markup">
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">&gt;</span></span>
+									      This is an example quotation that uses the blockquote tag.
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">&gt;</span></span>
+									          </code>
+				// Flow Text
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Flow Text
+						.row
+							.col.s12
+								a#flow-toggle.btn.waves-effect.waves-light Toggle flow-text
+								#flow-text-demo.card-panel
+									p
+										| One common flaw we've seen in many frameworks is a lack of support for truly responsive text. While elements on the page resize fluidly, text still resizes on a fixed basis. To ameliorate this problem, for text heavy pages, we've created a class that fluidly scales text size and line-height to optimize readability for the user. Line length stays between 45-80 characters and line height scales to be larger on smaller screens.
+									p
+										| To see Flow Text in action, slowly resize your browser and watch the size of this text body change! Use the button above to toggle off/on flow-text to see the difference!
+								p To use flow-text on a body of text, simply just add the class flow-text to a tag, see the code blow.
+							.col.s12
+								pre.language-markup.
+									<code class=" col s12 language-markup">
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>flow-text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>I am Flow Text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									          </code>
+		include ../include/footer.pug
+block append scripts
+	script.
+		$(document).ready(function(){
+			// Toggle Flow Text
+		    var toggleFlowTextButton = $('#flow-toggle');
+		    toggleFlowTextButton.click( function(){
+		      $('#flow-text-demo').children('p').each(function(){
+		          $(this).toggleClass('flow-text');
+		        });
+		    });
+		});

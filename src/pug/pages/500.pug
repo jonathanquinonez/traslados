@@ -1,0 +1,23 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: 500
+	- var setBodyClass='error-page'
+block append css
+	
+block content
+	- var route = 'extraPages'
+	- var func = 'page404'
+	
+	.fullpage-flex-center.grey.darken-4
+		.flex-center.pos-relative.full-height
+		    .center-align
+		        .error-code.error-text
+		            | 500
+		        p.caption.grey-text Internal Server Error!
+		        .links
+		            a(href='#!',class='btn btn-flat')
+		            	i.material-icons.left home
+		            	|Home
+		            a(href='#!',class='btn btn-flat')
+		            	i.material-icons.left description
+		            	|Documentation

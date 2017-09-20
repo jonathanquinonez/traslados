@@ -1,0 +1,304 @@
+.navbar-fixed.full-top-nav
+	//- ATR
+	#current-menu&attributes({"data-menu":"default"})
+		nav
+			+morph('javascript:void(0)')(class="morph menu small mob-menu button-collapse top-nav waves-effect waves-light circle hide-on-large-only",id="sidebar-default-collapse",data_activates='nav-default')
+			.nav-wrapper
+				
+				// LOGO Set
+
+				a.animated.brand-logo.hide-on-large-only.nav-logo(href="javascript:void(0)")
+					+mi('whatshot').logo-icon.left.base-text
+					span.left&attributes({"style":"margin-left:20px;"})
+						|FORGE
+				a.animated.brand-logo.hide-on-med-and-down.defaultMenu-logo(href="javascript:void(0)")
+					+mi('whatshot').logo-icon.left.white-text
+					span.left&attributes({"style":"margin-left:20px;"})
+						|FORGE
+				// Left menu options at top-nav
+
+				ul.left.topnav-Menu-ls.hide-on-med-and-down
+					li
+						+morph('javascript:void(0)')(class='morph small iconizedToggle waves-effect waves-light')
+					li
+						a(href="#") Sass
+				// Right Menu
+
+				ul.right
+					li.hide-on-med-and-down
+						a(class="waves-effect waves-set app-search-btn" href='#')
+							i.material-icons search
+					
+					// MESSAGE SECTION
+
+					li.hide-on-med-and-down
+						a(class="dropdown-button waves-effect waves-set" href='#', data-beloworigin='true', data-activates='top-nav-msgsweb')
+							+mi('email')
+							span.badge-count 5
+					
+					// ADMIN SETTINGS SECTION
+
+					li
+						a(class="dropdown-button waves-effect waves-set" href='#', data-beloworigin='true', data-activates='top-nav-userProfile')
+							img.circle.admin-profile-img-small(src='../images/placeholder/50x50g.jpg', alt='')
+					li.hide-on-med-and-down
+						+morph('javascript:void(0)')(class='morph notify small notification-toggle-open waves-effect waves-light')
+					li.hide-on-large-only
+						a(class="waves-effect waves-set toggle-topnav-hidden-menu" href='javascript:void(0);')
+							+mi('more_vert')
+				
+				// Mobile Screen Nav Options
+
+				ul.right.hide-on-large-only.topnav-hidden-menu.hide
+					li
+						a(class="waves-effect waves-set app-search-btn" href='#')
+							i.material-icons search
+					li.right
+						a(class="waves-effect waves-set toggle-topnav-hidden-menu" href='#')
+							+mi('more_vert')
+					li.right
+						+morph('javascript:void(0)')(class='morph notify small notification-toggle-open waves-effect waves-light')
+					li.right
+						a(class="dropdown-button waves-effect waves-set" href='#', data-beloworigin='true', data-activates='top-nav-msgs')
+							+mi('email')
+							span.badge-count 5
+				
+				// DROP-DOWN
+
+				.drop-down-bucket
+					ul#top-nav-msgsweb.collection.dropdown-content
+						li.collection-item.msg-header
+							ul
+								li.left
+									span Messages
+									a(href="#",class='right')
+										+mi('create').small
+						li.collection-item.msg-content
+							ul.collection#psTopNavMmsgsWeb
+								li.collection-item.msg-items
+									
+									// REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+										span.chat-status.with-badge.online 10
+									
+									// Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Jenny Jordan
+											//- span.badge-count 10+
+										.notify-desc 
+											| Hey, How are you doing?
+										span.chat-time
+											| 30 Minutes ago.
+								li.collection-item.msg-items
+									
+									// REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+										span.chat-status.with-badge.offline 5
+									
+									// Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Jack Jordan
+											//- span.badge-count 10+
+										.notify-desc 
+											| Wish you Happy birthday!
+										span.chat-time
+											| 20 Minutes ago.
+								li.collection-item.msg-items
+									
+									//- REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+										span.chat-status.with-badge.away 10
+									
+									//- Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Selena Morris
+											//- span.badge-count 10+
+										.notify-desc 
+											| Envato is really awesome place to be.
+										span.chat-time
+											| 15 Minutes ago.
+								li.collection-item.msg-items
+									
+									//- REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+										span.chat-status.with-badge.busy 10
+									
+									//- Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Mira Dellon
+											//- span.badge-count 10+
+										.notify-desc 
+											| Let meet up at my place in this weekends.
+										span.chat-time
+											| 10 Minutes ago.
+								li.collection-item.msg-items
+									
+									//- REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+										span.chat-status.with-badge.online 10
+									
+									//- Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Evi Willson
+											//- span.badge-count 10+
+										.notify-desc 
+											| Are you ready for party on this weekend?
+										span.chat-time
+											| 5 Minutes ago.
+
+						li.collection-item.msg-footer.pos-relative
+							a(href="#",class='center tooltipped')&attributes({"data-position":"top","data-tooltip":"See all messages","style":"padding:7px 16px;"})
+								+mi('more_horiz').small.clear-style
+					ul#top-nav-msgs.collection.dropdown-content
+						li.collection-item.msg-header
+							ul
+								li.left
+									span Messages
+									a(href="#",class='right')
+										+mi('create').small
+						li.collection-item.msg-content
+							ul.collection#psTopNavMmsgs
+								li.collection-item.msg-items
+									
+									// REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+										span.chat-status.with-badge.online 10
+									
+									// Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Jenny Jordan
+											//- span.badge-count 10+
+										.notify-desc 
+											| Hey, How are you doing?
+										span.chat-time
+											| 30 Minutes ago.
+								li.collection-item.msg-items
+									
+									// REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+										span.chat-status.with-badge.offline 5
+									
+									// Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Jack Jordan
+											//- span.badge-count 10+
+										.notify-desc 
+											| Wish you Happy birthday!
+										span.chat-time
+											| 20 Minutes ago.
+								li.collection-item.msg-items
+									
+									//- REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+										span.chat-status.with-badge.away 10
+									
+									//- Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Selena Morris
+											//- span.badge-count 10+
+										.notify-desc 
+											| Envato is really awesome place to be.
+										span.chat-time
+											| 15 Minutes ago.
+								li.collection-item.msg-items
+									
+									//- REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+										span.chat-status.with-badge.busy 10
+									
+									//- Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Mira Dellon
+											//- span.badge-count 10+
+										.notify-desc 
+											| Let meet up at my place in this weekends.
+										span.chat-time
+											| 10 Minutes ago.
+								li.collection-item.msg-items
+									
+									//- REDIRECTION TO User-Profile
+
+									a(href="#",class='chat-user') 
+										img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+										span.chat-status.with-badge.online 10
+									
+									//- Redirection to msg/chat
+
+									a(href="#",class='chat-content')
+										span.title
+											| Evi Willson
+											//- span.badge-count 10+
+										.notify-desc 
+											| Are you ready for party on this weekend?
+										span.chat-time
+											| 5 Minutes ago.
+
+						li.collection-item.msg-footer.pos-relative
+							a(href="#",class='center tooltipped')&attributes({"data-position":"top","data-tooltip":"See all messages","style":"padding:7px 16px;"})
+								+mi('more_horiz').small.clear-style
+					ul#top-nav-userProfile.collection.dropdown-content
+						li.collection-item
+							.admin-profile-content
+								img.circle.user-profile-img(src='../images/placeholder/50x50g.jpg', alt='')
+								p.user-name.primary-text CodigoForge
+								p.user-designation.secondary-text CEO : Materialize-Z
+								.divider
+								ul.profile-ul
+									li.profile-li
+										a(href="#").btn.waves-light.collection-item
+											+mi('settings').left
+											span.text-items Profile
+									li.profile-li
+										a(href="#").btn.waves-light.collection-item
+											+mi('inbox').left
+											span.badge.right.secondary-bg.lighten-2.new 5
+											span.text-items Inbox
+									li.profile-li
+										a(href="#").btn.waves-light.collection-item
+											+mi('power_settings_new').left
+											span.text-items Sign Out
+				
+				// Searchbar
+				
+				form#app-search.inactive.animated
+					.input-field
+						input(type="search",id="search")
+						label(for="search",class='label-icon')
+							i.material-icons search
+						i.material-icons.app-search-Cls close

@@ -1,0 +1,218 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Image Hover Effects
+block append css
+	link(type='text/css', rel='stylesheet', href='../css/plugins/miketricking/style.css')
+	
+block content
+	- var mainRoute="gallery"
+	- var route = 'gallery'
+	- var func = 'imgMikeTrick'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Gallery"},{"link":"#","title":"Image Hover Effects"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Image Hover Effects
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline Introduction
+					p
+						| Click the link on the desired image hover effect to view the html and css code you can copy to use the effect. Special thanks to 
+						a(href="https://miketricking.github.io/dist/") miketricking 
+						| for this wonderful images hover effects.
+			.row
+				// Hover effect 1
+				.col.s12.m6.image-hover-effect
+					.hover.ehover1
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Hover effect 1
+							button.info.modal-trigger(data-target='modal1')
+								| Show code
+				// Hover effect 2
+				.col.s12.m6.image-hover-effect
+					.hover.ehover2
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Hover effect 2
+							button.info.modal-trigger(data-target='modal2')
+								| Show code
+			.row
+				// Hover effect 3
+				.col.s12.m6.image-hover-effect
+					.hover.ehover3
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Hover effect 3
+							button.info.modal-trigger(data-target='modal3')
+								| Show code
+				// Hover effect 4
+				.col.s12.m6.image-hover-effect
+					.hover.ehover4
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Hover effect 4
+							button.info.modal-trigger(data-target='modal4')
+								| Show code
+			.row
+				// Hover effect 5
+				.col.s12.m6.image-hover-effect
+					.hover.ehover42
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Hover effect 4.v2
+							button.info.modal-trigger(data-target='modal5')
+								| Show code
+				// Hover effect 6
+				.col.s12.m6.image-hover-effect
+					.hover.ehover1v2
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Hover effect 1.v2
+							button.info.modal-trigger(data-target='modal6')
+								| Show code
+			.row
+				// Hover effect 7
+				.col.s12.m6.image-hover-effect
+					.hover.ehover5
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Hover effect 5
+							button.info.modal-trigger(data-target='modal7')
+								| Show code
+				// Hover effect 8
+				.col.s12.m6.image-hover-effect
+					.hover.ehover6
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay.point(data-target='modal8')
+							h2 Hover effect 6
+							.rotate
+								p.group1
+									a(href='#')
+										i.mdi.mdi-twitter
+									a(href='#')
+										i.mdi.mdi-facebook
+								hr
+								hr
+								p.group2
+									a(href='#')
+										i.mdi.mdi-instagram
+									a(href='#')
+										i.mdi.mdi-dribbble
+			.row
+				// Hover effect 9
+				.col.s12.m6.image-hover-effect
+					.hover.ehover7
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay.point(data-target='modal9')
+							h2 Hover effect 7
+							p
+								a(href='#')
+									i.mdi.mdi-twitter
+								a(href='#')
+									i.mdi.mdi-facebook
+								a(href='#')
+									i.mdi.mdi-instagram
+								a(href='#')
+									i.mdi.mdi-dribbble
+				// Hover effect 10
+				.col.s12.m6.image-hover-effect
+					.hover.ehover8
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay.point(data-toggle='modal', data-target='modal10')
+							h2 Hover effect 8
+							p.set1
+								a(href='#')
+									i.mdi.mdi-twitter
+								a(href='#')
+									i.mdi.mdi-facebook
+							hr
+							hr
+							p.set2
+								a(href='#')
+									i.mdi.mdi-instagram
+								a(href='#')
+									i.mdi.mdi-dribbble
+			.row
+				// Hover effect 11
+				.col.s12.m6.image-hover-effect
+					.hover.ehover9
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Hover effect 9
+							button.info.modal-trigger(data-target='modal11')
+								| Show code
+				// Hover effect 12
+				.col.s12.m6.image-hover-effect
+					.hover.ehover10
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							button.info.modal-trigger(data-target='modal12')
+								| Show code
+							p.icon-links
+								a(href='#')
+									span.mdi.mdi-twitter
+								a(href='#')
+									span.mdi.mdi-facebook
+								a(href='#')
+									span.mdi.mdi-instagram
+			.row
+				//- Effect 13
+				.col.s12.m6.image-hover-effect
+					.hover.ehover11
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Effect 11
+							button.info.nullbutton.modal-trigger(data-target='modal13')
+								| Show code
+				.col.s12.m6.image-hover-effect
+					.hover.ehover12
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Effect 12
+							button.info.nullbutton.modal-trigger(data-target='modal14')
+								| Show code
+			.row
+				//- Effect 15
+				.col.s12.m6.image-hover-effect
+					.hover.ehover13
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 Effect 13
+							button.info.nullbutton.modal-trigger(data-target='modal15')
+								| Show code
+				//- Effect 16
+				.col.s12.m6.image-hover-effect
+					.hover.ehover14
+						img.responsive-img(src='../images/placeholder/1920x1280t.jpg', alt='placeholder')
+						.overlay
+							h2 lense effect
+							button.info.nullbutton.modal-trigger(data-target='modal16')
+								| Show code
+
+			include ../partials/miketricking-modals.pug
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/miketricking/js/example.js')

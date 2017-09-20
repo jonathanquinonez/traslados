@@ -1,0 +1,80 @@
+extends ../layout/defualt-layout.pug
+block title
+  title Forge :: Chart.js Pie Charts
+block append css
+  
+block content
+  - var mainRoute="chart"
+  - var route = 'pieChart'
+  - var func = 'chartjsPieChart'
+  - var nestedName=""
+  - var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"ChartJS Pie Charts"}]
+  include ../include/header.pug
+  main.animated
+    // ============================
+    // MAIN HEADER
+    // ============================
+    .main-header
+      .sec-page
+        .page-title
+          h2 Pie Charts
+      // ============================
+      // breadcrumb
+      // ============================
+      .sec-breadcrumb
+        +breadcrumb(breadcrumb,'left')
+    // ============================
+    // Main container
+    // ============================
+    .main-container
+      //- Intro
+      div.row
+        .col.s12
+          h4.content-headline Chart.js Pie Charts
+          p
+            | Pie and doughnut charts are probably the most commonly used charts there are. They are divided into segments, the arc of each segment shows the proportional value of each piece of data. Here, it is from 
+            a(href="http://www.chartjs.org/docs/#doughnut-pie-chart-introduction") ChartJS.
+
+      // Chart.js Bar-Charts
+      .row
+        .col.s12.m6
+          // Doughnut Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Doughnut Chart
+            .row
+              .col.s12
+                canvas#chart-doughnut&attributes({"height":"480"})
+        .col.s12.m6
+          // Pie Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Pie Chart
+            .row
+              .col.s12
+                canvas#chart-pie&attributes({"height":"480"})
+      .row
+        .col.s12.m6
+          // Polar Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Polar Chart
+            .row
+              .col.s12
+                canvas#chart-polar&attributes({"height":"480"})
+        .col.s12.m6
+          // Radar Chart
+          .card-panel
+            .row.box-title
+              div.col.s12
+                h5.content-headline Radar Chart
+            .row
+              .col.s12
+                canvas#chart-radar&attributes({"height":"480"})
+    include ../include/footer.pug
+block append scripts
+  script(type='text/javascript', src='../plugins/charts/chartjs/dist/Chart.bundle.js')
+  script(type='text/javascript', src='../plugins/charts/chartjs/chart-pie.js')

@@ -1,0 +1,180 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Location Picker
+block append css
+	
+block content
+	- var mainRoute="UIElements"
+	- var route = 'picker'
+	- var func = 'location-picker'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Pickers"},{"link":"#","title":"Location Picker"}]
+	include ../include/header.pug
+	main.animated
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Picker : Location
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set",data-activates='dropdown2',data-beloworigin='true',data-alignment='right')
+						+mi('chat')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Tags
+			div.row
+				.col.s12
+					h4.content-headline Location
+					p 
+				form.col.s12
+					//Fetching Location
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Fetching Location
+						.row
+							.input-field.col.s12.m10.l10
+								input(type="text")#us3-address
+							.input-field.col.s12.m2.l2
+								input(type="text")#us3-radius
+						.row
+							.col.s12
+								#us3&attributes({"style":"height:300px;width:inherit;"})
+						.row
+							.col.s12.m6.l6.input-field
+								input(type="text",id="us3-lat")
+							.col.s12.m6.l6.input-field
+								input(type="text",id="us3-lon")
+				//-  Example 2
+				form.col.s12
+					//Manipulating Map Widget From Callback
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Manipulating Map Widget From Callback
+						.row
+							.col.s12
+								#us4&attributes({"style":"height:500px;width:inherit;"})
+							.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us4'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+										location<span class="token punctuation">:</span> <span class="token punctuation">{</span>latitude<span class="token punctuation">:</span> <span class="token number">46.15242437752303</span><span class="token punctuation">,</span> longitude<span class="token punctuation">:</span> <span class="token number">2.7470703125</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+										radius<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+										onchanged<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>currentLocation<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> isMarkerDropped<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+										    <span class="token keyword">var</span> mapContext <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token string">'map'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+										    mapContext<span class="token punctuation">.</span>map<span class="token punctuation">.</span><span class="token function">setZoom</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+										<span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+				//- Advanced usage of geo decoder features
+				form.col.s12
+					//Manipulating Map Widget From Callback (Input parser)
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Manipulating Map Widget From Callback (Input parser)
+						.row
+							.col.s12.m6.l6
+								#us5&attributes({"style":"height:300px;width:100%;"})
+							.col.s12.m6.l6
+								.row
+									.input-field.s12.col
+										input(type="text",placeholder="Street",id="us5-street1",name='Street')
+										label(for="us5-street1") Street
+									.input-field.s12.col
+										input(type="text",placeholder="City",id="us5-city",name='City')
+										label(for="us5-city") City
+									.input-field.s12.col
+										input(type="text",placeholder="State",id="us5-state",name='State')
+										label(for="us5-state") State or Province
+									.input-field.s12.col
+										input(type="text",placeholder="Postal",id="us5-zip",name='Postal')
+										label(for="us5-zip") Postal Code
+									.input-field.s12.col
+										input(type="text",placeholder="Country",id="us5-country",name='Country')
+										label(for="us5-country") Country
+							.col.s12
+								pre.language-javascript.
+									<code class="  language-javascript">
+									<span class="token keyword">function</span> <span class="token function">updateControls</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-street1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>addressLine1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-city'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>city<span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-state'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>stateOrProvince<span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-zip'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>postalCode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5-country'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">val</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">.</span>country<span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token punctuation">}</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#us5'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+									    location<span class="token punctuation">:</span> <span class="token punctuation">{</span>latitude<span class="token punctuation">:</span> <span class="token number">42.00</span><span class="token punctuation">,</span> longitude<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">73.82480799999996</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+									    radius<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+									    onchanged<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>currentLocation<span class="token punctuation">,</span> radius<span class="token punctuation">,</span> isMarkerDropped<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									        <span class="token keyword">var</span> addressComponents <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token string">'map'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>location<span class="token punctuation">.</span>addressComponents<span class="token punctuation">;</span>
+									        <span class="token function">updateControls</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+									    oninitialized<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+									        <span class="token keyword">var</span> addressComponents <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span>component<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">locationpicker</span><span class="token punctuation">(</span><span class="token string">'map'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>location<span class="token punctuation">.</span>addressComponents<span class="token punctuation">;</span>
+									        <span class="token function">updateControls</span><span class="token punctuation">(</span>addressComponents<span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span>
+									<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+		include ../include/footer.pug
+block append scripts
+	script(type="text/javascript",src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDb1h7KGGCmDIdyx1XT2jTHvmagtlYzyGQ&sensor=false&libraries=places')
+	script(type="text/javascript", src="../plugins/pickers/locationpicker/dist/locationpicker.jquery.min.js")
+	
+	
+	script.
+		$(document).ready(function(){
+			$('#us3').locationpicker({
+			    location: {
+			        latitude: 46.15242437752303,
+			        longitude: 2.7470703125
+			    },
+			    radius: 300,
+			    inputBinding: {
+			        latitudeInput: $('#us3-lat'),
+			        longitudeInput: $('#us3-lon'),
+			        radiusInput: $('#us3-radius'),
+			        locationNameInput: $('#us3-address')
+			    },
+			    enableAutocomplete: true,
+			    onchanged: function (currentLocation, radius, isMarkerDropped) {
+			        // Uncomment line below to show alert on each Location Changed event
+			    	alert("Location changed. New location (" + currentLocation.latitude + ", " + currentLocation.longitude + ")");
+			    }
+			});
+			$('#us4').locationpicker({
+				location: {latitude: 46.15242437752303, longitude: 2.7470703125},
+				radius: 300,
+				onchanged: function(currentLocation, radius, isMarkerDropped) {
+				    var mapContext = $(this).locationpicker('map');
+				    mapContext.map.setZoom(20);
+				}
+			});
+			function updateControls(addressComponents) {
+			    $('#us5-street1').val(addressComponents.addressLine1);
+			    $('#us5-city').val(addressComponents.city);
+			    $('#us5-state').val(addressComponents.stateOrProvince);
+			    $('#us5-zip').val(addressComponents.postalCode);
+			    $('#us5-country').val(addressComponents.country);
+			}
+			$('#us5').locationpicker({
+			    location: {latitude: 42.00, longitude: -73.82480799999996},
+			    radius: 300,
+			    onchanged: function (currentLocation, radius, isMarkerDropped) {
+			        var addressComponents = $(this).locationpicker('map').location.addressComponents;
+			        updateControls(addressComponents);
+			    },
+			    oninitialized: function(component) {
+			        var addressComponents = $(component).locationpicker('map').location.addressComponents;
+			        updateControls(addressComponents);
+			    }
+			});
+		});

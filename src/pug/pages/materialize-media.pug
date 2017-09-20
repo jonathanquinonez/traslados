@@ -1,0 +1,329 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize Media
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'appJsComponents'
+	- var func = 'materializeMedia'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Advance UI"},{"link":"#","title":"Media"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Materialize Media
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			div.row
+				.col.s12
+					h4.content-headline Material Box
+					p Material box is a material design implementation of the Lightbox plugin. When a user clicks on an image that can be enlarged. Material box centers the image and enlarges it in a smooth, non-jarring manner. To dismiss the image, the user can either click on the image again, scroll away, or press the ESC key.
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic
+								p Here is standar example of it.
+						.row
+							.col.s12
+								.material-placeholder
+									img(src="../images/placeholder/250x250t.jpg",class="materialboxed",alt='placeholder')
+								p Creating the above image with the effect is as simple as adding a <code class="language-markup">materialboxed</code> class to the image tag.
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialboxed<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>650<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/250x260g.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      </code>
+				
+				.col.s12
+					// Initialization
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Initialization
+								p Materialbox is intialized automatically. However, if you add images dynamically, you will have to add this initialization code.
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+									    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.materialboxed'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">materialbox</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+				
+				.col.s12
+					// Captions
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Captions
+								p It is very easy to add a short caption to your photo. Just add the caption as a <code class="language-markup">data-caption</code> attribute.
+								img(src="../images/placeholder/250x250t.jpg", alt="placeholder", width='250', class="materialboxed", data-caption="A picture of some deer and tons of trees")
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>materialboxed<span class="token punctuation">"</span></span> <span class="token attr-name">data-caption</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>A picture of some deer and tons of trees<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>250<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://th01.deviantart.net/fs70/PRE/i/2013/126/1/e/nature_portrait_by_pw_fotografie-d63tx0n.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          </code>
+			// Slider
+			div.row
+				.col.s12
+					h4.content-headline Slider
+					p Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider.
+					p Note: This is also Hammer.js compatible! Try swiping with your finger to scroll through the slider.
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic
+								p Here we go with the example
+						.row
+							.col.s12
+								.slider
+									ul.slides
+										li
+											img(src='../images/placeholder/580x250g.jpg',alt="placeholder")
+											// random image
+											.caption.center-align
+												h3 This is our big Tagline!
+												h5.light.grey-text.text-lighten-3 Here's our small slogan.
+										li
+											img(src='../images/placeholder/580x250t.jpg',alt="placeholder")
+											// random image
+											.caption.left-align
+												h3 Left Aligned Caption
+												h5.light.grey-text.text-lighten-3 Here's our small slogan.
+										li
+											img(src='../images/placeholder/580x250r.jpg',alt="placeholder")
+											// random image
+											.caption.right-align
+												h3 Right Aligned Caption
+												h5.light.grey-text.text-lighten-3 Here's our small slogan.
+										li
+											img(src='../images/placeholder/580x250g.jpg',alt="placeholder")
+											// random image
+											.caption.center-align
+												h3 This is our big Tagline!
+												h5.light.grey-text.text-lighten-3 Here's our small slogan.
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>slider<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>slides<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/580x250g.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment" spellcheck="true">&lt;!-- random image --&gt;</span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>caption center-align<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>This is our big Tagline!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>light grey-text text-lighten-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Here's our small slogan.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/580x250g.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment" spellcheck="true">&lt;!-- random image --&gt;</span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>caption left-align<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Left Aligned Caption<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>light grey-text text-lighten-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Here's our small slogan.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/580x250g.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment" spellcheck="true">&lt;!-- random image --&gt;</span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>caption right-align<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Right Aligned Caption<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>light grey-text text-lighten-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Here's our small slogan.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/580x250g.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token comment" spellcheck="true">&lt;!-- random image --&gt;</span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>caption center-align<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>This is our big Tagline!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>light grey-text text-lighten-3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Here's our small slogan.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      </code>
+				.col.s12
+					// jQuery Initialization & Options
+					.card-panel
+						.row.box-title
+							.col.s12
+								h5.content-headline jQuery Initialization & Options
+								p Let's understand the initialization and option to play with it.
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									    <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+									      <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.slider'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slider</span><span class="token punctuation">(</span><span class="token punctuation">{</span>full_width<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+							.col.s12
+								h5.light jQuery Plugin Options
+							.col.s12
+								table.highlight
+									thead
+										tr
+											th Option Name
+											th Description
+									tbody
+										tr
+											td Indicators
+											td Set to false to hide slide indicators. (Default: True)
+										tr
+											td Height
+											td Set height of slider. (Default: 400)
+										tr
+											td Transition
+											td Set the duration of the transition animation in ms. (Default: 500)
+										tr
+											td Interval
+											td Set the duration between transitions in ms. (Default: 6000)
+							.col.s12
+								h5.light jQuery Plugin Methods
+								p We have methods to pause, start, move to next and move to previous slide.
+							.col.s12
+								pre.language-javascript.
+									<code class="language-javascript">
+									<span class="token comment" spellcheck="true">// Pause slider
+									</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.slider'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slider</span><span class="token punctuation">(</span><span class="token string">'pause'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token comment" spellcheck="true">// Start slider
+									</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.slider'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slider</span><span class="token punctuation">(</span><span class="token string">'start'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token comment" spellcheck="true">// Next slide
+									</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.slider'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slider</span><span class="token punctuation">(</span><span class="token string">'next'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token comment" spellcheck="true">// Previous slide
+									</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.slider'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slider</span><span class="token punctuation">(</span><span class="token string">'prev'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									      </code>
+			// Carousel
+			.row
+				.col.s12
+					h4.content-headline Carousel
+					p Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider.
+					p Note: This is also touch compatible! Try swiping with your finger to scroll through the carousel.
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Carousel
+								p Here, we go with carousel and carousel slider.
+						.row.section
+							.col.s12
+								.carousel
+									a.carousel-item(href='#one!')
+										img(src='../images/placeholder/250x250t.jpg',alt="placeholder")
+									a.carousel-item(href='#two!')
+										img(src='../images/placeholder/250x250r.jpg',alt="placeholder")
+									a.carousel-item(href='#three!')
+										img(src='../images/placeholder/250x250g.jpg',alt="placeholder")
+									a.carousel-item(href='#four!')
+										img(src='../images/placeholder/250x250t.jpg',alt="placeholder")
+									a.carousel-item(href='#five!')
+										img(src='../images/placeholder/250x250t.jpg',alt="placeholder")
+						.row.section
+							.col.s12
+								.carousel.carousel-slider
+									a.carousel-item(href='#one!')
+										img(src='../images/placeholder/800x400t.jpg',alt="placeholder")
+									a.carousel-item(href='#two!')
+										img(src='../images/placeholder/800x400g.jpg',alt="placeholder")
+									a.carousel-item(href='#three!')
+										img(src='../images/placeholder/800x400r.jpg',alt="placeholder")
+									a.carousel-item(href='#four!')
+										img(src='../images/placeholder/800x400t.jpg',alt="placeholder")
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel-item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#one!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/250x250t.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel-item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#two!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/250x250t.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel-item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#three!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/250x250t.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel-item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#four!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/250x250t.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel-item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#five!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/250x250t.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel carousel-slider<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel-item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#one!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/800x400t.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel-item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#two!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/800x400g.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel-item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#three!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/800x400r.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carousel-item<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#four!<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/800x400t.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      </code>
+				.col.s12
+					// jQuery Initialization
+					.card-panel
+						.row.box-title
+							.col.s12
+								h5.content-headline jQuery Initialization
+								p Let's understand how to initiate sliders.
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									    <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+									      <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.carousel'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">carousel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+						//- jQuery Plugin Options
+						.row
+							.col.s12
+								table.highlight
+									thead
+										tr
+											th Option Name
+											th Description
+									tbody
+										tr
+											td time_constant
+											td Transition time. (Default: 200)
+										tr
+											td dist
+											td Perspective zoom. If 0, all items are the same size. (Default: -100)
+										tr
+											td shift
+											td Set the duration of the transition animation in ms. (Default: 500)
+										tr
+											td padding
+											td Set the duration between transitions in ms. (Default: 6000)
+										tr
+											td full_width
+											td Make the carousel a full width slider like the second example. (Default: false)
+
+							//- jQuery Plugin Methods
+							.col.s12
+								p We have methods to pause, start, move to next and move to previous slide.
+								pre.language-javascript.
+									<code class="language-javascript">
+									<span class="token comment" spellcheck="true">// Next slide
+									</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.carousel'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">carousel</span><span class="token punctuation">(</span><span class="token string">'next'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.carousel'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">carousel</span><span class="token punctuation">(</span><span class="token string">'next'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Move next n times.
+									</span><span class="token comment" spellcheck="true">// Previous slide
+									</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.carousel'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">carousel</span><span class="token punctuation">(</span><span class="token string">'prev'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.carousel'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">carousel</span><span class="token punctuation">(</span><span class="token string">'prev'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Move prev n times.
+									</span>      </code>
+		include ../include/footer.pug
+block append scripts
+	script.
+		$(document).ready(function(){
+			$('.materialboxed').materialbox();
+		    $('.slider').slider({full_width: true});
+		    $('.carousel.carousel-slider').carousel({full_width:true});
+		    $('.carousel').carousel();
+		});

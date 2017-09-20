@@ -1,0 +1,153 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Blog Post Detail
+block content
+	- var mainRoute=""
+	- var route = 'blogRoute'
+	- var func = 'blogDetail'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Blog"},{"link":"#","title":"Post Detail"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Blog
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline Blog
+					p
+						| A regularly updated website or web page, typically one run by an individual or small group, that is written in an informal or conversational style.
+			.row
+				// ============================
+				// SMALL
+				// ============================
+				.col.s12
+					article
+						.card.blog-card
+							.card-content
+								.post-header
+									img(class="circle author-img", src="../images/placeholder/800x400g.jpg",alt="Auther Image")
+									.post-header-content
+										h2.post-title Material Blog
+										ul.post-details
+											li.grey-text
+												+mi('person').left.blue-text
+												| John Doe
+											li.grey-text
+												+mi('access_time').left.grey-text.text-darken-2
+												| Jan 15, 2017
+											li.grey-text
+												+mi('favorite').left.pink-text
+												| 10
+											li.grey-text
+												+mi('share').left.cyan-text
+												| 10
+								img(src="../images/placeholder/800x400t.jpg",class='blog-post-image',alt="blog post image")
+								p
+									|Maecenas varius finibus orci vel dignissim. Nam posuere, magna pellentesque accumsan tincidunt, libero lorem convallis lectus, tincidunt accumsan enim ex ut sem. Ut in augue congue, tempus urna sit amet, condimentum lorem. Pellentesque est sem, semper sit amet velit et, commodo fringilla turpis. Aenean quam erat, eleifend quis congue vitae, interdum vitae risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed viverra nulla.
+								p
+									|Maecenas congue risus enim, a bibendum erat sodales non. Aliquam sodales nunc id nisi scelerisque, eu semper neque condimentum. Suspendisse at purus eget velit volutpat consequat. Sed sodales, enim a pretium euismod, dui nunc venenatis enim, a hendrerit diam mauris sed ligula. Integer malesuada velit velit, et rhoncus velit finibus eu. Nam faucibus nulla lectus, eu laoreet mi rhoncus sed. Suspendisse iaculis mollis faucibus. Phasellus nisi ex, lacinia ac velit eget, congue ultrices ante. Vestibulum a ex dui. Etiam eget ex sodales, semper urna et, faucibus nisi. Etiam vehicula, elit in efficitur pretium, quam quam pellentesque tellus, vel laoreet erat leo id tortor. Morbi lobortis erat non ipsum hendrerit, non venenatis erat tempus. Nunc laoreet malesuada dolor, nec iaculis mi suscipit hendrerit. Aliquam arcu magna.
+							.card-action.pos-relative
+								span.capitalize-text.grey-text
+									+mi('loyalty').left
+									| Technology, Material Design
+								.fixed-action-btn.click-to-toggle.blog-fab-share
+									a.btn-floating.blue
+										i.large.material-icons share
+									ul
+										li
+											a.btn-floating.blue.darken-3
+												+mdiIcon('mdi-facebook')
+										li
+											a.btn-floating.light-blue
+												+mdiIcon('mdi-twitter')
+										li
+											a.btn-floating.red
+												+mdiIcon('mdi-google-plus')
+			.row
+				.col.s12
+					h5.content-headline Comment
+				div.input-field.col.s4
+					input(type="text",id='username')
+					label(for='username') Your Name
+				div.input-field.col.s4
+					input(type="text",id='email')
+					label(for='email') Your Email
+				div.input-field.col.s4
+					input(type="text",id='subject')
+					label(for='subject') Subject
+				div.input-field.col.s12
+					textarea#comment.materialize-textarea(name='textarea')
+					label(for='comment') Your comment
+			// ============================
+			// COMMENTS 
+			// ============================
+			.row
+				ul.collection.blog-comments
+					li.collection-item.avatar
+						img.circle.user-pic(src='../images/placeholder/200x200r.jpg', alt='user pic')
+						span.title.pink-text Willson Eric
+						p.grey-text
+							| Jan 15, 2017
+						p.comment-text
+							| Risus et cubilia lacus vestibulum conubia parturient scelerisque tincidunt ac habitant libero duis sagittis vestibulum dolor venenatis.Nostra cras in dis in a dignissim est in per sem consectetur.
+						.secondary-content
+							a.waves-effect.waves-light.pink-text Report
+							span.grey-text  | 
+							a.waves-effect.waves-light.pink-text Reply
+						ul.collection.blog-comments
+							li.collection-item.avatar
+								img.circle.user-pic(src='../images/placeholder/200x200g.jpg', alt='user pic')
+								span.title.pink-text Kelly Will
+								p.grey-text
+									| Jan 15, 2017
+								p.comment-text
+									| Risus et cubilia lacus vestibulum conubia parturient scelerisque tincidunt ac habitant libero duis sagittis vestibulum dolor venenatis.Nostra cras in dis in a dignissim est in per sem consectetur.
+								.secondary-content
+									a.waves-effect.waves-light.pink-text Report
+									span.grey-text  | 
+									a.waves-effect.waves-light.pink-text Reply
+							li.collection-item.avatar
+								img.circle.user-pic(src='../images/placeholder/200x200t.jpg', alt='user pic')
+								span.title.pink-text Eshly
+								p.grey-text
+									| Jan 15, 2017
+								p.comment-text
+									| Risus et cubilia lacus vestibulum conubia parturient scelerisque tincidunt ac habitant libero duis sagittis vestibulum dolor venenatis.Nostra cras in dis in a dignissim est in per sem consectetur.
+								.secondary-content
+									a.waves-effect.waves-light.pink-text Report
+									span.grey-text  | 
+									a.waves-effect.waves-light.pink-text Reply
+					li.collection-item.avatar
+						img.circle.user-pic(src='../images/placeholder/200x200t.jpg', alt='user-pic')
+						span.title.pink-text Bill Quill
+						p.grey-text
+							| Jan 15, 2017
+						p.comment-text
+							| Risus et cubilia lacus vestibulum conubia parturient scelerisque tincidunt ac habitant libero duis sagittis vestibulum dolor venenatis.Nostra cras in dis in a dignissim est in per sem consectetur.
+						.secondary-content
+							a.waves-effect.waves-light.pink-text Report
+							span.grey-text  | 
+							a.waves-effect.waves-light.pink-text Reply
+    	//- FOOTER
+		include ../include/footer.pug

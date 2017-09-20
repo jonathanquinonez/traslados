@@ -1,0 +1,133 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize Pushpin
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'appJsComponents'
+	- var func = 'materializePushpin'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Advance UI"},{"link":"#","title":"Pushpin"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Pushpin
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Intro
+			div.row
+				.col.s12.m9.l10
+					#initialization.section.scrollspy
+						h4.content-headline Pushpin
+						p
+							|Pushpin is our fixed positioning plugin. Use this to pin elements to your page during specific scroll ranges. You can check out our live example: the fixed table of contents on the right.
+						// jQuery Plugin Initialization
+						.card-panel
+							.row.box-title
+								div.col.s12
+									h5.content-headline jQuery Plugin Initialization
+									p
+										|Here is a sample initialization of pushpin. Take a look at what the options are and customize them to your needs.
+							.row
+								.col.s12
+									pre.language-markup.
+										<code class=" col s12 language-javascript">
+										  <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+										    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.tabs-wrapper .row'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pushpin</span><span class="token punctuation">(</span><span class="token punctuation">{</span> top<span class="token punctuation">:</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.tabs-wrapper'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>top <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+										  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+										        </code>
+					#classes.section.scrollspy
+						// CSS Classes
+						.card-panel
+							.row.box-title
+								div.col.s12
+									h5.content-headline CSS Classes
+									p A pushpinned element has 3 states. One above and below the scrolling threshold, and the pinned state where the element becomes fixed. Because pushpin changes positioning, chances are your element will look different when the states change. Use these css classes to correctly style your 3 states.
+							.row
+								.col.s12
+									pre.language-css.
+										<code class="language-css">
+										  <span class="token selector">// Class for when element is above threshold
+										  .pin-top </span><span class="token punctuation">{</span>
+										    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+										  <span class="token punctuation">}</span>
+
+										  <span class="token selector">// Class for when element is below threshold
+										  .pin-bottom </span><span class="token punctuation">{</span>
+										    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+										  <span class="token punctuation">}</span>
+
+										  <span class="token selector">// Class for when element is pinned
+										  .pinned </span><span class="token punctuation">{</span>
+										    <span class="token property">position</span><span class="token punctuation">:</span> fixed <span class="token important">!important</span><span class="token punctuation">;</span>
+										  <span class="token punctuation">}</span>
+										        </code>
+					#options.section.scrollspy
+						// jQuery Plugin Options
+						.card-panel
+							.row.box-title
+								div.col.s12
+									h5.content-headline jQuery Plugin Options
+									p Here are jQuery options for push-pin.
+							.row
+								.col.s12
+									table.highlight
+										thead
+											tr
+												th Option Name
+												th Description
+										tbody
+											tr
+												td Top
+												td
+													| The distance in pixels from the top of the page where the element becomes fixed. (Default: 0)
+											tr
+												td Bottom
+												td
+													| The distance in pixels from the top of the page where the elements stops being fixed. (Default: Infinity)
+											tr
+												td Offset
+												td The offset from the top the element will be fixed at. (Default: 0)
+				.col.hide-on-small-only.m3.l2
+					.toc-wrapper-doc.pin-top50
+						ul.section.table-of-contents
+							li
+								a(href='#initialization') Initialization
+							li
+								a(href='#classes') CSS classes
+							li
+								a(href='#options') Options
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Removal
+								p To remove the pushpin from an element, pass in <code class="language-markup">'remove'</code> as the option to the pushpin function
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token comment" spellcheck="true">//Removes pushpin and pushpin classes
+									</span>  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.tabs-wrapper .row'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pushpin</span><span class="token punctuation">(</span><span class="token string">'remove'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+		include ../include/footer.pug

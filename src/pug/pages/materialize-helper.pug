@@ -1,0 +1,223 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize Helpers
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'materializeHelper'
+	- var func = ''
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Helpers"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Helper
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			// Alignment
+			div.row
+				.col.s12
+					h4.content-headline Alignment
+					p
+						|We have easy to use classes to help you align your content.
+				form.col.s12
+					// Vertical Align
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Vertical Align
+								p You can easily vertically center things by adding the class <code class="language-markup">valign-wrapper</code> to the container holding the items you want to vertically align.
+						.row
+							.col.s12
+								.valign-wrapper.valign-demo
+									h5.valign(style="width:100%;text-align:center;") This should be vertically aligned
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>valign-wrapper<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>valign<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This should be vertically aligned<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+				form.col.s12
+					// Text Align
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Text Align
+								p These classes are for horizontally aligning content. We have <code class="language-markup">.left-align</code>, <code class="language-markup">.right-align</code> and <code class="language-markup">.center-align</code>.
+						.row
+							.col.s12
+								.talign-demo
+									h5.left-align This should be left aligned
+							.col.s12
+								.talign-demo
+									h5.right-align This should be right aligned
+							.col.s12
+								.talign-demo
+									h5.center-align This should be center aligned
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>left-align<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This should be left aligned<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>right-align<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This should be right aligned<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center-align<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This should be center aligned<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+						//-Quick Floats
+				form.col.s12
+					// Quick Floats
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Quick Floats
+								p Quickly float things by adding the class <code class="language-markup">left</code> or <code class="language-markup">right</code> to the element. !important is used to avoid specificity issues.
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>left<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+			// Hiding Content
+			div.row
+				.col.s12
+					h4.content-headline Hiding Content
+						p We provide easy to use classes to hide content on specific screen sizes.
+				form.col.s12
+					// Classes
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Classes
+								p Show/hide content based on the devices or screen size.
+						.row
+							.col.s12
+								table.striped
+									thead
+										tr
+										th Class Name
+										th Screen Range
+									tbody
+										tr
+											td
+												code.language-markup .hide
+											td Hidden for all Devices
+										tr
+											td
+												code.language-markup .hide-on-small-only
+											td Hidden for Mobile Only
+										tr
+											td
+												code.language-markup .hide-on-med-only
+											td Hidden for Tablet Only
+										tr
+											td
+												code.language-markup .hide-on-med-and-down
+											td Hidden for Tablet and Below
+										tr
+											td
+												code.language-markup .hide-on-med-and-up
+											td Hidden for Tablet and Above
+										tr
+											td
+												code.language-markup .hide-on-large-only
+											td Hidden for Desktop Only
+						//- Usage
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hide-on-small-only<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+			// Formatting
+			div.row
+				.col.s12
+					h4.content-headline Formatting
+						p These classes help format various content on your site.
+				form.col.s12
+					// Truncation
+					.card-panel
+						.row.box-title
+							//- truncate
+							.col.s12
+								h5.content-headline Truncation
+								p To truncate long lines of text in an ellipsis, add the class truncate to the tag which contains the text. See an example below of a header being truncated inside a card.
+						.row
+							.col.s6.offset-s3.m6.offset-m3
+								.card-panel
+									h4.truncate This is an extremely long title that will be truncated
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>truncate<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is an extremely long title that will be truncated<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+						//- Hover
+				form.col.s12
+					// Hover
+					.card-panel
+						.row.box-title
+							.col.s12
+								h5.content-headline Hover
+								p The hoverable is a hover class that adds an animation for box shadow as seen below. It can be used on most elements, but meant for use on cards.
+						.row
+							.col.s12
+								.card.hoverable.small
+									.card-image
+										img(src="../images/placeholder/1024x720t.jpg", alt="placeholder")
+										span.card-title Card Title
+									.card-content
+										p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+									.card-action
+										a(href="#") This is a link
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-panel hoverable<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> Hoverable Card Panel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        </code>
+				form.col.s12
+					// Browser Defaults
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Browser Defaults
+								p Because we override many of the default browser styles and elements, we provide the .browser-default class to revert these elements to their original state.
+						.row
+							.col.s12
+								table.striped
+									thead
+										tr
+											th Name of Element
+											th Reverted Style
+									tbody
+										tr
+											td UL
+											td Bullet points
+										tr
+											td SELECT
+											td Browser default select element
+		include ../include/footer.pug

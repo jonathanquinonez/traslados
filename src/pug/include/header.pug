@@ -1,0 +1,25 @@
+include ../partials/routes.pug
+header
+	// ============================
+	// TOP NAV
+	// ============================
+	include ../partials/top-nav.pug
+	// ============================
+	// Vertical Navigation (Default and Iconized)
+	// ============================
+	.vertical-navigations.animated
+		include ../partials/sb-vertical/sidebar-default.pug
+	// ============================
+	// Horizontal Navigation (Default and Iconized)
+	// ============================
+	.horizontal-navigations.navbar-fixed.full-top-nav
+		include ../partials/sb-horizontal/horizontal-nav.pug
+	.other-verticalSections
+		// ============================
+		// THEME SETTING
+		// ============================
+		include ../partials/theme-setting.pug
+		// ============================
+		// RIGHT SIDEBAR NOTIFICATION SECTION
+		// ============================
+		include ../partials/sb-vertical/sidebar-notification.pug

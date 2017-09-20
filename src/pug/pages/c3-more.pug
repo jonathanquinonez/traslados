@@ -1,0 +1,99 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: C3 Other Charts
+block append css
+	link(type='text/css', rel='stylesheet', href='../css/plugins/c3/c3.css')
+	
+block content
+	- var mainRoute="chart"
+	- var route = 'extraCharts'
+	- var func = 'c3ExtraCharts'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"C3 Other Charts"}]
+	- var dropdown1=[{"type":"normal","link":'http://c3js.org/samples/chart_area.html',"icon":"link","iType":"material","title":"c3 Example"},{"type":"normal","link":'https://github.com/c3js/c3',"icon":"mdi-git","iType":"mdi","title":"Git Hub"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('c3breadcrumbOption',dropdown1)
+		.main-header
+			.sec-page
+				.page-title
+					h2 Other Charts
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating btn-flat waves-effect waves-set",data-activates='c3breadcrumbOption',data-beloworigin='true',data-alignment='right',data-position="bottom",data-delay="50")
+						+mi('more_vert')
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			.row
+				.col.s12
+					h4.content-headline C3 Other Charts
+					p
+						| C3 
+						a(href="http://c3js.org/examples.html") 
+							| more chart collection
+						|. C3 is one of the hugh chart library. You can explore more charts as below.
+			
+			.row
+				.col.s12
+					// Combo Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Combo Chart
+						.row
+							.col.s12
+								#combo-chart
+			.row
+				.col.s12
+					// Custome X-categoty Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Custome X-categoty Chart
+						.row
+							.col.s12
+								#custom_x_categorized
+			.row
+				.col.s12
+					// Axes Range Example#1
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Axes Range Example#1
+						.row
+							.col.s12
+								#axes_range1
+				.col.s12
+					// Axes Range Example#2 
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Axes Range Example#2 
+						.row
+							.col.s12
+								#axes_range2
+			.row
+				.col.s12
+					// Scatter
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Scatter
+						.row
+							.col.s12
+								#scatter-chart
+			.row
+				.col.s12.s6
+					// Gauge
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Gauge
+						.row
+							.col.s12
+								#gauge-chart
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/charts/d3/d3.v3.min.js', charset="utf-8")
+	script(type='text/javascript', src='../plugins/charts/c3/c3.js')
+	script(type='text/javascript', src='../plugins/charts/c3/c3-more.js')

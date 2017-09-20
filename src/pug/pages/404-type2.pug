@@ -1,0 +1,26 @@
+extends ../layout/defualt-layout.pug
+
+block title
+	title Forge :: 404
+	- var setBodyClass='error-page'
+block append css
+	
+block content
+	- var route = 'extraPages'
+	- var func = 'page403type2'	
+	
+	.fullpage-flex-center.grey.darken-4
+		.flex-center.pos-relative.full-height
+			.row
+				.col.s12
+					.card.center-align
+						.card-content.white-text.pos-relative
+							h2.primary-text 404
+							p.caption.grey-text
+								| Sorry, We could not find that page!!
+							a.btn-floating.halfway-fab.waves-effect.waves-light.primary-bg
+								i.material-icons home
+						.card-action.grey.darken-3
+							a(href="#!",class='btn btn-flat white-text')
+								i.material-icons.left reply
+								| Back

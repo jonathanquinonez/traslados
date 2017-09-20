@@ -1,0 +1,83 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Google Pie Charts
+block append css
+	
+block content
+	- var mainRoute="chart"
+	- var route = 'pieChart'
+	- var func = 'googlePieChart'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Charts"},{"link":"#","title":"Google Pie Charts"}]
+	include ../include/header.pug
+	main.animated
+		.main-header
+			.sec-page
+				.page-title
+					h2 Pie Charts
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Google Pie Charts
+					p
+						| Google 
+						a(href="https://developers.google.com/chart/interactive/docs/gallery/piechart") 
+							| pie chart 
+						| that is rendered within the browser using SVG or VML. Displays tooltips when hovering over slices.
+			//- Google Bar-Charts
+			.row
+				.col.s12.m6
+					// A Simple Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline A Simple Chart
+						.row
+							.col.s12
+								#piechart
+				.col.s12.m6
+					// Making a 3D Pie Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Making a 3D Pie Chart
+						.row
+							.col.s12
+								#piechart_3d
+			.row
+				.col.s12.m6
+					// Exploding a Slice
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Exploding a Slice
+						.row
+							.col.s12
+								#piechart_sliced
+				.col.s12.m6
+					// Removing Slices
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Removing Slices
+						.row
+							.col.s12
+								#pacman
+			.row
+				.col.s12.m6
+					// Making a Donut Chart
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Making a Donut Chart
+						.row
+							.col.s12
+								#donutchart
+		include ../include/footer.pug
+block append scripts
+	script(type='text/javascript', src='../plugins/charts/google-chart/loader.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/jsapi.js')
+	script(type='text/javascript', src='../plugins/charts/google-chart/piechart.js')

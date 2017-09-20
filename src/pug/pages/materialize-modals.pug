@@ -1,0 +1,250 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize Modals
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'appJsComponents'
+	- var func = 'materializeModals'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Advance UI"},{"link":"#","title":"Modals"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Materialize Modals
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Modals
+					p Use a modal for dialog boxes, confirmation messages, or other content that can be called up. In order for the modal to work you have to add the Modal ID to the link of the trigger. To add a close button, just add the class <code class="language-markup">.modal-close</code> to your button.
+				
+				.col.s12
+					// Modals HTML Structure
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Modals HTML Structure
+								p If you have content that is very long and you want the action buttons to be visible all the time, you can add the <code class="language-markup">modal-fixed-footer</code> class to the modal.
+							.col.s12.demo-modals
+								a(href="#modal1",class="waves-effect waves-light btn  s12",data-target="modal1") Modal
+								a(href="#modal2",class="waves-effect waves-light btn  s12") Modal With Fixed Footer
+								a(href="#modal3",class="waves-effect waves-light btn  s12") Modal Bottom Sheet Style
+								#modal1.modal
+									.modal-content
+										h4 Modal Header
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+									.modal-footer
+										a.modal-action.modal-close.waves-effect.waves-red.btn-flat(href='#!') Disagree
+										a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Agree
+								#modal2.modal.modal-fixed-footer
+									.modal-content
+										h4 Modal Header
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+										p
+											| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+									.modal-footer
+										a.modal-action.modal-close.waves-effect.waves-red.btn-flat(href='#!') Disagree
+										a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href='#!') Agree
+								#modal3.modal.bottom-sheet
+									.modal-content
+										h4 Modal Header
+										ul.collection
+											li.collection-item.avatar
+												img.circle(src='../images/placeholder/250x250t.jpg', alt='')
+												span.title Title
+												p
+													| First Line 
+													br
+													|                Second Line
+												a.secondary-content(href='#!')
+													i.material-icons grade
+											li.collection-item.avatar
+												i.material-icons.circle folder
+												span.title Title
+												p
+													| First Line 
+													br
+													|                Second Line
+												a.secondary-content(href='#!')
+													i.material-icons grade
+											li.collection-item.avatar
+												i.material-icons.circle.green assessment
+												span.title Title
+												p
+													| First Line 
+													br
+													|                Second Line
+												a.secondary-content(href='#!')
+													i.material-icons grade
+											li.collection-item.avatar
+												i.material-icons.circle.red play_arrow
+												span.title Title
+												p
+													| First Line 
+													br
+													|                Second Line
+												a.secondary-content(href='#!')
+													i.material-icons grade
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token comment" spellcheck="true">&lt;!-- Modal Trigger --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> waves-effect waves-light btn<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#modal1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Modal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+
+									  <span class="token comment" spellcheck="true">&lt;!-- Modal Structure --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal modal-fixed-footer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal-content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Modal Header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>A bunch of text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal-footer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#!<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal-action modal-close waves-effect waves-green btn-flat <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Agree<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									          </code>
+				//- Modals with Footer
+				.col.s12
+					// Modals with Fixed Footer
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Modals with Fixed Footer
+								p If you have content that is very long and you want the action buttons to be visible all the time, you can add the <code class="language-markup">modal-fixed-footer</code> class to the modal.
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token comment" spellcheck="true">&lt;!-- Modal Trigger --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> waves-effect waves-light btn<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#modal1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Modal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+
+									  <span class="token comment" spellcheck="true">&lt;!-- Modal Structure --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal modal-fixed-footer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal-content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Modal Header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>A bunch of text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal-footer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#!<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal-action modal-close waves-effect waves-green btn-flat <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Agree<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									          </code>
+				//- Bottom Sheet Modals
+				.col.s12
+					// Bottom Sheet Modals
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Bottom Sheet Modals
+								p Bottom Sheet Modals are good for displaying actions to the user on the bottom of a screen. They still act the same as regular modals.
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token comment" spellcheck="true">&lt;!-- Modal Trigger --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>waves-effect waves-light btn <span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#modal1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Modal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+
+									  <span class="token comment" spellcheck="true">&lt;!-- Modal Structure --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal bottom-sheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal-content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Modal Header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>A bunch of text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal-footer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#!<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> modal-action modal-close waves-effect waves-green btn-flat<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Agree<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									          </code>
+				// Modals with Button trigger
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Modals with Button trigger
+								p If you prefer to use a button to open a modal specify the Modal ID in <code class="language-markup">data-target</code> rather than the href attribute.
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token comment" spellcheck="true">&lt;!-- Modal Trigger --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">data-target</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>modal1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn <span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Modal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+									          </code>
+				
+				// jQuery Plugin Initialization
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline jQuery Plugin Initialization
+								p To open a modal using a trigger:
+						.row
+							.col.s12
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+									    <span class="token comment" spellcheck="true">// the "href" attribute of . must specify the modal ID that wants to be triggered
+									</span>    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.modal'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									          </code>
+								p You can also open modals programatically, the below code will make your modal open on document ready:
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#modal1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token string">'open'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									          </code>
+								p You can also close them programatically:
+								pre.language-javascript.
+									<code class=" language-javascript">
+									  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#modal1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+									        </code>
+				// Options
+				.col.s12
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Options
+								p You can customize the behavior of each modal using these options. For example, you can call a custom function to run when a modal is dismissed. To do this, just place your function in the intialization code as shown below.
+						.row
+							.col
+								pre.language-javascript.
+									<code class=" language-javascript">
+										<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.modal'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">modal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+												dismissible<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Modal can be dismissed by clicking outside of the modal
+									</span>      opacity<span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Opacity of modal background
+									</span>      inDuration<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Transition in duration
+									</span>      outDuration<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Transition out duration
+									</span>      startingTop<span class="token punctuation">:</span> <span class="token string">'4%'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Starting top style attribute
+									</span>      endingTop<span class="token punctuation">:</span> <span class="token string">'10%'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Ending top style attribute
+									</span>      ready<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>modal<span class="token punctuation">,</span> trigger<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// Callback for Modal open. Modal and trigger parameters available.
+									</span>        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Ready"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+													console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>modal<span class="token punctuation">,</span> trigger<span class="token punctuation">)</span><span class="token punctuation">;</span>
+												<span class="token punctuation">}</span><span class="token punctuation">,</span>
+												complete<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'Closed'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// Callback for Modal close
+									</span>    <span class="token punctuation">}</span>
+										<span class="token punctuation">)</span><span class="token punctuation">;</span>
+												</code>
+		include ../include/footer.pug

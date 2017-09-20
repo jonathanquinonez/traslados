@@ -1,0 +1,430 @@
+extends ../layout/defualt-layout.pug
+block title
+	title Forge :: Materialize Cards
+block append css
+	
+block content
+	- var mainRoute="appearance"
+	- var route = 'appComponents'
+	- var func = 'materializeCards'
+	- var nestedName=""
+	- var breadcrumb=[{"link":"index.html","title":"Home"},{"link":"#","title":"Cards"}]
+	- var pageGeneralDropDown=[{"type":"normal","link":'#',"icon":"account_box","iType":"material","title":"Account"},{"type":"normal","link":'#',"icon":"local_activity","iType":"material","title":"Recent Activities"},{"type":"normal","link":'#',"icon":"mdi-wheelchair-accessibility","iType":"mdi","title":"Accessibility"},{"type":"divider"},{"type":"normal","link":'#',"icon":"settings","iType":"material","title":"All Settings"}]
+	include ../include/header.pug
+	main.animated
+		+dropdownContent('generalDropDown',pageGeneralDropDown)
+		// ============================
+		// MAIN HEADER
+		// ============================
+		.main-header
+			.sec-page
+				.page-title
+					h2 Cards
+				.page-options
+					a(href="#",class="dropdown-button page-opt-dropBtn btn-floating waves-effect waves-set setWave",data-activates='generalDropDown',data-beloworigin="true",data-alignment="right",data-position="bottom",data-constrainwidth="false",data-delay="50",data-gutter="25")
+						+mi('perm_data_setting')
+					a(href="#",class="waves-effect waves-set page-opt-dropBtn setWave btn-floating")
+						+mi('chat_bubble_outline')
+			// ============================
+			// breadcrumb
+			// ============================
+			.sec-breadcrumb
+				+breadcrumb(breadcrumb,'left')
+		// ============================
+		// Main container
+		// ============================
+		.main-container
+			//- Intro
+			div.row
+				.col.s12
+					h4.content-headline Card
+					p Cards are a convenient means of displaying content composed of different types of objects. They’re also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.
+				.col.s12
+					// Basic Card
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Basic Card
+								p Here is the standard basic card.
+						.row
+							.col.s12.m6
+								.card.blue-grey.darken-1
+									.card-content.white-text
+										span.card-title Card Title
+										p
+										| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+									.card-action
+										a(href='#').white-text This is a link
+										a(href='#').white-text This is a link
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card blue-grey darken-1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-content white-text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Card Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+									              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>I am a very simple card. I am good at containing small bits of information.
+									              I am convenient because I require little markup to use effectively.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-action<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									            </code>
+				.col.s12
+					// Image Card
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Image Card
+								p Here is the standard card with an image thumbnail.
+						.row
+							// Image Card
+							.col.s12.m7
+								.card
+									.card-image
+										img(src='../images/placeholder/600x400r.jpg',alt='placeholder')
+										span.card-title Card Title
+									.card-content
+										p
+											| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+									.card-action
+										a(href='#') This is a link
+							.col.s12.m5.hide-on-med-and-down
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col s12 m7<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-image<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/700x400g.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Card Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>I am a very simple card. I am good at containing small bits of information.
+									              I am convenient because I require little markup to use effectively.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-action<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									            </code>
+				.col.s12
+					// Card Reveal
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Card Reveal
+								p
+									| Here you can add a card that reveals more information once clicked. Just add the 
+									code.language-markup card-reveal
+									|  div with a 
+									code.language-markup span.card-title
+									|  inside to make this work. Add the class 
+									code.language-markup activator
+									|  to an element inside the card to allow it to open the card reveal.
+						.row
+							// Pullup Card
+							.col.s12.m7
+								.card
+									.card-image.waves-effect.waves-block.waves-light
+										img.activator(src='../images/placeholder/600x400r.jpg')
+									.card-content
+										span.card-title.activator.grey-text.text-darken-4
+											| Card Title
+											i.material-icons.right more_vert
+											p
+												a(href='#!') This is a link
+									.card-reveal
+										span.card-title.grey-text.text-darken-4
+											| Card Title
+											i.material-icons.right close
+										p
+											| Here is some more information about this product that is only revealed once clicked on.
+							.col.s12.m5.hide-on-med-and-down
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-image waves-effect waves-block waves-light<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>activator<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/700x400g.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-title activator grey-text text-darken-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Card Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>more_vert<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>This is a link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-reveal<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-title grey-text text-darken-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Card Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons right<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>close<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Here is some more information about this product that is only revealed once clicked on.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									            </code>
+				.col.s12
+					// Card Action Options
+					.card-panel
+						.row.box-title
+							.col.s12
+								h5.content-headline Card Action Options
+								p The default option is having the card-reveal go over the card-action. This is achieved by placing the card-action div after the card-reveal div in your HTML.
+						.row
+							.col.s12.m6
+								.card
+									.card-image.waves-effect.waves-block.waves-light
+										img.activator(src='../images/placeholder/600x300t.jpg')
+									.card-content
+										span.card-title.activator.grey-text.text-darken-4
+											| Card Title
+											i.material-icons.right more_vert
+										p
+											a(href='#!') This is a link
+									.card-reveal
+										span.card-title.grey-text.text-darken-4
+											| Card Title
+											i.material-icons.right close
+										p
+											| Here is some more information about this product that is only revealed once clicked on.
+									.card-action
+										a(href='#') This is a link
+										a(href='#') This is a link
+							.col.s12.m6
+								.card(style='overflow: hidden;')
+									.card-image.waves-effect.waves-block.waves-light
+										img.activator(src='../images/placeholder/600x300t.jpg')
+									.card-content
+										span.card-title.activator.grey-text.text-darken-4
+											| Card Title
+											i.material-icons.right more_vert
+										p
+											a(href='#!') This is a link
+									.card-action
+										a(href='#') This is a link
+										a(href='#') This is a link
+									.card-reveal(style='display: none; transform: translateY(0px);')
+										span.card-title.grey-text.text-darken-4
+											| Card Title
+											i.material-icons.right close
+										p
+											| Here is some more information about this product that is only revealed once clicked on.
+										.col.s12
+											p.caption
+												| You can have your card-action always visible by placing the card-reveal div directly after the card-action div.
+				.col.s12
+					// Card Sizes
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Card Sizes
+								p If you want to have uniformly sized cards, you can use our premade size classes. Just add the size class in addition to the card class.
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card small<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token comment" spellcheck="true">&lt;!-- Card Content --&gt;</span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									            </code>
+						.row
+							.col.s12.m6
+								h5.light Small
+								.card.small
+									.card-image
+										img(src='../images/placeholder/600x300t.jpg',alt='placeholder')
+										span.card-title Card Title
+									.card-content
+										p
+											| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+									.card-action
+										a(href='#') This is a link
+										a(href='#') This is a link
+							.col.s12.m6
+								p.caption
+									| The Small Card limits the height of the card to 300px.
+						//- Medium
+						.row
+							.col.s12.m6
+								h5.light Medium
+								.card.medium
+									.card-image
+										img(src='../images/placeholder/600x300t.jpg',alt='placeholder')
+										span.card-title Card Title
+									.card-content
+										p
+											| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+									.card-action
+										a(href='#') This is a link
+										a(href='#') This is a link
+							.col.s12.m6
+								p.caption
+									| The Small Card limits the height of the card to 400px.
+						//- Large
+						.row
+							.col.s12.m6
+								h5.light Large
+								.card.large
+									.card-image
+										img(src='../images/placeholder/700x400g.jpg',alt='placeholder')
+										span.card-title Card Title
+									.card-content
+										p
+											| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+									.card-action
+										a(href='#') This is a link
+										a(href='#') This is a link
+							.col.s12.m6
+								p.caption
+									| The Small Card limits the height of the card to 500px.
+				.col.s12
+					// Card Panel
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline Card Panel
+								p For a simpler card with less markup, try using a card panel which just has padding and a shadow effect.
+						.row
+							.col.s12.m5
+								.card-panel.primary-bg.dark
+									span.white-text
+										| I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+							.col.s12.m7.hide-on-med-and-down
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col s12 m5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-panel teal<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>white-text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>I am a very simple card. I am good at containing small bits of information.
+									          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									            </code>
+				.col.s12
+					// FAB IN CARD
+					.card-panel
+						.row.box-title
+							div.col.s12
+								h5.content-headline FABs In Cards
+								p Here is an image card with a Floating Action Button.
+						.row
+							.col.s12.m6
+								.card
+									.card-image
+										img(class="responsive-img",src="../images/placeholder/700x400g.jpg")
+										span.card-title Blue River
+										a(href="#",class="btn-floating halfway-fab waves-effect waves-light secondary-bg")
+											+mi('add')
+									.card-content
+										p
+											|I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+							.col.s12.m6
+								.card
+									.card-image
+										img(class="responsive-img",src="../images/placeholder/700x400g.jpg")
+										span.card-title Wild Life
+										a(href="#",class="btn-floating btn-large halfway-fab waves-effect waves-light secondary-bg")
+											+mi('add')
+									.card-content
+										p
+											|I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>col s12 m6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-image<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>../images/placeholder/700x400g.jpg<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Card Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn-floating halfway-fab waves-effect waves-light red<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>material-icons<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>add<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									            </code>
+				div.col.s12
+					// Tabs in Cards
+					div.card-panel
+						div.row.box-title
+							div.col.s12
+								h5.content-headline Tabs in Cards
+								p
+									|You can add tabs to your cards by adding a dividing <code class='language-markup'>cards-tabs</code> div inbetween your header content and your tab content.
+						.row
+							.col.s12.m6
+								.card
+									.card-content
+										h5.caption Simple Card with plain Tab
+										p
+											|I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+									.card-tabs
+										ul.tabs.tabs-fixed-width
+											li.tab
+												a(href='#test4') Test 1
+											li.tab
+												a(href='#test5',class='active') Test 2
+											li.tab
+												a(href='#test6') Test 3
+									.card-content.grey.lighten-4
+										#test4
+											p Test 1
+										#test5
+											p Test 2
+										#test6
+											p Test 3
+							.col.s12.m6
+								.card.blue
+									.card-content
+										h5.caption.white-text Colored or dark background card with tabs.
+										p.white-text
+											|I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+									.card-tabs
+										ul.tabs.tabs-fixed-width.tabs-transparent
+											li.tab
+												a(href='#test7') Test 1
+											li.tab
+												a(href='#test8',class='active') Test 2
+											li.tab
+												a(href='#test9') Test 3
+									.card-content.blue.lighten-4
+										#test7
+											p Test 1
+										#test8
+											p Test 2
+										#test9
+											p Test 3
+						.row
+							.col.s12
+								pre.language-markup.
+									<code class=" language-markup">
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-tabs<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tabs tabs-fixed-width<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#test4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Test 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>active<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#test5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Test 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#test6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Test 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-content grey lighten-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Test 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Test 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Test 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+									  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code>
+		include ../include/footer.pug
+	
+	

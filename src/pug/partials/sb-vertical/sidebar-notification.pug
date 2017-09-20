@@ -1,0 +1,281 @@
+// NOTIFICATION-SIDEBAR
+#sb-notification.row.notification-sidebar.fixed.animated
+	.col.s12
+		ul.tabs.rsb-notifications
+			li.tab.col.s4
+				a(href="#rsb-shortcuts")
+					+mi('widgets').small
+			li.tab.col.s4
+				a(href="#rsb-notifications")
+					+mi('notifications').small
+					span.badge-count.white 10
+			li.tab.col.s4
+				a(href="#rsb-tasklist")
+					+mi('playlist_add_check').small
+					span.badge-count.teal.lighten-2.white-text 14
+		
+		#rsb-notifications.col.s12
+			ul.notification-list.collection#psNotificationList
+				li.collection-item.notification-item.waves-effect.waves-set
+					
+					// REDIRECTION TO User-Profile
+
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+					
+					// Redirection to msg/chat
+
+					a(href="#",class='notify-content')
+						span.title
+							| Amazon
+							+mi('add_shopping_cart').notify-type.blue-text
+						.notify-desc 
+							| Envato account subsciption is added to your cart.
+						span.notify-time
+							| 5 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					
+					// REDIRECTION TO User-Profile
+
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+					
+					// Redirection to msg/chat
+
+					a(href="#",class='notify-content')
+						span.title
+							| Jack Jordan
+							+mi('attach_money').notify-type.green-text
+						.notify-desc 
+							| Payment received from John Doe for theme.
+						span.notify-time
+							| 30 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					
+					// REDIRECTION TO User-Profile
+
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+					
+					// Redirection to msg/chat
+
+					a(href="#",class='notify-content')
+						span.title
+							| Jenny Jordan
+							+mi('poll').notify-type.blue-text
+						.notify-desc 
+							| Esi has polled you.
+						span.notify-time
+							| 35 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					
+					// REDIRECTION TO User-Profile
+
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+						span.notify-status.offline
+					
+					// Redirection to msg/chat
+
+					a(href="#",class='notify-content')
+						span.title
+							| Selena Morris
+							+mi('share').notify-type.purple-text
+						.notify-desc 
+							| Jeo has shared documents with you.
+						span.notify-time
+							| 38 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					
+					// REDIRECTION TO User-Profile
+
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+					
+					// Redirection to msg/chat
+
+					a(href="#",class='notify-content')
+						span.title
+							| Jessica
+							+mi('notifications').notify-type.orange-text
+						.notify-desc 
+							| Reminder to pay bill.
+						span.notify-time
+							| 42 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					
+					// REDIRECTION TO User-Profile
+
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+					
+					// Redirection to msg/chat
+
+					a(href="#",class='notify-content')
+						span.title
+							| Mira Dellon
+							+mi('attachment').notify-type.yellow-text
+						.notify-desc 
+							| You have received documents from Oghie.
+						span.notify-time
+							| 49 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					//- REDIRECTION TO User-Profile
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+						//- span.notify-status.away
+					//- Redirection to msg/chat
+					a(href="#",class='notify-content')
+						span.title
+							| Evi Willson
+							+mi('message').notify-type.amber-text
+						.notify-desc 
+							| Review and share Envato new products.
+						span.notify-time
+							| 53 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					//- REDIRECTION TO User-Profile
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+						//- span.notify-status.offline
+					//- Redirection to msg/chat
+					a(href="#",class='notify-content')
+						span.title
+							| Anisi Ojior
+							+mi('battery_alert').notify-type.red-text
+						.notify-desc 
+							| 10% battery remains.
+						span.notify-time
+							| 54 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					//- REDIRECTION TO User-Profile
+					//- a(href="#",class='notify-user') 
+					//- 	img.circle(src='../images/people.jpg', alt='')
+						//- span.notify-status.online
+					//- Redirection to msg/chat
+					a(href="#",class='notify-content full')
+						span.title
+							| Macbook
+							+mi('network_wifi').notify-type.cyan-text
+						.notify-desc 
+							| Thoriseum network is connected.
+						span.notify-time
+							| 2 Hours ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					//- REDIRECTION TO User-Profile
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300t.jpg', alt='')
+						//- span.notify-status.busy
+					//- Redirection to msg/chat
+					a(href="#",class='notify-content')
+						span.title
+							| Macbook
+							+mi('wb_cloudy').notify-type.blue-text
+						.notify-desc 
+							| Weather is cloudy.
+						span.notify-time
+							| 2 Hours 30 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					//- REDIRECTION TO User-Profile
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+						//- span.notify-status.away
+					//- Redirection to msg/chat
+					a(href="#",class='notify-content')
+						span.title
+							| Canon Printer
+							+mi('print').notify-type.red-text
+						.notify-desc 
+							| Your Request document is not printed.
+						span.notify-time
+							| 3 Hours ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					
+					// REDIRECTION TO User-Profile
+
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+					
+					// Redirection to msg/chat
+
+					a(href="#",class='notify-content')
+						span.title
+							| Apple
+							+mi('system_update_alt').notify-type.blue-text
+						.notify-desc 
+							| New updates are ready to install.
+						span.notify-time
+							| 3 Hours  5 Minutes ago.
+				li.collection-item.notification-item.waves-effect.waves-set
+					
+					// REDIRECTION TO User-Profile
+
+					a(href="#",class='notify-user') 
+						img.circle(src='../images/placeholder/300x300g.jpg', alt='')
+					
+					// Redirection to msg/chat
+
+					a(href="#",class='notify-content')
+						span.title
+							| Jack Jordan
+							+mi('file_download').notify-type.green-text
+						.notify-desc 
+							| File download complete.
+						span.notify-time
+							| 3 Hours  8 Minutes ago.
+			div.footer
+				a(href="#",class='center tooltipped')&attributes({"data-position":"top","data-tooltip":"See all notifications"})
+					+mi('more_horiz').small
+		#rsb-tasklist.col.s12
+			div.tab-notelist#psTabNotelist
+				p
+					input(type="checkbox",id="task1")
+					label(for="task1") Bring some milk
+				p
+					input(type="checkbox",id="task2")
+					label(for="task2") Promote envato
+				p
+					input(type="checkbox",id="task3")
+					label(for="task3") Make WP theme and submit for review
+				p
+					input(type="checkbox",id="task4")
+					label(for="task4") Read atricle of Jeffrey. He has published a lots of tutorials for VueJS and Laravel 5.2. I want to learn unit-testing.
+			.notes-footer
+				a(href="#",class='tooltipped left waves-effect waves-set')&attributes({"data-position":"top","data-tooltip":"Clear selected"})
+					+mi('delete').small
+				a(href="#",class='tooltipped right waves-effect waves-set')&attributes({"data-position":"top","data-tooltip":"Add new task"})
+					+mi('add').small
+		#rsb-shortcuts.col.s12
+			ul.tab-shortcut.collection#psTabShortcut
+				li.collection-item.waves-effect.waves-set
+					a(href="#",class="shortcut-aItem")
+						+mi("photo_library").blue-text
+						span.shortcut-name Gallary
+				li.collection-item.waves-effect.waves-set
+					a(href="#",class="shortcut-aItem")
+						+mi("mail").orange-text
+						span.shortcut-name Mail
+				li.collection-item.waves-effect.waves-set
+					a(href="#",class="shortcut-aItem")
+						+mi("file_download").yellow-text
+						span.shortcut-name Downloads
+				li.collection-item.waves-effect.waves-set
+					a(href="#",class="shortcut-aItem")
+						+mi("event").green-text
+						span.shortcut-name Events
+				li.collection-item.waves-effect.waves-set
+					a(href="#",class="shortcut-aItem")
+						+mi("contacts").purple-text
+						span.shortcut-name Contacts
+				li.collection-item.waves-effect.waves-set
+					a(href="#",class="shortcut-aItem")
+						+mi("settings").cyan-text
+						span.shortcut-name Settings
+				li.collection-item.waves-effect.waves-set
+					a(href="#",class="shortcut-aItem")
+						+mi("lock").amber-text
+						span.shortcut-name Lock Screen
+				li.collection-item.waves-effect.waves-set
+					a(href="#",class="shortcut-aItem")
+						+mi("power_settings_new").red-text
+						span.shortcut-name Logout
